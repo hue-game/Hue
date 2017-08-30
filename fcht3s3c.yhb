@@ -1,0 +1,2 @@
+cd $GHU_WORKINGDIR
+PATH=$GHU_FULLPATH:$PATH /bin/bash
