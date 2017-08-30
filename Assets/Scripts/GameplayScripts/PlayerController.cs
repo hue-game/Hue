@@ -5,14 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float runSpeed;
-    public float jumpHeight;
+    public GameManager gameManager;
+    public float runSpeedDefault;
+    public float jumpHeightDefault;
+
+    [HideInInspector]
+    public string currentColor;
+
     private bool grounded;
-    private string currentColor;
+    private float runSpeed;
+    private float jumpHeight;
 
     // Use this for initialization
     void Start()
     {
+        runSpeed = runSpeedDefault;
+        jumpHeight = jumpHeightDefault;
         SwitchColor("blue");
     }
 
@@ -20,8 +28,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float move = Input.GetAxis("Horizontal");
-        //if (grounded)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(move * runSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(move * runSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+        if (move > 0)
+            GetComponent<SpriteRenderer>().flipX = false;
+        else if (move < 0)
+            GetComponent<SpriteRenderer>().flipX = true;
     }
 
     void Update()
@@ -30,18 +42,23 @@ public class PlayerController : MonoBehaviour
         {
             if (grounded)
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight));
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
                 grounded = false;
             }
         }
         if (Input.GetButtonDown("Fire1"))
         {
             if (currentColor == "blue")
+            {
                 SwitchColor("red");
+                gameManager.SwitchColor("red");
+            }
             else
+            {
                 SwitchColor("blue");
+                gameManager.SwitchColor("blue");
+            }
         }
-            
 
     }
 
@@ -80,14 +97,14 @@ public class PlayerController : MonoBehaviour
             case "blue":
                 currentColor = "blue";
                 GetComponent<SpriteRenderer>().color = Color.blue;
-                runSpeed = 5;
-                jumpHeight = 350;
+                runSpeed = runSpeedDefault;
+                jumpHeight = jumpHeightDefault;
                 break;
             case "red":
                 currentColor = "red";
                 GetComponent<SpriteRenderer>().color = Color.red;
-                runSpeed = 10;
-                jumpHeight = 550;
+                runSpeed = runSpeedDefault * 1.8f;
+                jumpHeight = jumpHeightDefault * 1.3f;
                 break;
             default: 
                 break;
