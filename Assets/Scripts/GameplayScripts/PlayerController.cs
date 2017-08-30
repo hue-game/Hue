@@ -17,11 +17,12 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         runSpeed = runSpeedDefault;
         jumpHeight = jumpHeightDefault;
         SwitchColor("blue");
+        gameManager.SwitchColor("blue");
     }
 
     // Update is called once per frame
