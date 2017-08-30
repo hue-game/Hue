@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableTemplate : MonoBehaviour {
+public class InteractableTemplate : InteractableController {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    public override void Interact()
+    {
+        if (canInteract == true)
+        {
+  
+        }
+    }
+
 }

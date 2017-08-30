@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableController : MonoBehaviour {
+public abstract class InteractableController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool canInteract;
+    
+    private void Awake()
+    {
+    }
+
+    public void ToggleInteractable()
+    {
+        canInteract = !canInteract;
+    }
+
+    public abstract void Interact();
 }
