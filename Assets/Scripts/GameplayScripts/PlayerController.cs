@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         runSpeed = runSpeedDefault;
         jumpHeight = jumpHeightDefault;
-        SwitchColor("blue");
-        gameManager.SwitchColor("blue");
+        SwitchColor("red");
+        gameManager.SwitchColor("red");
     }
 
     // Update is called once per frame
@@ -104,8 +104,8 @@ public class PlayerController : MonoBehaviour
             case "red":
                 currentColor = "red";
                 GetComponent<SpriteRenderer>().color = Color.red;
-                runSpeed = runSpeedDefault * 1.8f;
-                jumpHeight = jumpHeightDefault * 1.3f;
+                runSpeed = runSpeedDefault * 1.6f;
+                jumpHeight = jumpHeightDefault * 1.4f;
                 break;
             default: 
                 break;
