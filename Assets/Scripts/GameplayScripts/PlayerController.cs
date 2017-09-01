@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        runSpeed = runSpeedDefault;
-        jumpHeight = jumpHeightDefault;
+        runSpeed = runSpeedDefault * 1.6f;
+        jumpHeight = jumpHeightDefault * 1.4f;
         SwitchColor();
     }
 
@@ -30,14 +30,15 @@ public class PlayerController : MonoBehaviour
     {
         float move = Input.GetAxis("Horizontal");
         //Move(move);
+
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    Jump();
+        //}
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             SwitchColor();
@@ -100,13 +101,13 @@ public class PlayerController : MonoBehaviour
         {
             case "blue":
                 GetComponent<SpriteRenderer>().color = Color.blue;
-                runSpeed = runSpeedDefault;
-                jumpHeight = jumpHeightDefault;
+                //runSpeed = runSpeedDefault;
+                //jumpHeight = jumpHeightDefault;
                 break;
             case "red":
                 GetComponent<SpriteRenderer>().color = Color.red;
-                runSpeed = runSpeedDefault * 1.6f;
-                jumpHeight = jumpHeightDefault * 1.4f;
+                //runSpeed = runSpeedDefault * 1.6f;
+                //jumpHeight = jumpHeightDefault * 1.4f;
                 break;
             default:
                 break;

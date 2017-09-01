@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public Image colorBackground;
-    public string worldColor = "red";
+    public string worldColor = "blue";
 
     private List<GameObject> blueWorldObjects = new List<GameObject>();
     private List<GameObject> redWorldObjects = new List<GameObject>();
+
     // Use this for initialization
     void Awake () {
+        worldColor = "blue";
+
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 
         foreach (GameObject gameObject in allGameObjects)
@@ -26,12 +29,6 @@ public class GameManager : MonoBehaviour {
 
         }
 
-	}
-
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
     public void SwitchColor()
