@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public Image colorBackground;
+    public string worldColor = "red";
 
     private List<GameObject> blueWorldObjects = new List<GameObject>();
     private List<GameObject> redWorldObjects = new List<GameObject>();
@@ -24,18 +25,26 @@ public class GameManager : MonoBehaviour {
             }
 
         }
+
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public void SwitchColor(string color)
+    public void SwitchColor()
     {
-        switch (color)
+        if (worldColor == "blue")
+            worldColor = "red";
+        else
+            worldColor = "blue";
+
+        switch (worldColor)
         {
             case "blue":
+                
                 colorBackground.color = new Color(0.231f, 0.4549f, 0.9843f, 0.4352f);
                 foreach (GameObject blueObject in blueWorldObjects)
                 {
