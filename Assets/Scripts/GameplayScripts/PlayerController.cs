@@ -9,56 +9,39 @@ public class PlayerController : MonoBehaviour
     public float runSpeedDefault;
     public float jumpHeightDefault;
 
-    [HideInInspector]
-    public string currentColor;
-
     private bool grounded;
     private float runSpeed;
     private float jumpHeight;
 
+    private bool moveLeft;
+    private bool moveRight;
+    private bool stop;
+
     // Use this for initialization
     void Awake()
     {
-        runSpeed = runSpeedDefault;
-        jumpHeight = jumpHeightDefault;
-        SwitchColor("red");
-        gameManager.SwitchColor("red");
+        runSpeed = runSpeedDefault * 1.6f;
+        jumpHeight = jumpHeightDefault * 1.4f;
+        SwitchColor();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         float move = Input.GetAxis("Horizontal");
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * runSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        //Move(move);
 
-        if (move > 0)
-            GetComponent<SpriteRenderer>().flipX = false;
-        else if (move < 0)
-            GetComponent<SpriteRenderer>().flipX = true;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    Jump();
+        //}
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (grounded)
-            {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-                grounded = false;
-            }
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (currentColor == "blue")
-            {
-                SwitchColor("red");
-                gameManager.SwitchColor("red");
-            }
-            else
-            {
-                SwitchColor("blue");
-                gameManager.SwitchColor("blue");
-            }
+            SwitchColor();
         }
 
     }
@@ -91,25 +74,43 @@ public class PlayerController : MonoBehaviour
         grounded = false;
     }
 
-    private void SwitchColor(string color)
+    public void Jump()
     {
-        switch (color)
+        if (grounded)
         {
-            case "blue":
-                currentColor = "blue";
-                GetComponent<SpriteRenderer>().color = Color.blue;
-                runSpeed = runSpeedDefault;
-                jumpHeight = jumpHeightDefault;
-                break;
-            case "red":
-                currentColor = "red";
-                GetComponent<SpriteRenderer>().color = Color.red;
-                runSpeed = runSpeedDefault * 1.6f;
-                jumpHeight = jumpHeightDefault * 1.4f;
-                break;
-            default: 
-                break;
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
+            grounded = false;
         }
     }
 
+    public void Move(float move)
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(move * runSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+        if (move > 0)
+            GetComponent<SpriteRenderer>().flipX = false;
+        else if (move < 0)
+            GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    public void SwitchColor()
+    {
+        gameManager.SwitchColor();
+
+        switch (gameManager.worldColor)
+        {
+            case "blue":
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                //runSpeed = runSpeedDefault;
+                //jumpHeight = jumpHeightDefault;
+                break;
+            case "red":
+                GetComponent<SpriteRenderer>().color = Color.red;
+                //runSpeed = runSpeedDefault * 1.6f;
+                //jumpHeight = jumpHeightDefault * 1.4f;
+                break;
+            default:
+                break;
+        }
+    }
 }
