@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4603510907642366}
   - component: {fileID: 212659836891589658}
   - component: {fileID: 61980165628745986}
+  - component: {fileID: 111853799051695298}
+  - component: {fileID: 95157970058881640}
   m_Layer: 8
   m_Name: fire
   m_TagString: Danger
@@ -66,6 +68,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.11, y: 2.82}
   m_EdgeRadius: 0
+--- !u!95 &95157970058881640
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933028726079776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78efd14bccf064d2980b5f6174e54470, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111853799051695298
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933028726079776}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0d528ce7094c045fcb7bdb02bddeb031, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!212 &212659836891589658
 SpriteRenderer:
   m_ObjectHideFlags: 1
