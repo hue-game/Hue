@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5bf0f32efb3e74bf5983981df61a79bb
-timeCreated: 1504258724
+guid: 5a42dfbf0396f42f6b21f12158237250
+timeCreated: 1504373607
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -97,10 +97,10 @@ TextureImporter:
       name: UNICORN_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1
-        width: 52
-        height: 60
+        x: 0
+        y: 0
+        width: 56.666668
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,10 +111,10 @@ TextureImporter:
       name: UNICORN_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 58
-        y: 1
-        width: 52
-        height: 58
+        x: 56
+        y: 0
+        width: 56.666668
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: UNICORN_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 115
-        y: 1
-        width: 52
-        height: 59
+        x: 112
+        y: 0
+        width: 56.666668
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
