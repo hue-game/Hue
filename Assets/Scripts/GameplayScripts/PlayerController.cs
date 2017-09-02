@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float move = Input.GetAxis("Horizontal");
-        //Move(move);
+        Move(move);
 
     }
 
