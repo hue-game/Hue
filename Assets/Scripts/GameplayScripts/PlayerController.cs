@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed;
     public float jumpHeight;
 
+    private float startScaleX; //Test variable for smooth flipping of character
     private bool grounded;
     private bool moveLeft;
     private bool moveRight;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        startScaleX = transform.localScale.x;
     }
 
     // FixedUpdate is called once per frame after physics have applied
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         if(grounded)
         {
-            rb.velocity = new Vector2(0, 0);
+            rb.velocity = new Vector2(rb.velocity.x, 0); //Reset velocity so you can keep bouncing on the bounce pads
             rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
             grounded = false;
         }
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
     //Jump Method for Bounce Pads: Uses strength from the respective bounce pad to determine the jump strength
     public void Jump(float strength)
     {
-        rb.velocity = new Vector2(0, 0);
+        rb.velocity = new Vector2(rb.velocity.x, 0); //Reset velocity so you can keep bouncing on the bounce pads
         rb.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
     }
 
@@ -59,11 +61,7 @@ public class PlayerController : MonoBehaviour
     public void Move(float move)
     {
         rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
-
-        if (move > 0)
-            GetComponent<SpriteRenderer>().flipX = false;
-        else if (move < 0)
-            GetComponent<SpriteRenderer>().flipX = true;
+        Flip(move);
     }
 
     //Check when the player collides with an object
@@ -97,6 +95,33 @@ public class PlayerController : MonoBehaviour
         grounded = false;
     }
 
+    //Flip the sprite of the character
+    private void Flip(float move)
+    {
+        if (move > 0)
+            GetComponent<SpriteRenderer>().flipX = false;
+        else if (move < 0)
+            GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    //Test for smooth flipping of character direction
+    //private IEnumerator Flip(float move)
+    //{
+    //    float t = 0;
+    //    float startFlipScaleX = transform.localScale.x;
+    //    float endFlipScaleX;
+    //    if (move < 0)
+    //        endFlipScaleX = -startScaleX;
+    //    else
+    //        endFlipScaleX = startScaleX;
+
+    //    while (t < 1f)
+    //    {
+    //        t += Time.deltaTime * (Time.timeScale / 0.25f);
+    //        transform.localScale = new Vector3(Mathf.Lerp(startFlipScaleX, endFlipScaleX, t), transform.localScale.y, transform.localScale.z);
+    //        yield return 0;
+    //    }
+    //}
 }
 
 

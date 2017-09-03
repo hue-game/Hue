@@ -9,6 +9,7 @@ public class BouncePadScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hit)
     {
+        //Check if the player has hit the bounce pad
         if (hit.name == "Player")
             player.Jump(strength);
     }
