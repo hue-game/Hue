@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        #if UNITY_ANDROID
-                controlCanvas.SetActive(true);
+        #if UNITY_ANDROID && !UNITY_EDITOR
+        controlCanvas.SetActive(true);
         #endif
         Application.targetFrameRate = 60;
 
