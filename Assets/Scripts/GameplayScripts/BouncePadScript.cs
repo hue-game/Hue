@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class BouncePadScript : MonoBehaviour
 {
-
-    private PlayerController player;
-    // Use this for initialization
-    void Start()
-    {
-        player = FindObjectOfType<PlayerController>();
-    }
+    public PlayerController player;
+    public float strength;
 
     void OnTriggerEnter2D(Collider2D hit)
     {
-        player.Jump();
+        if (hit.name == "Player")
+            player.Jump(strength);
     }
 }    

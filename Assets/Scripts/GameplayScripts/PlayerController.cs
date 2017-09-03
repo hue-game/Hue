@@ -6,60 +6,82 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public GameManager gameManager;
-    public float runSpeedDefault;
-    public float jumpHeightDefault;
+    public float runSpeed;
+    public float jumpHeight;
 
     private bool grounded;
-    private float runSpeed;
-    private float jumpHeight;
-
     private bool moveLeft;
     private bool moveRight;
     private bool stop;
 
-    // Use this for initialization
-    void Awake()
+    private Rigidbody2D rb;
+
+    private void Awake()
     {
-        runSpeed = runSpeedDefault * 1.6f;
-        jumpHeight = jumpHeightDefault * 1.4f;
-        SwitchColor();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    // FixedUpdate is called once per frame after physics have applied
+    private void FixedUpdate()
     {
-        float move = Input.GetAxis("Horizontal");
+        float move = Input.GetAxisRaw("Horizontal");
         Move(move);
-
     }
 
-    void Update()
+    //Check for key inputs every frame
+    private void Update()
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    Jump();
-        //}
+        if (Input.GetButtonDown("Jump"))
+            Jump();
         if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            SwitchColor();
-        }
-
+            gameManager.SwitchColor();
     }
 
-    void OnCollisionEnter2D(Collision2D hit)
+    //Default Jump Method: Uses jumpHeight from player to determine the jump strength
+    private void Jump()
     {
+        if(grounded)
+        {
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
+            grounded = false;
+        }
+    }
+
+    //Jump Method for Bounce Pads: Uses strength from the respective bounce pad to determine the jump strength
+    public void Jump(float strength)
+    {
+        rb.velocity = new Vector2(0, 0);
+        rb.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
+    }
+
+    //Move the character left and right, also flip the sprite of the character
+    public void Move(float move)
+    {
+        rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
+
+        if (move > 0)
+            GetComponent<SpriteRenderer>().flipX = false;
+        else if (move < 0)
+            GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    //Check when the player collides with an object
+    private void OnCollisionEnter2D(Collision2D hit)
+    {
+        if (hit.collider.tag == "Danger")
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        //Code below only used for manual jump
         Vector2 contactPoint = hit.contacts[0].point;
         Vector2 center = GetComponent<Collider2D>().bounds.center;
         float offset = GetComponent<Collider2D>().bounds.extents.y;
 
         grounded = contactPoint.y <= center.y - offset;
 
-        if (hit.collider.tag == "Danger")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 
+    //Only used for manual jump
     void OnCollisionStay2D(Collision2D hit)
     {
         Vector2 contactPoint = hit.contacts[0].point;
@@ -69,48 +91,14 @@ public class PlayerController : MonoBehaviour
         grounded = contactPoint.y <= center.y - offset;
     }
 
+    //Only used for manual jump
     void OnCollisionExit2D(Collision2D hit)
     {
         grounded = false;
     }
 
-    public void Jump()
-    {
-        if (grounded)
-        {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-            grounded = false;
-        }
-    }
-
-    public void Move(float move)
-    {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * runSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
-        if (move > 0)
-            GetComponent<SpriteRenderer>().flipX = false;
-        else if (move < 0)
-            GetComponent<SpriteRenderer>().flipX = true;
-    }
-
-    public void SwitchColor()
-    {
-        gameManager.SwitchColor();
-
-        switch (gameManager.worldColor)
-        {
-            case "blue":
-                GetComponent<SpriteRenderer>().color = Color.blue;
-                //runSpeed = runSpeedDefault;
-                //jumpHeight = jumpHeightDefault;
-                break;
-            case "red":
-                GetComponent<SpriteRenderer>().color = Color.red;
-                //runSpeed = runSpeedDefault * 1.6f;
-                //jumpHeight = jumpHeightDefault * 1.4f;
-                break;
-            default:
-                break;
-        }
-    }
 }
+
+
+
+
