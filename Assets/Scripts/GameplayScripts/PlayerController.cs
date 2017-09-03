@@ -121,8 +121,16 @@ public class PlayerController : MonoBehaviour
     //Check when the player collides with an object
     private void OnCollisionEnter2D(Collision2D hit)
     {
+        Debug.Log("hello");
+
         if (hit.collider.tag == "Danger")
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (hit.collider.tag == "Rope")
+        {
+            HingeJoint2D myJoint = (HingeJoint2D)gameObject.AddComponent<HingeJoint2D>();
+            myJoint.connectedBody = hit.rigidbody;
+        }
 
         //Code below only used for manual jump
         Vector2 contactPoint = hit.contacts[0].point;
