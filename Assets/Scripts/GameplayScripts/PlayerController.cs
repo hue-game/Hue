@@ -26,17 +26,78 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called once per frame after physics have applied
     private void FixedUpdate()
     {
-        float move = Input.GetAxisRaw("Horizontal");
-        Move(move);
+        #if UNITY_STANDALONE || UNITY_EDITOR
+        //Old move method replaced with one below in Update that works like the mobile version 
+        //float move = Input.GetAxisRaw("Horizontal");
+        //Move(move);
+        #endif
+
+        //TODO: Add Move() back here so velocity gets updated every frame (even for mobile controls) use moveLeft and moveRight to determine which way to go
+
     }
 
     //Check for key inputs every frame
     private void Update()
     {
+        #if UNITY_STANDALONE || UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            MoveLeft();
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+            MoveLeft();
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            MoveRight();
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+            MoveRight();
+
         if (Input.GetButtonDown("Jump"))
             Jump();
         if (Input.GetKeyDown(KeyCode.LeftControl))
             gameManager.SwitchColor();
+        #endif
+    }
+
+    public void MoveLeft()
+    {
+        if (moveRight && !moveLeft)
+            Move(-1);
+        else if (moveLeft && !moveRight)
+            Move(0);
+        else if (!moveLeft)
+            Move(-1);
+        else if (moveLeft && moveRight)
+            Move(1);
+
+        moveLeft = !moveLeft;
+    }
+
+    public void MoveRight()
+    {
+        if (moveLeft && !moveRight)
+            Move(1);
+        else if (moveRight && !moveLeft)
+            Move(0);
+        else if (!moveRight)
+            Move(1);
+        else if (moveLeft && moveRight)
+            Move(-1);
+
+        moveRight = !moveRight;
+    }
+
+    //Move the character left and right, also flip the sprite of the character
+    public void Move(float move)
+    {
+        rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
+        Flip(move);
+    }
+
+    //Flip the sprite of the character
+    private void Flip(float move)
+    {
+        if (move > 0)
+            GetComponent<SpriteRenderer>().flipX = false;
+        else if (move < 0)
+            GetComponent<SpriteRenderer>().flipX = true;
     }
 
     //Default Jump Method: Uses jumpHeight from player to determine the jump strength
@@ -55,13 +116,6 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, 0); //Reset velocity so you can keep bouncing on the bounce pads
         rb.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
-    }
-
-    //Move the character left and right, also flip the sprite of the character
-    public void Move(float move)
-    {
-        rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
-        Flip(move);
     }
 
     //Check when the player collides with an object
@@ -93,15 +147,6 @@ public class PlayerController : MonoBehaviour
     void OnCollisionExit2D(Collision2D hit)
     {
         grounded = false;
-    }
-
-    //Flip the sprite of the character
-    private void Flip(float move)
-    {
-        if (move > 0)
-            GetComponent<SpriteRenderer>().flipX = false;
-        else if (move < 0)
-            GetComponent<SpriteRenderer>().flipX = true;
     }
 
     //Test for smooth flipping of character direction

@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        //Start in blue world which will then be switched to red at start (change this to color eventually)
-        worldColor = "blue";
+        #if UNITY_ANDROID
+                controlCanvas.SetActive(true);
+        #endif
+        Application.targetFrameRate = 60;
 
         //Get an array of all GameObjects in the scene
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
@@ -35,13 +37,15 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+        //Start in blue world which will then be switched to red at start (change this to gray and color eventually)
         //Call SwitchColor at start to change the background color and correctly set the gameObjects for that world (assume you always start in the grey world)
+        worldColor = "blue";
         SwitchColor();
 	}
 
     public void Update()
     {
-        //Check for escape (later add back button on phone or pause button on control canvas
+        //Check for escape (later add pause button on control canvas)
         if (Input.GetButtonDown("Cancel"))
             PauseGame();
     }
@@ -77,7 +81,7 @@ public class GameManager : MonoBehaviour {
                 break;
             case "red":
                 colorBackground.color = new Color(0.941f, 0.176f, 0.176f, 0.4352f);
-                player.GetComponent<SpriteRenderer>().color = Color.blue;
+                player.GetComponent<SpriteRenderer>().color = Color.red;
 
                 foreach (GameObject blueObject in blueWorldObjects)
                 {
