@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
     private bool moveLeft;
     private bool moveRight;
+    private string lastDirection;
     private bool stop;
 
     private Rigidbody2D rb;
@@ -26,14 +27,12 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called once per frame after physics have applied
     private void FixedUpdate()
     {
-        #if UNITY_STANDALONE || UNITY_EDITOR
-        //Old move method replaced with one below in Update that works like the mobile version 
+#if UNITY_STANDALONE || UNITY_EDITOR
         //float move = Input.GetAxisRaw("Horizontal");
         //Move(move);
-        #endif
+#endif
 
-        //TODO: Add Move() back here so velocity gets updated every frame (even for mobile controls) use moveLeft and moveRight to determine which way to go
-
+        Move();
     }
 
     //Check for key inputs every frame
@@ -58,30 +57,34 @@ public class PlayerController : MonoBehaviour
 
     public void MoveLeft()
     {
-        if (moveRight && !moveLeft)
-            Move(-1);
-        else if (moveLeft && !moveRight)
-            Move(0);
-        else if (!moveLeft)
-            Move(-1);
-        else if (moveLeft && moveRight)
-            Move(1);
-
+        if (!moveLeft)
+            lastDirection = "left";
         moveLeft = !moveLeft;
     }
 
     public void MoveRight()
     {
-        if (moveLeft && !moveRight)
-            Move(1);
-        else if (moveRight && !moveLeft)
-            Move(0);
-        else if (!moveRight)
-            Move(1);
-        else if (moveLeft && moveRight)
-            Move(-1);
-
+        if (!moveRight)
+            lastDirection = "right";
         moveRight = !moveRight;
+    }
+
+    public void Move()
+    {
+        float move = 0.0f;
+        if (moveLeft && !moveRight)
+            move = -1.0f;
+        else if (!moveRight && !moveLeft)
+            move = 0.0f;
+        else if (!moveLeft && moveRight)
+            move = 1.0f;
+        else if (moveLeft && moveRight && (lastDirection == "left"))
+            move = -1.0f;
+        else if (moveLeft && moveRight && (lastDirection == "right"))
+            move = 1.0f;
+
+        rb.velocity = new Vector2(move * runSpeed, rb.velocity.y);
+        Flip(move);
     }
 
     //Move the character left and right, also flip the sprite of the character
