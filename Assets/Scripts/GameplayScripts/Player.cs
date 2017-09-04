@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
             _jumpScript.JumpUp();
         if (Input.GetKeyDown(KeyCode.LeftControl))
-            gameManager.SwitchColor();
+            gameManager.SwitchWorld();
         #endif
     }
 

@@ -78,7 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6c4e3ad85571840ab4cd9693b721ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  jumpScript: {fileID: 114089077235005260, guid: 2a197694a605553459bca09253f5b2b2,
+    type: 2}
   strength: 30
 --- !u!212 &212712134948825750
 SpriteRenderer:
