@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour {
 			foreach (GameObject nightmareObject in nightmareWorldObjects)
 			{
 				nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
-				if (nightmareObject.GetComponent<Collider2D> () == null) {
+				if (nightmareObject.GetComponent<Collider2D> () != null) {
 					nightmareObject.GetComponent<Collider2D> ().enabled = false;
 				}
 			}
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour {
 			foreach (GameObject dreamObject in dreamWorldObjects)
 			{
 				dreamObject.GetComponent<SpriteRenderer>().color = Color.white * 1.0f;
-				if (dreamObject.GetComponent<Collider2D> () == null) {
+				if (dreamObject.GetComponent<Collider2D> () != null) {
 					dreamObject.GetComponent<Collider2D> ().enabled = true;
 				}
 			}
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
 			foreach (GameObject nightmareObject in nightmareWorldObjects) {
 				nightmareObject.GetComponent<SpriteRenderer> ().color = Color.white * 1.0f;
 
-				if (nightmareObject.GetComponent<Collider2D> () == null) {
+				if (nightmareObject.GetComponent<Collider2D> () != null) {
 					nightmareObject.GetComponent<Collider2D> ().enabled = false;
 				}
 			}
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
 			foreach (GameObject dreamObject in dreamWorldObjects) {
 				dreamObject.GetComponent<SpriteRenderer> ().color = Color.white * 0.1f;
 
-				if (dreamObject.GetComponent<Collider2D> () == null) {
+				if (dreamObject.GetComponent<Collider2D> () != null) {
 					dreamObject.GetComponent<Collider2D> ().enabled = false;
 				}
 			}
