@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Jump))]
 public class BouncePad : MonoBehaviour
 {
-    public Player player;
+    public Jump jumpScript;
     public float strength;
 
     void OnTriggerEnter2D(Collider2D hit)
     {
         //Check if the player has hit the bounce pad
         if (hit.name == "Player")
-            player.Jump(strength);
+            jumpScript.JumpUp(strength);
     }
 }    

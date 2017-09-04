@@ -17,10 +17,13 @@ public class AutomaticMove : MonoBehaviour {
 	[Range(0, 25)]
 	public float offsetFromCenterY = 2f;
 
-	private Rigidbody2D _body;
-	private Vector3 _originalPosition;
+    public Rigidbody2D _playerBody;
+    
+    private Rigidbody2D _body;
+    private Vector3 _originalPosition;
 	private float _activeVelocityX;
 	private float _activeVelocityY;
+    private bool _playerOnPlatform;
 
 	// Use this for initialization
 	void Start () {
@@ -30,12 +33,7 @@ public class AutomaticMove : MonoBehaviour {
 		_activeVelocityY = movementSpeedY;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	void FixedUpdate() {
+	private void FixedUpdate() {
 		if (_originalPosition.x - this.transform.position.x > offsetFromCenterX) {
 			_activeVelocityX = movementSpeedX;	
 		} else if (_originalPosition.x - this.transform.position.x < -offsetFromCenterX) {
@@ -49,5 +47,22 @@ public class AutomaticMove : MonoBehaviour {
 		}
 
 		_body.velocity = new Vector2 (_activeVelocityX, _activeVelocityY);
-	}
+        if (_playerOnPlatform)
+        {
+            _playerBody.transform.position = _playerBody.position + _body.velocity * Time.deltaTime;
+            _playerOnPlatform = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "PlayerFeetCollider")
+            _playerOnPlatform = true;
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.name == "PlayerFeetCollider")
+            _playerOnPlatform = true;
+    }
 }
