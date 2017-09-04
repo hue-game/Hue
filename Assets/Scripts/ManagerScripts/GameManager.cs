@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour {
             if(gameObject != null)
             {
                 //Add objects with a blue or red layer (to be changed to gray and color) to their respective lists
-                if (gameObject.layer == LayerMask.NameToLayer("WaterWorld"))
+                if (gameObject.layer == LayerMask.NameToLayer("NightmareWorld"))
                     nightmareWorldObjects.Add(gameObject);
-                else if (gameObject.layer == LayerMask.NameToLayer("FireWorld"))
+                else if (gameObject.layer == LayerMask.NameToLayer("DreamWorld"))
                     dreamWorldObjects.Add(gameObject);
             }
         }
@@ -53,35 +53,36 @@ public class GameManager : MonoBehaviour {
 			foreach (GameObject nightmareObject in nightmareWorldObjects)
 			{
 				nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
-				if (nightmareObject.GetComponent<Collider2D> () != null) {
-					nightmareObject.GetComponent<Collider2D> ().enabled = false;
+				if (nightmareObject.GetComponent<Collider2D>() != null) {
+					nightmareObject.GetComponent<Collider2D>().enabled = false;
 				}
 			}
 
 			foreach (GameObject dreamObject in dreamWorldObjects)
 			{
 				dreamObject.GetComponent<SpriteRenderer>().color = Color.white * 1.0f;
-				if (dreamObject.GetComponent<Collider2D> () != null) {
-					dreamObject.GetComponent<Collider2D> ().enabled = true;
+				if (dreamObject.GetComponent<Collider2D>() != null) {
+					dreamObject.GetComponent<Collider2D>().enabled = true;
 				}
 			}
-		} else {
+		} 
+        else {
 			player.GetComponent<SpriteRenderer> ().color = Color.red;
 
 			//For each object in the both worlds enable/disable the collider and change the opacity of the sprite
 			foreach (GameObject nightmareObject in nightmareWorldObjects) {
-				nightmareObject.GetComponent<SpriteRenderer> ().color = Color.white * 1.0f;
+				nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 1.0f;
 
-				if (nightmareObject.GetComponent<Collider2D> () != null) {
-					nightmareObject.GetComponent<Collider2D> ().enabled = false;
+				if (nightmareObject.GetComponent<Collider2D>() != null) {
+					nightmareObject.GetComponent<Collider2D>().enabled = true;
 				}
 			}
 
 			foreach (GameObject dreamObject in dreamWorldObjects) {
-				dreamObject.GetComponent<SpriteRenderer> ().color = Color.white * 0.1f;
+				dreamObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
 
-				if (dreamObject.GetComponent<Collider2D> () != null) {
-					dreamObject.GetComponent<Collider2D> ().enabled = false;
+				if (dreamObject.GetComponent<Collider2D>() != null) {
+					dreamObject.GetComponent<Collider2D>().enabled = false;
 				}
 			}
 		}
