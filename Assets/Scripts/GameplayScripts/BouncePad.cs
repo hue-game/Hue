@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouncePadScript : MonoBehaviour
+public class BouncePad : MonoBehaviour
 {
-    public PlayerController player;
+    public Player player;
     public float strength;
 
     void OnTriggerEnter2D(Collider2D hit)

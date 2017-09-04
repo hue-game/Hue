@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParallaxScript : MonoBehaviour {
+public class Parallax : MonoBehaviour {
 	[Range(-10, 0)]
 	public float parallaxScale = -1f;
 

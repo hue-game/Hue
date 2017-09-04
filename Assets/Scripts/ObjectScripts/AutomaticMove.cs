@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class AutomaticMover : MonoBehaviour {
+public class AutomaticMove : MonoBehaviour {
 	[Range(0, 10)]
 	public float movementSpeedX = 2f;
 

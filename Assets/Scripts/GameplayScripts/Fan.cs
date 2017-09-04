@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour {
+public class Fan : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
