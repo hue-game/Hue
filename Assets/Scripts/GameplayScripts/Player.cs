@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Jump))]
 [RequireComponent(typeof(Move))]
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(WorldManager))]
 public class Player : MonoBehaviour
 {
-    public GameManager gameManager;
-
+	private WorldManager _worldManager;
     private Move _moveScript;
     private Jump _jumpScript;
     private Rigidbody2D _rb;
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _moveScript = GetComponent<Move>();
         _jumpScript = GetComponent<Jump>();
+		_worldManager = GetComponent<WorldManager> ();
     }
 
     // FixedUpdate is called once per frame after physics have applied
@@ -44,7 +45,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
             _jumpScript.JumpUp();
         if (Input.GetKeyDown(KeyCode.LeftControl))
-            gameManager.SwitchWorld();
+            _worldManager.SwitchWorld();
         #endif
     }
 
