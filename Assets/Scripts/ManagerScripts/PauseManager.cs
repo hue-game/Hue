@@ -6,24 +6,19 @@ public class PauseManager : MonoBehaviour {
 	private bool _isPaused = false;
 	public GameObject pauseUICanvas;
 	public GameObject pauseOverlayCanvas;
-//	public GameObject controlCanvas;
+	public GameObject controlCanvas;
 
 	// Use this for initialization
 	void Start () {
 		pauseOverlayCanvas.SetActive (false);
 		pauseUICanvas.SetActive (true);
-//		controlCanvas.SetActive (true);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		controlCanvas.SetActive (true);
 	}
 
 	public void Pause () {
 		_isPaused = true;
 		Time.timeScale = 0.0f;
-//		controlCanvas.SetActive(false);
+		controlCanvas.SetActive(false);
 		pauseUICanvas.SetActive (false);
 		pauseOverlayCanvas.SetActive(true);
 	}
@@ -33,7 +28,7 @@ public class PauseManager : MonoBehaviour {
 		Time.timeScale = 1.0f;
 		pauseOverlayCanvas.SetActive(false);
 		pauseUICanvas.SetActive (true);
-//		controlCanvas.SetActive(true);
+		controlCanvas.SetActive(true);
 	}
 
 	void Back() {
