@@ -61,7 +61,8 @@ GameObject:
   - component: {fileID: 50885307988743532}
   - component: {fileID: 111751698426229282}
   - component: {fileID: 95878817331735642}
-  - component: {fileID: 61313258243615374}
+  - component: {fileID: 61510096443168702}
+  - component: {fileID: 60260649931765814}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -452,8 +453,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1126660830444648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 0.595858}
+  m_LocalPosition: {x: -18.3, y: -4.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 0.595858}
   m_Children:
   - {fileID: 4304959632348232}
   m_Father: {fileID: 4696415492406278}
@@ -497,8 +498,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 75
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -569,7 +570,107 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!61 &61313258243615374
+--- !u!60 &60260649931765814
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126660830444648}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.35, y: 3.92}
+    newSize: {x: 2.22, y: 2.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.695, y: -1.67}
+      - {x: -0.685, y: -1.5799999}
+      - {x: -0.60499996, y: -1.49}
+      - {x: -0.385, y: -1.24}
+      - {x: -0.315, y: -1.23}
+      - {x: 0.005, y: -0.97999996}
+      - {x: 0.175, y: -1.1899999}
+      - {x: 0.24499999, y: -1.25}
+      - {x: 0.375, y: -1.49}
+      - {x: 0.385, y: -1.5699999}
+      - {x: 0.465, y: -1.73}
+      - {x: 0.525, y: -1.8299999}
+      - {x: 0.555, y: -1.87}
+      - {x: 0.91499996, y: -1.87}
+      - {x: 1.095, y: -1.76}
+      - {x: 1.165, y: -1.65}
+      - {x: 1.175, y: -1.54}
+      - {x: 1.175, y: -1.4399999}
+      - {x: 1.155, y: -1.4}
+      - {x: 1.0649999, y: -1.39}
+      - {x: 0.78499997, y: -1.61}
+      - {x: 0.715, y: -1.43}
+      - {x: 0.48499998, y: -0.84999996}
+      - {x: 0.435, y: -0.71999997}
+      - {x: 0.36499998, y: -0.63}
+      - {x: 0.355, y: -0.29999998}
+      - {x: 0.36499998, y: -0.29999998}
+      - {x: 0.39499998, y: -0.14}
+      - {x: 0.355, y: 0.14}
+      - {x: 0.295, y: 0.42999998}
+      - {x: 0.235, y: 0.53}
+      - {x: 0.205, y: 0.55}
+      - {x: 0.085, y: 0.65}
+      - {x: 0.095, y: 0.69}
+      - {x: 0.16499999, y: 0.88}
+      - {x: 0.275, y: 0.89}
+      - {x: 0.405, y: 1.06}
+      - {x: 0.42499998, y: 1.13}
+      - {x: 0.415, y: 1.37}
+      - {x: 0.385, y: 1.56}
+      - {x: 0.275, y: 1.7099999}
+      - {x: 0.074999996, y: 1.78}
+      - {x: -0.024999999, y: 1.79}
+      - {x: -0.225, y: 1.79}
+      - {x: -0.405, y: 1.76}
+      - {x: -0.625, y: 1.75}
+      - {x: -0.705, y: 1.6999999}
+      - {x: -0.72499996, y: 1.36}
+      - {x: -0.685, y: 1.0699999}
+      - {x: -0.675, y: 1.01}
+      - {x: -0.465, y: 0.82}
+      - {x: -0.355, y: 0.79999995}
+      - {x: -0.265, y: 0.71999997}
+      - {x: -0.295, y: 0.65999997}
+      - {x: -0.39499998, y: 0.63}
+      - {x: -0.585, y: 0.48}
+      - {x: -0.615, y: 0.41}
+      - {x: -0.655, y: 0.21}
+      - {x: -0.645, y: -0.01}
+      - {x: -0.66499996, y: -0.19999999}
+      - {x: -0.705, y: -0.35999998}
+      - {x: -0.705, y: -0.65999997}
+      - {x: -0.73499995, y: -0.88}
+      - {x: -0.72499996, y: -0.97999996}
+      - {x: -0.775, y: -1.05}
+      - {x: -0.91499996, y: -1.26}
+      - {x: -1.145, y: -1.61}
+      - {x: -1.155, y: -1.66}
+      - {x: -1.155, y: -1.7099999}
+      - {x: -1.145, y: -1.74}
+      - {x: -0.97499996, y: -1.89}
+      - {x: -0.905, y: -1.9}
+      - {x: -0.645, y: -1.9}
+      - {x: -0.49499997, y: -1.88}
+      - {x: -0.445, y: -1.8399999}
+      - {x: -0.48499998, y: -1.7199999}
+--- !u!61 &61510096443168702
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -585,14 +686,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.52, y: 0.6}
+    oldSize: {x: 2.35, y: 3.92}
     newSize: {x: 2.22, y: 2.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.52, y: 0.6}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!81 &81435435923411020
 AudioListener:
@@ -617,7 +718,7 @@ Animator:
   m_GameObject: {fileID: 1126660830444648}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3b8870a10ac94f3b829e2df329b9f7e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9986a003da1934327ac4bb27090135ef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -633,7 +734,7 @@ Animation:
   m_GameObject: {fileID: 1126660830444648}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 36167f82749004cbe9090a67fbdd9421, type: 2}
+  m_Animation: {fileID: 7400000, guid: 8be525aa81040444e80737223bad5453, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -1087,7 +1188,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxScale: -1
   smoothing: 10
-  layers: []
+  layers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114622604000709902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1439,8 +1543,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5bf0f32efb3e74bf5983981df61a79bb, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 14b243cd4bcef43dd93ddbb17a828b27, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

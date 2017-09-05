@@ -8,3 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/__DELETED_GUID_Trash/9484d50871dda424fbdf4e481f485c29
     guid: 9484d50871dda424fbdf4e481f485c29
+  - enabled: 1
+    path: Assets/Scenes/Menu/MainMenu.unity
+    guid: 38a20a2f4e8395641a1747b33280bb9d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: fc9887f71a5fed44d9c72f23b5a5e277
