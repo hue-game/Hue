@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 14b243cd4bcef43dd93ddbb17a828b27
-timeCreated: 1504536865
+guid: f3a392f1aaea54c5b98158d38d3cb14f
+timeCreated: 1504608634
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PlayerWalk_0
-    21300002: PlayerWalk_1
-    21300004: PlayerWalk_2
-    21300006: PlayerWalk_3
+    21300000: PlayerWalk 1_0
+    21300002: PlayerWalk 1_1
+    21300004: PlayerWalk 1_2
+    21300006: PlayerWalk 1_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -95,13 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerWalk_0
+      name: PlayerWalk 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 235
-        height: 392
+        width: 47
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,13 +109,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PlayerWalk_1
+      name: PlayerWalk 1_1
       rect:
         serializedVersion: 2
-        x: 235
+        x: 47
         y: 0
-        width: 235
-        height: 392
+        width: 47
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,13 +123,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PlayerWalk_2
+      name: PlayerWalk 1_2
       rect:
         serializedVersion: 2
-        x: 470
+        x: 94
         y: 0
-        width: 235
-        height: 392
+        width: 47
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PlayerWalk_3
+      name: PlayerWalk 1_3
       rect:
         serializedVersion: 2
-        x: 705
+        x: 141
         y: 0
-        width: 235
-        height: 392
+        width: 47
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
