@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Move))]
 [RequireComponent(typeof(WorldManager))]
 [RequireComponent(typeof(CheckpointManager))]
+[RequireComponent(typeof(CollectibleManager))]
 public class Player : MonoBehaviour
 {
     [HideInInspector]
@@ -71,6 +72,11 @@ public class Player : MonoBehaviour
         float offset = GetComponent<Collider2D>().bounds.extents.y;
 
         _jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
+
+        if (hit.gameObject.tag == "Danger")
+        {
+            Respawn(_checkpointManager.GetLastCheckpoint());
+        }
 
     }
 	void OnTriggerEnter2D(Collider2D hit) {
