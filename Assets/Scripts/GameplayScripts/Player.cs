@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(WorldManager))]
 public class Player : MonoBehaviour
 {
+    [HideInInspector]
+    public GameObject onRope;
+
 	private WorldManager _worldManager;
     private Move _moveScript;
     private Jump _jumpScript;
@@ -20,7 +23,8 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _moveScript = GetComponent<Move>();
         _jumpScript = GetComponent<Jump>();
-		_worldManager = GetComponent<WorldManager> ();
+		_worldManager = GetComponent<WorldManager>();
+        onRope = null;
     }
 
     // FixedUpdate is called once per frame after physics have applied
@@ -54,12 +58,6 @@ public class Player : MonoBehaviour
     {
         if (hit.collider.tag == "Danger")
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        if (hit.collider.tag == "Rope")
-        {
-            HingeJoint2D myJoint = (HingeJoint2D)gameObject.AddComponent<HingeJoint2D>();
-            myJoint.connectedBody = hit.rigidbody;
-        }
 
         //Code below only used for manual jump
         Vector2 contactPoint = hit.contacts[0].point;

@@ -35,7 +35,6 @@ public class Rope : MonoBehaviour
  
  
 	*/
-
     public Transform target;
     public float resolution = 0.5F;                           //  Sets the amount of joints there are in the rope (1 = 1 joint for every 1 unit)
     public float ropeDrag = 0.1F;                                //  Sets each joints Drag
@@ -49,10 +48,10 @@ public class Rope : MonoBehaviour
     private bool rope = false;                       //  DONT MESS!	This is to keep errors out of your debug window! Keeps the rope from rendering when it doesnt exist...
 
     //Joint Settings
-    public Vector3 swingAxis = new Vector3(1, 1, 0);                 //  Sets which axis the character joint will swing on (1 axis is best for 2D, 2-3 axis is best for 3D (Default= 3 axis))
-    public float lowTwistLimit = -100.0F;                   //  The lower limit around the primary axis of the character joint. 
-    public float highTwistLimit = 100.0F;                   //  The upper limit around the primary axis of the character joint.
-    public float swing1Limit = 20.0F;                   //	The limit around the primary axis of the character joint starting at the initialization point.
+    //public Vector3 swingAxis = new Vector3(1, 1, 0);                 //  Sets which axis the character joint will swing on (1 axis is best for 2D, 2-3 axis is best for 3D (Default= 3 axis))
+    //public float lowTwistLimit = -100.0F;                   //  The lower limit around the primary axis of the character joint. 
+    //public float highTwistLimit = 100.0F;                   //  The upper limit around the primary axis of the character joint.
+    //public float swing1Limit = 20.0F;                   //	The limit around the primary axis of the character joint starting at the initialization point.
 
     void Awake()
     {
@@ -61,18 +60,11 @@ public class Rope : MonoBehaviour
 
     void Update()
     {
-        // Put rope control here!
-
-
         //Destroy Rope Test	(Example of how you can use the rope dynamically)
         if (rope && Input.GetKeyDown("d"))
-        {
             DestroyRope();
-        }
         if (!rope && Input.GetKeyDown("r"))
-        {
             BuildRope();
-        }
     }
     void LateUpdate()
     {
@@ -82,25 +74,19 @@ public class Rope : MonoBehaviour
             for (int i = 0; i < segments; i++)
             {
                 if (i == 0)
-                {
                     line.SetPosition(i, transform.position);
-                }
-                else
-                if (i == segments - 1)
-                {
-                    line.SetPosition(i, target.transform.position);
-                }
                 else
                 {
-                    line.SetPosition(i, joints[i].transform.position);
+                    if (i == segments - 1)
+                        line.SetPosition(i, target.transform.position);
+                    else
+                        line.SetPosition(i, joints[i].transform.position);
                 }
             }
             line.enabled = true;
         }
         else
-        {
             line.enabled = false;
-        }
     }
 
 
@@ -108,6 +94,7 @@ public class Rope : MonoBehaviour
     void BuildRope()
     {
         line = gameObject.GetComponent<LineRenderer>();
+        line.useWorldSpace = true;
 
         // Find the amount of segments based on the distance and resolution
         // Example: [resolution of 1.0 = 1 joint per unit of distance]
@@ -135,16 +122,6 @@ public class Rope : MonoBehaviour
         // Attach the joints to the target object and parent it to this object	
         HingeJoint2D end = target.gameObject.AddComponent<HingeJoint2D>();
         end.connectedBody = joints[joints.Length - 1].transform.GetComponent<Rigidbody2D>();
-        //end.swingAxis = swingAxis;
-        //SoftJointLimit limit_setter = end.lowTwistLimit;
-        //limit_setter.limit = lowTwistLimit;
-        //end.lowTwistLimit = limit_setter;
-        //limit_setter = end.highTwistLimit;
-        //limit_setter.limit = highTwistLimit;
-        //end.highTwistLimit = limit_setter;
-        //limit_setter = end.swing1Limit;
-        //limit_setter.limit = swing1Limit;
-        //end.swing1Limit = limit_setter;
         target.parent = transform;
 
         // Rope = true, The rope now exists in the scene!
@@ -158,33 +135,40 @@ public class Rope : MonoBehaviour
         Rigidbody2D rigid = joints[n].AddComponent<Rigidbody2D>();
         CircleCollider2D col = joints[n].AddComponent<CircleCollider2D>();
         HingeJoint2D ph = joints[n].AddComponent<HingeJoint2D>();
-        //ph.swingAxis = swingAxis;
-        //SoftJointLimit limit_setter = ph.lowTwistLimit;
-        //limit_setter.limit = lowTwistLimit;
-        //ph.lowTwistLimit = limit_setter;
-        //limit_setter = ph.highTwistLimit;
-        //limit_setter.limit = highTwistLimit;
-        //ph.highTwistLimit = limit_setter;
-        //limit_setter = ph.swing1Limit;
-        //limit_setter.limit = swing1Limit;
-        //ph.swing1Limit = limit_setter;
-        //ph.breakForce = ropeBreakForce; <--------------- TODO
-
+        joints[n].AddComponent<RopeSegment>();
         joints[n].transform.position = segmentPos[n];
 
         rigid.drag = ropeDrag;
         rigid.mass = ropeMass;
         col.radius = ropeColRadius;
+        ph.enableCollision = true;
 
         if (n == 1)
-        {
             ph.connectedBody = transform.GetComponent<Rigidbody2D>();
-        }
         else
-        {
             ph.connectedBody = joints[n - 1].GetComponent<Rigidbody2D>();
-        }
 
+    }
+
+    public void ChangeMass(GameObject joint, float mass)
+    {
+        bool foundJoint = false;   
+        for (int i = 0; i < joints.Length - 1; i++)
+        {
+            if (joints[i] == joint)
+                foundJoint = true;
+            if (foundJoint)
+                joints[i].GetComponent<Rigidbody2D>().mass = mass;
+        }
+        foundJoint = false;
+    }
+
+    public void ToggleTriggerCollider()
+    {
+        foreach(GameObject joint in joints)
+        {
+            joint.GetComponent<CircleCollider2D>().isTrigger = !joint.GetComponent<CircleCollider2D>().isTrigger;
+        }
     }
 
     void DestroyRope()
