@@ -26,9 +26,7 @@ public class WorldManager : MonoBehaviour {
 			}
 		}
 
-		//Start in blue world which will then be switched to red at start (change this to gray and color eventually)
-		//Call SwitchColor at start to change the background color and correctly set the gameObjects for that world (assume you always start in the grey world)
-		SwitchWorld();
+		UpdateWorld ();
 	}
 
 	public void Update()
@@ -38,7 +36,10 @@ public class WorldManager : MonoBehaviour {
 	public void SwitchWorld()
 	{
 		worldType = !worldType;
+		UpdateWorld ();
+	}
 
+	public void UpdateWorld() {
 		if (worldType) {
 			foreach (GameObject nightmareObject in nightmareWorldObjects)
 			{

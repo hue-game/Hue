@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4879878046379156}
   - component: {fileID: 212528221789800772}
-  - component: {fileID: 61670860739933928}
+  - component: {fileID: 68873009294687248}
   m_Layer: 8
   m_Name: TreeCanopy
   m_TagString: Untagged
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1787560111078192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117.58477, y: 29.9, z: 0}
+  m_LocalPosition: {x: -34.9, y: -10.6, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61670860739933928
-BoxCollider2D:
+--- !u!68 &68873009294687248
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,19 +53,15 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0064706802, y: 0.042310953}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.19, y: 0.69}
-    newSize: {x: 2.19, y: 0.69}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.0775394, y: 0.42845058}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.0949998, y: 0.20779848}
+  - {x: -1.0347857, y: 0.20631075}
+  - {x: -0.78678465, y: 0.19072723}
+  - {x: -0.37135077, y: 0.18999624}
+  - {x: 0.18766117, y: 0.19242525}
+  - {x: 1.0560381, y: 0.16883636}
 --- !u!212 &212528221789800772
 SpriteRenderer:
   m_ObjectHideFlags: 1
