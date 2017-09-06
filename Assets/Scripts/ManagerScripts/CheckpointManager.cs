@@ -15,15 +15,9 @@ public class CheckpointManager : MonoBehaviour
 	}
 
 	public void SetNewCheckpoint(GameObject checkpoint) {
-		Debug.Log (checkpoint.GetInstanceID());
-		foreach (var c in checkpoint.GetComponents<Component> ()) {
-//			Debug.Log (c);
-		}
-
 		if (!checkpoint.GetComponent<Checkpoint>()._CheckpointReached) {
-//			print (" test");
-			//checkpoint.GetComponent<Checkpoint>().CheckpointReached();
-			//_checkpoints.Add(checkpoint);
+			checkpoint.GetComponent<Checkpoint>().CheckpointReached();
+			_checkpoints.Add(checkpoint);
 		}
 	}
 

@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 		}
 
 		if (hit.collider.tag == "Danger") {
+
 			Respawn(_checkpointManager.GetLastCheckpoint ());
 		}
 
