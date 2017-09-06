@@ -15,10 +15,14 @@ public class Move : MonoBehaviour {
     private Rigidbody2D _rb;
     private Flip _flipScript;
 
+	Animator anim;
+
 	// Use this for initialization
 	void Start () {
         _rb = GetComponent<Rigidbody2D>();
         _flipScript = GetComponent<Flip>();
+
+		anim = GetComponent<Animator> ();
 	}
 	
     public void MoveLeft()
@@ -57,5 +61,7 @@ public class Move : MonoBehaviour {
             _flipScript.FlipSprite(false);
         else if (move < 0)
             _flipScript.FlipSprite(true);
+			
+		anim.SetFloat ("Movement", Mathf.Abs (Input.GetAxis ("Horizontal")));
     }
 }
