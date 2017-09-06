@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4838226300381472}
   - component: {fileID: 212493581381132458}
   - component: {fileID: 68966289375502962}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: DreamSlope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018136812252224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.43, y: -1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +61,8 @@ EdgeCollider2D:
   - {x: -0.5235977, y: 0.19305038}
   - {x: -0.22091675, y: 0.2769432}
   - {x: 0.745224, y: 0.54413986}
-  - {x: 2.1743927, y: 0.87519455}
+  - {x: 2.192158, y: 0.8963733}
+  - {x: 2.1904185, y: -0.82350373}
 --- !u!212 &212493581381132458
 SpriteRenderer:
   m_ObjectHideFlags: 1
