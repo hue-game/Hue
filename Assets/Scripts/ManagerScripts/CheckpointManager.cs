@@ -28,5 +28,3 @@ public class CheckpointManager : MonoBehaviour
         return _checkpoints.Last();
     }
 }
-
-

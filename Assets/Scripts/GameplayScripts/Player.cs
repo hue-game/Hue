@@ -65,10 +65,6 @@ public class Player : MonoBehaviour
     //Check when the player collides with an object
     private void OnCollisionEnter2D(Collision2D hit)
     {
-		if (hit.collider.tag == "Danger") {
-			Respawn(_checkpointManager.GetLastCheckpoint());
-		}
-
         //Code below only used for manual jump
         Vector2 contactPoint = hit.contacts[0].point;
         Vector2 center = GetComponent<Collider2D>().bounds.center;
