@@ -9,7 +9,10 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Move))]
 [RequireComponent(typeof(WorldManager))]
 [RequireComponent(typeof(CheckpointManager))]
+<<<<<<< HEAD
 [RequireComponent(typeof(CollectibleManager))]
+=======
+>>>>>>> f80aaec3034aaea6b7a5c56dcf3b7cf66f8d1ede
 public class Player : MonoBehaviour
 {
     [HideInInspector]
@@ -66,18 +69,10 @@ public class Player : MonoBehaviour
     //Check when the player collides with an object
     private void OnCollisionEnter2D(Collision2D hit)
     {
-        ////Code below only used for manual jump
-        //Vector2 contactPoint = hit.contacts[0].point;
-        //Vector2 center = GetComponent<Collider2D>().bounds.center;
-        //float offset = GetComponent<Collider2D>().bounds.extents.y;
-
-        //_jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
-
         if (hit.gameObject.tag == "Danger")
         {
             Respawn(_checkpointManager.GetLastCheckpoint());
         }
-
     }
 	void OnTriggerEnter2D(Collider2D hit) {
 		if (hit.tag == "Checkpoint") {
@@ -88,22 +83,6 @@ public class Player : MonoBehaviour
 			Respawn(_checkpointManager.GetLastCheckpoint());
 		}
 	}
-
-    ////Only used for manual jump
-    //void OnCollisionStay2D(Collision2D hit)
-    //{
-    //    Vector2 contactPoint = hit.contacts[0].point;
-    //    Vector2 center = GetComponent<Collider2D>().bounds.center;
-    //    float offset = GetComponent<Collider2D>().bounds.extents.y;
-
-    //    _jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
-    //}
-
-    ////Only used for manual jump
-    //void OnCollisionExit2D(Collision2D hit)
-    //{
-    //    _jumpScript.SetGrounded(false);
-    //}
 }
 
 
