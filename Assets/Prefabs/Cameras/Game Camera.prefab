@@ -110,7 +110,7 @@ MonoBehaviour:
   smoothTimeX: 0.1
   smoothTimeY: 0.25
   offSetX: 0
-  offSetY: 0
+  offSetY: -2
 --- !u!114 &114993371855676230
 MonoBehaviour:
   m_ObjectHideFlags: 1
