@@ -9,10 +9,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Move))]
 [RequireComponent(typeof(WorldManager))]
 [RequireComponent(typeof(CheckpointManager))]
-<<<<<<< HEAD
 [RequireComponent(typeof(CollectibleManager))]
-=======
->>>>>>> f80aaec3034aaea6b7a5c56dcf3b7cf66f8d1ede
+
 public class Player : MonoBehaviour
 {
     [HideInInspector]
