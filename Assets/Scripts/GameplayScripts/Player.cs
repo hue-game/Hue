@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     private Move _moveScript;
     private Jump _jumpScript;
 
+	Animator JumpAnimation;
+
     private void Awake()
     {
 		_checkpointManager = GetComponent<CheckpointManager> ();
@@ -31,6 +33,11 @@ public class Player : MonoBehaviour
 		_worldManager = GetComponent<WorldManager>();
         onRope = null;
     }
+
+	void Start() {
+
+		JumpAnimation = GetComponent<Animator> ();
+	}
 
     // FixedUpdate is called once per frame after physics have applied
     private void FixedUpdate()
@@ -71,6 +78,12 @@ public class Player : MonoBehaviour
         float offset = GetComponent<Collider2D>().bounds.extents.y;
 
         _jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
+
+		//if (_jumpScript.SetGrounded() = false) {
+		//	if (JumpAnimation.GetBool("Jump") = true) {
+		//		JumpAnimation.SetTrigger ("Land");
+		//		}
+		//	}
 
     }
 	void OnTriggerEnter2D(Collider2D hit) {
