@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212588573289906156}
   - component: {fileID: 68941702723360400}
   m_Layer: 8
-  m_Name: DreamGround
+  m_Name: DreamGround (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
