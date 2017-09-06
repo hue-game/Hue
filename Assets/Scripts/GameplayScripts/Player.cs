@@ -11,22 +11,25 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CheckpointManager))]
 public class Player : MonoBehaviour
 {
+    [HideInInspector]
+    public GameObject onRope;
+
 	[Range(0, 25)]
 	public float respawnTime = 3.0f;
 	private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
     private Move _moveScript;
     private Jump _jumpScript;
-    private Rigidbody2D _rb;
 
     private void Awake()
     {
 		_checkpointManager = GetComponent<CheckpointManager> ();
 		_worldManager = GetComponent<WorldManager> ();
 
-        _rb = GetComponent<Rigidbody2D>();
         _moveScript = GetComponent<Move>();
         _jumpScript = GetComponent<Jump>();
+		_worldManager = GetComponent<WorldManager>();
+        onRope = null;
     }
 
     // FixedUpdate is called once per frame after physics have applied
@@ -62,21 +65,6 @@ public class Player : MonoBehaviour
     //Check when the player collides with an object
     private void OnCollisionEnter2D(Collision2D hit)
     {
-		if (hit.collider.tag == "Checkpoint") {
-			_checkpointManager.SetNewCheckpoint (hit.gameObject);
-		}
-
-		if (hit.collider.tag == "Danger") {
-
-			Respawn(_checkpointManager.GetLastCheckpoint ());
-		}
-
-        if (hit.collider.tag == "Rope")
-        {
-            HingeJoint2D myJoint = (HingeJoint2D)gameObject.AddComponent<HingeJoint2D>();
-            myJoint.connectedBody = hit.rigidbody;
-        }
-
         //Code below only used for manual jump
         Vector2 contactPoint = hit.contacts[0].point;
         Vector2 center = GetComponent<Collider2D>().bounds.center;
@@ -87,11 +75,11 @@ public class Player : MonoBehaviour
     }
 	void OnTriggerEnter2D(Collider2D hit) {
 		if (hit.tag == "Checkpoint") {
-			_checkpointManager.SetNewCheckpoint (hit.gameObject);
+			_checkpointManager.SetNewCheckpoint(hit.gameObject);
 		}
 
 		if (hit.tag == "Danger") {
-			Respawn(_checkpointManager.GetLastCheckpoint ());
+			Respawn(_checkpointManager.GetLastCheckpoint());
 		}
 	}
 
