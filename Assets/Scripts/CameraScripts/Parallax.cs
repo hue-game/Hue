@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour {
-	[Range(-10, 0)]
-	public float parallaxScale = -1f;
+	[Range(0, 10)]	
+	public float parallaxScale = 5f;
 
-	[Range(0, 25)]
-	public float smoothing = 10f;
+	[Range(0, 50)]
+	public float smoothing = 25f;
 
 	public Transform[] layers;
 

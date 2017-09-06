@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4693182871649418}
   - component: {fileID: 212945468025162524}
   - component: {fileID: 68894289936246938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmarePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,9 +34,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070417704577844}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.2, y: -9.5, z: 0}
-  m_LocalScale: {x: 40, y: 6, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.01, y: -11.69, z: 0}
+  m_LocalScale: {x: 51.992363, y: 11.66073, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,8 +56,19 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.3264511, y: 0.104662895}
-  - {x: 1.3499999, y: 0.1569942}
+  - {x: -1.3255436, y: 0.07932838}
+  - {x: -1.3034261, y: 0.1339458}
+  - {x: -1.2780112, y: 0.18890557}
+  - {x: -1.16638, y: 0.19160366}
+  - {x: -0.558247, y: 0.20642757}
+  - {x: -0.5228211, y: 0.2254448}
+  - {x: -0.47561905, y: 0.24427924}
+  - {x: -0.44175607, y: 0.29860467}
+  - {x: -0.4112072, y: 0.30796131}
+  - {x: -0.37577078, y: 0.29927462}
+  - {x: -0.26502925, y: 0.26229638}
+  - {x: -0.16790275, y: 0.2253809}
+  - {x: 1.2306937, y: 0.2163423}
 --- !u!212 &212945468025162524
 SpriteRenderer:
   m_ObjectHideFlags: 1

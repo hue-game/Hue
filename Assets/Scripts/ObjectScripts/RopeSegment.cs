@@ -48,7 +48,6 @@ public class RopeSegment : MonoBehaviour {
             _player.GetComponent<Rigidbody2D>().simulated = true;
             _player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * 2;
             _parentRope.GetComponent<Rope>().ChangeMass(gameObject, 1.0f);
-            _parentRope.SetActive(false);
         }
     }
 }

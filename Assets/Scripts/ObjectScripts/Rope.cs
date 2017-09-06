@@ -46,6 +46,7 @@ public class Rope : MonoBehaviour
     private LineRenderer line;                          //  DONT MESS!	 The line renderer variable is set up when its assigned as a new component
     private int segments = 0;                   //  DONT MESS!	The number of segments is calculated based off of your distance * resolution
     private bool rope = false;                       //  DONT MESS!	This is to keep errors out of your debug window! Keeps the rope from rendering when it doesnt exist...
+    private Material ropeMaterial;
 
     //Joint Settings
     //public Vector3 swingAxis = new Vector3(1, 1, 0);                 //  Sets which axis the character joint will swing on (1 axis is best for 2D, 2-3 axis is best for 3D (Default= 3 axis))
@@ -94,6 +95,7 @@ public class Rope : MonoBehaviour
     void BuildRope()
     {
         line = gameObject.GetComponent<LineRenderer>();
+        line.material = new Material(line.material);
         line.useWorldSpace = true;
 
         // Find the amount of segments based on the distance and resolution

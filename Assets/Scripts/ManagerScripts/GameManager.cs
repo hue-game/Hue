@@ -15,10 +15,11 @@ public class GameManager : MonoBehaviour {
     }
 
 	public void StartLevel() {
-		SceneManager.LoadSceneAsync ("Level1");
+		SceneManager.LoadScene ("Level1");
 	}
 
-	void RestartLevel() {
+	public void RestartLevel() {
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 
 	void StopLevel() {
