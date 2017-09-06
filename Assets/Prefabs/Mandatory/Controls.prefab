@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114406187602801508}
   - component: {fileID: 114540782551718642}
   m_Layer: 5
-  m_Name: RightControl
+  m_Name: Right control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114471594610384818}
   - component: {fileID: 114487029248507144}
   m_Layer: 5
-  m_Name: LeftControl
+  m_Name: Left control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 114864185533936890}
   - component: {fileID: 114898760712346272}
   m_Layer: 5
-  m_Name: SwitchControl
+  m_Name: Switch control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
