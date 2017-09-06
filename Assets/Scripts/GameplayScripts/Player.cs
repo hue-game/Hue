@@ -66,12 +66,12 @@ public class Player : MonoBehaviour
     //Check when the player collides with an object
     private void OnCollisionEnter2D(Collision2D hit)
     {
-        //Code below only used for manual jump
-        Vector2 contactPoint = hit.contacts[0].point;
-        Vector2 center = GetComponent<Collider2D>().bounds.center;
-        float offset = GetComponent<Collider2D>().bounds.extents.y;
+        ////Code below only used for manual jump
+        //Vector2 contactPoint = hit.contacts[0].point;
+        //Vector2 center = GetComponent<Collider2D>().bounds.center;
+        //float offset = GetComponent<Collider2D>().bounds.extents.y;
 
-        _jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
+        //_jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
 
         if (hit.gameObject.tag == "Danger")
         {
@@ -89,21 +89,21 @@ public class Player : MonoBehaviour
 		}
 	}
 
-    //Only used for manual jump
-    void OnCollisionStay2D(Collision2D hit)
-    {
-        Vector2 contactPoint = hit.contacts[0].point;
-        Vector2 center = GetComponent<Collider2D>().bounds.center;
-        float offset = GetComponent<Collider2D>().bounds.extents.y;
+    ////Only used for manual jump
+    //void OnCollisionStay2D(Collision2D hit)
+    //{
+    //    Vector2 contactPoint = hit.contacts[0].point;
+    //    Vector2 center = GetComponent<Collider2D>().bounds.center;
+    //    float offset = GetComponent<Collider2D>().bounds.extents.y;
 
-        _jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
-    }
+    //    _jumpScript.SetGrounded(contactPoint.y <= center.y - offset);
+    //}
 
-    //Only used for manual jump
-    void OnCollisionExit2D(Collision2D hit)
-    {
-        _jumpScript.SetGrounded(false);
-    }
+    ////Only used for manual jump
+    //void OnCollisionExit2D(Collision2D hit)
+    //{
+    //    _jumpScript.SetGrounded(false);
+    //}
 }
 
 
