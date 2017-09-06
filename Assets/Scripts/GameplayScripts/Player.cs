@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
             Respawn(_checkpointManager.GetLastCheckpoint());
         }
     }
+
 	void OnTriggerEnter2D(Collider2D hit) {
 		if (hit.tag == "Checkpoint") {
 			_checkpointManager.SetNewCheckpoint(hit.gameObject);

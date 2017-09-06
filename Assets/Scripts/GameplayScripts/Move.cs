@@ -55,6 +55,8 @@ public class Move : MonoBehaviour {
         else if (_moveLeft && _moveRight && (_lastDirection == "right"))
             move = 1.0f;
 
+		WalkAnimation.SetFloat ("XMovement", Mathf.Abs (move));
+
         //Apply the velocity of the player
         if (GetComponent<Player>().onRope == null)
             _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
@@ -69,8 +71,6 @@ public class Move : MonoBehaviour {
         if (move > 0)
             _flipScript.FlipSprite(false);
         else if (move < 0)
-            _flipScript.FlipSprite(true);
-			
-		WalkAnimation.SetFloat ("XMovement", Mathf.Abs (Input.GetAxis ("Horizontal")));
+            _flipScript.FlipSprite(true);			
     }
 }

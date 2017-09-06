@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 public class AutomaticMove : MonoBehaviour {
-	[Range(0, 10)]
+	[Range(-10, 10)]
 	public float movementSpeedX = 2f;
 
-	[Range(0, 10)]
+	[Range(-10, 10)]
 	public float movementSpeedY = 0f;
 
 	[Range(0, 25)]
@@ -34,17 +34,35 @@ public class AutomaticMove : MonoBehaviour {
 	}
 	
 	private void FixedUpdate() {
-		if (_originalPosition.x - this.transform.position.x > offsetFromCenterX) {
-			_activeVelocityX = movementSpeedX;	
-		} else if (_originalPosition.x - this.transform.position.x < -offsetFromCenterX) {
-			_activeVelocityX = -movementSpeedX;
+		if (movementSpeedX > 0) {
+			if (_originalPosition.x - this.transform.position.x > offsetFromCenterX) {
+				_activeVelocityX = movementSpeedX;	
+			} else if (_originalPosition.x - this.transform.position.x < -offsetFromCenterX) {
+				_activeVelocityX = -movementSpeedX;
+			}
+		} else if (movementSpeedX < 0) {
+			if (_originalPosition.x - this.transform.position.x < -offsetFromCenterX) {
+				_activeVelocityX = movementSpeedX;
+			} else if (_originalPosition.x - this.transform.position.x > offsetFromCenterX) {
+				_activeVelocityX = -movementSpeedX;
+			}
 		}
 
-		if (_originalPosition.y - this.transform.position.y > offsetFromCenterY) {
-			_activeVelocityY = movementSpeedY;	
-		} else if (_originalPosition.y - this.transform.position.y < -offsetFromCenterY) {
-			_activeVelocityY = -movementSpeedY;
+		if (movementSpeedY > 0) {
+			if (_originalPosition.y - this.transform.position.y > offsetFromCenterY) {
+				_activeVelocityY = movementSpeedY;	
+			} else if (_originalPosition.y - this.transform.position.y < -offsetFromCenterY) {
+				_activeVelocityY = -movementSpeedY;
+			}
+		} else if (movementSpeedY < 0) {
+			if (_originalPosition.y - this.transform.position.y < -offsetFromCenterY) {
+				_activeVelocityY = movementSpeedY;	
+			} else if (_originalPosition.y - this.transform.position.y > offsetFromCenterY) {
+				_activeVelocityY = -movementSpeedY;
+			}
 		}
+			
+
 
 		_body.velocity = new Vector2 (_activeVelocityX, _activeVelocityY);
         if (_playerOnPlatform)

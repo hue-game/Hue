@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4693182871649418}
   - component: {fileID: 212945468025162524}
   - component: {fileID: 68894289936246938}
+  - component: {fileID: 50002180827137802}
+  - component: {fileID: 114508837274604562}
   m_Layer: 9
   m_Name: NightmarePlatform
   m_TagString: Untagged
@@ -35,12 +37,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070417704577844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.907654, y: -1.73576, z: 0}
+  m_LocalPosition: {x: 52.88, y: -2.235404, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50002180827137802
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070417704577844}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!68 &68894289936246938
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -58,6 +80,22 @@ EdgeCollider2D:
   m_Points:
   - {x: -1.2726593, y: 0.19334078}
   - {x: 1.2417259, y: 0.20107448}
+--- !u!114 &114508837274604562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070417704577844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b1ff6690f1c41e4b2314e58aa69e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeedX: 1
+  movementSpeedY: 0
+  offsetFromCenterX: 2
+  offsetFromCenterY: 2
+  _playerBody: {fileID: 0}
 --- !u!212 &212945468025162524
 SpriteRenderer:
   m_ObjectHideFlags: 1

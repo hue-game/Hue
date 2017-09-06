@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212712134948825750}
   - component: {fileID: 61425546093068266}
   - component: {fileID: 114060264131661196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamBounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpScript: {fileID: 0}
-  strength: 15
+  strength: 16.5
 --- !u!212 &212712134948825750
 SpriteRenderer:
   m_ObjectHideFlags: 1

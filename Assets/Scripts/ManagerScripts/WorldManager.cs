@@ -44,10 +44,11 @@ public class WorldManager : MonoBehaviour {
 	public void UpdateWorld() {
 		if (worldType) {
 			foreach (GameObject nightmareObject in nightmareWorldObjects)
-			{
-                if (nightmareObject.GetComponent<SpriteRenderer>() != null) {
-                    nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
-                }
+			{	
+            	if (nightmareObject.GetComponent<SpriteRenderer>() != null) {
+                	nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
+            	}	
+
                 if (nightmareObject.GetComponent<Rope>() != null)
                 {
                     nightmareObject.GetComponent<LineRenderer>().material.color = Color.white * 0.1f;
