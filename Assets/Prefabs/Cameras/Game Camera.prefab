@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3bf4d33724a407e8d0b42fb75c97d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxScale: 1
-  smoothing: 50
+  distanceFactor: 3
+  speed: 2
   layers:
   - {fileID: 0}
   - {fileID: 0}
