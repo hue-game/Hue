@@ -11,7 +11,7 @@ public class WorldManager : MonoBehaviour {
     private Player _player;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
         //Get an array of all GameObjects in the scene
         _player = FindObjectOfType<Player>();
 		GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
@@ -75,7 +75,7 @@ public class WorldManager : MonoBehaviour {
                     if (_player.onRope == joint.gameObject)
                         joint.GetComponent<RopeSegment>().ExitRope();
                     if (joint.GetComponent<Collider2D>() != null)
-                        joint.GetComponent<Collider2D>().enabled = show;
+                        joint.GetComponent<RopeSegment>().TogglePlayerCollision(show);
                 }
             }
         }

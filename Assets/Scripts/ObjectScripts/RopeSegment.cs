@@ -59,4 +59,12 @@ public class RopeSegment : MonoBehaviour {
             _parentRope.GetComponent<Rope>().ChangeMass(gameObject, 1.0f);
         }
     }
+
+    public void TogglePlayerCollision(bool enable)
+    {
+        if (!enable)
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>());
+        else
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), false);
+    }
 }
