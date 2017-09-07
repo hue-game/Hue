@@ -40,7 +40,8 @@ public class Rope : MonoBehaviour
     public float ropeDrag = 0.1F;                                //  Sets each joints Drag
     public float ropeMass = 0.1F;                           //  Sets each joints Mass
     public float ropeColRadius = 0.5F;                  //  Sets the radius of the collider in the SphereCollider component
-                                                        //public float ropeBreakForce = 25.0F;					 //-------------- TODO (Hopefully will break the rope in half...
+    public float ropeLeaveMultiplier = 2.0f;
+    
     private Vector3[] segmentPos;           //  DONT MESS!	This is for the Line Renderer's Reference and to set up the positions of the gameObjects
     private GameObject[] joints;            //  DONT MESS!	This is the actual joint objects that will be automatically created
     private LineRenderer line;                          //  DONT MESS!	 The line renderer variable is set up when its assigned as a new component
@@ -59,14 +60,6 @@ public class Rope : MonoBehaviour
         BuildRope();
     }
 
-    void Update()
-    {
-        //Destroy Rope Test	(Example of how you can use the rope dynamically)
-        if (rope && Input.GetKeyDown("d"))
-            DestroyRope();
-        if (!rope && Input.GetKeyDown("r"))
-            BuildRope();
-    }
     void LateUpdate()
     {
         // Does rope exist? If so, update its position
@@ -89,8 +82,6 @@ public class Rope : MonoBehaviour
         else
             line.enabled = false;
     }
-
-
 
     void BuildRope()
     {
@@ -138,6 +129,7 @@ public class Rope : MonoBehaviour
         CircleCollider2D col = joints[n].AddComponent<CircleCollider2D>();
         HingeJoint2D ph = joints[n].AddComponent<HingeJoint2D>();
         joints[n].AddComponent<RopeSegment>();
+        joints[n].GetComponent<RopeSegment>().RopeLeaveMultiplier = ropeLeaveMultiplier;
         joints[n].transform.position = segmentPos[n];
 
         rigid.drag = ropeDrag;

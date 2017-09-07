@@ -31,10 +31,6 @@ public class WorldManager : MonoBehaviour {
 		UpdateWorld ();
 	}
 
-	public void Update()
-	{
-	}
-
 	public void SwitchWorld()
 	{
 		worldType = !worldType;
@@ -44,93 +40,47 @@ public class WorldManager : MonoBehaviour {
 	public void UpdateWorld() {
 		if (worldType) {
 			foreach (GameObject nightmareObject in nightmareWorldObjects)
-			{	
-            	if (nightmareObject.GetComponent<SpriteRenderer>() != null) {
-                	nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
-            	}	
-
-                if (nightmareObject.GetComponent<Rope>() != null)
-                {
-                    nightmareObject.GetComponent<LineRenderer>().material.color = Color.white * 0.1f;
-                    foreach (Transform joint in nightmareObject.GetComponentInChildren<Transform>())
-                    {
-                        if (joint.GetComponent<Joint2D>() != null)
-                        {
-                            if (_player.onRope == joint.gameObject)
-                                joint.GetComponent<RopeSegment>().ExitRope();
-                            joint.GetComponent<Rigidbody2D>().simulated = false;
-                        }
-                    }
-                }
-                if (nightmareObject.GetComponent<Collider2D>() != null) {
-					nightmareObject.GetComponent<Collider2D>().enabled = false;
-				}
-			}
+                UpdateWorldObject(nightmareObject, false);
 
 			foreach (GameObject dreamObject in dreamWorldObjects)
-			{
-                if (dreamObject.GetComponent<SpriteRenderer>() != null) {
-                    dreamObject.GetComponent<SpriteRenderer>().color = Color.white * 1.0f;
-                }
-                if (dreamObject.GetComponent<Rope>() != null)
-                {
-                    dreamObject.GetComponent<LineRenderer>().material.color = Color.white * 1.0f;
-                    foreach (Transform joint in dreamObject.GetComponentInChildren<Transform>())
-                    {
-                        if (joint.GetComponent<Joint2D>() != null)
-                        {
-                            joint.GetComponent<Rigidbody2D>().simulated = true;
-                        }
-                    }
-                }
-                if (dreamObject.GetComponent<Collider2D>() != null) {
-					dreamObject.GetComponent<Collider2D>().enabled = true;
-				}
-			}
+                UpdateWorldObject(dreamObject, true);
 		} 
 		else {
-			//For each object in the both worlds enable/disable the collider and change the opacity of the sprite
-			foreach (GameObject nightmareObject in nightmareWorldObjects) {
-                if (nightmareObject.GetComponent<SpriteRenderer>() != null) {
-                    nightmareObject.GetComponent<SpriteRenderer>().color = Color.white * 1.0f;
-                }
-                if (nightmareObject.GetComponent<Rope>() != null)
-                {
-                    nightmareObject.GetComponent<LineRenderer>().material.color = Color.white * 1.0f;
-                    foreach (Transform joint in nightmareObject.GetComponentInChildren<Transform>())
-                    {
-                        if (joint.GetComponent<Joint2D>() != null)
-                        {
-                            joint.GetComponent<Rigidbody2D>().simulated = true;
-                        }
-                    }
-                }
-                if (nightmareObject.GetComponent<Collider2D>() != null) {
-					nightmareObject.GetComponent<Collider2D>().enabled = true;
-				}
-			}
+			foreach (GameObject nightmareObject in nightmareWorldObjects)
+                UpdateWorldObject(nightmareObject, true);
 
-			foreach (GameObject dreamObject in dreamWorldObjects) {
-		        if (dreamObject.GetComponent<SpriteRenderer>() != null) {
-                    dreamObject.GetComponent<SpriteRenderer>().color = Color.white * 0.1f;
-                }
-                if (dreamObject.GetComponent<Rope>() != null)
-                {
-                    dreamObject.GetComponent<LineRenderer>().material.color = Color.white * 0.1f;
-                    foreach (Transform joint in dreamObject.GetComponentInChildren<Transform>())
-                    {
-                        if (joint.GetComponent<Joint2D>() != null)
-                        {
-                            if (_player.onRope == joint.gameObject)
-                                joint.GetComponent<RopeSegment>().ExitRope();
-                            joint.GetComponent<Rigidbody2D>().simulated = false;
-                        }
-                    }
-                }
-                if (dreamObject.GetComponent<Collider2D>() != null) {
-					dreamObject.GetComponent<Collider2D>().enabled = false;
-				}
-			}
-		}
+            foreach (GameObject dreamObject in dreamWorldObjects)
+                UpdateWorldObject(dreamObject, false);
+        }
 	}
+
+    private void UpdateWorldObject(GameObject worldObject, bool show)
+    {
+        float opacity = show ? 1.0f : 0.1f;
+        if (worldObject.GetComponent<SpriteRenderer>() != null)
+        {
+            if (worldObject.tag != "Background")
+                worldObject.GetComponent<SpriteRenderer>().color = Color.white * opacity;
+            else
+                worldObject.SetActive(show);
+        }
+
+        if (worldObject.GetComponent<Rope>() != null)
+        {
+            worldObject.GetComponent<LineRenderer>().material.color = Color.white * opacity;
+            foreach (Transform joint in worldObject.GetComponentInChildren<Transform>())
+            {
+                if (joint.GetComponent<Joint2D>() != null)
+                {
+                    if (_player.onRope == joint.gameObject)
+                        joint.GetComponent<RopeSegment>().ExitRope();
+                    if (joint.GetComponent<Collider2D>() != null)
+                        joint.GetComponent<Collider2D>().enabled = show;
+                }
+            }
+        }
+
+        if (worldObject.GetComponent<Collider2D>() != null)
+            worldObject.GetComponent<Collider2D>().enabled = show;
+    }
 }

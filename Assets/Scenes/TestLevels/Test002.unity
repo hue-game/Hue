@@ -2340,6 +2340,11 @@ Prefab:
       propertyPath: ropeColRadius
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114380559949901804, guid: 938f1c84c0ca7a441bd08597d1c09b95,
+        type: 2}
+      propertyPath: ropeLeaveMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 938f1c84c0ca7a441bd08597d1c09b95, type: 2}
   m_IsPrefabParent: 0
@@ -4096,6 +4101,10 @@ Prefab:
       propertyPath: m_DrawMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1827166958502208, guid: 966940a4e6f1090459b48a124729465c, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 966940a4e6f1090459b48a124729465c, type: 2}
   m_IsPrefabParent: 0
@@ -5712,6 +5721,10 @@ Prefab:
       propertyPath: controlCanvas
       value: 
       objectReference: {fileID: 599332921}
+    - target: {fileID: 1664090735968752, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0

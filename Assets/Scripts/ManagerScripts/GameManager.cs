@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 
-	void StopLevel() {
+	public void StopLevel() {
+		SceneManager.LoadScene ("MainMenu");
 	}
 }
