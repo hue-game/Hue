@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 13893210}
   m_Layer: 8
   m_Name: DreamRocks (20)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 29195773}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,6 +270,119 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &41315448
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655788198}
+    m_Modifications:
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 123.663
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &47330537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 47330538}
+  - component: {fileID: 47330539}
+  m_Layer: 8
+  m_Name: DreamRocks (5)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &47330538
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47330537}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 102.51, y: -0.6, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &47330539
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47330537}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 0
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &57981094
 Prefab:
   m_ObjectHideFlags: 0
@@ -279,7 +392,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.583
+      value: 3.5930023
       objectReference: {fileID: 0}
     - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
       propertyPath: m_LocalPosition.y
@@ -317,6 +430,77 @@ Transform:
   m_PrefabParentObject: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18,
     type: 2}
   m_PrefabInternal: {fileID: 57981094}
+--- !u!1 &61416759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 61416760}
+  - component: {fileID: 61416761}
+  m_Layer: 9
+  m_Name: NightmareMountain (2)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61416760
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 61416759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 124.8, y: -2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 670009459}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &61416761
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 61416759}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 07a08ce4f046e40869a54872b40c6592, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 8.1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &69614869
 Prefab:
   m_ObjectHideFlags: 0
@@ -368,6 +552,77 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &73752021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 73752022}
+  - component: {fileID: 73752023}
+  m_Layer: 8
+  m_Name: DreamRocks (18)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73752022
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73752021}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 134.9, y: 3.6, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &73752023
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73752021}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &82874572
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +659,16 @@ Transform:
   - {fileID: 1489731145}
   - {fileID: 1362013658}
   - {fileID: 1771292888}
+  - {fileID: 1058933802}
+  - {fileID: 912437458}
+  - {fileID: 47330538}
+  - {fileID: 867514968}
+  - {fileID: 1565165548}
+  - {fileID: 679710947}
+  - {fileID: 103218695}
+  - {fileID: 262944691}
+  - {fileID: 487392808}
+  - {fileID: 73752022}
   m_Father: {fileID: 2082898825}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -418,7 +683,7 @@ GameObject:
   - component: {fileID: 89242809}
   m_Layer: 8
   m_Name: DreamRocks (16)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,11 +743,266 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!4 &107616660 stripped
+--- !u!1 &103218694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 103218695}
+  - component: {fileID: 103218696}
+  m_Layer: 8
+  m_Name: DreamRocks (13)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &103218695
 Transform:
-  m_PrefabParentObject: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e,
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103218694}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 119.51, y: 2.3000002, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &103218696
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103218694}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1001 &106070025
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1886971042}
+    m_Modifications:
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.7752304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.186
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &107616659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1633441155582270, guid: 984b23c5e50094223a08d62f90bfda28,
     type: 2}
-  m_PrefabInternal: {fileID: 1816410509}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 107616660}
+  - component: {fileID: 107616664}
+  - component: {fileID: 107616662}
+  - component: {fileID: 107616661}
+  - component: {fileID: 107616663}
+  m_Layer: 9
+  m_Name: Positively moving nightmare platform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107616660
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4846875716513098, guid: 984b23c5e50094223a08d62f90bfda28,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107616659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64.67, y: -2.235404, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 294720093}
+  m_Father: {fileID: 1255401776}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &107616661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114715058913830354, guid: 984b23c5e50094223a08d62f90bfda28,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107616659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b1ff6690f1c41e4b2314e58aa69e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeedX: 1
+  movementSpeedY: 0
+  offsetFromCenterX: 2
+  offsetFromCenterY: 2
+  _playerBody: {fileID: 557309421}
+--- !u!50 &107616662
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 50112513445237154, guid: 984b23c5e50094223a08d62f90bfda28,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107616659}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &107616663
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 61898792651784648, guid: 984b23c5e50094223a08d62f90bfda28,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107616659}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03411627}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.7, y: 0.77}
+    newSize: {x: 2.7, y: 0.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 0.47432756}
+  m_EdgeRadius: 0
+--- !u!212 &107616664
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 212685783032034210, guid: 984b23c5e50094223a08d62f90bfda28,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107616659}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 960da5bbe208d4738b39aa4e56997d5d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.7, y: 0.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &112190814 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 879510100}
 --- !u!1001 &132552485
 Prefab:
   m_ObjectHideFlags: 0
@@ -527,9 +1047,69 @@ Prefab:
       propertyPath: ropeColRadius
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 1593146165294046, guid: 938f1c84c0ca7a441bd08597d1c09b95, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114380559949901804, guid: 938f1c84c0ca7a441bd08597d1c09b95,
+        type: 2}
+      propertyPath: ropeLeaveMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 938f1c84c0ca7a441bd08597d1c09b95, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &136868012
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655788198}
+    m_Modifications:
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 128.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663549952581846, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_Name
+      value: DreamSlope left (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &136868013 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62,
+    type: 2}
+  m_PrefabInternal: {fileID: 136868012}
 --- !u!4 &136982361 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
@@ -544,7 +1124,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 45.89747
+      value: 44.07
       objectReference: {fileID: 0}
     - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -657,7 +1237,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 81.57
+      value: 80.58
       objectReference: {fileID: 0}
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -705,7 +1285,7 @@ GameObject:
   - component: {fileID: 197097515}
   m_Layer: 8
   m_Name: DreamRocks (8)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +1298,7 @@ Transform:
   m_GameObject: {fileID: 197097513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 25.599998, y: 4.7, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 4
@@ -756,7 +1336,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -774,7 +1354,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 81.57
+      value: 80.58
       objectReference: {fileID: 0}
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -823,7 +1403,7 @@ GameObject:
   - component: {fileID: 204724277}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -975,7 +1555,7 @@ GameObject:
   - component: {fileID: 219741431}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,9 +1666,9 @@ GameObject:
   m_Component:
   - component: {fileID: 238183498}
   - component: {fileID: 238183499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSky flip (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,6 +1821,124 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &262944690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 262944691}
+  - component: {fileID: 262944692}
+  m_Layer: 8
+  m_Name: DreamRocks (15)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &262944691
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262944690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 129.79999, y: -1.6999998, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &262944692
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262944690}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1001 &294720092
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 107616660}
+    m_Modifications:
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &294720093 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e,
+    type: 2}
+  m_PrefabInternal: {fileID: 294720092}
 --- !u!1 &304924879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,16 +1987,160 @@ Transform:
   m_PrefabParentObject: {fileID: 4373408990489438, guid: 3f82944c63f754e3a90904885842db3f,
     type: 2}
   m_PrefabInternal: {fileID: 1631109179}
+--- !u!1001 &344330905
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1787447812}
+    m_Modifications:
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 122.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284324017804580, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &344330906 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137,
+    type: 2}
+  m_PrefabInternal: {fileID: 344330905}
 --- !u!4 &350281695 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18,
     type: 2}
   m_PrefabInternal: {fileID: 1913576818}
+--- !u!1001 &356854256
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 112.766655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4677744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &359505192 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137,
     type: 2}
   m_PrefabInternal: {fileID: 1588057041}
+--- !u!1001 &375914187
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 128.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400335511852010, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_Name
+      value: Nightmare slope left (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &375914188 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f,
+    type: 2}
+  m_PrefabInternal: {fileID: 375914187}
 --- !u!1 &385497496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,9 +2267,9 @@ GameObject:
   m_Component:
   - component: {fileID: 422783998}
   - component: {fileID: 422783999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSky flip
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +2345,7 @@ GameObject:
   - component: {fileID: 436287393}
   m_Layer: 8
   m_Name: DreamRocks (4)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1516,7 +2358,7 @@ Transform:
   m_GameObject: {fileID: 436287391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 20.499998, y: -0.6, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 2
@@ -1554,7 +2396,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1577,9 +2419,9 @@ GameObject:
   m_Component:
   - component: {fileID: 450091604}
   - component: {fileID: 450091605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSky (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1650,7 +2492,7 @@ GameObject:
   - component: {fileID: 451915918}
   m_Layer: 8
   m_Name: DreamRocks (17)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1723,7 +2565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.67
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1813,6 +2655,77 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &487392807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 487392808}
+  - component: {fileID: 487392809}
+  m_Layer: 8
+  m_Name: DreamRocks (16)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487392808
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 487392807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 141, y: 0.4, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &487392809
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 487392807}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!114 &492020319 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114810294728247620, guid: f63ead12d1273468c9675f7a7c893091,
@@ -1833,7 +2746,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4242582053283352, guid: 5a64807c047994557848af7a2dcec668, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: -0.9699979
       objectReference: {fileID: 0}
     - target: {fileID: 4242582053283352, guid: 5a64807c047994557848af7a2dcec668, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1861,7 +2774,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4242582053283352, guid: 5a64807c047994557848af7a2dcec668, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a64807c047994557848af7a2dcec668, type: 2}
@@ -1876,6 +2789,52 @@ Transform:
   m_PrefabParentObject: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f,
     type: 2}
   m_PrefabInternal: {fileID: 977213127}
+--- !u!1001 &527559735
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1787447812}
+    m_Modifications:
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 108.473
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284324017804580, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &548297747
 Prefab:
   m_ObjectHideFlags: 0
@@ -1927,7 +2886,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 81.57
+      value: 80.58
       objectReference: {fileID: 0}
     - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1964,6 +2923,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &555545627
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655788198}
+    m_Modifications:
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 103.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &557309416 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e,
@@ -1992,6 +2993,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 468304163}
   m_Script: {fileID: 11500000, guid: f3e7371059c31694ca1081721323b69f, type: 3}
+--- !u!4 &572845449 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1922485297}
 --- !u!4 &594762601 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137,
@@ -2008,7 +3014,7 @@ GameObject:
   - component: {fileID: 605855666}
   m_Layer: 9
   m_Name: NightmareSky
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2109,6 +3115,7 @@ Transform:
   - {fileID: 1649592995}
   - {fileID: 1255401776}
   - {fileID: 1886971042}
+  - {fileID: 671434485}
   m_Father: {fileID: 720724367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2121,7 +3128,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.84
+      value: 7.8500023
       objectReference: {fileID: 0}
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2149,7 +3156,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1023341721263688, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_Name
@@ -2280,6 +3287,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &656591373 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1434130030}
 --- !u!1 &670009458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,9 +3325,121 @@ Transform:
   - {fileID: 1101635602}
   - {fileID: 1862041594}
   - {fileID: 815773648}
+  - {fileID: 1403180155}
+  - {fileID: 61416760}
+  - {fileID: 1960787351}
+  - {fileID: 2016555120}
   m_Father: {fileID: 1544744129}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &671434484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 671434485}
+  m_Layer: 0
+  m_Name: Puzzle 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &671434485
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671434484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2040344836}
+  - {fileID: 112190814}
+  - {fileID: 572845449}
+  - {fileID: 1396166363}
+  - {fileID: 2038099916}
+  - {fileID: 1914304161}
+  - {fileID: 656591373}
+  - {fileID: 1466636999}
+  - {fileID: 375914188}
+  m_Father: {fileID: 622996002}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &679710946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 679710947}
+  - component: {fileID: 679710948}
+  m_Layer: 8
+  m_Name: DreamRocks (12)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &679710947
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679710946}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 108.31, y: 0.20000005, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &679710948
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679710946}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &692709394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +3554,7 @@ GameObject:
   - component: {fileID: 732773994}
   m_Layer: 9
   m_Name: NightmareSky (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2531,7 +3655,7 @@ GameObject:
   - component: {fileID: 752829446}
   m_Layer: 8
   m_Name: DreamRocks
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2668,7 +3792,7 @@ GameObject:
   - component: {fileID: 767246071}
   m_Layer: 8
   m_Name: DreamRocks (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2681,7 +3805,7 @@ Transform:
   m_GameObject: {fileID: 767246069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.2, y: 3.4, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 1
@@ -2719,7 +3843,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -2744,7 +3868,7 @@ GameObject:
   - component: {fileID: 815773649}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2756,7 +3880,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 815773647}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 95.61, y: -2.5, z: 1}
+  m_LocalPosition: {x: 94.62, y: -2.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 670009459}
@@ -2851,6 +3975,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &832349275
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 111.763
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831843447258350, guid: ee52748527c29499e9432b80a7141e91,
+        type: 2}
+      propertyPath: ropeLeaveMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &833803544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +4033,7 @@ GameObject:
   - component: {fileID: 833803546}
   m_Layer: 8
   m_Name: DreamRocks (6)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2938,7 +4109,7 @@ GameObject:
   - component: {fileID: 854120202}
   m_Layer: 8
   m_Name: DreamRocks (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2991,6 +4162,119 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 1
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1001 &867163446
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 111.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &867514967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 867514968}
+  - component: {fileID: 867514969}
+  m_Layer: 8
+  m_Name: DreamRocks (7)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867514968
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867514967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 113.71001, y: 1.5000001, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &867514969
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867514967}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2.68, y: 2.21}
@@ -3053,6 +4337,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94983d18276b74736b940010f3987e3e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &879510100
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 103.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.0240195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &890191008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,7 +4390,7 @@ GameObject:
   - component: {fileID: 890191010}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3135,7 +4461,7 @@ GameObject:
   - component: {fileID: 899998376}
   m_Layer: 8
   m_Name: DreamRocks (14)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3204,7 +4530,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.013
+      value: 8.023002
       objectReference: {fileID: 0}
     - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3260,7 +4586,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4838226300381472, guid: 9a59e56dab41b4bca96236d8674cb09e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.1930008
+      value: -0.7969971
       objectReference: {fileID: 0}
     - target: {fileID: 4838226300381472, guid: 9a59e56dab41b4bca96236d8674cb09e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3332,6 +4658,77 @@ Transform:
   m_Father: {fileID: 1408302183}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &912437457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 912437458}
+  - component: {fileID: 912437459}
+  m_Layer: 8
+  m_Name: DreamRocks (3)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &912437458
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 912437457}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 93.21, y: 3.4, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &912437459
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 912437457}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 1
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &925445402
 Prefab:
   m_ObjectHideFlags: 0
@@ -3374,6 +4771,77 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &927243901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 927243902}
+  - component: {fileID: 927243903}
+  m_Layer: 8
+  m_Name: DreamSky (3)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927243902
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927243901}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 199.59, y: 1.2999997, z: -59}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1450847567}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &927243903
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927243901}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d8eb34f72e77247fd8d1bf87321883fe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 15.74}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &936433846
 Prefab:
   m_ObjectHideFlags: 0
@@ -3427,7 +4895,7 @@ GameObject:
   - component: {fileID: 944015440}
   m_Layer: 8
   m_Name: DreamRocks (8)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3492,6 +4960,77 @@ Transform:
   m_PrefabParentObject: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62,
     type: 2}
   m_PrefabInternal: {fileID: 648959493}
+--- !u!1 &952799216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 952799217}
+  - component: {fileID: 952799218}
+  m_Layer: 9
+  m_Name: NightmareSky (3)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &952799217
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952799216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 148.28955, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1768940750}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &952799218
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952799216}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d9d803573fb7c4219b5624e464c46cb1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 15.240001}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &969597989
 Prefab:
   m_ObjectHideFlags: 0
@@ -3590,6 +5129,82 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &981083945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 981083946}
+  - component: {fileID: 981083947}
+  m_Layer: 8
+  m_Name: DreamSky flip (3)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981083946
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981083945}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 174.79, y: 1.3, z: -59}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1450847567}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &981083947
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981083945}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d8eb34f72e77247fd8d1bf87321883fe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 15.74}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &993910587 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18,
+    type: 2}
+  m_PrefabInternal: {fileID: 1554652573}
 --- !u!1001 &1017943009
 Prefab:
   m_ObjectHideFlags: 0
@@ -3657,7 +5272,7 @@ GameObject:
   - component: {fileID: 1029435091}
   m_Layer: 8
   m_Name: DreamRocks (21)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3733,7 +5348,7 @@ GameObject:
   - component: {fileID: 1050644189}
   m_Layer: 8
   m_Name: DreamRocks (6)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3746,7 +5361,7 @@ Transform:
   m_GameObject: {fileID: 1050644187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 31.699999, y: 1.5000001, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 3
@@ -3784,9 +5399,80 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1 &1058933801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1058933802}
+  - component: {fileID: 1058933803}
+  m_Layer: 8
+  m_Name: DreamRocks (1)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058933802
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058933801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 82.01, y: 1.3, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1058933803
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058933801}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2.68, y: 2.21}
   m_AdaptiveModeThreshold: 0.5
@@ -3802,7 +5488,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.927002
+      value: 13.690002
       objectReference: {fileID: 0}
     - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3851,7 +5537,7 @@ GameObject:
   - component: {fileID: 1085440729}
   m_Layer: 8
   m_Name: DreamRocks (3)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3922,7 +5608,7 @@ GameObject:
   - component: {fileID: 1096756762}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3991,7 +5677,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.41
+      value: 3.420002
       objectReference: {fileID: 0}
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4019,7 +5705,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
@@ -4040,7 +5726,7 @@ GameObject:
   - component: {fileID: 1101635603}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4168,7 +5854,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1159933836 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e,
+  m_PrefabParentObject: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa,
     type: 2}
   m_PrefabInternal: {fileID: 1238939147}
 --- !u!4 &1165975269 stripped
@@ -4187,7 +5873,7 @@ GameObject:
   - component: {fileID: 1166023797}
   m_Layer: 8
   m_Name: DreamRocks (9)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4247,6 +5933,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1179015473
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1159933836}
+    m_Modifications:
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.26999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206388669841726, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a2cf6055309d043d6a033ccd8380d11e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1194621300
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,7 +6021,7 @@ GameObject:
   - component: {fileID: 1205927988}
   m_Layer: 8
   m_Name: DreamRocks (11)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4364,7 +6092,7 @@ GameObject:
   - component: {fileID: 1206158508}
   m_Layer: 9
   m_Name: NightmareSky flip (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4435,7 +6163,7 @@ GameObject:
   - component: {fileID: 1208958565}
   m_Layer: 9
   m_Name: NightmareSky flip
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4577,7 +6305,7 @@ GameObject:
   - component: {fileID: 1230157308}
   m_Layer: 8
   m_Name: DreamRocks (23)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4589,7 +6317,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1230157306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.2, y: -4.8999996, z: -1}
+  m_LocalPosition: {x: 87.21, y: -4.8999996, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2016403315}
@@ -4649,59 +6377,50 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1255401776}
     m_Modifications:
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 72.71
+      value: 71.96
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalPosition.y
       value: -2.235404
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+    - target: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114508837274604562, guid: 94983d18276b74736b940010f3987e3e,
+    - target: {fileID: 114843440981503564, guid: 6afbd7289d0f0415aabbcddd7f29defa,
         type: 2}
       propertyPath: _playerBody
       value: 
       objectReference: {fileID: 557309421}
-    - target: {fileID: 1070417704577844, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_Name
-      value: Nightmare platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508837274604562, guid: 94983d18276b74736b940010f3987e3e,
-        type: 2}
-      propertyPath: movementSpeedX
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508837274604562, guid: 94983d18276b74736b940010f3987e3e,
+    - target: {fileID: 114843440981503564, guid: 6afbd7289d0f0415aabbcddd7f29defa,
         type: 2}
       propertyPath: offsetFromCenterX
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 94983d18276b74736b940010f3987e3e, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 6afbd7289d0f0415aabbcddd7f29defa, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1250016674 stripped
 Transform:
@@ -4752,7 +6471,7 @@ GameObject:
   - component: {fileID: 1255863888}
   m_Layer: 8
   m_Name: DreamRocks (15)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4975,7 +6694,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15.099998
+      value: 13.862999
       objectReference: {fileID: 0}
     - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5024,7 +6743,7 @@ GameObject:
   - component: {fileID: 1362013659}
   m_Layer: 8
   m_Name: DreamRocks (19)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5037,7 +6756,7 @@ Transform:
   m_GameObject: {fileID: 1362013657}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 67.7, y: -2.9999995, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 9
@@ -5075,7 +6794,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -5095,7 +6814,7 @@ GameObject:
   - component: {fileID: 1378373456}
   m_Layer: 8
   m_Name: DreamRocks (13)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5211,6 +6930,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
     type: 2}
   m_PrefabInternal: {fileID: 1017943009}
+--- !u!4 &1396166363 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565,
+    type: 2}
+  m_PrefabInternal: {fileID: 2128371842}
 --- !u!1001 &1401975948
 Prefab:
   m_ObjectHideFlags: 0
@@ -5220,7 +6944,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4434464493203912, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 0.61000216
       objectReference: {fileID: 0}
     - target: {fileID: 4434464493203912, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5254,9 +6978,100 @@ Prefab:
       propertyPath: m_Name
       value: Tree with rope
       objectReference: {fileID: 0}
+    - target: {fileID: 1652186774193306, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413055020004398, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412493491256648, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662951755797678, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010260568652722, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 261c2cf375aaf4ec284928be800fc6dc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1403180154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1403180155}
+  - component: {fileID: 1403180156}
+  m_Layer: 9
+  m_Name: NightmareMountain (1)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1403180155
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1403180154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 105.380005, y: -2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 670009459}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1403180156
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1403180154}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 07a08ce4f046e40869a54872b40c6592, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 8.1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &1408302182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5287,9 +7102,57 @@ Transform:
   - {fileID: 304924880}
   - {fileID: 1194621301}
   - {fileID: 634567729}
+  - {fileID: 1655788198}
+  - {fileID: 1768979033}
   m_Father: {fileID: 720724367}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1434130030
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 123.663
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023341721263688, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_Name
+      value: NightmareGround (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1438804922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,7 +7164,7 @@ GameObject:
   - component: {fileID: 1438804924}
   m_Layer: 8
   m_Name: DreamRocks (10)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5361,6 +7224,57 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1444788548
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1787447812}
+    m_Modifications:
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284324017804580, guid: a582a8658c47d43d797486159b330137, type: 2}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1444788549 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137,
+    type: 2}
+  m_PrefabInternal: {fileID: 1444788548}
 --- !u!1 &1450847566
 GameObject:
   m_ObjectHideFlags: 0
@@ -5392,6 +7306,8 @@ Transform:
   - {fileID: 238183498}
   - {fileID: 1813007305}
   - {fileID: 1722591734}
+  - {fileID: 927243902}
+  - {fileID: 981083946}
   m_Father: {fileID: 1575620574}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5411,7 +7327,7 @@ GameObject:
   - component: {fileID: 1460104983}
   m_Layer: 9
   m_Name: NightmareSky (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5471,6 +7387,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!4 &1466636999 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32,
+    type: 2}
+  m_PrefabInternal: {fileID: 356854256}
 --- !u!1 &1489731144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,7 +7403,7 @@ GameObject:
   - component: {fileID: 1489731146}
   m_Layer: 8
   m_Name: DreamRocks (17)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5495,7 +7416,7 @@ Transform:
   m_GameObject: {fileID: 1489731144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 56.5, y: -5.1, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 8
@@ -5533,7 +7454,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 1
   m_FlipY: 1
   m_DrawMode: 0
@@ -5553,7 +7474,7 @@ GameObject:
   - component: {fileID: 1511323066}
   m_Layer: 8
   m_Name: DreamRocks (12)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5689,6 +7610,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
     type: 2}
   m_PrefabInternal: {fileID: 1873162746}
+--- !u!1001 &1519430859
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655788198}
+    m_Modifications:
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 119.273
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.28447
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bcbd437acea6142b0b58a12f855fad62, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1534780865 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4723238214839480, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
@@ -5729,6 +7692,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1545762215
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655788198}
+    m_Modifications:
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 115.263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 328006c385a344732bb4122c5066c362, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1554652573
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1655788198}
+    m_Modifications:
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 108.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045886317894836, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+      propertyPath: m_Name
+      value: DreamGround (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1555425485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,7 +7868,7 @@ GameObject:
   - component: {fileID: 1559389919}
   m_Layer: 8
   m_Name: DreamRocks (19)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5871,6 +7922,77 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 1
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.68, y: 2.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1 &1565165547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1565165548}
+  - component: {fileID: 1565165549}
+  m_Layer: 8
+  m_Name: DreamRocks (9)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565165548
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1565165547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 107.61, y: 4.7, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82874573}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1565165549
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1565165547}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_FlipX: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2.68, y: 2.21}
   m_AdaptiveModeThreshold: 0.5
@@ -5951,7 +8073,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 90.32698, y: -4.248441}
+  - {x: 162.32188, y: -3.0177617}
   - {x: -11.227191, y: -3.9742148}
 --- !u!1001 &1588057041
 Prefab:
@@ -5962,7 +8084,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 43.22
+      value: 46.85
       objectReference: {fileID: 0}
     - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5995,6 +8117,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1594542340 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18,
+    type: 2}
+  m_PrefabInternal: {fileID: 555545627}
+--- !u!4 &1606584844 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18,
+    type: 2}
+  m_PrefabInternal: {fileID: 41315448}
+--- !u!4 &1611044607 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137,
+    type: 2}
+  m_PrefabInternal: {fileID: 527559735}
 --- !u!1001 &1626885017
 Prefab:
   m_ObjectHideFlags: 0
@@ -6182,6 +8319,45 @@ Transform:
   m_PrefabParentObject: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc,
     type: 2}
   m_PrefabInternal: {fileID: 1258496375}
+--- !u!1 &1655788197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1655788198}
+  m_Layer: 0
+  m_Name: Puzzle 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655788198
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1655788197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1594542340}
+  - {fileID: 993910587}
+  - {fileID: 1876432218}
+  - {fileID: 1671088283}
+  - {fileID: 1606584844}
+  - {fileID: 136868013}
+  m_Father: {fileID: 1408302183}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1671088283 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4227580797611950, guid: bcbd437acea6142b0b58a12f855fad62,
+    type: 2}
+  m_PrefabInternal: {fileID: 1519430859}
 --- !u!1 &1680321327
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,7 +8440,7 @@ GameObject:
   - component: {fileID: 1684966408}
   m_Layer: 9
   m_Name: NightmareSky flip (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6461,7 +8637,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 80
+      value: 79.01
       objectReference: {fileID: 0}
     - target: {fileID: 4472218726021654, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6503,9 +8679,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1722591734}
   - component: {fileID: 1722591735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSky flip (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6576,7 +8752,7 @@ GameObject:
   - component: {fileID: 1729074638}
   m_Layer: 8
   m_Name: DreamRocks (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6722,53 +8898,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4541202771374546, guid: ee161b08e2f48414eb1e7da31649c3eb,
     type: 2}
   m_PrefabInternal: {fileID: 2128010076}
---- !u!1001 &1751886733
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 107616660}
-    m_Modifications:
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.0252228
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.25217497
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114794875675259834, guid: 4b98a28e5c7da44dea70be000d3fdb32,
-        type: 2}
-      propertyPath: jumpScript
-      value: 
-      objectReference: {fileID: 557309424}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4b98a28e5c7da44dea70be000d3fdb32, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1754191085
 GameObject:
   m_ObjectHideFlags: 0
@@ -6780,7 +8909,7 @@ GameObject:
   - component: {fileID: 1754191087}
   m_Layer: 8
   m_Name: DreamRocks (4)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6917,8 +9046,38 @@ Transform:
   - {fileID: 1684966407}
   - {fileID: 1460104982}
   - {fileID: 1206158507}
+  - {fileID: 952799217}
+  - {fileID: 2106492224}
   m_Father: {fileID: 1575620574}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1768979032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1768979033}
+  m_Layer: 0
+  m_Name: Puzzle 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768979033
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768979032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1408302183}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771292887
 GameObject:
@@ -6931,7 +9090,7 @@ GameObject:
   - component: {fileID: 1771292889}
   m_Layer: 8
   m_Name: DreamRocks (21)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6944,7 +9103,7 @@ Transform:
   m_GameObject: {fileID: 1771292887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 77, y: -6.9999995, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 10
@@ -6982,7 +9141,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
@@ -7019,9 +9178,17 @@ Transform:
   - {fileID: 594762601}
   - {fileID: 359505192}
   - {fileID: 844959901}
+  - {fileID: 1611044607}
+  - {fileID: 1444788549}
+  - {fileID: 344330906}
   m_Father: {fileID: 720724367}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1801299186 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9,
+    type: 2}
+  m_PrefabInternal: {fileID: 106070025}
 --- !u!1 &1813007304
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,9 +9198,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1813007305}
   - component: {fileID: 1813007306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSky (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7093,61 +9260,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &1816410509
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1255401776}
-    m_Modifications:
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 64.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.235404
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693182871649418, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508837274604562, guid: 94983d18276b74736b940010f3987e3e,
-        type: 2}
-      propertyPath: _playerBody
-      value: 
-      objectReference: {fileID: 557309421}
-    - target: {fileID: 1070417704577844, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_Name
-      value: Nightmare platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070417704577844, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 94983d18276b74736b940010f3987e3e, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1862041593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7159,7 +9271,7 @@ GameObject:
   - component: {fileID: 1862041595}
   m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7315,6 +9427,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee161b08e2f48414eb1e7da31649c3eb, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1876432218 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4588143487230282, guid: 328006c385a344732bb4122c5066c362,
+    type: 2}
+  m_PrefabInternal: {fileID: 1545762215}
 --- !u!1001 &1877304973
 Prefab:
   m_ObjectHideFlags: 0
@@ -7387,6 +9504,7 @@ Transform:
   m_LocalPosition: {x: 85.933, y: -1.666, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1801299186}
   - {fileID: 523943646}
   - {fileID: 1100463441}
   - {fileID: 633660922}
@@ -7444,6 +9562,62 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08fd95143ceec4de4a91bb58a6666b18, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1914304161 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1962926706}
+--- !u!1001 &1922485297
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 108.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.0240195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532224547684414, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023341721263688, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
+      propertyPath: m_Name
+      value: NightmareGround (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212816577331621282, guid: 37e5e866db83e48b290070ab944dc7bc,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1922568257
 GameObject:
@@ -7529,7 +9703,7 @@ GameObject:
   - component: {fileID: 1942681477}
   m_Layer: 8
   m_Name: DreamRocks (22)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7541,7 +9715,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1942681475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.899994, y: -3.1999993, z: -1}
+  m_LocalPosition: {x: 81.909996, y: -3.1999993, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2016403315}
@@ -7600,7 +9774,7 @@ GameObject:
   - component: {fileID: 1947481307}
   m_Layer: 8
   m_Name: DreamRocks (5)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7660,6 +9834,77 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1960787350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1960787351}
+  - component: {fileID: 1960787352}
+  m_Layer: 9
+  m_Name: NightmareMountain (3)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960787351
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960787350}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 137.95999, y: -2.5, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 670009459}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1960787352
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960787350}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 07a08ce4f046e40869a54872b40c6592, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 8.1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1001 &1962532673
 Prefab:
   m_ObjectHideFlags: 0
@@ -7707,6 +9952,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4557c309764a0492f8b9d903964b1f06, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1962926706
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 119.27694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.28446728
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954209285507372, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5e1163f5b5fe04fc2b75534a4c2c396f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1971389949 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4385379822884024, guid: 4b98a28e5c7da44dea70be000d3fdb32,
@@ -7723,7 +10010,7 @@ GameObject:
   - component: {fileID: 1972883564}
   m_Layer: 8
   m_Name: DreamRocks (10)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7736,7 +10023,7 @@ Transform:
   m_GameObject: {fileID: 1972883562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 36.8, y: 6.8, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 5
@@ -7774,7 +10061,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -7792,9 +10079,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1997765913}
   - component: {fileID: 1997765914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSky
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7990,7 +10277,7 @@ GameObject:
   - component: {fileID: 2011951078}
   m_Layer: 8
   m_Name: DreamRocks (7)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8102,6 +10389,77 @@ Transform:
   m_Father: {fileID: 1544744129}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2016555119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2016555120}
+  - component: {fileID: 2016555121}
+  m_Layer: 9
+  m_Name: NightmareMountain (4)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2016555120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016555119}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 149.31, y: -2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 670009459}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2016555121
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016555119}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 07a08ce4f046e40869a54872b40c6592, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 8.1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &2018330417 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4849359013209430, guid: 08fd95143ceec4de4a91bb58a6666b18,
@@ -8118,7 +10476,7 @@ GameObject:
   - component: {fileID: 2023810097}
   m_Layer: 8
   m_Name: DreamRocks (18)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8243,6 +10601,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2038099916 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4983412891385096, guid: ee52748527c29499e9432b80a7141e91,
+    type: 2}
+  m_PrefabInternal: {fileID: 832349275}
+--- !u!4 &2040344836 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4663406655031514, guid: b87305b6c24864b1db4bcd05eba9cdf9,
+    type: 2}
+  m_PrefabInternal: {fileID: 867163446}
 --- !u!4 &2040619983 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4838226300381472, guid: 9a59e56dab41b4bca96236d8674cb09e,
@@ -8259,7 +10627,7 @@ GameObject:
   - component: {fileID: 2060024743}
   m_Layer: 8
   m_Name: DreamRocks
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8272,7 +10640,7 @@ Transform:
   m_GameObject: {fileID: 2060024741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.3, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 0
@@ -8310,7 +10678,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8330,7 +10698,7 @@ GameObject:
   - component: {fileID: 2065740845}
   m_Layer: 8
   m_Name: DreamRocks (11)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8343,7 +10711,7 @@ Transform:
   m_GameObject: {fileID: 2065740843}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 42.1, y: 5.1, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 6
@@ -8381,7 +10749,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -8471,6 +10839,77 @@ Transform:
   m_PrefabParentObject: {fileID: 4541202771374546, guid: ee161b08e2f48414eb1e7da31649c3eb,
     type: 2}
   m_PrefabInternal: {fileID: 1873306172}
+--- !u!1 &2106492223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2106492224}
+  - component: {fileID: 2106492225}
+  m_Layer: 9
+  m_Name: NightmareSky flip (3)
+  m_TagString: Background
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106492224
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106492223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 173.09, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1768940750}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2106492225
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106492223}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d9d803573fb7c4219b5624e464c46cb1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.800001, y: 15.240001}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &2112776951
 GameObject:
   m_ObjectHideFlags: 0
@@ -8482,7 +10921,7 @@ GameObject:
   - component: {fileID: 2112776953}
   m_Layer: 8
   m_Name: DreamRocks (14)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8495,7 +10934,7 @@ Transform:
   m_GameObject: {fileID: 2112776951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 57.299995, y: 4.9, z: -1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 82874573}
   m_RootOrder: 7
@@ -8533,7 +10972,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c7039d1c9257e45628876b22ba7a5b40, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8647,6 +11086,53 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee161b08e2f48414eb1e7da31649c3eb, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2128371842
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 671434485}
+    m_Modifications:
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 110.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374057261809592, guid: 6529608e4383c4b189161ec304410565, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264474645276956, guid: 6529608e4383c4b189161ec304410565,
+        type: 2}
+      propertyPath: jumpScript
+      value: 
+      objectReference: {fileID: 557309424}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6529608e4383c4b189161ec304410565, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2135048071
 Prefab:
