@@ -74,7 +74,7 @@ public class WorldManager : MonoBehaviour {
                 {
                     if (_player.onRope == joint.gameObject)
                         joint.GetComponent<RopeSegment>().ExitRope();
-                    if (joint.GetComponent<Collider2D>() != null)
+					if (joint.GetComponent<Collider2D>() != null && joint.GetComponent<RopeSegment>() != null)
                         joint.GetComponent<RopeSegment>().TogglePlayerCollision(show);
                 }
             }

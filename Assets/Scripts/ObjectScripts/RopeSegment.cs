@@ -17,7 +17,7 @@ public class RopeSegment : MonoBehaviour {
         }
     }
 
-    void Start()
+    void Awake()
     {
         _player = FindObjectOfType<Player>();
         _rb = GetComponent<Rigidbody2D>();
@@ -62,9 +62,12 @@ public class RopeSegment : MonoBehaviour {
 
     public void TogglePlayerCollision(bool enable)
     {
-        if (!enable)
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>());
-        else
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), false);
+		if (_player.GetComponent<Collider2D>())
+		{
+				if (!enable)
+					Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>());
+				else
+					Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), false);
+		}
     }
 }
