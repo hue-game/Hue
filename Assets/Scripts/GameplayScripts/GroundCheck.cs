@@ -6,9 +6,13 @@ public class GroundCheck : MonoBehaviour {
 
     private Jump _jumpScript;
 
+	Animator JumpAnimation;
+
 	// Use this for initialization
 	void Start () {
         _jumpScript = transform.parent.GetComponent<Jump>();	
+
+		JumpAnimation = GetComponent<Animator>(); 
 	}
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,5 +26,6 @@ public class GroundCheck : MonoBehaviour {
     private void OnTriggerLeave2D(Collider2D other)
     {
         _jumpScript.SetGrounded(false);
+		JumpAnimation.SetTrigger("Jump");
     }
 }

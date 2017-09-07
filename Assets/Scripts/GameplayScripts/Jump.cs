@@ -10,13 +10,9 @@ public class Jump : MonoBehaviour {
     private bool _grounded;
     private Rigidbody2D _rb;
 
-	Animator JumpAnimation;
-
-	
 	void Start () {
         _rb = GetComponent<Rigidbody2D>();
 
-		JumpAnimation = GetComponent<Animator>();
 	}
 
     //Default Jump Method: Uses jumpHeight from player to determine the jump strength
@@ -28,8 +24,6 @@ public class Jump : MonoBehaviour {
             _rb.velocity = new Vector2(_rb.velocity.x, 0); //Reset velocity so you can keep bouncing on the bounce pads
             _rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
             _grounded = false;
-
-			JumpAnimation.SetTrigger ("Jump");
         }
     }
 

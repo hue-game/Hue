@@ -73,15 +73,15 @@ public class Player : MonoBehaviour
         }
     }
 
-	void OnTriggerEnter2D(Collider2D hit) {
-		if (hit.tag == "Checkpoint") {
-			_checkpointManager.SetNewCheckpoint(hit.gameObject);
-		}
-
-		if (hit.tag == "Danger") {
-			Respawn(_checkpointManager.GetLastCheckpoint());
-		}
+    void OnTriggerEnter2D(Collider2D hit) {
+	if (hit.tag == "Checkpoint") {
+		_checkpointManager.SetNewCheckpoint(hit.gameObject);
 	}
+
+	if (hit.tag == "Danger") {
+		Respawn(_checkpointManager.GetLastCheckpoint());
+	}
+    } 
 }
 
 
