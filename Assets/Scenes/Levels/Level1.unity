@@ -1618,13 +1618,7 @@ Prefab:
       propertyPath: collectibleText
       value: 
       objectReference: {fileID: 492020319}
-    - target: {fileID: 58986834993472688, guid: a4c7911d082ac4230893a46db961433e,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 70398925632216364, guid: a4c7911d082ac4230893a46db961433e, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4c7911d082ac4230893a46db961433e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &478931210
@@ -2363,6 +2357,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1772596826850058, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
+      propertyPath: m_Name
+      value: Game camera
+      objectReference: {fileID: 0}
     - target: {fileID: 114084325994535644, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
         type: 2}
       propertyPath: player
@@ -2383,61 +2381,9 @@ Prefab:
       propertyPath: layers.Array.data[2]
       value: 
       objectReference: {fileID: 2082898825}
-    - target: {fileID: 1772596826850058, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
-      propertyPath: m_Name
-      value: Game camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 114993371855676230, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
-        type: 2}
-      propertyPath: smoothing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114993371855676230, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
-        type: 2}
-      propertyPath: parallaxScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114993371855676230, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
-        type: 2}
-      propertyPath: distanceFactor
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114993371855676230, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
-        type: 2}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &766620856
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 766620857}
-  m_Layer: 0
-  m_Name: Foreground
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &766620857
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 766620856}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767246069
 GameObject:
   m_ObjectHideFlags: 0
