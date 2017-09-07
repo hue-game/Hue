@@ -7,6 +7,15 @@ public class RopeSegment : MonoBehaviour {
     private Player _player;
     private Rigidbody2D _rb;
     private GameObject _parentRope;
+    private float _ropeLeaveMultiplier;
+
+    public float RopeLeaveMultiplier
+    {
+        set
+        {
+            _ropeLeaveMultiplier = value;
+        }
+    }
 
     void Start()
     {
@@ -46,7 +55,7 @@ public class RopeSegment : MonoBehaviour {
             _player.onRope = null;
             _player.transform.parent = null;
             _player.GetComponent<Rigidbody2D>().simulated = true;
-            _player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * 2;
+            _player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * _ropeLeaveMultiplier;
             _parentRope.GetComponent<Rope>().ChangeMass(gameObject, 1.0f);
         }
     }
