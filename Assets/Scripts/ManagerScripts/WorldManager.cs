@@ -59,10 +59,13 @@ public class WorldManager : MonoBehaviour {
         float opacity = show ? 1.0f : 0.1f;
         if (worldObject.GetComponent<SpriteRenderer>() != null)
         {
-            if (worldObject.tag != "Background")
-                worldObject.GetComponent<SpriteRenderer>().color = Color.white * opacity;
-            else
-                worldObject.SetActive(show);
+			if (worldObject.tag != "Background") {
+				Color woc = worldObject.GetComponent<SpriteRenderer> ().color;
+				woc.a = opacity;
+				worldObject.GetComponent<SpriteRenderer> ().color = woc;
+			} else {
+				worldObject.SetActive (show);
+			}
         }
 
         if (worldObject.GetComponent<Rope>() != null)

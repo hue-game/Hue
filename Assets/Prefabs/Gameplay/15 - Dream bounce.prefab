@@ -9,73 +9,82 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1938830713628582}
+  m_RootGameObject: {fileID: 1689982508388968}
   m_IsPrefabParent: 1
---- !u!1 &1938830713628582
+--- !u!1 &1689982508388968
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4830971081173736}
-  - component: {fileID: 61335999598777986}
-  - component: {fileID: 212440363938967690}
+  - component: {fileID: 4149930906147790}
+  - component: {fileID: 212712134948825750}
+  - component: {fileID: 61425546093068266}
+  - component: {fileID: 114060264131661196}
   m_Layer: 8
-  m_Name: DreamVoid
-  m_TagString: Danger
+  m_Name: 15 - Dream bounce
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4830971081173736
+  m_IsActive: 1
+--- !u!4 &4149930906147790
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938830713628582}
+  m_GameObject: {fileID: 1689982508388968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD:Assets/Prefabs/DreamVoid.prefab
-  m_LocalPosition: {x: 29.8, y: -17.8, z: -10}
-=======
-  m_LocalPosition: {x: 0, y: 0, z: -10}
->>>>>>> f99b38ba821262fe90e544ab443edd25d763022b:Assets/Prefabs/Gameplay/DreamVoid.prefab
+  m_LocalPosition: {x: 114.87262, y: -3.5261922, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61335999598777986
+--- !u!61 &61425546093068266
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938830713628582}
+  m_GameObject: {fileID: 1689982508388968}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014020681, y: -0.22487426}
+  m_Offset: {x: 0.0057220235, y: -0.005721286}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.72, y: 2.32}
-    newSize: {x: 3.72, y: 2.32}
+    oldSize: {x: 0.38, y: 0.11}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6867485, y: 0.4656353}
+  m_Size: {x: 0.32659322, y: 0.14174503}
   m_EdgeRadius: 0
---- !u!212 &212440363938967690
+--- !u!114 &114060264131661196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689982508388968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6c4e3ad85571840ab4cd9693b721ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 15
+--- !u!212 &212712134948825750
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938830713628582}
+  m_GameObject: {fileID: 1689982508388968}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -102,12 +111,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5d91d21d91fc4d29bed04e4ee4d4eda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9d3c29d844fe45d090026fc0d35058c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.72, y: 2.32}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

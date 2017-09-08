@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212726808900888392}
   - component: {fileID: 60429895089494382}
   m_Layer: 9
-  m_Name: HintStone
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
