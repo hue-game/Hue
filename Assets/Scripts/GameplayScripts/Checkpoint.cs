@@ -27,8 +27,7 @@ public class Checkpoint : MonoBehaviour {
 	public void CheckpointReached() {
 		if (!_checkpointReached) {
 			_checkpointReached = true;
-			Debug.Log (_spriteRenderer);
-			_spriteRenderer.sprite = checkpointReachedSprite;
+				_spriteRenderer.sprite = checkpointReachedSprite;
 		}
 	}
 }
