@@ -29,7 +29,7 @@ public class RopeSegment : MonoBehaviour {
         if (_player.onRope == gameObject)
         {
             _player.transform.position = transform.position;
-            _player.transform.localRotation = Quaternion.Inverse(transform.rotation);
+            _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 
@@ -55,6 +55,7 @@ public class RopeSegment : MonoBehaviour {
             _player.onRope = null;
             _player.transform.parent = null;
             _player.GetComponent<Rigidbody2D>().simulated = true;
+            _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             _player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * _ropeLeaveMultiplier;
             _parentRope.GetComponent<Rope>().ChangeMass(gameObject, 1.0f);
         }

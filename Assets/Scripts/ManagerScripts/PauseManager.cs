@@ -31,6 +31,21 @@ public class PauseManager : MonoBehaviour {
 		controlCanvas.SetActive(true);
 	}
 
-	void Back() {
-	}
+    void Update()
+    { 
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (_isPaused)
+                Resume();
+            else
+                Pause();
+        }  
+    }
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+            Pause();
+    }
+
 }

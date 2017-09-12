@@ -9,12 +9,14 @@ public class WorldManager : MonoBehaviour {
 	private List<GameObject> nightmareWorldObjects = new List<GameObject>();
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
     private Player _player;
+    private Rope[] ropes;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         //Get an array of all GameObjects in the scene
         _player = FindObjectOfType<Player>();
-		GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        ropes = FindObjectsOfType<Rope>();
+        GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 
 		foreach (GameObject gameObject in allGameObjects)
 		{
@@ -85,5 +87,15 @@ public class WorldManager : MonoBehaviour {
 
         if (worldObject.GetComponent<Collider2D>() != null)
             worldObject.GetComponent<Collider2D>().enabled = show;
+    }
+
+    public void ResetRopes()
+    {
+        //Reset ropes
+        foreach (Rope rope in ropes)
+        {
+            rope.DestroyRope();
+            rope.BuildRope();
+        }
     }
 }

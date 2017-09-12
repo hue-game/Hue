@@ -63,6 +63,8 @@ public class Player : MonoBehaviour
 	void Respawn(GameObject checkpoint) {
 		
 		transform.position = checkpoint.transform.position;
+
+        _worldManager.ResetRopes();
 	}
 
     //Check when the player collides with an object

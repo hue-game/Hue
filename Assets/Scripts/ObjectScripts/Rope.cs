@@ -48,6 +48,8 @@ public class Rope : MonoBehaviour
     private int segments = 0;                   //  DONT MESS!	The number of segments is calculated based off of your distance * resolution
     private bool rope = false;                       //  DONT MESS!	This is to keep errors out of your debug window! Keeps the rope from rendering when it doesnt exist...
     private Material ropeMaterial;
+    private GameObject ropeEnd;
+    private Vector3 ropeEndPosition;
 
     //Joint Settings
     //public Vector3 swingAxis = new Vector3(1, 1, 0);                 //  Sets which axis the character joint will swing on (1 axis is best for 2D, 2-3 axis is best for 3D (Default= 3 axis))
@@ -57,6 +59,8 @@ public class Rope : MonoBehaviour
 
     void Awake()
     {
+        ropeEnd = target.gameObject;
+        ropeEndPosition = ropeEnd.transform.localPosition;
         BuildRope();
     }
 
@@ -83,7 +87,7 @@ public class Rope : MonoBehaviour
             line.enabled = false;
     }
 
-    void BuildRope()
+    public void BuildRope()
     {
         line = gameObject.GetComponent<LineRenderer>();
         line.material = new Material(line.material);
@@ -165,7 +169,7 @@ public class Rope : MonoBehaviour
         }
     }
 
-    void DestroyRope()
+    public void DestroyRope()
     {
         // Stop Rendering Rope then Destroy all of its components
         rope = false;
@@ -177,5 +181,9 @@ public class Rope : MonoBehaviour
         segmentPos = new Vector3[0];
         joints = new GameObject[0];
         segments = 0;
+
+        ropeEnd.transform.localPosition = ropeEndPosition;
+        Destroy(ropeEnd.GetComponent<HingeJoint2D>());
+        ropeEnd.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
     }
 }
