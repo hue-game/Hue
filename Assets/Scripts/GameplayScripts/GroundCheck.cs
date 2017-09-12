@@ -26,6 +26,6 @@ public class GroundCheck : MonoBehaviour {
     private void OnTriggerLeave2D(Collider2D other)
     {
         _jumpScript.SetGrounded(false);
-		JumpAnimation.SetTrigger("Jump");
     }
+
 }
