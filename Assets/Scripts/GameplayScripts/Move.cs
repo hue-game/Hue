@@ -56,16 +56,19 @@ public class Move : MonoBehaviour {
             move = 1.0f;
 
 		WalkAnimation.SetFloat ("XMovement", Mathf.Abs (move));
-
-        //Apply the velocity of the player
-        if (GetComponent<Player>().onRope == null)
-            _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
-        else
-        {
-            Rigidbody2D _ropeRb = GetComponent<Player>().onRope.GetComponent<Rigidbody2D>();
-            if (move != 0)
-                _ropeRb.AddForce(new Vector2(move * ropeSwingSpeed, -ropeSwingDownwardForce));
-        }
+		_rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
+//
+//        //Apply the velocity of the player
+//		if (GetComponent<Player>().onRope == null)
+//            _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
+//		else if (GetComponent<LevelSelectionPlayer>().onRope == null)
+//			_rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
+//        else
+//        {
+//            Rigidbody2D _ropeRb = GetComponent<Player>().onRope.GetComponent<Rigidbody2D>();
+//            if (move != 0)
+//                _ropeRb.AddForce(new Vector2(move * ropeSwingSpeed, -ropeSwingDownwardForce));
+//        }
 
         //Call flip script to flip the character's sprite
         if (move > 0)

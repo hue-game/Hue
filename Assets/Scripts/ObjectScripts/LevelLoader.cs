@@ -4,25 +4,34 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Collider2D))]
 public class LevelLoader : MonoBehaviour {
-    public GameManager gameManager;
+	public GameObject levelTransitionCanvas;
 	public string levelToLoad;
-	public bool shouldInteract;
+	public bool interactable = false;
 
-	void LoadLevel(string levelToLoad) {
-		SceneManager.LoadSceneAsync (levelToLoad);
+	void InitLevel() {
+		levelTransitionCanvas.SetActive (true);
+		StartCoroutine (this.Transition());
 	}
-	
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
-		if (other.tag == "Player")
+		if (other.tag == "Player" && !this.interactable)
 		{
-			if (shouldInteract) {
-				
-			} else {
-				this.LoadLevel (levelToLoad);
-				// Load level
-			}
+			this.InitLevel ();
         }
     }
+		
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.tag == "Player" && this.interactable && Input.GetButtonDown("Jump")) {
+			this.InitLevel();
+		}
+	}
+
+	IEnumerator Transition() {
+		yield return new WaitForSeconds(3);
+		SceneManager.LoadScene (this.levelToLoad);
+	}
 }

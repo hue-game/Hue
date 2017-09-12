@@ -14,15 +14,11 @@ public class GameManager : MonoBehaviour {
     {
     }
 
-	public void StartLevel() {
-		SceneManager.LoadScene ("Level1");
-	}
-
 	public void RestartLevel() {
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 
 	public void StopLevel() {
-		SceneManager.LoadScene ("MainMenu");
+		SceneManager.LoadScene ("InteractiveMainMenu");
 	}
 }

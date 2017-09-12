@@ -110,7 +110,7 @@ MonoBehaviour:
   smoothTimeX: 0.1
   smoothTimeY: 0.25
   offSetX: 0
-  offSetY: -1
+  offSetY: -2
 --- !u!114 &114993371855676230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,10 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceFactor: 3
   speed: 2
-  layers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  layers: []
 --- !u!124 &124506822372921556
 Behaviour:
   m_ObjectHideFlags: 1
