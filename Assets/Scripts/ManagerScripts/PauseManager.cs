@@ -12,8 +12,8 @@ public class PauseManager : MonoBehaviour {
 	void Start () {
 		pauseOverlayCanvas.SetActive (false);
 		pauseUICanvas.SetActive (true);
-		controlCanvas.SetActive (true);
-	}
+        controlCanvas.SetActive(true);
+    }
 
 	public void Pause () {
 		_isPaused = true;
@@ -44,8 +44,10 @@ public class PauseManager : MonoBehaviour {
 
     void OnApplicationPause(bool pauseStatus)
     {
+        #if !UNITY_EDITOR
         if (pauseStatus)
             Pause();
+        #endif
     }
 
 }

@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	private WorldManager _worldManager;
     private Move _moveScript;
     private Jump _jumpScript;
+    private InputManager _input;
 
     private void Awake()
     {
@@ -31,32 +32,40 @@ public class Player : MonoBehaviour
         _moveScript = GetComponent<Move>();
         _jumpScript = GetComponent<Jump>();
 		_worldManager = GetComponent<WorldManager>();
+        _input = GetComponent<InputManager>();
         onRope = null;
     }
 
     // FixedUpdate is called once per frame after physics have applied
     private void FixedUpdate()
     {
-        _moveScript.MoveCharacter();
+        //_moveScript.MoveCharacter();
+        _moveScript.MoveAnalog(_input.movementX);
     }
 
     //Check for key inputs every frame
     private void Update()
     {
-        #if UNITY_STANDALONE || UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-            _moveScript.MoveLeft();
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-            _moveScript.MoveLeft();
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            _moveScript.MoveRight();
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-            _moveScript.MoveRight();
-
-        if (Input.GetButtonDown("Jump"))
+        if (_input.jump)
             _jumpScript.JumpUp();
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+
+        if (_input.Switch)
             _worldManager.SwitchWorld();
+
+        #if UNITY_STANDALONE || UNITY_EDITOR
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //    _moveScript.MoveLeft();
+        //if (Input.GetKeyUp(KeyCode.LeftArrow))
+        //    _moveScript.MoveLeft();
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //    _moveScript.MoveRight();
+        //if (Input.GetKeyUp(KeyCode.RightArrow))
+        //    _moveScript.MoveRight();
+
+        //if (Input.GetButtonDown("Jump"))
+        //    _jumpScript.JumpUp();
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //    _worldManager.SwitchWorld();
         #endif
     }
 
