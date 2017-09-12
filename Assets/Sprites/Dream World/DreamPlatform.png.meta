@@ -1,18 +1,21 @@
 fileFormatVersion: 2
-guid: 95985d989fdcb4466ac2ac6c5a989af0
-timeCreated: 1505214802
+guid: 208bfd4826d81471b8ea2860a78aa119
+timeCreated: 1505212547
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: DreamVoid_0
-    21300002: DreamVoid_1
-    21300004: DreamVoid_2
-    21300006: DreamVoid_3
-    21300008: DreamVoid_4
-    21300010: DreamVoid_5
-    21300012: DreamVoid_6
-    21300014: DreamVoid_7
-    21300016: DreamVoid_8
+    21300000: DreamPlatform_0
+    21300002: DreamPlatform_1
+    21300004: DreamPlatform_2
+    21300006: DreamPlatform_3
+    21300008: DreamPlatform_4
+    21300010: DreamPlatform_5
+    21300012: DreamPlatform_6
+    21300014: DreamPlatform_7
+    21300016: DreamPlatform_8
+    21300018: DreamPlatform_9
+    21300020: DreamPlatform_10
+    21300022: DreamPlatform_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -100,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DreamVoid_0
+      name: DreamPlatform_0
       rect:
         serializedVersion: 2
         x: 0
@@ -108,13 +111,13 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_1
+      name: DreamPlatform_1
       rect:
         serializedVersion: 2
         x: 100
@@ -122,13 +125,13 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_2
+      name: DreamPlatform_2
       rect:
         serializedVersion: 2
         x: 200
@@ -136,13 +139,27 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_3
+      name: DreamPlatform_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DreamPlatform_4
       rect:
         serializedVersion: 2
         x: 0
@@ -150,13 +167,13 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_4
+      name: DreamPlatform_5
       rect:
         serializedVersion: 2
         x: 100
@@ -164,13 +181,13 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_5
+      name: DreamPlatform_6
       rect:
         serializedVersion: 2
         x: 200
@@ -178,13 +195,27 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_6
+      name: DreamPlatform_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DreamPlatform_8
       rect:
         serializedVersion: 2
         x: 0
@@ -192,13 +223,13 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_7
+      name: DreamPlatform_9
       rect:
         serializedVersion: 2
         x: 100
@@ -206,13 +237,13 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: DreamVoid_8
+      name: DreamPlatform_10
       rect:
         serializedVersion: 2
         x: 200
@@ -220,7 +251,21 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DreamPlatform_11
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -44,14 +44,14 @@ public class Jump : MonoBehaviour {
     public bool GetGrounded()
     {
         return _grounded;
-		JumpAnimation.SetTrigger ("Land");
-		JumpAnimation.ResetTrigger ("Jump");
+
     }
 
     public void SetGrounded(bool grounded)
     {
         _grounded = grounded;
-
+		JumpAnimation.SetTrigger ("Land");
+		JumpAnimation.ResetTrigger ("Jump");
     }
 
 	//void Update() {
