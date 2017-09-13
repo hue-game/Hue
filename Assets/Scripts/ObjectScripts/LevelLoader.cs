@@ -10,6 +10,8 @@ public class LevelLoader : MonoBehaviour {
 	public string levelToLoad;
 	public bool interactable = false;
 
+    private bool touching = false;
+
 	void InitLevel() {
 		levelTransitionCanvas.SetActive (true);
 		StartCoroutine (this.Transition());
@@ -18,17 +20,27 @@ public class LevelLoader : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-		if (other.tag == "Player" && !this.interactable)
-		{
-			this.InitLevel ();
-        }
+        if (other.tag == "Player" && interactable)
+            touching = true;
     }
-		
-	void OnTriggerStay2D(Collider2D other) {
-		if (other.tag == "Player" && this.interactable && Input.GetButtonDown("Jump")) {
-			this.InitLevel();
-		}
-	}
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Player" && interactable)
+            touching = true;
+    }
+
+    void OnTriggerLeave2D(Collider2D other)
+    {
+        touching = false;
+    }
+
+    public void PlayerInteract()
+    {
+        if (touching && interactable)
+            InitLevel();
+    }
+
 
 	IEnumerator Transition() {
 		yield return new WaitForSeconds(3);

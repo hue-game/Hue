@@ -173,7 +173,7 @@ public class Rope : MonoBehaviour
     {
         // Stop Rendering Rope then Destroy all of its components
         rope = false;
-        for (int dj = 0; dj < joints.Length - 1; dj++)
+        for (int dj = 0; dj < joints.Length; dj++)
         {
             Destroy(joints[dj]);
         }

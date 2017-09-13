@@ -15,7 +15,7 @@ public class Collectible : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
-        if (hit.name == "Player")
+        if (hit.tag == "Player")
         {
             _collectibleManager.AddCollectible(gameObject);
             GetComponent<Collider2D>().enabled = false;

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour {
 
-    public VirtualJoystick joystick;
     [HideInInspector]
     public float movementX;
     [HideInInspector]
@@ -14,28 +13,23 @@ public class InputManager : MonoBehaviour {
     [HideInInspector]
     public bool Switch;
 
-    private float _movementXABS;
-    private float _movementYABS;
-    private Move _moveScript;
-    private Jump _jumpScript;
-    private WorldManager _worldManager;
+    private VirtualJoystick joystick;
 
 	// Use this for initialization
 	void Start () {
+        joystick = FindObjectOfType<VirtualJoystick>();
 	}
 	
     //Check for key inputs every frame
     private void Update()
     {
-        _movementXABS = joystick.InputDirection.x;
-        _movementYABS = joystick.InputDirection.y;
+        movementX = joystick.InputDirection.x;
+        movementY = joystick.InputDirection.y;
 
         #if UNITY_STANDALONE || UNITY_EDITOR
-                if (_movementXABS == 0)
-                    _movementXABS = Input.GetAxisRaw("Horizontal");
+        if (movementX == 0)
+            movementX = Input.GetAxisRaw("Horizontal");
         #endif
-
-        movementX = _movementXABS;
 
         jump = Input.GetButton("Jump");
         Switch = Input.GetKeyDown(KeyCode.LeftControl);

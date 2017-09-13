@@ -8,13 +8,13 @@ public class WorldManager : MonoBehaviour {
 	private bool worldType = false;
 	private List<GameObject> nightmareWorldObjects = new List<GameObject>();
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
-    private Player _player;
+    private IPlayer _player;
     private Rope[] ropes;
 
     // Use this for initialization
     void Start () {
         //Get an array of all GameObjects in the scene
-        _player = FindObjectOfType<Player>();
+        _player = FindObjectOfType<IPlayer>();
         ropes = FindObjectsOfType<Rope>();
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 

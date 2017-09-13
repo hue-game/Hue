@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
-
     private Image _joystickContainer;
     private Image _joystickKnob;
 
@@ -16,11 +15,6 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         _joystickContainer = GetComponent<Image>();
         _joystickKnob = transform.GetChild(0).GetComponent<Image>();
         InputDirection = Vector2.zero;
-    }
-
-    void Update()
-    {
-        //print(InputDirection);
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -41,54 +41,16 @@ public class Move : MonoBehaviour {
         _moveRight = !_moveRight;
     }
 
-    public void MoveCharacter()
-    {
-        float move = 0.0f;
-        if (_moveLeft && !_moveRight)
-            move = -1.0f;
-        else if (!_moveRight && !_moveLeft)
-            move = 0.0f;
-        else if (!_moveLeft && _moveRight)
-            move = 1.0f;
-        else if (_moveLeft && _moveRight && (_lastDirection == "left"))
-            move = -1.0f;
-        else if (_moveLeft && _moveRight && (_lastDirection == "right"))
-            move = 1.0f;
-
-		WalkAnimation.SetFloat ("XMovement", Mathf.Abs (move));
-		_rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
-//
-//        //Apply the velocity of the player
-//		if (GetComponent<Player>().onRope == null)
-//            _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
-//		else if (GetComponent<LevelSelectionPlayer>().onRope == null)
-//			_rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
-//        else
-//        {
-//            Rigidbody2D _ropeRb = GetComponent<Player>().onRope.GetComponent<Rigidbody2D>();
-//            if (move != 0)
-//                _ropeRb.AddForce(new Vector2(move * ropeSwingSpeed, -ropeSwingDownwardForce));
-//        }
-
-        //Call flip script to flip the character's sprite
-        if (move > 0)
-            _flipScript.FlipSprite(false);
-        else if (move < 0)
-            _flipScript.FlipSprite(true);			
-    }
-
     public void MoveAnalog(float move)
     {
-        //float move = 0.0f;
-
         WalkAnimation.SetFloat("XMovement", Mathf.Abs(move));
 
         //Apply the velocity of the player
-        if (GetComponent<Player>().onRope == null)
+        if (GetComponent<IPlayer>().onRope == null)
             _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
         else
         {
-            Rigidbody2D _ropeRb = GetComponent<Player>().onRope.GetComponent<Rigidbody2D>();
+            Rigidbody2D _ropeRb = GetComponent<IPlayer>().onRope.GetComponent<Rigidbody2D>();
             if (move != 0)
                 _ropeRb.AddForce(new Vector2(move * ropeSwingSpeed, -ropeSwingDownwardForce));
         }

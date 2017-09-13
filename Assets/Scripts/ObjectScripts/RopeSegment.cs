@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RopeSegment : MonoBehaviour {
 
-    private Player _player;
+    private IPlayer _player;
     private Rigidbody2D _rb;
     private GameObject _parentRope;
     private float _ropeLeaveMultiplier;
@@ -19,7 +19,7 @@ public class RopeSegment : MonoBehaviour {
 
     void Awake()
     {
-        _player = FindObjectOfType<Player>();
+        _player = FindObjectOfType<IPlayer>();
         _rb = GetComponent<Rigidbody2D>();
         _parentRope = transform.parent.gameObject;
     }

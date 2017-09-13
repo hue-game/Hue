@@ -17,8 +17,7 @@ public class AutomaticMove : MonoBehaviour {
 	[Range(0, 25)]
 	public float offsetFromCenterY = 2f;
 
-    public Rigidbody2D _playerBody;
-    
+    private Rigidbody2D _playerBody;
     private Rigidbody2D _body;
     private Vector3 _originalPosition;
 	private float _activeVelocityX;
@@ -27,6 +26,7 @@ public class AutomaticMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        _playerBody = FindObjectOfType<IPlayer>().GetComponent<Rigidbody2D>();
 		_body = GetComponent<Rigidbody2D>();
 		_originalPosition = transform.position;
 		_activeVelocityX = movementSpeedX;
