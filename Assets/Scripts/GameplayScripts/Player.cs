@@ -46,6 +46,7 @@ public class Player : IPlayer
 		transform.position = checkpoint.transform.position;
 
         _worldManager.ResetRopes();
+        _worldManager.ResetTriggers();
 	}
 
     //Check when the player collides with an object
