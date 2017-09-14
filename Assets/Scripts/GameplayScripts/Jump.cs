@@ -6,30 +6,47 @@ using UnityEngine;
 public class Jump : MonoBehaviour {
 
     public float jumpHeight;
+    public float jumpX;
+    public float jumpY;
 
-    private bool _grounded;
+    private bool _groundedLeft;
+    private bool _groundedRight;
+    [HideInInspector]
+    public bool _inAir;
     private Rigidbody2D _rb;
+    private InputManager _inputManager;
 
 	Animator JumpAnimation;
 
 	void Start () {
         _rb = GetComponent<Rigidbody2D>();
-
+        _inputManager = GetComponent<InputManager>();
 		JumpAnimation = GetComponent<Animator> ();
 
 	}
 
+    void LateUpdate()
+    {
+        if (_inAir && _groundedLeft && _groundedRight)
+        {
+            JumpAnimation.SetTrigger("Land");
+            JumpAnimation.ResetTrigger("Jump");
+            _inAir = false;
+        }
+        LedgeJump();
+    }
+
     //Default Jump Method: Uses jumpHeight from player to determine the jump strength
     public void JumpUp()
     {
-        //print(_grounded);
-        if (_grounded)
+        if (_groundedLeft || _groundedRight)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 0); //Reset velocity so you can keep bouncing on the bounce pads
             _rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-            _grounded = false;
-			}
-		JumpAnimation.SetTrigger ("Jump");
+            _groundedLeft = false;
+            _groundedRight = false;
+        }
+        JumpAnimation.SetTrigger ("Jump");
     }
 
     //Jump Method for Bounce Pads: Uses strength from the respective bounce pad to determine the jump strength
@@ -41,27 +58,35 @@ public class Jump : MonoBehaviour {
 		JumpAnimation.SetTrigger ("Jump");
     }
 
-    public bool GetGrounded()
+    public void LedgeJump()
     {
-        return _grounded;
-
+        if(!_inAir)
+        {
+            if (_inputManager.movementX > 0.5f && !_groundedRight && _groundedLeft)
+            {
+                _rb.AddForce(new Vector2(jumpX, jumpY), ForceMode2D.Impulse);
+                JumpAnimation.SetTrigger("Jump");
+                _groundedLeft = false;
+                _groundedRight = false;
+                _inAir = true;
+            }
+            else if (_inputManager.movementX < -0.5f && _groundedRight && !_groundedLeft)
+            {
+                _rb.AddForce(new Vector2(-jumpX, jumpY), ForceMode2D.Impulse);
+                JumpAnimation.SetTrigger("Jump");
+                _groundedLeft = false;
+                _groundedRight = false;
+                _inAir = true;
+            }
+        }
     }
 
-    public void SetGrounded(bool grounded)
+    public void SetGrounded(bool grounded, bool leftFoot)
     {
-        _grounded = grounded;
-		JumpAnimation.SetTrigger ("Land");
-		JumpAnimation.ResetTrigger ("Jump");
+        if (leftFoot)
+            _groundedLeft = grounded;
+        else
+            _groundedRight = grounded;
     }
-
-	//void Update() {
-	//
-	//	if (_grounded = false) {
-	//		JumpAnimation.SetTrigger ("Jump");
-	//
-	//	} else if (_grounded) {
-	//		JumpAnimation.SetTrigger("Land");
-	//	}
-	//}
 
 }

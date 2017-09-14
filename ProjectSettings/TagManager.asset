@@ -7,6 +7,7 @@ TagManager:
   - Danger
   - Checkpoint
   - Background
+  - Feet
   layers:
   - Default
   - TransparentFX

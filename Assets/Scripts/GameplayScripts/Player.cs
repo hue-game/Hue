@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Jump))]
 [RequireComponent(typeof(WorldManager))]
 [RequireComponent(typeof(CheckpointManager))]
 [RequireComponent(typeof(CollectibleManager))]
@@ -13,7 +12,6 @@ public class Player : IPlayer
 	public float respawnTime = 3.0f;
 	private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
-    private Jump _jumpScript;
 
     private void Awake()
     {

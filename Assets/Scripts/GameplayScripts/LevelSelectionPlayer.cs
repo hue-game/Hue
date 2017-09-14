@@ -10,6 +10,7 @@ public class LevelSelectionPlayer : IPlayer
     private void Awake()
 	{
 		_moveScript = GetComponent<Move>();
+        _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
         _levelLoader = FindObjectOfType<LevelLoader>();
         onRope = null;

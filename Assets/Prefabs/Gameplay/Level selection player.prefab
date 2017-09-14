@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114103625026346684}
   - component: {fileID: 111867139789119110}
   - component: {fileID: 95922624575521722}
+  - component: {fileID: 114345480134716288}
   m_Layer: 0
   m_Name: Level selection player
   m_TagString: Player
@@ -139,6 +140,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onRope: {fileID: 0}
+--- !u!114 &114345480134716288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402900644612964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8489c2c4f41bf9a4ca3b50b55e8a826a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementX: 0
+  movementY: 0
+  jump: 0
+  Switch: 0
 --- !u!114 &114887820062875926
 MonoBehaviour:
   m_ObjectHideFlags: 1

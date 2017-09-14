@@ -47,7 +47,10 @@ public class Move : MonoBehaviour {
 
         //Apply the velocity of the player
         if (GetComponent<IPlayer>().onRope == null)
-            _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
+        {
+            if (!GetComponent<Jump>()._inAir)
+                _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
+        }
         else
         {
             Rigidbody2D _ropeRb = GetComponent<IPlayer>().onRope.GetComponent<Rigidbody2D>();

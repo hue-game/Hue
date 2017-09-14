@@ -62,8 +62,6 @@ public class AutomaticMove : MonoBehaviour {
 			}
 		}
 			
-
-
 		_body.velocity = new Vector2 (_activeVelocityX, _activeVelocityY);
         if (_playerOnPlatform)
         {
@@ -74,13 +72,13 @@ public class AutomaticMove : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "PlayerFeetCollider")
+        if (other.gameObject.tag == "Feet")
             _playerOnPlatform = true;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.name == "PlayerFeetCollider")
+        if (other.gameObject.tag == "Feet")
             _playerOnPlatform = true;
     }
 }
