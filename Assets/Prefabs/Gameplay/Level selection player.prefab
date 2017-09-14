@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 111867139789119110}
   - component: {fileID: 95922624575521722}
   - component: {fileID: 114345480134716288}
+  - component: {fileID: 114915581052134818}
   m_Layer: 0
   m_Name: Level selection player
   m_TagString: Player
@@ -166,6 +167,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f9e9f9b08f23439efe04e0147b90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114915581052134818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402900644612964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ecad58368a3554aa0a2a2d38d62961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 12.5
+  jumpX: 1.2
+  jumpY: 7
+  _inAir: 0
 --- !u!212 &212829239695847410
 SpriteRenderer:
   m_ObjectHideFlags: 1

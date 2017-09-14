@@ -11,9 +11,6 @@ public class Move : MonoBehaviour {
     public float ropeSwingSpeed = 60.0f;
     public float ropeSwingDownwardForce = 20.0f;
 
-    private bool _moveLeft;
-    private bool _moveRight;
-    private string _lastDirection;
     private Rigidbody2D _rb;
     private Flip _flipScript;
 
@@ -27,20 +24,6 @@ public class Move : MonoBehaviour {
 		WalkAnimation = GetComponent<Animator> ();
 	}
 	
-    public void MoveLeft()
-    {
-        if (!_moveLeft)
-            _lastDirection = "left";
-        _moveLeft = !_moveLeft;
-    }
-
-    public void MoveRight()
-    {
-        if (!_moveRight)
-            _lastDirection = "right";
-        _moveRight = !_moveRight;
-    }
-
     public void MoveAnalog(float move)
     {
         WalkAnimation.SetFloat("XMovement", Mathf.Abs(move));
