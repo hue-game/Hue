@@ -24,27 +24,21 @@ public class Move : MonoBehaviour {
 		WalkAnimation = GetComponent<Animator> ();
 	}
 	
-    public void MoveAnalog(float move)
+    public void MoveAnalog(float moveX, float moveY)
     {
-        WalkAnimation.SetFloat("XMovement", Mathf.Abs(move));
+        WalkAnimation.SetFloat("XMovement", Mathf.Abs(moveX));
 
         //Apply the velocity of the player
         if (GetComponent<IPlayer>().onRope == null)
         {
             if (!GetComponent<Jump>()._inAir)
-                _rb.velocity = new Vector2(move * runSpeed, _rb.velocity.y);
+                _rb.velocity = new Vector2(moveX * runSpeed, _rb.velocity.y);
         }
-        else
-        {
-            Rigidbody2D _ropeRb = GetComponent<IPlayer>().onRope.GetComponent<Rigidbody2D>();
-            if (move != 0)
-                _ropeRb.AddForce(new Vector2(move * ropeSwingSpeed, -ropeSwingDownwardForce));
-        }
-
+   
         //Call flip script to flip the character's sprite
-        if (move > 0)
+        if (moveX > 0)
             _flipScript.FlipSprite(false);
-        else if (move < 0)
+        else if (moveX < 0)
             _flipScript.FlipSprite(true);
     }
 }

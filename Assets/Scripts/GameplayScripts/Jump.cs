@@ -11,7 +11,7 @@ public class Jump : MonoBehaviour {
 
     private bool _groundedLeft;
     private bool _groundedRight;
-    [HideInInspector]
+    //[HideInInspector]
     public bool _inAir;
     private Rigidbody2D _rb;
     private InputManager _inputManager;
@@ -47,6 +47,8 @@ public class Jump : MonoBehaviour {
             _groundedRight = false;
         }
         JumpAnimation.SetTrigger ("Jump");
+        _inAir = true;
+
     }
 
     //Jump Method for Bounce Pads: Uses strength from the respective bounce pad to determine the jump strength
@@ -56,6 +58,10 @@ public class Jump : MonoBehaviour {
         _rb.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
 
 		JumpAnimation.SetTrigger ("Jump");
+        _groundedLeft = false;
+        _groundedRight = false;
+        _inAir = true;
+
     }
 
     public void LedgeJump()

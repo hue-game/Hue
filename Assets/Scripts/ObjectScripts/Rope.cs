@@ -50,7 +50,11 @@ public class Rope : MonoBehaviour
     private Material ropeMaterial;
     private GameObject ropeEnd;
     private Vector3 ropeEndPosition;
+    private InputManager _input;
+    private IPlayer _player;
 
+    private float ropeSwingSpeed;
+    private float ropeSwingDownwardForce;
     //Joint Settings
     //public Vector3 swingAxis = new Vector3(1, 1, 0);                 //  Sets which axis the character joint will swing on (1 axis is best for 2D, 2-3 axis is best for 3D (Default= 3 axis))
     //public float lowTwistLimit = -100.0F;                   //  The lower limit around the primary axis of the character joint. 
@@ -62,6 +66,10 @@ public class Rope : MonoBehaviour
         ropeEnd = target.gameObject;
         ropeEndPosition = ropeEnd.transform.localPosition;
         BuildRope();
+        _input = FindObjectOfType<InputManager>();
+        _player = FindObjectOfType<IPlayer>();
+        ropeSwingSpeed = _player.GetComponent<Move>().ropeSwingSpeed;
+        ropeSwingDownwardForce = _player.GetComponent<Move>().ropeSwingDownwardForce;
     }
 
     void LateUpdate()
@@ -85,6 +93,19 @@ public class Rope : MonoBehaviour
         }
         else
             line.enabled = false;
+    }
+
+    void FixedUpdate()
+    {
+        GameObject _seg = _player.onRope;
+        if (_seg != null)
+        {
+            float moveX = _input.movementX;
+            Rigidbody2D _ropeRb = _seg.GetComponent<Rigidbody2D>();
+            if (moveX != 0)
+                _ropeRb.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
+        }
+      
     }
 
     public void BuildRope()
@@ -154,9 +175,12 @@ public class Rope : MonoBehaviour
         for (int i = 0; i < joints.Length - 1; i++)
         {
             if (joints[i] == joint)
-                foundJoint = true;
-            if (foundJoint)
                 joints[i].GetComponent<Rigidbody2D>().mass = mass;
+                
+            //if (joints[i] == joint)
+            //    foundJoint = true;
+            //if (foundJoint)
+            //    joints[i].GetComponent<Rigidbody2D>().mass = mass;
         }
         foundJoint = false;
     }

@@ -19,7 +19,7 @@ public class LevelSelectionPlayer : IPlayer
     // FixedUpdate is called once per frame after physics have applied
     private void FixedUpdate()
     {
-        _moveScript.MoveAnalog(_input.movementX);
+        _moveScript.MoveAnalog(_input.movementX, _input.movementY);
     }
 
     //Check for key inputs every frame
