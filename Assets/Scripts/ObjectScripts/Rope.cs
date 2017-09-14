@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 // Require a Rigidbody and LineRenderer object for easier assembly
 [RequireComponent(typeof(Rigidbody2D))]
@@ -98,14 +99,41 @@ public class Rope : MonoBehaviour
     void FixedUpdate()
     {
         GameObject _seg = _player.onRope;
+
         if (_seg != null)
         {
-            float moveX = _input.movementX;
-            Rigidbody2D _ropeRb = _seg.GetComponent<Rigidbody2D>();
-            if (moveX != 0)
-                _ropeRb.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
+            if (Array.IndexOf(joints, _seg) > -1)
+            {
+                float moveX = _input.movementX;
+                float moveY = _input.movementY;
+                int moveToJointIndex = -1;
+
+                Rigidbody2D _ropeRb = _seg.GetComponent<Rigidbody2D>();
+                if (moveX != 0)
+                    _ropeRb.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
+
+                if (moveY > 0)
+                {
+                    if (_seg.GetComponent<RopeSegment>().index > 5)
+                        moveToJointIndex = _seg.GetComponent<RopeSegment>().index - 1;
+                }
+                else if (moveY < 0)
+                {
+                    if (_seg.GetComponent<RopeSegment>().index < joints.Length - 1)
+                        moveToJointIndex = _seg.GetComponent<RopeSegment>().index + 1;
+                }
+
+                if (moveToJointIndex != -1)
+                {
+                    _player.transform.position = Vector2.MoveTowards(_player.transform.position, joints[moveToJointIndex].transform.position, 1.5f * Mathf.Abs(moveY) * Time.deltaTime);
+                    float distanceToCurrent = Vector2.Distance(_player.transform.position, _seg.transform.position);
+                    float distanceToNext = Vector2.Distance(_player.transform.position, joints[moveToJointIndex].transform.position);
+
+                    if (distanceToNext < distanceToCurrent)
+                        ChangeSegment(joints[moveToJointIndex]);
+                }
+            }
         }
-      
     }
 
     public void BuildRope()
@@ -155,6 +183,7 @@ public class Rope : MonoBehaviour
         HingeJoint2D ph = joints[n].AddComponent<HingeJoint2D>();
         joints[n].AddComponent<RopeSegment>();
         joints[n].GetComponent<RopeSegment>().RopeLeaveMultiplier = ropeLeaveMultiplier;
+        joints[n].GetComponent<RopeSegment>().index = n;
         joints[n].transform.position = segmentPos[n];
 
         rigid.drag = ropeDrag;
@@ -167,6 +196,12 @@ public class Rope : MonoBehaviour
         else
             ph.connectedBody = joints[n - 1].GetComponent<Rigidbody2D>();
 
+    }
+
+    private void ChangeSegment(GameObject segment)
+    {
+        _player.onRope = segment;
+        _player.transform.parent = segment.transform;
     }
 
     public void ChangeMass(GameObject joint, float mass)

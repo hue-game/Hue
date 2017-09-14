@@ -389,8 +389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 3.5
-  ropeSwingSpeed: 60
-  ropeSwingDownwardForce: 20
+  ropeSwingSpeed: 50
+  ropeSwingDownwardForce: 2
 --- !u!114 &114838504110892400
 MonoBehaviour:
   m_ObjectHideFlags: 1

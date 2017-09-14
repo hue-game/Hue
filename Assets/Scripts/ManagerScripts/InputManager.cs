@@ -27,8 +27,11 @@ public class InputManager : MonoBehaviour {
         movementY = joystick.InputDirection.y;
 
         #if UNITY_STANDALONE || UNITY_EDITOR
-        if (movementX == 0)
+        if (movementX == 0 || movementY == 0)
+        {
             movementX = Input.GetAxisRaw("Horizontal");
+            movementY = Input.GetAxisRaw("Vertical");
+        }
         #endif
 
         jump = Input.GetButton("Jump");

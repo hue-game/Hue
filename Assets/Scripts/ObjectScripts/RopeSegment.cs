@@ -9,6 +9,8 @@ public class RopeSegment : MonoBehaviour {
     private GameObject _parentRope;
     private float _ropeLeaveMultiplier;
     private float _mass;
+    [HideInInspector]
+    public int index;
 
     public float RopeLeaveMultiplier
     {
@@ -26,13 +28,10 @@ public class RopeSegment : MonoBehaviour {
         _mass = _parentRope.GetComponent<Rope>().ropeMass;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (_player.onRope == gameObject)
-        {
-            _player.transform.position = transform.position;
             _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -42,8 +41,9 @@ public class RopeSegment : MonoBehaviour {
             if (other.gameObject == _player.gameObject)
             {
                 _player.onRope = gameObject;
-                _player.transform.parent = gameObject.transform;
-                _rb.AddForce(new Vector2(_player.GetComponent<Rigidbody2D>().velocity.x / 2, -5.0f), ForceMode2D.Impulse);
+                _player.transform.parent = transform;
+                _player.transform.position = transform.position;
+                //_rb.AddForce(new Vector2(_player.GetComponent<Rigidbody2D>().velocity.x / 2, -5.0f), ForceMode2D.Impulse);
                 _player.GetComponent<Rigidbody2D>().simulated = false;
                 //_parentRope.GetComponent<Rope>().ChangeMass(gameObject, _mass * 2f);
             }
@@ -57,6 +57,7 @@ public class RopeSegment : MonoBehaviour {
             _player.onRope = null;
             _player.transform.parent = null;
             _player.GetComponent<Rigidbody2D>().simulated = true;
+            _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             _player.GetComponent<Rigidbody2D>().AddForce(_rb.velocity * 2, ForceMode2D.Impulse);
 
@@ -67,8 +68,9 @@ public class RopeSegment : MonoBehaviour {
             //Vector2 dismount1 = Vector2.ClampMagnitude(_rb.velocity, 3);
             //print(dismount1);
             //_player.GetComponent<Rigidbody2D>().AddForce(dismount1 * 2, ForceMode2D.Impulse);
-
             //_player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * _ropeLeaveMultiplier;
+            print(_rb.velocity);
+            //_player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * 2;
             //_parentRope.GetComponent<Rope>().ChangeMass(gameObject, _mass);
         }
     }

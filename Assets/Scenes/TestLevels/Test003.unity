@@ -3581,6 +3581,20 @@ Prefab:
       propertyPath: defaultCheckpoint
       value: 
       objectReference: {fileID: 1558281162}
+    - target: {fileID: 1897117157980912, guid: a4c7911d082ac4230893a46db961433e, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114813851952441414, guid: a4c7911d082ac4230893a46db961433e,
+        type: 2}
+      propertyPath: ropeSwingSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114813851952441414, guid: a4c7911d082ac4230893a46db961433e,
+        type: 2}
+      propertyPath: ropeSwingDownwardForce
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4c7911d082ac4230893a46db961433e, type: 2}
   m_IsPrefabParent: 0
@@ -6114,7 +6128,7 @@ Prefab:
     - target: {fileID: 114831843447258350, guid: ee52748527c29499e9432b80a7141e91,
         type: 2}
       propertyPath: ropeLeaveMultiplier
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1033653171705122, guid: ee52748527c29499e9432b80a7141e91, type: 2}
       propertyPath: m_Layer
@@ -6123,6 +6137,20 @@ Prefab:
     - target: {fileID: 1381109770618662, guid: ee52748527c29499e9432b80a7141e91, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984016954557658, guid: ee52748527c29499e9432b80a7141e91, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120935991304344128, guid: ee52748527c29499e9432b80a7141e91,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212846664252325058, guid: ee52748527c29499e9432b80a7141e91,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee52748527c29499e9432b80a7141e91, type: 2}
@@ -11654,6 +11682,10 @@ Prefab:
     - target: {fileID: 1846966645997306, guid: 328006c385a344732bb4122c5066c362, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846966645997306, guid: 328006c385a344732bb4122c5066c362, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 328006c385a344732bb4122c5066c362, type: 2}
