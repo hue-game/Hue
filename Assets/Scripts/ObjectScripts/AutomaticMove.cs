@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
 public class AutomaticMove : MonoBehaviour {
 	[Range(-10, 10)]
 	public float movementSpeedX = 2f;
