@@ -8,41 +8,68 @@ using UnityEngine.UI;
 public class LevelLoader : MonoBehaviour {
 	public GameObject levelTransitionCanvas;
 	public string levelToLoad;
-	public bool interactable = false;
 
     private bool touching = false;
+    private GameManager _gameManager;
 
-	void InitLevel() {
-		levelTransitionCanvas.SetActive (true);
-		StartCoroutine (this.Transition());
-	}
-
+    private void Start()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && interactable)
+        if (other.tag == "Player")
             touching = true;
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player" && interactable)
+        if (other.tag == "Player")
             touching = true;
     }
 
-    void OnTriggerLeave2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        touching = false;
+        if (other.tag == "Player")
+            touching = false;
     }
 
     public void PlayerInteract()
     {
-        if (touching && interactable)
-            InitLevel();
+        if (touching)
+        {
+            if (levelToLoad != "InteractiveMainMenu")
+            {
+                if (SceneManager.GetActiveScene().name == "InteractiveMainMenu")
+                {
+                    if (PlayerPrefs.GetInt("totalCollectiblesGlobal") >= _gameManager.levelRequirements[levelToLoad])
+                        InitLevel();
+                }
+                else
+                {
+                    if (PlayerPrefs.GetInt("totalCollectiblesGlobal") >= _gameManager.levelRequirements[levelToLoad])
+                        levelToLoad = "InteractiveMainMenu";
+                    InitLevel();
+                }
+            }
+            else
+            {
+                InitLevel();
+            }
+        }
     }
 
+    private void InitLevel()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        touching = false;
+        FindObjectOfType<IPlayer>().GetComponent<Rigidbody2D>().simulated = false;
+        levelTransitionCanvas.SetActive(true);
+        StartCoroutine(this.Transition());
+    }
 
-	IEnumerator Transition() {
+    private IEnumerator Transition() {
 		yield return new WaitForSeconds(3);
 		SceneManager.LoadScene (this.levelToLoad);
 	}

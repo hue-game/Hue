@@ -17,17 +17,16 @@ public class Checkpoint : MonoBehaviour {
 		}
 	}
 
-
 	// Use this for initialization
-	void Start () {
-		_spriteRenderer = GetComponent<SpriteRenderer> ();
+	void Awake () {
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_spriteRenderer.sprite = checkpointNotReachedSprite;
 	}
 
 	public void CheckpointReached() {
 		if (!_checkpointReached) {
 			_checkpointReached = true;
-			_spriteRenderer.sprite = checkpointReachedSprite;
-		}
+            _spriteRenderer.sprite = checkpointReachedSprite;
+        }
 	}
 }

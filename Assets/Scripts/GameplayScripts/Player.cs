@@ -12,15 +12,15 @@ public class Player : IPlayer
 	public float respawnTime = 3.0f;
 	private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
+    private GameManager _gameManager;
 
     private void Awake()
     {
 		_checkpointManager = GetComponent<CheckpointManager> ();
 		_worldManager = GetComponent<WorldManager> ();
-
+        _gameManager = FindObjectOfType<GameManager>();
         _moveScript = GetComponent<Move>();
         _jumpScript = GetComponent<Jump>();
-		_worldManager = GetComponent<WorldManager>();
         _input = GetComponent<InputManager>();
         onRope = null;
     }
@@ -38,7 +38,10 @@ public class Player : IPlayer
             _jumpScript.JumpUp();
 
         if (_input.Switch)
+        {
             _worldManager.SwitchWorld();
+            _gameManager.PlayerInteract();
+        }
     }
 
 	void Respawn(GameObject checkpoint) {

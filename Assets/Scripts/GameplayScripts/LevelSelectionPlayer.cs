@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectionPlayer : IPlayer
 {
-    private LevelLoader _levelLoader;
+    private GameManager _gameManager;
 
     private void Awake()
 	{
 		_moveScript = GetComponent<Move>();
         _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
-        _levelLoader = FindObjectOfType<LevelLoader>();
+        _gameManager = FindObjectOfType<GameManager>();
         onRope = null;
 	}
 
@@ -26,7 +26,7 @@ public class LevelSelectionPlayer : IPlayer
     private void Update()
     {
         if (_input.Switch)
-            _levelLoader.PlayerInteract();
+            _gameManager.PlayerInteract();
     }
 }
 

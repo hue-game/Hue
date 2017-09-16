@@ -1,0 +1,20 @@
+{
+	"Items" : [
+		{
+			"levelName": "Level 1", 
+			"collectiblesRequired" : 0
+		},
+		{
+			"levelName": "Level 2", 
+			"collectiblesRequired" : 0
+		},
+		{
+			"levelName": "Level 3", 
+			"collectiblesRequired" : 2
+		},
+		{
+			"levelName": "Test003", 
+			"collectiblesRequired" : 1
+		}
+	]
+}
