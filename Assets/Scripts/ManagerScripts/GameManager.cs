@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
     private ResetProgress _resetProgress;
 
 	void Start() {
+        if (!PlayerPrefs.HasKey("totalCollectiblesGlobal"))
+            PlayerPrefs.SetInt("totalCollectiblesGlobal", 0);
+
         _levelLoaders = FindObjectsOfType<LevelLoader>();
         _resetProgress = FindObjectOfType<ResetProgress>();
     
@@ -43,14 +46,10 @@ public class GameManager : MonoBehaviour {
 
     private void LoadLevelRequirements()
     {
-        using (StreamReader r = new StreamReader("Assets/Resources/LevelRequirements.json"))
-        {
-            string json = r.ReadToEnd();
-            LevelInfo[] levelData = JsonHelper.FromJson<LevelInfo>(json);
-
+        string json = Resources.Load<TextAsset>("LevelRequirements").text;
+        LevelInfo[] levelData = JsonHelper.FromJson<LevelInfo>(json);
             foreach (LevelInfo level in levelData)
                 levelRequirements.Add(level.levelName, level.collectiblesRequired);
-        }
     }
 
     public void UpdateLevelLoaders()
