@@ -61,8 +61,7 @@ public class WorldManager : MonoBehaviour {
     private void UpdateWorldObject(GameObject worldObject, bool show)
     {
         float opacity = show ? 1.0f : 0.1f;
-        if (worldObject.GetComponent<SpriteRenderer>() != null)
-        {
+		if (worldObject.GetComponent<SpriteRenderer> () != null) {
 			if (worldObject.tag != "Background") {
 				Color woc = worldObject.GetComponent<SpriteRenderer> ().color;
 				woc.a = opacity;
@@ -70,7 +69,12 @@ public class WorldManager : MonoBehaviour {
 			} else {
 				worldObject.SetActive (show);
 			}
-        }
+		} else if (worldObject.tag == "Danger") {
+			worldObject.SetActive (show);
+		} else if (worldObject.GetComponent<Collider2D>() != null) {
+			worldObject.GetComponent<Collider2D>().enabled = show;
+		}
+			
 
         if (worldObject.GetComponent<Rope>() != null)
         {
