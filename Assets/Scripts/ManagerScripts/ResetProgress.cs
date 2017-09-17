@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class ResetProgress : MonoBehaviour { 
+	public string journeyResetText = "twisted minds have been put to rest...";
     private bool touching = false;
     private GameManager _gameManager;
 
@@ -35,7 +36,7 @@ public class ResetProgress : MonoBehaviour {
         if (touching)
         {
             PlayerPrefs.DeleteAll();
-            GetComponentInChildren<TextMesh>().text = "Journey Reset";
+			GetComponentInChildren<TextMesh> ().text = journeyResetText;
             _gameManager.UpdateLevelLoaders();
         }
     }

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
         {
             levelLoader.PlayerInteract();
         }
+
         if(_resetProgress != null)
             _resetProgress.PlayerInteract();
     }
@@ -59,11 +60,11 @@ public class GameManager : MonoBehaviour {
             int remaining = levelRequirements[levelLoader.levelToLoad] - PlayerPrefs.GetInt("totalCollectiblesGlobal");
             if (remaining > 0)
             {
-                levelLoader.GetComponentInChildren<TextMesh>().text = remaining.ToString() + " more to go";
+                levelLoader.GetComponentInChildren<TextMesh>().text = remaining.ToString() + " more twisted minds";
             }
             else
             {
-                levelLoader.GetComponentInChildren<TextMesh>().text = "Interact";
+                levelLoader.GetComponentInChildren<TextMesh>().text = "interact";
             }
         }
     }

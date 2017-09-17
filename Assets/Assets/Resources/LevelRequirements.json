@@ -10,11 +10,7 @@
 		},
 		{
 			"levelName": "Level 3", 
-			"collectiblesRequired" : 2
-		},
-		{
-			"levelName": "Test003", 
-			"collectiblesRequired" : 1
-		}
+			"collectiblesRequired" : 3
+	  }
 	]
 }
