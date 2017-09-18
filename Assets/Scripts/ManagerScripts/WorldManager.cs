@@ -67,8 +67,16 @@ public class WorldManager : MonoBehaviour {
 				woc.a = opacity;
 				worldObject.GetComponent<SpriteRenderer> ().color = woc;
 			} else {
-				worldObject.SetActive (show);
-			}
+                if (worldObject.GetComponent<Collectible>() != null)
+                {
+                    if (PlayerPrefs.GetInt(worldObject.name) == 1)
+                        worldObject.SetActive(false);
+                    else
+                        worldObject.SetActive(show);
+                }
+                else
+                    worldObject.SetActive(show);
+            }
 		} else if (worldObject.tag == "Danger") {
 			worldObject.SetActive (show);
 		} else if (worldObject.GetComponent<Collider2D>() != null) {

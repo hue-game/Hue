@@ -11,9 +11,8 @@ public class CollectibleManager : MonoBehaviour {
     [HideInInspector]
     public int totalCollectiblesGlobal = 0;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         totalCollectiblesGlobal = PlayerPrefs.GetInt("totalCollectiblesGlobal");
-
         foreach(Collectible collectible in FindObjectsOfType<Collectible>())
         {
             if (PlayerPrefs.GetInt(collectible.name) == 1)

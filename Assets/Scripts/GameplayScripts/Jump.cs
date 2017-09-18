@@ -70,18 +70,22 @@ public class Jump : MonoBehaviour {
         {
             if (_inputManager.movementX > 0.5f && !_groundedRight && _groundedLeft)
             {
+                _rb.velocity = new Vector2(_rb.velocity.x, 0);
                 _rb.AddForce(new Vector2(jumpX, jumpY), ForceMode2D.Impulse);
-                JumpAnimation.SetTrigger("Jump");
                 _groundedLeft = false;
                 _groundedRight = false;
+                JumpAnimation.ResetTrigger("Land");
+                JumpAnimation.SetTrigger("Jump");
                 _inAir = true;
             }
             else if (_inputManager.movementX < -0.5f && _groundedRight && !_groundedLeft)
             {
+                _rb.velocity = new Vector2(_rb.velocity.x, 0);
                 _rb.AddForce(new Vector2(-jumpX, jumpY), ForceMode2D.Impulse);
-                JumpAnimation.SetTrigger("Jump");
                 _groundedLeft = false;
                 _groundedRight = false;
+                JumpAnimation.ResetTrigger("Land");
+                JumpAnimation.SetTrigger("Jump");
                 _inAir = true;
             }
         }

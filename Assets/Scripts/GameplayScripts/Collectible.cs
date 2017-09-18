@@ -6,7 +6,6 @@ public class Collectible : MonoBehaviour {
 
     private CollectibleManager _collectibleManager;
     private SpriteRenderer _sprite;
-
     void Start()
     {
         _collectibleManager = FindObjectOfType<CollectibleManager>();
@@ -31,10 +30,11 @@ public class Collectible : MonoBehaviour {
         {
             t += Time.deltaTime * (Time.timeScale / 2.0f);
 
-            _sprite.color = Color.white * (1.0f - (t * 0.5f));
+            _sprite.color = Color.white * (1.0f - t);
             yield return 0;
         }
 
+        //Destroy(gameObject);
         gameObject.SetActive(false);
     }
 
