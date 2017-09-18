@@ -14,10 +14,13 @@ public class FollowPlayer : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector3(player.transform.position.x - offSetX, player.transform.position.y - offSetY, transform.position.z);
-
+        ResetCamera();
     }
 
+    public void ResetCamera()
+    {
+        transform.position = new Vector3(player.transform.position.x - offSetX, player.transform.position.y - offSetY, transform.position.z);
+    }
     void FixedUpdate()
     {
         float posXSmoothed = Mathf.SmoothDamp(transform.position.x, player.transform.position.x - offSetX, ref velocity.x, smoothTimeX);

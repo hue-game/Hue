@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     private LevelLoader[] _levelLoaders;
     private ResetProgress _resetProgress;
+    private CheckpointManager _checkpointManager;
 
 	void Start() {
         if (!PlayerPrefs.HasKey("totalCollectiblesGlobal"))
@@ -18,10 +19,18 @@ public class GameManager : MonoBehaviour {
 
         _levelLoaders = FindObjectsOfType<LevelLoader>();
         _resetProgress = FindObjectOfType<ResetProgress>();
+        _checkpointManager = FindObjectOfType<CheckpointManager>();
     
         LoadLevelRequirements();
         if (SceneManager.GetActiveScene().name == "InteractiveMainMenu")
             UpdateLevelLoaders();
+
+        if (_checkpointManager == null)
+        {
+            PlayerPrefs.DeleteKey("CurrentLevel");
+            PlayerPrefs.DeleteKey("CurrentCheckpoint");
+            PlayerPrefs.Save();
+        }
     }
 
 	public void RestartLevel() {

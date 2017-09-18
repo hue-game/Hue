@@ -45,11 +45,12 @@ public class Player : IPlayer
     }
 
 	void Respawn(GameObject checkpoint) {
-		
-		transform.position = checkpoint.transform.position;
+		//transform.position = checkpoint.transform.position;
 
-        _worldManager.ResetRopes();
-        _worldManager.ResetTriggers();
+  //      _worldManager.ResetRopes();
+  //      _worldManager.ResetTriggers();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
     //Check when the player collides with an object
