@@ -1300,6 +1300,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114084325994535644, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
+        type: 2}
+      propertyPath: offSetY
+      value: -0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
   m_IsPrefabParent: 0
@@ -1705,7 +1710,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 637853212}
-  m_Text: interact to put twisted minds to rest
+  m_Text: Interact to reset your journey
   m_OffsetZ: 0
   m_CharacterSize: 0.125
   m_LineSpacing: 1
