@@ -31,8 +31,26 @@ public class Move : MonoBehaviour {
         //Apply the velocity of the player
         if (GetComponent<IPlayer>().onRope == null)
         {
-            if (!GetComponent<Jump>()._inAir)
-                _rb.velocity = new Vector2(moveX * runSpeed, _rb.velocity.y);
+            if (GetComponent<IPlayer>().onLadder)
+            {
+                //Move player if on a ladder (allow horizontal movement)
+                if (moveX == 0 && moveY == 0)
+                {
+                    _rb.velocity = new Vector2(0, 0);
+                    _rb.isKinematic = true;
+                }
+                else
+                {
+                    _rb.velocity = new Vector2(moveX * runSpeed / 1.5f, moveY * runSpeed);
+                    _rb.isKinematic = false;
+                }
+            }
+            else 
+            {
+                //Move player if not jumping in the air
+                if (!GetComponent<Jump>()._inAir)
+                    _rb.velocity = new Vector2(moveX * runSpeed, _rb.velocity.y);
+            }
         }
    
         //Call flip script to flip the character's sprite

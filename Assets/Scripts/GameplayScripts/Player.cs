@@ -15,9 +15,6 @@ public class Player : IPlayer
     private GameManager _gameManager;
 	private Rigidbody2D _rigidBody;
 
-	[HideInInspector]
-	public bool onLadder = false;
-
     private void Awake()
     {
 		_checkpointManager = GetComponent<CheckpointManager> ();
@@ -27,8 +24,6 @@ public class Player : IPlayer
 		_rigidBody = GetComponent<Rigidbody2D> ();
         _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
-
-        onRope = null;
     }
 
     // FixedUpdate is called once per frame after physics have applied

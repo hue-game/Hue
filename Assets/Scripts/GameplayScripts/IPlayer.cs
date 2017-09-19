@@ -10,7 +10,10 @@ using UnityEngine;
 public abstract class IPlayer : MonoBehaviour
 {
     [HideInInspector]
-    public GameObject onRope;
+    public GameObject onRope = null;
+
+    [HideInInspector]
+    public bool onLadder = false;
 
     protected Move _moveScript;
     protected InputManager _input;

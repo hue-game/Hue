@@ -80,6 +80,14 @@ public class Jump : MonoBehaviour {
         }
     }
 
+    public bool GetGrounded(bool leftFoot)
+    {
+        if (leftFoot)
+            return _groundedLeft;
+        else
+            return _groundedRight;
+    }
+
     public void SetGrounded(bool grounded, bool leftFoot)
     {
         if (leftFoot)
