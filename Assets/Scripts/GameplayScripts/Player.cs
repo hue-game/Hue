@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(WorldManager))]
-[RequireComponent(typeof(CheckpointManager))]
 [RequireComponent(typeof(CollectibleManager))]
+[RequireComponent(typeof(CheckpointManager))]
 public class Player : IPlayer
 {
 	[Range(0, 25)]
@@ -13,6 +13,10 @@ public class Player : IPlayer
 	private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
     private GameManager _gameManager;
+	private Rigidbody2D _rigidBody;
+
+	[HideInInspector]
+	public bool onLadder = false;
 
     private void Awake()
     {
@@ -20,8 +24,10 @@ public class Player : IPlayer
 		_worldManager = GetComponent<WorldManager> ();
         _gameManager = FindObjectOfType<GameManager>();
         _moveScript = GetComponent<Move>();
+		_rigidBody = GetComponent<Rigidbody2D> ();
         _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
+
         onRope = null;
     }
 

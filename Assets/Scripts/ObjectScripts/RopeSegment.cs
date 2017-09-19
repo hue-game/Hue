@@ -12,6 +12,7 @@ public class RopeSegment : MonoBehaviour {
     [HideInInspector]
     public int index;
 
+
     public float RopeLeaveMultiplier
     {
         set
