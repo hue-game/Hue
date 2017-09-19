@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f3a392f1aaea54c5b98158d38d3cb14f
-timeCreated: 1505808637
+timeCreated: 1505829831
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -98,10 +98,10 @@ TextureImporter:
       name: PlayerWalk 1_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 80
-        height: 153
+        x: 0
+        y: 0
+        width: 62
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,10 +112,10 @@ TextureImporter:
       name: PlayerWalk 1_1
       rect:
         serializedVersion: 2
-        x: 93
+        x: 66
         y: 0
-        width: 45
-        height: 158
+        width: 44
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,10 +126,10 @@ TextureImporter:
       name: PlayerWalk 1_2
       rect:
         serializedVersion: 2
-        x: 161
+        x: 120
         y: 0
-        width: 68
-        height: 153
+        width: 59
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: PlayerWalk 1_3
       rect:
         serializedVersion: 2
-        x: 247
-        y: 1
-        width: 53
-        height: 159
+        x: 188
+        y: 0
+        width: 39
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

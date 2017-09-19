@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 0ae80b43d9bc842178393a40e18973e8
-timeCreated: 1505809584
+timeCreated: 1505829513
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: PlayerIdle 1_0
     21300002: PlayerIdle 1_1
+    21300004: PlayerIdle 1_2
+    21300006: PlayerIdle 1_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -96,10 +98,10 @@ TextureImporter:
       name: PlayerIdle 1_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 67
-        height: 157
+        width: 50
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,10 +112,38 @@ TextureImporter:
       name: PlayerIdle 1_1
       rect:
         serializedVersion: 2
-        x: 75
+        x: 54
         y: 0
-        width: 73
-        height: 155
+        width: 52
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PlayerIdle 1_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 114
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PlayerIdle 1_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0
+        width: 55
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
