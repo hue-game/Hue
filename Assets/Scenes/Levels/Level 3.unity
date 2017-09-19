@@ -1620,7 +1620,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1284324017804580, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_Name
-      value: Default checkpoint
+      value: Checkpoint-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}
