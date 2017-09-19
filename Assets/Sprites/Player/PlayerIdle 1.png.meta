@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0ae80b43d9bc842178393a40e18973e8
-timeCreated: 1505746318
+timeCreated: 1505809584
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -96,10 +96,10 @@ TextureImporter:
       name: PlayerIdle 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 33.5
-        height: 77
+        width: 67
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,10 +110,10 @@ TextureImporter:
       name: PlayerIdle 1_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 75
         y: 0
-        width: 33.5
-        height: 77
+        width: 73
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
