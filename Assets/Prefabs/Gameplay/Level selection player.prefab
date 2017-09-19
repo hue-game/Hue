@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 12.5
-  jumpX: 1.2
-  jumpY: 7
+  jumpX: 7.4
+  jumpY: 6
   _inAir: 0
 --- !u!212 &212829239695847410
 SpriteRenderer:

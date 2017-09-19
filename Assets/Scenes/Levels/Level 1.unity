@@ -197,6 +197,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 141884277}
+    - target: {fileID: 114084325994535644, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
+        type: 2}
+      propertyPath: offSetY
+      value: -0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
   m_IsPrefabParent: 0
@@ -3712,12 +3717,12 @@ Prefab:
     - target: {fileID: 114704928448740532, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
       propertyPath: jumpX
-      value: 2
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 114704928448740532, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
       propertyPath: jumpY
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114813851952441414, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}

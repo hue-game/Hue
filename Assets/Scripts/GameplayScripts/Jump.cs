@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +26,7 @@ public class Jump : MonoBehaviour {
 
 	}
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (_inAir && _groundedLeft && _groundedRight)
         {
@@ -70,23 +71,11 @@ public class Jump : MonoBehaviour {
         {
             if (_inputManager.movementX > 0.5f && !_groundedRight && _groundedLeft)
             {
-                _rb.velocity = new Vector2(_rb.velocity.x, 0);
-                _rb.AddForce(new Vector2(jumpX, jumpY), ForceMode2D.Impulse);
-                _groundedLeft = false;
-                _groundedRight = false;
-                JumpAnimation.ResetTrigger("Land");
-                JumpAnimation.SetTrigger("Jump");
-                _inAir = true;
+                StartCoroutine(SmoothJump(1));
             }
             else if (_inputManager.movementX < -0.5f && _groundedRight && !_groundedLeft)
             {
-                _rb.velocity = new Vector2(_rb.velocity.x, 0);
-                _rb.AddForce(new Vector2(-jumpX, jumpY), ForceMode2D.Impulse);
-                _groundedLeft = false;
-                _groundedRight = false;
-                JumpAnimation.ResetTrigger("Land");
-                JumpAnimation.SetTrigger("Jump");
-                _inAir = true;
+                StartCoroutine(SmoothJump(-1));
             }
         }
     }
@@ -99,4 +88,41 @@ public class Jump : MonoBehaviour {
             _groundedRight = grounded;
     }
 
+    //Old Values
+    //X = 2, Y = 9
+    IEnumerator SmoothJump(int direction)
+    {
+        _rb.velocity = new Vector2(_rb.velocity.x, 0);
+        //_rb.AddForce(new Vector2(jumpX, jumpY), ForceMode2D.Impulse);
+        _groundedLeft = false;
+        _groundedRight = false;
+        JumpAnimation.ResetTrigger("Land");
+        JumpAnimation.SetTrigger("Jump");
+        _inAir = true;
+
+        float t = 0;
+
+        _rb.velocity = new Vector2(0, 0);
+        _rb.AddForce(new Vector2(jumpX * 0.2f * direction, jumpY * 0.6f), ForceMode2D.Impulse);
+        
+        while (t < 1)
+        {
+            t += Time.fixedDeltaTime * (Time.timeScale / 1f);
+            if (t < 0.08f)
+            {
+                _rb.AddForce(new Vector2(jumpX * 0.04f * direction * (1 - t), jumpY * 0.09f * (1 - t)), ForceMode2D.Impulse);
+                _rb.AddForce(new Vector2(jumpX * 1 * direction * (1 - t), jumpY * 1.4f * (1 - t)), ForceMode2D.Force);
+            }
+            else if (t < 0.2f)
+                _rb.AddForce(new Vector2(jumpX * 4 * direction * (1 - t), jumpY * 9 * (1 - t)), ForceMode2D.Force);
+  
+            else if (t < 0.4f)
+                _rb.AddForce(new Vector2(jumpX * 1 * -direction * (1 - t), 0), ForceMode2D.Force);
+  
+            if (_rb.velocity.x > 6.5f)
+                _rb.velocity = new Vector2(6.5f, _rb.velocity.y);
+
+            yield return new WaitForFixedUpdate();
+        }    
+    }
 }

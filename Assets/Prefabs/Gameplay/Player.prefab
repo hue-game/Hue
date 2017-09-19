@@ -363,8 +363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 12.5
-  jumpX: 1.2
-  jumpY: 7
+  jumpX: 7.4
+  jumpY: 6
   _inAir: 0
 --- !u!114 &114757082521375846
 MonoBehaviour:
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7371059c31694ca1081721323b69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 3.5
+  runSpeed: 4
   ropeSwingSpeed: 50
   ropeSwingDownwardForce: 2
 --- !u!114 &114838504110892400
@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleText: {fileID: 0}
+  totalCollectiblesGlobal: 0
 --- !u!114 &114888235076020024
 MonoBehaviour:
   m_ObjectHideFlags: 1

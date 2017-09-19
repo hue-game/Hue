@@ -7389,7 +7389,7 @@ Prefab:
     - target: {fileID: 114704928448740532, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
       propertyPath: jumpX
-      value: 2
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 114704928448740532, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
@@ -7399,7 +7399,7 @@ Prefab:
     - target: {fileID: 114704928448740532, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
       propertyPath: jumpY
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114380806366229204, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
