@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 95922624575521722}
   - component: {fileID: 114345480134716288}
   - component: {fileID: 114915581052134818}
+  - component: {fileID: 114794702471057834}
   m_Layer: 0
   m_Name: Level selection player
   m_TagString: Player
@@ -43,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1402900644612964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,8 +82,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02651596, y: 0.053026438}
-  m_Size: {x: 0.3409195, y: 0.8939471}
+  m_Offset: {x: 0, y: -0.1}
+  m_Size: {x: 0.37, y: 1}
   m_Direction: 0
 --- !u!95 &95922624575521722
 Animator:
@@ -141,7 +142,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onRope: {fileID: 0}
+  onLadder: 0
 --- !u!114 &114345480134716288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402900644612964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8489c2c4f41bf9a4ca3b50b55e8a826a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementX: 0
+  movementY: 0
+  jump: 0
+  Switch: 0
+--- !u!114 &114794702471057834
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -214,7 +231,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f3a392f1aaea54c5b98158d38d3cb14f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ae80b43d9bc842178393a40e18973e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

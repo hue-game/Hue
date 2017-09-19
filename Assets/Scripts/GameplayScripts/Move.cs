@@ -13,6 +13,8 @@ public class Move : MonoBehaviour {
 
     private Rigidbody2D _rb;
     private Flip _flipScript;
+    private IPlayer _player;
+    private Jump _jump;
 
 	Animator WalkAnimation;
 
@@ -20,6 +22,8 @@ public class Move : MonoBehaviour {
 	void Start () {
         _rb = GetComponent<Rigidbody2D>();
         _flipScript = GetComponent<Flip>();
+        _player = GetComponent<IPlayer>();
+        _jump = GetComponent<Jump>();
 
 		WalkAnimation = GetComponent<Animator> ();
 	}
@@ -29,9 +33,9 @@ public class Move : MonoBehaviour {
         WalkAnimation.SetFloat("XMovement", Mathf.Abs(moveX));
 
         //Apply the velocity of the player
-        if (GetComponent<IPlayer>().onRope == null)
+        if (_player.onRope == null)
         {
-            if (GetComponent<IPlayer>().onLadder)
+            if (_player.onLadder)
             {
                 //Move player if on a ladder (allow horizontal movement)
                 if (moveX == 0 && moveY == 0)
@@ -48,7 +52,7 @@ public class Move : MonoBehaviour {
             else 
             {
                 //Move player if not jumping in the air
-                if (!GetComponent<Jump>()._inAir)
+                if (!_jump._inAir)
                     _rb.velocity = new Vector2(moveX * runSpeed, _rb.velocity.y);
             }
         }
