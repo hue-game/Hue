@@ -12,14 +12,13 @@ public class RopeSegment : MonoBehaviour {
     [HideInInspector]
     public int index;
 
+	Animator ClimbAnimation;
 
-    public float RopeLeaveMultiplier
-    {
-        set
-        {
-            _ropeLeaveMultiplier = value;
-        }
-    }
+    public float RopeLeaveMultiplier {
+		set {
+			_ropeLeaveMultiplier = value;
+		}
+	}
 
     void Awake()
     {
@@ -27,6 +26,8 @@ public class RopeSegment : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
         _parentRope = transform.parent.gameObject;
         _mass = _parentRope.GetComponent<Rope>().ropeMass;
+
+		ClimbAnimation = _player.GetComponent<Animator>();
     }
 
     //void Update()
@@ -72,6 +73,10 @@ public class RopeSegment : MonoBehaviour {
                 //_playerHJ.connectedAnchor = Vector2.zero;
                 //_playerHJ.enableCollision = false;
                 _playerHJ.connectedBody = _rb;
+
+
+				ClimbAnimation.ResetTrigger("Jump");
+				ClimbAnimation.SetTrigger("Climbing");
             }
         }
     }
@@ -100,6 +105,11 @@ public class RopeSegment : MonoBehaviour {
             print(_rb.velocity);
             //_player.GetComponent<Rigidbody2D>().velocity = _rb.velocity * 2;
             //_parentRope.GetComponent<Rope>().ChangeMass(gameObject, _mass);
+
+			ClimbAnimation.SetTrigger("Jump");
+			ClimbAnimation.ResetTrigger("Climbing");
+			ClimbAnimation.speed = 1f;
+
         }
     }
 
@@ -113,4 +123,7 @@ public class RopeSegment : MonoBehaviour {
 					Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), false);
 		}
     }
+		
+
 }
+	

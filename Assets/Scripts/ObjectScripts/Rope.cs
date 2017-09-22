@@ -30,6 +30,9 @@ public class Rope : MonoBehaviour
 
     private float ropeSwingDownwardForce;
 
+	Animator ClimbAnimation;
+	private float _playerSpeedY;
+
     void Awake()
     {
         ropeEnd = target.gameObject;
@@ -41,7 +44,9 @@ public class Rope : MonoBehaviour
         //ropeSwingSpeed = _player.GetComponent<Move>().ropeSwingSpeed;
         //ropeSwingDownwardForce = _player.GetComponent<Move>().ropeSwingDownwardForce;
         BuildRope();
-    }
+
+		ClimbAnimation = _player.GetComponent<Animator>();
+	}
 
     void LateUpdate()
     {
@@ -83,6 +88,10 @@ public class Rope : MonoBehaviour
                 Rigidbody2D _ropeRb = _seg.GetComponent<Rigidbody2D>();
                 _playerJoint = _player.GetComponent<RelativeJoint2D>();
 
+				ClimbAnimation.SetFloat("ClimbingSpeed", Mathf.Abs(moveY));
+				ClimbAnimation.speed = ClimbAnimation.GetFloat("ClimbingSpeed");
+
+
                 if (moveX != 0)
                     _playerRB.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
                     //_ropeRb.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
@@ -98,12 +107,14 @@ public class Rope : MonoBehaviour
                     //Climb up animation;
                     if (_seg.GetComponent<RopeSegment>().index > 5)
                         moveToJointIndex = _seg.GetComponent<RopeSegment>().index - 1;
+
                 }
                 else if (moveY < 0)
                 {
                     //Climb down animation;
                     if (_seg.GetComponent<RopeSegment>().index < joints.Length - 1)
                         moveToJointIndex = _seg.GetComponent<RopeSegment>().index + 1;
+
                 }
 
                 if (moveToJointIndex != -1)
