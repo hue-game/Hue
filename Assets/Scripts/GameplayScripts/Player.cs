@@ -9,11 +9,14 @@ using UnityEngine.SceneManagement;
 public class Player : IPlayer
 {
 	[Range(0, 25)]
+
 	public float respawnTime = 3.0f;
 	private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
     private GameManager _gameManager;
 	private Rigidbody2D _rigidBody;
+
+	Animator DieAnimation;
 
     private void Awake()
     {
@@ -24,6 +27,8 @@ public class Player : IPlayer
 		_rigidBody = GetComponent<Rigidbody2D> ();
         _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
+
+		DieAnimation = GetComponent<Animator> ();
     }
 
     // FixedUpdate is called once per frame after physics have applied
@@ -77,8 +82,10 @@ public class Player : IPlayer
     public IEnumerator KillPlayer()
     {
         _rigidBody.simulated = false;
-        //Play death animation
-        yield return new WaitForSeconds(0.5f);
+        
+		DieAnimation.SetTrigger ("Die");
+        yield return new WaitForSeconds(0.9f);
+		DieAnimation.ResetTrigger ("Die");
 
         Respawn(_checkpointManager.GetLastCheckpoint());
     }
