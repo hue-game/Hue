@@ -21,9 +21,8 @@ GameObject:
   - component: {fileID: 4110748296581468}
   - component: {fileID: 114608825669427682}
   - component: {fileID: 61883177010806512}
-  - component: {fileID: 50935777323131818}
   m_Layer: 0
-  m_Name: SpawnTrigger
+  m_Name: SpawnSystemTouchRepeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,26 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50935777323131818
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514221572827628}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &61883177010806512
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -98,11 +77,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e83dccd9f1ec9d4cb99aafe5a947b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 1435170484381154, guid: 339b2e210d429904cb6133905d13fa7b, type: 2}
+  alwaysOn: 0
   triggerEnabled: 1
-  interval: 1
-  prefab: {fileID: 1435170484381154, guid: 2f6af8c8b43b8654c8410a68ca522aaa, type: 2}
+  canTriggerAgain: 1
   spawnPoint: {x: 0, y: 0}
-  radius: 0
+  radiusX: 1
+  radiusY: 1
+  intervalBase: 1
+  intervalRandomizePercentage: 0
   duration: 10
-  delay: 0
-  canTriggerAgain: 0
+  initialDelay: 0

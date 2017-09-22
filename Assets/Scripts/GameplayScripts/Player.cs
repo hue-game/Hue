@@ -59,7 +59,8 @@ public class Player : IPlayer
     {
         if (hit.gameObject.tag == "Danger")
         {
-            Respawn(_checkpointManager.GetLastCheckpoint());
+            StartCoroutine(KillPlayer());
+
         }
     }
 
@@ -69,9 +70,18 @@ public class Player : IPlayer
 	    }
 
 	    if (hit.tag == "Danger") {
-		    Respawn(_checkpointManager.GetLastCheckpoint());
-	    }
+            StartCoroutine(KillPlayer());
+        }
     } 
+
+    public IEnumerator KillPlayer()
+    {
+        _rigidBody.simulated = false;
+        //Play death animation
+        yield return new WaitForSeconds(0.5f);
+
+        Respawn(_checkpointManager.GetLastCheckpoint());
+    }
 }
 
 

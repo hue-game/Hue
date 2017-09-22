@@ -14,7 +14,7 @@ public class Ladder : MonoBehaviour {
 
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag == "Player") {
+		if (other.tag == "Player" && _player.onRope == null) {
             _player.GetComponent<Animator>().SetTrigger("Land");
             _player.GetComponent<Animator>().ResetTrigger("Jump");
             _player.onLadder = true;
@@ -24,7 +24,6 @@ public class Ladder : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D other) {
         if (other.tag == "Player")
         {
-            print(gameObject);
             bool differentLadderFound = false;
             foreach(Ladder ladder in FindObjectsOfType<Ladder>())
             {
@@ -34,6 +33,7 @@ public class Ladder : MonoBehaviour {
                 }
             }
             if (!differentLadderFound)
+                _player.GetComponent<Rigidbody2D>().isKinematic = false;
                 _player.onLadder = false;
         }
     }

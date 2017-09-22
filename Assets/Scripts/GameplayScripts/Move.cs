@@ -37,6 +37,7 @@ public class Move : MonoBehaviour {
         {
             if (_player.onLadder)
             {
+                //ClimbAnimation.SetFloat("YMovement", Mathf.Abs(moveY));
                 //Move player if on a ladder (allow horizontal movement)
                 if (moveX == 0 && moveY == 0)
                 {
@@ -45,11 +46,11 @@ public class Move : MonoBehaviour {
                 }
                 else
                 {
-                    _rb.velocity = new Vector2(moveX * runSpeed / 1.5f, moveY * runSpeed);
+                    _rb.velocity = new Vector2(moveX * runSpeed / 2f, moveY * runSpeed);
                     _rb.isKinematic = false;
                 }
             }
-            else 
+            else
             {
                 //Move player if not jumping in the air
                 if (!_jump._inAir)
