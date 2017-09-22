@@ -8,17 +8,23 @@ public class Ladder : MonoBehaviour {
 	private IPlayer _player;
     private 
 	// Use this for initialization
+
+	Animator ClimbAnimation;
+
+
 	void Start () {
 		_player = FindObjectOfType<IPlayer>();	
+		ClimbAnimation = _player.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player" && _player.onRope == null) {
-            _player.GetComponent<Animator>().SetTrigger("Land");
-            _player.GetComponent<Animator>().ResetTrigger("Jump");
+            //_player.GetComponent<Animator>().SetTrigger("Land");
+            //_player.GetComponent<Animator>().ResetTrigger("Jump");
             _player.onLadder = true;
-            //Set trigger for climbing;
+
+
 		}
 	}
 
@@ -37,7 +43,12 @@ public class Ladder : MonoBehaviour {
             {
                 _player.GetComponent<Rigidbody2D>().isKinematic = false;
                 _player.onLadder = false;
-                //Set trigger for not climbing;
+
+				// ClimbAnimation.SetTrigger("Jump");
+				ClimbAnimation.ResetTrigger("Climbing");
+				ClimbAnimation.SetTrigger("Land");
+				ClimbAnimation.speed = 1f;
+
             }
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RopeSegment : MonoBehaviour {
 
     private IPlayer _player;
+	private Jump _playerJump;
     private Rigidbody2D _rb;
     private GameObject _parentRope;
     [HideInInspector]
@@ -18,6 +19,7 @@ public class RopeSegment : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
         _parentRope = transform.parent.gameObject;
 		ClimbAnimation = _player.GetComponent<Animator>();
+		_playerJump = _player.GetComponent<Jump> ();
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -61,7 +63,15 @@ public class RopeSegment : MonoBehaviour {
 
             Destroy(_player.GetComponent<Joint2D>());
 
-			ClimbAnimation.SetTrigger("Jump");
+			bool leftFoot = _playerJump.GetGrounded (true);
+			bool rightFoot = _playerJump.GetGrounded (false);
+
+			if (leftFoot && rightFoot) {
+				ClimbAnimation.SetTrigger ("Land");
+			} else {
+				ClimbAnimation.SetTrigger("Jump");
+			}
+
 			ClimbAnimation.ResetTrigger("Climbing");
 			ClimbAnimation.speed = 1f;
         }

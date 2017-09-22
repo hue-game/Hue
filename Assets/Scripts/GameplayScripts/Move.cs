@@ -16,7 +16,7 @@ public class Move : MonoBehaviour {
     private IPlayer _player;
     private Jump _jump;
 
-	Animator WalkAnimation;
+	Animator Animation;
 
 	// Use this for initialization
 	void Start () {
@@ -25,18 +25,34 @@ public class Move : MonoBehaviour {
         _player = GetComponent<IPlayer>();
         _jump = GetComponent<Jump>();
 
-		WalkAnimation = GetComponent<Animator> ();
+		Animation = GetComponent<Animator> ();
 	}
 	
     public void MoveAnalog(float moveX, float moveY)
     {
-        WalkAnimation.SetFloat("XMovement", Mathf.Abs(moveX));
+        Animation.SetFloat("XMovement", Mathf.Abs(moveX));
 
         //Apply the velocity of the player
         if (_player.onRope == null)
         {
             if (_player.onLadder)
             {
+				bool leftFoot = _jump.GetGrounded (true);
+				bool rightFoot = _jump.GetGrounded (false);
+
+				if (!leftFoot && !rightFoot) {
+					Animation.ResetTrigger ("Jump");
+					Animation.SetTrigger ("Climbing");
+
+					Animation.SetFloat ("ClimbingSpeed", Mathf.Abs (moveY));
+					Animation.speed = Animation.GetFloat ("ClimbingSpeed");
+				} else {
+					Animation.ResetTrigger("Climbing");
+					Animation.SetTrigger("Land");
+					Animation.speed = 1f;
+				}
+
+
                 //ClimbAnimation.SetFloat("YMovement", Mathf.Abs(moveY));
                 //Move player if on a ladder (allow horizontal movement)
                 if (moveX == 0 && moveY == 0)
