@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114816627576181800}
   - component: {fileID: 58373733113276870}
   m_Layer: 0
-  m_Name: VoidBallHorizontal
+  m_Name: VoidBallMeteor
   m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,9 +91,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfCollide: 0
   enableGravity: 0
-  angle: 90
-  angleRandomizePercentage: 0
-  speed: 8
+  angle: 180
+  angleRandomizePercentage: 10
+  speed: 6
   speedRandomizePercentage: 20
 --- !u!212 &212930127443802412
 SpriteRenderer:
@@ -135,5 +135,5 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
