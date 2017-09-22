@@ -103,12 +103,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4635169356099248}
-  resolution: 60
+  resolution: 3.5
   ropeDrag: 0.15
-  ropeMass: 0.75
-  ropeColRadius: 0.1
+  ropeMass: 1.2
+  ropeColRadius: 0.15
   ropeLeaveMultiplier: 2
-  ropeSwingSpeed: 40
+  ropeSwingSpeed: 25
 --- !u!120 &120455878151167714
 LineRenderer:
   m_ObjectHideFlags: 1

@@ -12,7 +12,6 @@ public class Rope : MonoBehaviour
     public float ropeDrag = 0.1F;                                //  Sets each joints Drag
     public float ropeMass = 0.1F;                           //  Sets each joints Mass
     public float ropeColRadius = 0.5F;                  //  Sets the radius of the collider in the SphereCollider component
-    public float ropeLeaveMultiplier = 2.0f;
     public float ropeSwingSpeed;                 
     
     private Vector3[] segmentPos;           //  DONT MESS!	This is for the Line Renderer's Reference and to set up the positions of the gameObjects
@@ -27,6 +26,7 @@ public class Rope : MonoBehaviour
     private IPlayer _player;
     private Rigidbody2D _playerRB;
     private RelativeJoint2D _playerJoint;
+    private SpriteRenderer _playerSprite;
 
     private float ropeSwingDownwardForce;
 
@@ -37,9 +37,8 @@ public class Rope : MonoBehaviour
         _input = FindObjectOfType<InputManager>();
         _player = FindObjectOfType<IPlayer>();
         _playerRB = _player.GetComponent<Rigidbody2D>();
+        _playerSprite = _player.GetComponent<SpriteRenderer>();
         ropeSwingDownwardForce = ropeSwingSpeed / 3;
-        //ropeSwingSpeed = _player.GetComponent<Move>().ropeSwingSpeed;
-        //ropeSwingDownwardForce = _player.GetComponent<Move>().ropeSwingDownwardForce;
         BuildRope();
     }
 
@@ -75,43 +74,47 @@ public class Rope : MonoBehaviour
             if (Array.IndexOf(joints, _seg) > -1)
             {
                 _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-
+                _playerJoint = _player.GetComponent<RelativeJoint2D>();
+                _playerJoint.autoConfigureOffset = false;
+                
                 float moveX = _input.movementX;
                 float moveY = _input.movementY;
                 int moveToJointIndex = -1;
 
-                Rigidbody2D _ropeRb = _seg.GetComponent<Rigidbody2D>();
-                _playerJoint = _player.GetComponent<RelativeJoint2D>();
-
                 if (moveX != 0)
                     _playerRB.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
-                    //_ropeRb.AddForce(new Vector2(moveX * ropeSwingSpeed, -ropeSwingDownwardForce));
-
-                if (moveX > 0)
-                    _playerJoint.linearOffset = new Vector2(0.2f, 0f);
-                else if (moveX < 0)
+        
+                if (_playerSprite.flipX)
                     _playerJoint.linearOffset = new Vector2(-0.2f, 0f);
+                else
+                    _playerJoint.linearOffset = new Vector2(0.2f, 0f);
 
 
                 if (moveY > 0)
                 {
                     //Climb up animation;
                     if (_seg.GetComponent<RopeSegment>().index > 5)
+                    {
                         moveToJointIndex = _seg.GetComponent<RopeSegment>().index - 1;
+                        _playerJoint.autoConfigureOffset = true;
+                    }
                 }
                 else if (moveY < 0)
                 {
                     //Climb down animation;
                     if (_seg.GetComponent<RopeSegment>().index < joints.Length - 1)
+                    {
                         moveToJointIndex = _seg.GetComponent<RopeSegment>().index + 1;
+                        _playerJoint.autoConfigureOffset = true;
+                    }
                 }
 
                 if (moveToJointIndex != -1)
                 {
                     Vector3 playerOffset = new Vector3(_playerJoint.linearOffset.x, _playerJoint.linearOffset.y, 0f);
-                    _player.transform.position = Vector2.MoveTowards(_player.transform.position, joints[moveToJointIndex].transform.position, 1.5f * Mathf.Abs(moveY) * Time.deltaTime);
-                    float distanceToCurrent = Vector2.Distance(_player.transform.position - playerOffset, _seg.transform.position);
-                    float distanceToNext = Vector2.Distance(_player.transform.position - playerOffset, joints[moveToJointIndex].transform.position);
+                    _player.transform.position = Vector2.MoveTowards(_player.transform.position, joints[moveToJointIndex].transform.position - playerOffset, 2.0f * Mathf.Abs(moveY) * Time.deltaTime);
+                    float distanceToCurrent = Vector2.Distance(_player.transform.position + playerOffset, _seg.transform.position);
+                    float distanceToNext = Vector2.Distance(_player.transform.position + playerOffset, joints[moveToJointIndex].transform.position);
 
                     if (distanceToNext < distanceToCurrent)
                         ChangeSegment(joints[moveToJointIndex]);
@@ -166,7 +169,6 @@ public class Rope : MonoBehaviour
         CircleCollider2D col = joints[n].AddComponent<CircleCollider2D>();
         HingeJoint2D ph = joints[n].AddComponent<HingeJoint2D>();
         joints[n].AddComponent<RopeSegment>();
-        joints[n].GetComponent<RopeSegment>().RopeLeaveMultiplier = ropeLeaveMultiplier;
         joints[n].GetComponent<RopeSegment>().index = n;
         joints[n].transform.position = segmentPos[n];
 
@@ -186,22 +188,6 @@ public class Rope : MonoBehaviour
         _player.onRope = segment;
         _player.transform.parent = segment.transform;
         _player.GetComponent<Joint2D>().connectedBody = segment.GetComponent<Rigidbody2D>();
-    }
-
-    public void ChangeMass(GameObject joint, float mass)
-    {
-        bool foundJoint = false;   
-        for (int i = 0; i < joints.Length - 1; i++)
-        {
-            if (joints[i] == joint)
-                joints[i].GetComponent<Rigidbody2D>().mass = mass;
-                
-            //if (joints[i] == joint)
-            //    foundJoint = true;
-            //if (foundJoint)
-            //    joints[i].GetComponent<Rigidbody2D>().mass = mass;
-        }
-        foundJoint = false;
     }
 
     public void ToggleTriggerCollider()

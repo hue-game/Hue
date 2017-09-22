@@ -106,7 +106,7 @@ MonoBehaviour:
   resolution: 5
   ropeDrag: 0.15
   ropeMass: 1
-  ropeColRadius: 0.15
+  ropeColRadius: 0.1
   ropeLeaveMultiplier: 2
   ropeSwingSpeed: 30
 --- !u!120 &120455878151167714
