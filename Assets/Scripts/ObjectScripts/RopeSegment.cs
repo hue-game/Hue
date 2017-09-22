@@ -56,7 +56,7 @@ public class RopeSegment : MonoBehaviour {
             _player.GetComponent<Rigidbody2D>().simulated = true;
             _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            if (_rb.velocity.x > 0)
+            if (_rb.velocity.x >= 0)
                 _player.GetComponent<Rigidbody2D>().AddForce(_rb.velocity * 1.3f + new Vector2(1f ,2f), ForceMode2D.Impulse);
             else
                 _player.GetComponent<Rigidbody2D>().AddForce(_rb.velocity * 1.3f + new Vector2(-1f, 2f), ForceMode2D.Impulse);
