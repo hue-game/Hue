@@ -18,6 +18,7 @@ public class Ladder : MonoBehaviour {
             _player.GetComponent<Animator>().SetTrigger("Land");
             _player.GetComponent<Animator>().ResetTrigger("Jump");
             _player.onLadder = true;
+            //Set trigger for climbing;
 		}
 	}
 
@@ -33,8 +34,11 @@ public class Ladder : MonoBehaviour {
                 }
             }
             if (!differentLadderFound)
+            {
                 _player.GetComponent<Rigidbody2D>().isKinematic = false;
                 _player.onLadder = false;
+                //Set trigger for not climbing;
+            }
         }
     }
 }

@@ -10,11 +10,14 @@ public class RopeSegment : MonoBehaviour {
     [HideInInspector]
     public int index;
 
+	Animator ClimbAnimation;
+
     void Awake()
     {
         _player = FindObjectOfType<IPlayer>();
         _rb = GetComponent<Rigidbody2D>();
         _parentRope = transform.parent.gameObject;
+		ClimbAnimation = _player.GetComponent<Animator>();
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -34,6 +37,9 @@ public class RopeSegment : MonoBehaviour {
                 _playerHJ.linearOffset = new Vector2(0.2f, 0f);
                 _playerHJ.angularOffset = 0;
                 _playerHJ.connectedBody = _rb;
+
+				ClimbAnimation.ResetTrigger("Jump");
+				ClimbAnimation.SetTrigger("Climbing");
             }
         }
     }
@@ -48,13 +54,16 @@ public class RopeSegment : MonoBehaviour {
             _player.GetComponent<Rigidbody2D>().simulated = true;
             _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             _player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            print(_rb.velocity);
             if (_rb.velocity.x > 0)
                 _player.GetComponent<Rigidbody2D>().AddForce(_rb.velocity * 1.3f + new Vector2(1f ,2f), ForceMode2D.Impulse);
             else
                 _player.GetComponent<Rigidbody2D>().AddForce(_rb.velocity * 1.3f + new Vector2(-1f, 2f), ForceMode2D.Impulse);
 
             Destroy(_player.GetComponent<Joint2D>());
+
+			ClimbAnimation.SetTrigger("Jump");
+			ClimbAnimation.ResetTrigger("Climbing");
+			ClimbAnimation.speed = 1f;
         }
     }
 
@@ -68,4 +77,7 @@ public class RopeSegment : MonoBehaviour {
 					Physics2D.IgnoreCollision(GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), false);
 		}
     }
+		
+
 }
+	
