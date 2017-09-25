@@ -16,12 +16,14 @@ public class VoidBall : MonoBehaviour {
 
     private Rigidbody2D _rb;
     private VoidBall _parentVB;
+    private WorldManager _worldManager;
 
 	// Use this for initialization
 	void Awake() {
         if (GetComponent<SpawnSystem>() == null)
         {
             _rb = GetComponent<Rigidbody2D>();
+            _worldManager = FindObjectOfType<WorldManager>();
 
             if (transform.parent != null)
             {
@@ -47,12 +49,28 @@ public class VoidBall : MonoBehaviour {
                     _rb.gravityScale = 0.0f;
                     _rb.isKinematic = true;
                     _rb.velocity = angleVector * speed;
+                    _rb.MoveRotation(-angle);
                 }
                 else
                 {
                     _rb.AddForce(angleVector * speed, ForceMode2D.Impulse);
                 }
+
+                _worldManager.AddGameObject(gameObject);
+                if (LayerMask.LayerToName(gameObject.layer) == "DreamWorld")
+                    _worldManager.UpdateWorldObject(gameObject, _worldManager.worldType);
+                else if (LayerMask.LayerToName(gameObject.layer) == "NightmareWorld")
+                    _worldManager.UpdateWorldObject(gameObject, !_worldManager.worldType);
             }
+        }
+    }
+
+    void Update()
+    {
+        if (enableGravity && GetComponent<SpawnSystem>() == null)
+        {
+            float angleSprite = Mathf.Atan2(_rb.velocity.x, _rb.velocity.y) * Mathf.Rad2Deg;
+            _rb.MoveRotation(angleSprite);
         }
     }
 
@@ -63,10 +81,16 @@ public class VoidBall : MonoBehaviour {
             if (!SelfCollide)
             {
                 if (other.gameObject.GetComponent<VoidBall>() == null)
+                {
+                    _worldManager.RemoveGameObject(gameObject);
                     Destroy(gameObject);
+                }
             }
             else
+            {
+                _worldManager.RemoveGameObject(gameObject);
                 Destroy(gameObject);
+            }
         }
     }
 }

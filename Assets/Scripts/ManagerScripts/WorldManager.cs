@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour {
 	// False is nightmare world, true is dream world.
-	private bool worldType = false;
+    [HideInInspector]
+	public bool worldType = false;
 	private List<GameObject> nightmareWorldObjects = new List<GameObject>();
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
     private IPlayer _player;
@@ -35,6 +36,22 @@ public class WorldManager : MonoBehaviour {
 		UpdateWorld ();
 	}
 
+    public void AddGameObject(GameObject addObject)
+    { 
+        if (addObject.layer == LayerMask.NameToLayer("NightmareWorld"))
+            nightmareWorldObjects.Add(addObject);
+        else if (addObject.layer == LayerMask.NameToLayer("DreamWorld"))
+            dreamWorldObjects.Add(addObject);
+    }
+
+    public void RemoveGameObject(GameObject removeObject)
+    {
+        if (removeObject.layer == LayerMask.NameToLayer("NightmareWorld"))
+            nightmareWorldObjects.Remove(removeObject);
+        else if (removeObject.layer == LayerMask.NameToLayer("DreamWorld"))
+            dreamWorldObjects.Remove(removeObject);
+    }
+
 	public void SwitchWorld()
 	{
 		worldType = !worldType;
@@ -58,7 +75,7 @@ public class WorldManager : MonoBehaviour {
         }
 	}
 
-    private void UpdateWorldObject(GameObject worldObject, bool show)
+    public void UpdateWorldObject(GameObject worldObject, bool show)
     {
         float opacity = show ? 1.0f : 0.1f;
 		if (worldObject.GetComponent<SpriteRenderer> () != null) {
