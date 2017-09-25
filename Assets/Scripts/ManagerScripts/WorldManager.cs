@@ -77,13 +77,35 @@ public class WorldManager : MonoBehaviour {
 
     public void UpdateWorldObject(GameObject worldObject, bool show)
     {
+        if (worldObject.tag == "RollingRock")
+        {
+            print("test");
+        }
+
         float opacity = show ? 1.0f : 0.1f;
-		if (worldObject.GetComponent<SpriteRenderer> () != null) {
-			if (worldObject.tag != "Background") {
-				Color woc = worldObject.GetComponent<SpriteRenderer> ().color;
-				woc.a = opacity;
-				worldObject.GetComponent<SpriteRenderer> ().color = woc;
-			} else {
+		if (worldObject.GetComponent<SpriteRenderer> () != null) 
+        {
+			if (worldObject.tag != "Background") 
+            {
+                //Change sprite of rolling rock
+                if (worldObject.tag == "RollingRock")
+                {
+                    if (worldType)
+                        worldObject.GetComponent<SpriteRenderer>().sprite = worldObject.GetComponent<RollingRock>().dreamSprite;
+                    else
+                        worldObject.GetComponent<SpriteRenderer>().sprite = worldObject.GetComponent<RollingRock>().nightmareSprite;
+                }
+                else
+                {
+                    //Show object from other world at lower opacity
+                    Color woc = worldObject.GetComponent<SpriteRenderer>().color;
+                    woc.a = opacity;
+                    worldObject.GetComponent<SpriteRenderer>().color = woc;
+                }
+            } 
+            else 
+            {
+                //Don't enable collectibles if found
                 if (worldObject.GetComponent<Collectible>() != null)
                 {
                     if (PlayerPrefs.GetInt(worldObject.name) == 1)
@@ -94,13 +116,13 @@ public class WorldManager : MonoBehaviour {
                 else
                     worldObject.SetActive(show);
             }
-		} else if (worldObject.tag == "Danger") {
+		} 
+        else if (worldObject.tag == "Danger") 
 			worldObject.SetActive (show);
-		} else if (worldObject.GetComponent<Collider2D>() != null) {
-			worldObject.GetComponent<Collider2D>().enabled = show;
-		}
+        
+   //     else if (worldObject.GetComponent<Collider2D>() != null)
+			//worldObject.GetComponent<Collider2D>().enabled = show;
 			
-
         if (worldObject.GetComponent<Rope>() != null)
         {
             worldObject.GetComponent<LineRenderer>().material.color = Color.white * opacity;
@@ -116,7 +138,7 @@ public class WorldManager : MonoBehaviour {
             }
         }
 
-        if (worldObject.GetComponent<Collider2D>() != null)
+        if (worldObject.GetComponent<Collider2D>() != null && worldObject.tag != "RollingRock")
             worldObject.GetComponent<Collider2D>().enabled = show;
     }
 
