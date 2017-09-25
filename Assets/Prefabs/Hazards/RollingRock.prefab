@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 50556364271036952}
   - component: {fileID: 60102868113072846}
   m_Layer: 8
-  m_Name: RollingRockDream
-  m_TagString: Untagged
+  m_Name: RollingRock
+  m_TagString: RollingRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killVelocity: 3
+  dreamSprite: {fileID: 21300000, guid: 14745fa08ee66434bade1c62f133511f, type: 3}
+  nightmareSprite: {fileID: 21300000, guid: 5b2b1fe5ba1654c20aee7fe946cf5717, type: 3}
 --- !u!212 &212727101624002720
 SpriteRenderer:
   m_ObjectHideFlags: 1

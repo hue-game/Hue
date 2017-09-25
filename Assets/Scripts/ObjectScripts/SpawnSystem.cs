@@ -89,7 +89,6 @@ public class SpawnSystem : MonoBehaviour {
         {
             _lastTrigger = Time.time;
             Invoke("SpawnObjectRepeat", _interval);
-            print("hhello");
         }
         else 
         {

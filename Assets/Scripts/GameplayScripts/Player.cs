@@ -82,8 +82,11 @@ public class Player : IPlayer
     public IEnumerator KillPlayer()
     {
         _rigidBody.simulated = false;
-        
-		DieAnimation.SetTrigger ("Die");
+
+        DieAnimation.ResetTrigger("Land");
+        DieAnimation.ResetTrigger("Jump");
+        DieAnimation.ResetTrigger("Climbing");
+        DieAnimation.SetTrigger ("Die");
         yield return new WaitForSeconds(0.9f);
 		DieAnimation.ResetTrigger ("Die");
 
