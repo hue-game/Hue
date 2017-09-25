@@ -124,10 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceFactor: 3
   speed: 2
-  layers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  layers: []
 --- !u!124 &124506822372921556
 Behaviour:
   m_ObjectHideFlags: 1
