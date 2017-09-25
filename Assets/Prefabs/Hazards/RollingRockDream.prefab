@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 212727101624002720}
   - component: {fileID: 50556364271036952}
   - component: {fileID: 60102868113072846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RollingRockDream
   m_TagString: Untagged
   m_Icon: {fileID: 0}

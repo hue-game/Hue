@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114462029295493178}
   - component: {fileID: 58628614156270288}
   - component: {fileID: 95459580694420906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightVoidBallHorizontal
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865625139584946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5180182, y: 3.8941464, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

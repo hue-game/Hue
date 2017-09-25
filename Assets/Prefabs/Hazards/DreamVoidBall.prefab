@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114713314133987622}
   - component: {fileID: 58795456069667036}
   - component: {fileID: 95766903611757994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamVoidBall
   m_TagString: Danger
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926898694096288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 5.27, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
