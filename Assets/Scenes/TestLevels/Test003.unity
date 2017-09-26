@@ -6346,7 +6346,7 @@ GameObject:
   - component: {fileID: 719995466}
   m_Layer: 0
   m_Name: Goomba (1)
-  m_TagString: Untagged
+  m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8434,28 +8434,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &925366495 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1299246237043490, guid: eab1fb9586f362740a25d987aff69a86,
-    type: 2}
-  m_PrefabInternal: {fileID: 1084221656}
---- !u!114 &925366496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 925366495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c9ff39a78de13f4a96437d676ff059f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelfCollide: 0
-  enableGravity: 1
-  angle: 0
-  angleRandomizePercentage: 0
-  speed: 10
-  speedRandomizePercentage: 18
 --- !u!1001 &925445402
 Prefab:
   m_ObjectHideFlags: 0
@@ -9333,11 +9311,11 @@ GameObject:
   - component: {fileID: 1032631202}
   m_Layer: 0
   m_Name: Goomba
-  m_TagString: Untagged
+  m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1032631201
 Rigidbody2D:
   serializedVersion: 4
@@ -9830,12 +9808,12 @@ Prefab:
         type: 2}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 1697345633031506, guid: fd5dea1d4cc894488acf560fba34c2e9,
+      objectReference: {fileID: 1868151680763614, guid: 54d8bb8b6293744beb2d51bfaf37eae7,
         type: 2}
     - target: {fileID: 114016601567810520, guid: eab1fb9586f362740a25d987aff69a86,
         type: 2}
       propertyPath: spawnPoint.x
-      value: 165
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 114016601567810520, guid: eab1fb9586f362740a25d987aff69a86,
         type: 2}
@@ -9865,6 +9843,11 @@ Prefab:
         type: 2}
       propertyPath: canTriggerAgain
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114016601567810520, guid: eab1fb9586f362740a25d987aff69a86,
+        type: 2}
+      propertyPath: radiusX
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -12905,6 +12888,7 @@ MonoBehaviour:
   angleRandomizePercentage: 0
   speed: 6
   speedRandomizePercentage: 18
+  DestroyAfterSeconds: 3
 --- !u!1 &1425645867
 GameObject:
   m_ObjectHideFlags: 0
@@ -13694,6 +13678,7 @@ MonoBehaviour:
   angleRandomizePercentage: 10
   speed: 6
   speedRandomizePercentage: 20
+  DestroyAfterSeconds: 3
 --- !u!58 &1484589887
 CircleCollider2D:
   m_ObjectHideFlags: 0

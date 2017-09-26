@@ -113,6 +113,7 @@ MonoBehaviour:
   angleRandomizePercentage: 0
   speed: 10
   speedRandomizePercentage: 20
+  DestroyAfterSeconds: 3
 --- !u!212 &212945434170380466
 SpriteRenderer:
   m_ObjectHideFlags: 1
