@@ -6,61 +6,123 @@ using UnityEngine;
 public class Goomba : IEnemy {
 
     public bool followPlayer = true;
+    [Header("left is false, right is true")]
+    public bool startDirection = false;
 
-    // Use this for initialization
     new void Awake () {
         base.Awake();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        float moveDirection = _rb.velocity.x;
-        if (moveDirection > 0)
+        if (startDirection)
+            _moveDirection = new Vector2(1, 0f);
+        else
+            _moveDirection = new Vector2(-1, 0f);
+
+        _rb.velocity = _moveDirection;
+    }
+
+    void Update () {
+        if (_moveDirection.x > 0) 
+        {
+            //Change animation
             _flipScript.FlipSprite(false);
-        else if (moveDirection < 0)
+        }
+        else if (_moveDirection.x < 0)
+        {
+            //Change animation
             _flipScript.FlipSprite(true);
+        }
 
         switch (state)
         {
             case "idle":
                 Idle();
                 break;
-            case "Attack":
+            case "attack":
                 Attack();
                 break;
             default:
+                _rb.velocity = new Vector2(_moveDirection.x, _rb.velocity.y);
                 break;
         }
 	}
 
     public override void Attack()
     {
-        //move to player;
+        if (_playerTransform.position.x > transform.position.x)
+            _moveDirection = Vector2.right;
+        else
+            _moveDirection = Vector2.left;
 
+        _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
 
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
         if (distanceToPlayer > alertRadius)
-        {
-            SetState("Lost");
             Lost();
-        }
     }
 
     public override void Idle()
     {
-        //Move randomly
+        if (OutOfRangeCheck())
+        {
+            if (roamingArea.bounds.center.x > transform.position.x)
+                _moveDirection = Vector2.right;
+            else
+                _moveDirection = Vector2.left;
+        }
+        else if (EdgeCheck())
+            _moveDirection *= -1;
+        else if (ObstacleCheck())
+            _moveDirection *= -1;
 
-
-        float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
+        _rb.velocity = new Vector2(_moveDirection.x * idleSpeed, _rb.velocity.y);
+        
         if (followPlayer)
         {
+            float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
             if (distanceToPlayer < alertRadius)
-            {
-                SetState("Found");
                 Found();
-            }
         }
     }
 
+    public override bool OutOfRangeCheck()
+    {
+        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
+            return false;
+        else
+            return true;
+    }
 
+    public override bool EdgeCheck()
+    {
+        RaycastHit2D[] edgeHitChecks;
+
+        if (_moveDirection.x > 0)
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right + Vector2.down, 1.0f);
+        else
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left + Vector2.down, 1.0f);
+
+        foreach (RaycastHit2D edgeHit in edgeHitChecks)
+        {
+            if (edgeHit.transform.GetComponent<IEnemy>() == null && edgeHit.transform.tag != "Player")
+                return false;
+        }
+
+        return true;
+    }
+
+    public override bool ObstacleCheck()
+    {
+        RaycastHit2D[] obstacleHitChecks;
+        if (_moveDirection.x > 0)
+            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right, 0.5f);
+        else
+            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left, 0.5f);
+
+        foreach (RaycastHit2D obstacleHit in obstacleHitChecks)
+        {
+            if (obstacleHit.transform.GetComponent<IEnemy>() == null && obstacleHit.transform.tag != "Player")
+                return true;
+        }
+
+        return false;
+    }
 }

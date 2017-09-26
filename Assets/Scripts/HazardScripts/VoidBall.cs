@@ -76,7 +76,7 @@ public class VoidBall : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Player" && GetComponent<SpawnSystem>() == null)
+        if (other.gameObject.tag != "Player" && other.isTrigger == false && GetComponent<SpawnSystem>() == null)
         {
             if (!SelfCollide)
             {

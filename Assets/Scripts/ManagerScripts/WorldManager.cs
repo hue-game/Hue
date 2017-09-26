@@ -77,11 +77,6 @@ public class WorldManager : MonoBehaviour {
 
     public void UpdateWorldObject(GameObject worldObject, bool show)
     {
-        if (worldObject.tag == "RollingRock")
-        {
-            print("test");
-        }
-
         float opacity = show ? 1.0f : 0.1f;
 		if (worldObject.GetComponent<SpriteRenderer> () != null) 
         {

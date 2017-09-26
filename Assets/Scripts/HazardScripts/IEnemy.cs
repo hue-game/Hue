@@ -6,15 +6,26 @@ public abstract class IEnemy : MonoBehaviour {
 
     public float alertRadius = 5;
     public float attackCooldown = 1f;
+    public float idleSpeed = 1.5f;
+    public float attackSpeed = 3.0f;
+    public Collider2D roamingArea;
 
-    [HideInInspector]
-    public string state;
+    //[HideInInspector]
+    public string state = "idle";
+
     protected Animator _animator;
     protected Rigidbody2D _rb;
     protected Flip _flipScript;
     protected Transform _playerTransform;
     protected WorldManager _worldManager;
-    protected float timeAlerted = 0;
+    protected float _timeAlerted = 0;
+    protected Vector2 _moveDirection = Vector2.right;
+    //Enable this if you want to randomly switch direction next frame (in idle)
+    protected bool _changeDirectionNextUpdate = false;
+    protected float _lastDirectionSwitch = 0;
+
+    private IEnemy[] _enemies;
+    private bool playerIsDead;
 
     // Use this for initialization
     public void Awake () {
@@ -23,33 +34,27 @@ public abstract class IEnemy : MonoBehaviour {
         _flipScript = GetComponent<Flip>();
         _playerTransform = FindObjectOfType<IPlayer>().transform;
         _worldManager = FindObjectOfType<WorldManager>();
-        state = "idle"; 
+        _enemies = FindObjectsOfType<IEnemy>();
+
+        foreach (IEnemy enemy in _enemies)
+            Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        //float moveDirection = _rb.velocity.x;
-        //if (moveDirection > 0)
-        //    _flipScript.FlipSprite(false);
-        //else if (moveDirection < 0)
-        //    _flipScript.FlipSprite(true);
-    }
 
-    public abstract void Idle();
-
-    public abstract void Attack();
 
     public void Lost()
     {
+        SetState("idle");
         //animator.ResetTrigger("Attack");
         //animator.SetTrigger("Lost");
     }
 
     public void Found()
     {
+        SetState("attack");
+        _moveDirection = Vector2.zero;
         bool alertDirection = _playerTransform.position.x > transform.position.x;
-        _flipScript.FlipSprite(alertDirection);
-        timeAlerted = Time.time;
+        _flipScript.FlipSprite(!alertDirection);
+        _timeAlerted = Time.time;
 
         //Play alert sound
         //animator.ResetTrigger("Idle");
@@ -61,5 +66,33 @@ public abstract class IEnemy : MonoBehaviour {
     {
         state = newState;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Danger")
+        {
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.tag == "Player")
+            playerIsDead = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    { 
+        if (other.gameObject.tag == "Danger")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public abstract void Idle();
+
+    public abstract void Attack();
+
+    public abstract bool ObstacleCheck();
+
+    public abstract bool OutOfRangeCheck();
+
+    public abstract bool EdgeCheck();
 
 }

@@ -72,7 +72,7 @@ public class SpawnSystem : MonoBehaviour {
         {
             _interval = intervalBase * (1 - ((float) Random.Range(-intervalRandomizePercentage, intervalRandomizePercentage) / 100));
 
-            Vector2 newSpawnPoint = spawnPoint + new Vector2(Random.Range(0, radiusX), Random.Range(0, radiusY));
+            Vector2 newSpawnPoint = spawnPoint + new Vector2(Random.Range(-radiusX, radiusX), Random.Range(-radiusY, radiusY));
             GameObject instance = Instantiate(prefab, Vector2.zero, Quaternion.identity, transform);
             instance.transform.position = newSpawnPoint;
         }

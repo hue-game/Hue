@@ -9,6 +9,7 @@ TagManager:
   - Background
   - Feet
   - RollingRock
+  - RoamArea
   layers:
   - Default
   - TransparentFX
