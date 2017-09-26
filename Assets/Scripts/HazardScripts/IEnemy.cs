@@ -10,11 +10,14 @@ public abstract class IEnemy : MonoBehaviour {
     public float idleSpeed = 1.5f;
     public float attackSpeed = 3.0f;
     public Collider2D roamingArea;
+    public Sprite alertSprite;
+    public Sprite lostSprite;
 
     [HideInInspector]
     public string state = "idle";
 
     protected Animator _animator;
+    protected Animator _alertAnimator;
     protected Rigidbody2D _rb;
     protected Flip _flipScript;
     protected Transform _playerTransform;
@@ -22,6 +25,7 @@ public abstract class IEnemy : MonoBehaviour {
     protected WorldManager _worldManager;
     protected Vector2 _moveDirection = Vector2.right;
     protected Vector2 _oldMoveDirection;
+    protected SpriteRenderer _enemyThoughtSprite;
 
     //Enable this if you want to randomly switch direction next frame (in idle)
     protected bool _changeDirectionNextUpdate = false;
@@ -33,12 +37,14 @@ public abstract class IEnemy : MonoBehaviour {
     // Use this for initialization
     public void Awake () {
         _animator = GetComponent<Animator>();
+        _alertAnimator = transform.GetChild(0).GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _flipScript = GetComponent<Flip>();
         _player = FindObjectOfType<IPlayer>();
         _playerTransform = _player.transform;
         _worldManager = FindObjectOfType<WorldManager>();
         _enemies = FindObjectsOfType<IEnemy>();
+        _enemyThoughtSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         foreach (IEnemy enemy in _enemies)
             Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());

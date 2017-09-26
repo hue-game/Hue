@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goomba : IEnemy {
+public class Charger : IEnemy {
 
-    public bool followPlayer = true;
     [Header("left is false, right is true")]
     public bool startDirection = false;
 
@@ -43,11 +42,11 @@ public class Goomba : IEnemy {
         {
             if (_moveDirection.x > 0)
             {
-                _animator.SetBool("WalkLeft", false);
+                //_animator.SetBool("WalkLeft", false);
             }
             else if (_moveDirection.x < 0)
             {
-                _animator.SetBool("WalkLeft", true);
+                //_animator.SetBool("WalkLeft", true);
             }
         }
     }
@@ -78,7 +77,7 @@ public class Goomba : IEnemy {
 
         _rb.velocity = new Vector2(_moveDirection.x * idleSpeed, _rb.velocity.y);
         
-        if (followPlayer && !_player.isDead)
+        if (!_player.isDead)
         {
             float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
             if (distanceToPlayer < alertRadius)
@@ -105,12 +104,9 @@ public class Goomba : IEnemy {
     {
         _animator.speed = 0.0f;
         SetState("lost");
-        _alertAnimator.SetBool("Lost", true);
-        _alertAnimator.SetBool("Found", false);
 
         yield return new WaitForSeconds(alertDuration);
-        
-        _alertAnimator.SetBool("Lost", false);
+
         _animator.speed = 1.0f;
         SetState("idle");
     }
@@ -120,13 +116,10 @@ public class Goomba : IEnemy {
         _animator.speed = 0.0f;
         SetState("found");
         bool alertDirection = _playerTransform.position.x > transform.position.x;
-        _animator.SetBool("WalkLeft", !alertDirection);
-        _alertAnimator.SetBool("Lost", false);
-        _alertAnimator.SetBool("Found", true);
+        //_animator.SetBool("WalkLeft", !alertDirection);
 
         yield return new WaitForSeconds(alertDuration);
 
-        _alertAnimator.SetBool("Found", false);
         _animator.speed = 1.0f;
         SetState("attack");
     }
@@ -147,4 +140,18 @@ public class Goomba : IEnemy {
 
         return false;
     }
+
+    private IEnumerator Slide()
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.fixedDeltaTime * (Time.timeScale / 1f);
+
+            yield return 0;
+        }
+
+
+    }
+
 }
