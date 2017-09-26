@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687750632240484}
   - component: {fileID: 212142842217994846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSurface2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661287063630034}
   - component: {fileID: 61831727687846610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dream canopy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475110397941054}
   - component: {fileID: 212453506606789782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4750763473967718}
   - component: {fileID: 212420542294395152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSurface2_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4220546396227806}
   - component: {fileID: 212477729901506126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSurface2_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4493397581853874}
   - component: {fileID: 212888285443096660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSurface2_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4559733450775940}
   - component: {fileID: 61104783295462300}
-  m_Layer: 0
+  - component: {fileID: 61323133671663756}
+  m_Layer: 8
   m_Name: Dream tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4552380011505140}
   - component: {fileID: 212710899041465182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DreamSurface2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886454655738498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 103.81891, y: 1.587964, z: 0}
+  m_LocalPosition: {x: 93.16, y: 18.843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4475110397941054}
@@ -394,6 +395,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.9127426, y: 0.5841775}
+  m_EdgeRadius: 0
+--- !u!61 &61323133671663756
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1886454655738498}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &61831727687846610
 BoxCollider2D:
