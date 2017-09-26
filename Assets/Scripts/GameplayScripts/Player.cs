@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class Player : IPlayer
 {
 	[Range(0, 25)]
-
 	public float respawnTime = 3.0f;
 	private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
@@ -48,6 +47,12 @@ public class Player : IPlayer
             _worldManager.SwitchWorld();
             _gameManager.PlayerInteract();
         }
+        if (isDead)
+        {
+            DieAnimation.ResetTrigger("Land");
+            DieAnimation.ResetTrigger("Jump");
+            DieAnimation.ResetTrigger("Climbing");
+        }
     }
 
 	void Respawn(GameObject checkpoint) {
@@ -81,6 +86,7 @@ public class Player : IPlayer
 
     public IEnumerator KillPlayer()
     {
+        isDead = true;
         _rigidBody.simulated = false;
 
         DieAnimation.ResetTrigger("Land");

@@ -15,6 +15,9 @@ public abstract class IPlayer : MonoBehaviour
     [HideInInspector]
     public bool onLadder = false;
 
+    [HideInInspector]
+    public bool isDead = false;
+
     protected Move _moveScript;
     protected InputManager _input;
     protected Jump _jumpScript;

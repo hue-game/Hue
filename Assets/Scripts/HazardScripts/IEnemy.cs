@@ -5,21 +5,24 @@ using UnityEngine;
 public abstract class IEnemy : MonoBehaviour {
 
     public float alertRadius = 5;
+    public float alertDuration = 0.2f;
     public float attackCooldown = 1f;
     public float idleSpeed = 1.5f;
     public float attackSpeed = 3.0f;
     public Collider2D roamingArea;
 
-    //[HideInInspector]
+    [HideInInspector]
     public string state = "idle";
 
     protected Animator _animator;
     protected Rigidbody2D _rb;
     protected Flip _flipScript;
     protected Transform _playerTransform;
+    protected IPlayer _player;
     protected WorldManager _worldManager;
-    protected float _timeAlerted = 0;
     protected Vector2 _moveDirection = Vector2.right;
+    protected Vector2 _oldMoveDirection;
+
     //Enable this if you want to randomly switch direction next frame (in idle)
     protected bool _changeDirectionNextUpdate = false;
     protected float _lastDirectionSwitch = 0;
@@ -32,34 +35,14 @@ public abstract class IEnemy : MonoBehaviour {
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _flipScript = GetComponent<Flip>();
-        _playerTransform = FindObjectOfType<IPlayer>().transform;
+        _player = FindObjectOfType<IPlayer>();
+        _playerTransform = _player.transform;
         _worldManager = FindObjectOfType<WorldManager>();
         _enemies = FindObjectsOfType<IEnemy>();
 
         foreach (IEnemy enemy in _enemies)
             Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 	}
-
-
-    public void Lost()
-    {
-        SetState("idle");
-        //animator.ResetTrigger("Attack");
-        //animator.SetTrigger("Lost");
-    }
-
-    public void Found()
-    {
-        SetState("attack");
-        _moveDirection = Vector2.zero;
-        bool alertDirection = _playerTransform.position.x > transform.position.x;
-        _flipScript.FlipSprite(!alertDirection);
-        _timeAlerted = Time.time;
-
-        //Play alert sound
-        //animator.ResetTrigger("Idle");
-        //animator.SetTrigger("Found");
-    }
 
     //Set this from animator or script
     public void SetState(string newState)
@@ -70,29 +53,49 @@ public abstract class IEnemy : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Danger")
-        {
             Destroy(gameObject);
-        }
-        else if (other.gameObject.tag == "Player")
-            playerIsDead = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     { 
         if (other.gameObject.tag == "Danger")
-        {
             Destroy(gameObject);
-        }
     }
 
     public abstract void Idle();
 
     public abstract void Attack();
 
+    public abstract IEnumerator Lost();
+
+    public abstract IEnumerator Found();
+
     public abstract bool ObstacleCheck();
 
-    public abstract bool OutOfRangeCheck();
+    public bool OutOfRangeCheck()
+    {
+        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
+            return false;
+        else
+            return true;
+    }
 
-    public abstract bool EdgeCheck();
+    public bool EdgeCheck()
+    {
+        RaycastHit2D[] edgeHitChecks;
+
+        if (_moveDirection.x > 0)
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right + Vector2.down, 1.0f);
+        else
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left + Vector2.down, 1.0f);
+
+        foreach (RaycastHit2D edgeHit in edgeHitChecks)
+        {
+            if (edgeHit.transform.GetComponent<IEnemy>() == null && edgeHit.transform.tag != "Player")
+                return false;
+        }
+
+        return true;
+    }
 
 }

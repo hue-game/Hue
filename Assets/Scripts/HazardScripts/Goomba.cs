@@ -16,19 +16,14 @@ public class Goomba : IEnemy {
         else
             _moveDirection = new Vector2(-1, 0f);
 
+        _oldMoveDirection = _moveDirection;
         _rb.velocity = _moveDirection;
     }
 
     void Update () {
-        if (_moveDirection.x > 0) 
+        if (_player.isDead)
         {
-            //Change animation
-            _flipScript.FlipSprite(false);
-        }
-        else if (_moveDirection.x < 0)
-        {
-            //Change animation
-            _flipScript.FlipSprite(true);
+            SetState("idle");
         }
 
         switch (state)
@@ -43,20 +38,18 @@ public class Goomba : IEnemy {
                 _rb.velocity = new Vector2(_moveDirection.x, _rb.velocity.y);
                 break;
         }
-	}
 
-    public override void Attack()
-    {
-        if (_playerTransform.position.x > transform.position.x)
-            _moveDirection = Vector2.right;
-        else
-            _moveDirection = Vector2.left;
-
-        _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
-
-        float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-        if (distanceToPlayer > alertRadius)
-            Lost();
+        if (state != "lost" && state != "found")
+        {
+            if (_moveDirection.x > 0)
+            {
+                _animator.SetBool("WalkLeft", false);
+            }
+            else if (_moveDirection.x < 0)
+            {
+                _animator.SetBool("WalkLeft", true);
+            }
+        }
     }
 
     public override void Idle()
@@ -67,46 +60,69 @@ public class Goomba : IEnemy {
                 _moveDirection = Vector2.right;
             else
                 _moveDirection = Vector2.left;
+
+            _oldMoveDirection = _moveDirection;
         }
         else if (EdgeCheck())
+        {
             _moveDirection *= -1;
-        else if (ObstacleCheck())
+            _oldMoveDirection = _moveDirection;
+        }
+        else if (ObstacleCheck()) 
+        {
             _moveDirection *= -1;
+            _oldMoveDirection = _moveDirection;
+        }
+        else
+            _moveDirection = _oldMoveDirection;
 
         _rb.velocity = new Vector2(_moveDirection.x * idleSpeed, _rb.velocity.y);
         
-        if (followPlayer)
+        if (followPlayer && !_player.isDead)
         {
             float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
             if (distanceToPlayer < alertRadius)
-                Found();
+                StartCoroutine(Found());
         }
     }
 
-    public override bool OutOfRangeCheck()
+    public override void Attack()
     {
-        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
-            return false;
+        if (_playerTransform.position.x > transform.position.x)
+            _moveDirection = Vector2.right;
         else
-            return true;
+            _moveDirection = Vector2.left;
+
+        _oldMoveDirection = _moveDirection;
+        _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
+
+        float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
+        if (distanceToPlayer > alertRadius)
+            StartCoroutine(Lost());
     }
 
-    public override bool EdgeCheck()
+    public override IEnumerator Lost()
     {
-        RaycastHit2D[] edgeHitChecks;
+        _animator.speed = 0.0f;
+        SetState("lost");
 
-        if (_moveDirection.x > 0)
-            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right + Vector2.down, 1.0f);
-        else
-            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left + Vector2.down, 1.0f);
+        yield return new WaitForSeconds(alertDuration);
 
-        foreach (RaycastHit2D edgeHit in edgeHitChecks)
-        {
-            if (edgeHit.transform.GetComponent<IEnemy>() == null && edgeHit.transform.tag != "Player")
-                return false;
-        }
+        _animator.speed = 1.0f;
+        SetState("idle");
+    }
 
-        return true;
+    public override IEnumerator Found()
+    {
+        _animator.speed = 0.0f;
+        SetState("found");
+        bool alertDirection = _playerTransform.position.x > transform.position.x;
+        _animator.SetBool("WalkLeft", !alertDirection);
+
+        yield return new WaitForSeconds(alertDuration);
+
+        _animator.speed = 1.0f;
+        SetState("attack");
     }
 
     public override bool ObstacleCheck()
