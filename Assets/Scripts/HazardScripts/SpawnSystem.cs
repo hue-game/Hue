@@ -100,15 +100,4 @@ public class SpawnSystem : MonoBehaviour {
         }
 
     }
-
-    //public void ResetTrigger()
-    //{
-    //    triggerEnabled = true;
-    //    _currentlyActive = false;
-    //    _timeActive = 0;
-    //    CancelInvoke("SpawnObject");
-
-    //    foreach (Transform child in GetComponentInChildren<Transform>())
-    //        Destroy(child.gameObject);
-    //}
 }

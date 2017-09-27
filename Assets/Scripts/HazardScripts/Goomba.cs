@@ -22,9 +22,7 @@ public class Goomba : IEnemy {
 
     void Update () {
         if (_player.isDead)
-        {
             SetState("idle");
-        }
 
         switch (state)
         {
@@ -109,7 +107,7 @@ public class Goomba : IEnemy {
         _alertAnimator.SetBool("Found", false);
 
         yield return new WaitForSeconds(alertDuration);
-        
+
         _alertAnimator.SetBool("Lost", false);
         _animator.speed = 1.0f;
         SetState("idle");
@@ -119,8 +117,7 @@ public class Goomba : IEnemy {
     {
         _animator.speed = 0.0f;
         SetState("found");
-        bool alertDirection = _playerTransform.position.x > transform.position.x;
-        _animator.SetBool("WalkLeft", !alertDirection);
+        FoundLookDirection();
         _alertAnimator.SetBool("Lost", false);
         _alertAnimator.SetBool("Found", true);
 
@@ -129,6 +126,13 @@ public class Goomba : IEnemy {
         _alertAnimator.SetBool("Found", false);
         _animator.speed = 1.0f;
         SetState("attack");
+    }
+
+
+    public override void FoundLookDirection()
+    {
+        bool alertDirection = _playerTransform.position.x > transform.position.x;
+        _animator.SetBool("WalkLeft", !alertDirection);
     }
 
     public override bool ObstacleCheck()

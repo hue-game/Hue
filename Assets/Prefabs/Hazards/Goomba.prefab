@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 114166622838837346}
   - component: {fileID: 50401306452498590}
   - component: {fileID: 212774849374561028}
-  - component: {fileID: 114057404213048054}
   - component: {fileID: 95578295513875854}
   - component: {fileID: 70320539585338104}
   m_Layer: 0
@@ -145,17 +144,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114057404213048054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032993011344462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111f9e9f9b08f23439efe04e0147b90d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114166622838837346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,12 +157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alertRadius: 5
   alertDuration: 0.2
-  attackCooldown: 1
   idleSpeed: 1.5
   attackSpeed: 3
   roamingArea: {fileID: 0}
-  alertSprite: {fileID: 0}
-  lostSprite: {fileID: 0}
   state: idle
   followPlayer: 0
   startDirection: 1

@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class Charger : IEnemy {
 
+    public float changeDirectionMin = 1f;
+    public float changeDirectionMax = 5f;
     [Header("left is false, right is true")]
     public bool startDirection = false;
+
+    private float _lastDirectionSwitch = 0;
+    private bool _isSliding = false;
 
     new void Awake () {
         base.Awake();
@@ -21,9 +26,7 @@ public class Charger : IEnemy {
 
     void Update () {
         if (_player.isDead)
-        {
             SetState("idle");
-        }
 
         switch (state)
         {
@@ -38,16 +41,12 @@ public class Charger : IEnemy {
                 break;
         }
 
-        if (state != "lost" && state != "found")
+        if (state != "lost" && state != "found" && !_isSliding)
         {
             if (_moveDirection.x > 0)
-            {
-                //_animator.SetBool("WalkLeft", false);
-            }
+                _flipScript.FlipSprite(false);
             else if (_moveDirection.x < 0)
-            {
-                //_animator.SetBool("WalkLeft", true);
-            }
+                _flipScript.FlipSprite(true);
         }
     }
 
@@ -80,7 +79,7 @@ public class Charger : IEnemy {
         if (!_player.isDead)
         {
             float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-            if (distanceToPlayer < alertRadius)
+            if (distanceToPlayer < alertRadius && !_isSliding)
                 StartCoroutine(Found());
         }
     }
@@ -93,35 +92,51 @@ public class Charger : IEnemy {
             _moveDirection = Vector2.left;
 
         _oldMoveDirection = _moveDirection;
-        _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
+
+        if (!_isSliding)
+            _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
 
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-        if (distanceToPlayer > alertRadius)
+        if (distanceToPlayer > alertRadius && !_isSliding)
             StartCoroutine(Lost());
     }
 
     public override IEnumerator Lost()
     {
-        _animator.speed = 0.0f;
         SetState("lost");
+        _animator.SetBool("Attack", false);
+        _animator.SetBool("Idle", true);
+
+        _alertAnimator.SetBool("Lost", true);
+        _alertAnimator.SetBool("Found", false);
 
         yield return new WaitForSeconds(alertDuration);
 
+        _alertAnimator.SetBool("Lost", false);
         _animator.speed = 1.0f;
         SetState("idle");
     }
 
     public override IEnumerator Found()
     {
-        _animator.speed = 0.0f;
         SetState("found");
-        bool alertDirection = _playerTransform.position.x > transform.position.x;
-        //_animator.SetBool("WalkLeft", !alertDirection);
+        _animator.SetBool("Attack", false);
+        _animator.SetBool("Idle", true);
+
+        _alertAnimator.SetBool("Lost", false);
+        _alertAnimator.SetBool("Found", true);
+        FoundLookDirection();
 
         yield return new WaitForSeconds(alertDuration);
 
-        _animator.speed = 1.0f;
+        _alertAnimator.SetBool("Found", false);
         SetState("attack");
+    }
+
+    public override void FoundLookDirection()
+    {
+        bool alertDirection = _playerTransform.position.x > transform.position.x;
+        _flipScript.FlipSprite(!alertDirection);
     }
 
     public override bool ObstacleCheck()
@@ -141,17 +156,29 @@ public class Charger : IEnemy {
         return false;
     }
 
+    private Vector2 RandomDirection()
+    {
+
+        return Vector2.zero;
+    }
+    
     private IEnumerator Slide()
     {
+        _isSliding = true;
+        _animator.SetBool("Sliding", true);
+        Vector2 startVelocity = _rb.velocity;
         float t = 0;
         while (t < 1)
         {
-            t += Time.fixedDeltaTime * (Time.timeScale / 1f);
+            Vector2 endVelocity = new Vector2(0, _rb.velocity.y);
+            t += Time.fixedDeltaTime * (Time.timeScale / 2f);
 
+            _rb.velocity = Vector2.Lerp(startVelocity, endVelocity, t);
             yield return 0;
         }
 
-
+        _isSliding = false;
+        _animator.SetBool("Sliding", false);
     }
 
 }

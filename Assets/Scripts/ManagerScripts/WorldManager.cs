@@ -10,22 +10,17 @@ public class WorldManager : MonoBehaviour {
 	private List<GameObject> nightmareWorldObjects = new List<GameObject>();
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
     private IPlayer _player;
-    private Rope[] _ropes;
-    private SpawnSystem[] _spawnSystems;
 
     // Use this for initialization
     void Start () {
-        //Get an array of all GameObjects in the scene
         _player = FindObjectOfType<IPlayer>();
-        _ropes = FindObjectsOfType<Rope>();
-        _spawnSystems = FindObjectsOfType<SpawnSystem>();
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 
 		foreach (GameObject gameObject in allGameObjects)
 		{
 			if(gameObject != null)
 			{
-				//Add objects with a blue or red layer (to be changed to gray and color) to their respective lists
+				//Add objects with a nightmare or dream layer to their respective lists
 				if (gameObject.layer == LayerMask.NameToLayer("NightmareWorld"))
 					nightmareWorldObjects.Add(gameObject);
 				else if (gameObject.layer == LayerMask.NameToLayer("DreamWorld"))
@@ -33,8 +28,18 @@ public class WorldManager : MonoBehaviour {
 			}
 		}
 
-		UpdateWorld ();
+		UpdateWorld();
 	}
+
+    public bool GetGameObject(GameObject checkObject)
+    {
+        if (checkObject.layer == LayerMask.NameToLayer("NightmareWorld"))
+            return nightmareWorldObjects.Contains(checkObject);
+        else if (checkObject.layer == LayerMask.NameToLayer("DreamWorld"))
+            return nightmareWorldObjects.Contains(checkObject);
+        else
+            return false;
+    }
 
     public void AddGameObject(GameObject addObject)
     { 
@@ -55,7 +60,7 @@ public class WorldManager : MonoBehaviour {
 	public void SwitchWorld()
 	{
 		worldType = !worldType;
-		UpdateWorld ();
+		UpdateWorld();
 	}
 
 	public void UpdateWorld() {
@@ -65,6 +70,9 @@ public class WorldManager : MonoBehaviour {
 
 			foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, true);
+
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"));
 		} 
 		else {
 			foreach (GameObject nightmareObject in nightmareWorldObjects)
@@ -72,8 +80,11 @@ public class WorldManager : MonoBehaviour {
 
             foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, false);
+
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"));
         }
-	}
+    }
 
     public void UpdateWorldObject(GameObject worldObject, bool show)
     {
@@ -86,9 +97,15 @@ public class WorldManager : MonoBehaviour {
                 if (worldObject.tag == "RollingRock")
                 {
                     if (worldType)
+                    {
                         worldObject.GetComponent<SpriteRenderer>().sprite = worldObject.GetComponent<RollingRock>().dreamSprite;
+                        worldObject.layer = LayerMask.NameToLayer("DreamWorld");
+                    }
                     else
+                    {
                         worldObject.GetComponent<SpriteRenderer>().sprite = worldObject.GetComponent<RollingRock>().nightmareSprite;
+                        worldObject.layer = LayerMask.NameToLayer("NightmareWorld");
+                    }
                 }
                 else
                 {
@@ -113,45 +130,14 @@ public class WorldManager : MonoBehaviour {
             }
 		} 
         else if (worldObject.tag == "Danger") 
-			worldObject.SetActive (show);
-        
-   //     else if (worldObject.GetComponent<Collider2D>() != null)
-			//worldObject.GetComponent<Collider2D>().enabled = show;
-			
+			worldObject.SetActive(show);
+
+        //Change the opacity of the line renderer for the rope
         if (worldObject.GetComponent<Rope>() != null)
-        {
             worldObject.GetComponent<LineRenderer>().material.color = Color.white * opacity;
-            foreach (Transform joint in worldObject.GetComponentInChildren<Transform>())
-            {
-                if (joint.GetComponent<Joint2D>() != null)
-                {
-                    if (_player.onRope == joint.gameObject)
-                        joint.GetComponent<RopeSegment>().ExitRope();
-					if (joint.GetComponent<Collider2D>() != null && joint.GetComponent<RopeSegment>() != null)
-                        joint.GetComponent<RopeSegment>().TogglePlayerCollision(show);
-                }
-            }
-        }
 
-        if (worldObject.GetComponent<Collider2D>() != null && worldObject.tag != "RollingRock")
-            worldObject.GetComponent<Collider2D>().enabled = show;
+        //Check if you are on a rope when switching, if so exit the rope
+        if (_player.onRope == worldObject)
+            worldObject.GetComponent<RopeSegment>().ExitRope();
     }
-
-    //public void ResetRopes()
-    //{
-    //    foreach (Rope rope in _ropes)
-    //    {
-    //        rope.DestroyRope();
-    //        rope.BuildRope();
-    //    }
-    //}
-
-    //public void ResetTriggers()
-    //{
-    //    foreach (SpawnTrigger trigger in _spawnTriggers)
-    //    {
-    //        trigger.ResetTrigger();
-    //    }
-    //}
-
 }

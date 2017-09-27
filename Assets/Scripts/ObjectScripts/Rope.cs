@@ -33,6 +33,8 @@ public class Rope : MonoBehaviour
 	Animator ClimbAnimation;
 	private float _playerSpeedY;
 
+    private WorldManager _worldManager;
+
     void Awake()
     {
         ropeEnd = target.gameObject;
@@ -41,11 +43,12 @@ public class Rope : MonoBehaviour
         _player = FindObjectOfType<IPlayer>();
         _playerRB = _player.GetComponent<Rigidbody2D>();
         _playerSprite = _player.GetComponent<SpriteRenderer>();
+        _worldManager = FindObjectOfType<WorldManager>();
         ropeSwingDownwardForce = ropeSwingSpeed / 3;
-        BuildRope();
-
 		ClimbAnimation = _player.GetComponent<Animator>();
-	}
+        
+        BuildRope();
+    }
 
     void LateUpdate()
     {
@@ -176,6 +179,8 @@ public class Rope : MonoBehaviour
         joints[n].AddComponent<RopeSegment>();
         joints[n].GetComponent<RopeSegment>().index = n;
         joints[n].transform.position = segmentPos[n];
+        joints[n].layer = joints[n].transform.parent.gameObject.layer;
+        _worldManager.AddGameObject(joints[n]);
 
         rigid.drag = ropeDrag;
         rigid.mass = ropeMass;
@@ -194,30 +199,4 @@ public class Rope : MonoBehaviour
         _player.transform.parent = segment.transform;
         _player.GetComponent<Joint2D>().connectedBody = segment.GetComponent<Rigidbody2D>();
     }
-
-    public void ToggleTriggerCollider()
-    {
-        foreach(GameObject joint in joints)
-        {
-            joint.GetComponent<CircleCollider2D>().isTrigger = !joint.GetComponent<CircleCollider2D>().isTrigger;
-        }
-    }
-
-    //public void DestroyRope()
-    //{
-    //    // Stop Rendering Rope then Destroy all of its components
-    //    rope = false;
-    //    for (int dj = 0; dj < joints.Length; dj++)
-    //    {
-    //        Destroy(joints[dj]);
-    //    }
-
-    //    segmentPos = new Vector3[0];
-    //    joints = new GameObject[0];
-    //    segments = 0;
-
-    //    ropeEnd.transform.localPosition = ropeEndPosition;
-    //    Destroy(ropeEnd.GetComponent<HingeJoint2D>());
-    //    ropeEnd.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-    //}
 }

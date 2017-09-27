@@ -6,12 +6,10 @@ public abstract class IEnemy : MonoBehaviour {
 
     public float alertRadius = 5;
     public float alertDuration = 0.2f;
-    public float attackCooldown = 1f;
+    //public float attackCooldown = 1f;
     public float idleSpeed = 1.5f;
     public float attackSpeed = 3.0f;
     public Collider2D roamingArea;
-    public Sprite alertSprite;
-    public Sprite lostSprite;
 
     [HideInInspector]
     public string state = "idle";
@@ -25,11 +23,10 @@ public abstract class IEnemy : MonoBehaviour {
     protected WorldManager _worldManager;
     protected Vector2 _moveDirection = Vector2.right;
     protected Vector2 _oldMoveDirection;
-    protected SpriteRenderer _enemyThoughtSprite;
 
     //Enable this if you want to randomly switch direction next frame (in idle)
-    protected bool _changeDirectionNextUpdate = false;
-    protected float _lastDirectionSwitch = 0;
+    //protected bool _changeDirectionNextUpdate = false;
+    //protected float _lastDirectionSwitch = 0;
 
     private IEnemy[] _enemies;
     private bool playerIsDead;
@@ -44,11 +41,18 @@ public abstract class IEnemy : MonoBehaviour {
         _playerTransform = _player.transform;
         _worldManager = FindObjectOfType<WorldManager>();
         _enemies = FindObjectsOfType<IEnemy>();
-        _enemyThoughtSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         foreach (IEnemy enemy in _enemies)
             Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 	}
+
+    public abstract void Idle();
+
+    public abstract void Attack();
+
+    public abstract IEnumerator Lost();
+
+    public abstract IEnumerator Found();
 
     //Set this from animator or script
     public void SetState(string newState)
@@ -63,20 +67,10 @@ public abstract class IEnemy : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    { 
+    {
         if (other.gameObject.tag == "Danger")
             Destroy(gameObject);
     }
-
-    public abstract void Idle();
-
-    public abstract void Attack();
-
-    public abstract IEnumerator Lost();
-
-    public abstract IEnumerator Found();
-
-    public abstract bool ObstacleCheck();
 
     public bool OutOfRangeCheck()
     {
@@ -103,5 +97,9 @@ public abstract class IEnemy : MonoBehaviour {
 
         return true;
     }
+
+    public abstract void FoundLookDirection();
+
+    public abstract bool ObstacleCheck();
 
 }
