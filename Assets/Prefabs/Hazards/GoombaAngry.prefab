@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114562905000245634}
   - component: {fileID: 50179948239222006}
   - component: {fileID: 212964705107848716}
+  - component: {fileID: 114364034882866112}
   - component: {fileID: 95987230243974310}
   - component: {fileID: 70677529304039892}
   m_Layer: 12
@@ -67,8 +68,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128795310184462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.12, y: 1.64, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children:
   - {fileID: 4288168538724496}
@@ -144,6 +145,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114364034882866112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128795310184462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f9e9f9b08f23439efe04e0147b90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114562905000245634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,11 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f34108f8c9fee4087bf67b8bb7011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertRadius: 3
+  alertRadius: 5
   alertDuration: 0.3
-  idleSpeed: 1.5
-  attackSpeed: 3
+  attackCooldown: 1
+  idleSpeed: 1
+  attackSpeed: 3.75
   roamingArea: {fileID: 0}
+  alertSprite: {fileID: 21300006, guid: ff9b6caedcf794a02a4367d27fc23715, type: 3}
+  lostSprite: {fileID: 21300000, guid: ff9b6caedcf794a02a4367d27fc23715, type: 3}
   state: idle
   followPlayer: 1
   startDirection: 0
@@ -238,7 +253,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee314ae508b224a2eb002762f9809fb5, type: 3}
-  m_Color: {r: 1, g: 0.43529412, b: 0.43529412, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

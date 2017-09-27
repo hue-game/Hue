@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114166622838837346}
   - component: {fileID: 50401306452498590}
   - component: {fileID: 212774849374561028}
+  - component: {fileID: 114057404213048054}
   - component: {fileID: 95578295513875854}
   - component: {fileID: 70320539585338104}
   m_Layer: 12
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032993011344462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.38, y: 1.69, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children:
   - {fileID: 4968710503335310}
@@ -144,6 +145,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114057404213048054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032993011344462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f9e9f9b08f23439efe04e0147b90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114166622838837346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,11 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f34108f8c9fee4087bf67b8bb7011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertRadius: 5
+  alertRadius: 3
   alertDuration: 0.2
-  idleSpeed: 1.5
+  attackCooldown: 1
+  idleSpeed: 1
   attackSpeed: 3
   roamingArea: {fileID: 0}
+  alertSprite: {fileID: 21300006, guid: ff9b6caedcf794a02a4367d27fc23715, type: 3}
+  lostSprite: {fileID: 21300000, guid: ff9b6caedcf794a02a4367d27fc23715, type: 3}
   state: idle
   followPlayer: 0
   startDirection: 1

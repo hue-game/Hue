@@ -109,8 +109,8 @@ MonoBehaviour:
   player: {fileID: 0}
   smoothTimeX: 0.25
   smoothTimeY: 0.25
-  offSetX: -1
-  offSetY: -2
+  offSetX: -1.5
+  offSetY: -0.75
 --- !u!114 &114993371855676230
 MonoBehaviour:
   m_ObjectHideFlags: 1
