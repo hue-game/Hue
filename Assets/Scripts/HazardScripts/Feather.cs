@@ -19,7 +19,7 @@ public class Feather : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        gameObject.layer = layerMask;
+        //gameObject.layer = layerMask;
         _rb = GetComponent<Rigidbody2D>();
         _worldManager = FindObjectOfType<WorldManager>();
         _worldManager.AddGameObject(gameObject);

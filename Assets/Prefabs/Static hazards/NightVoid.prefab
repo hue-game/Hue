@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4201683796911752}
   - component: {fileID: 61494124235801356}
   m_Layer: 9
-  m_Name: Nightmare void full
+  m_Name: NightVoid
   m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

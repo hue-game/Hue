@@ -15,6 +15,7 @@ public class Buzzard : IEnemy {
     private float _nextDirectionSwitch = 0;
     private bool _turning = false;
     private Vector2 _newMoveDirection;
+    private bool _hoverAbove = true;
 
     new void Awake () {
         base.Awake();
@@ -54,44 +55,55 @@ public class Buzzard : IEnemy {
 
     public override void Idle()
     {
-        if (_turning)
+        if (!_turning)
         {
             if (OutOfRangeCheck())
-                _moveDirection = (roamingArea.bounds.center - transform.position).normalized;
+            {
+                _oldMoveDirection = _moveDirection;
+                _newMoveDirection = (roamingArea.bounds.center - transform.position).normalized;
+                StartCoroutine(Turn());
+            }
             else if (ObstacleCheck())
-                _moveDirection *= -1;
+            {
+                _oldMoveDirection = _moveDirection;
+                _newMoveDirection = _moveDirection *= -1;
+                StartCoroutine(Turn());
+            }
             else if (_lostToIdle)
             {
                 _lostToIdle = false;
-                _moveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
+                _oldMoveDirection = _moveDirection;
+                _newMoveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
+                StartCoroutine(Turn());
             }
             else if (Time.time > _nextDirectionSwitch)
             {
                 _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
                 _oldMoveDirection = _moveDirection;
 
-                //float currentQuadrant = Vector2.An
-                _moveDirection = (roamingArea.bounds.center - transform.position).normalized;
+                Vector2 center = (roamingArea.bounds.center - transform.position).normalized;
+                bool moveTowardsCenter = false;
+                if (UnityEngine.Random.Range(0f, 1f) > 0.66f)
+                    moveTowardsCenter = true;
 
-                //float movementChance = 0.66f;
-                //if (roamingArea.bounds.center.x > transform.position.x)
-                //    movementChance = 0.33f;
+                if (moveTowardsCenter)
+                {
+                    if (center.x > 0 && center.y > 0)
+                        _newMoveDirection = new Vector2(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f));
+                    else if (center.x > 0 && center.y < 0)
+                        _newMoveDirection = new Vector2(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(-1f, 0f));
+                    else if (center.x < 0 && center.y < 0)
+                        _newMoveDirection = new Vector2(UnityEngine.Random.Range(-1f, 0f), UnityEngine.Random.Range(-1f, 0f));
+                    else if (center.x < 0 && center.y > 0)
+                        _newMoveDirection = new Vector2(UnityEngine.Random.Range(-1f, 0f), UnityEngine.Random.Range(0f, 1f));
+                    else
+                        _newMoveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
+                }
+                else
+                    _newMoveDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
 
-                //if (UnityEngine.Random.Range(0f, 1f) > movementChance)
-                //    _moveDirection = new Vector2(1f, 0f);
-                //else
-                //    _moveDirection = new Vector2(-1f, 0f);
-
-                //if (UnityEngine.Random.Range(0f, 1f) > 0.8f)
-                //{
-                //    _moveDirection = new Vector2(0f, 0f);
-                //    _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(0.8f, 2.5f);
-                //}
-
-                //_oldMoveDirection = _moveDirection;
+                StartCoroutine(Turn());
             }
-            //else
-            //    _moveDirection = _oldMoveDirection;
         }
 
         _rb.velocity = _moveDirection * idleSpeed;
@@ -106,21 +118,13 @@ public class Buzzard : IEnemy {
 
     public override void Attack()
     {
-        //if (_playerTransform.position.x > transform.position.x)
-        //    _moveDirection = Vector2.right;
-        //else
-        //    _moveDirection = Vector2.left;
-
-
         _moveDirection = (_playerTransform.position- transform.position).normalized;
-        //_oldMoveDirection = _moveDirection;
 
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
         if (distanceToPlayer > alertRadius)
             StartCoroutine(Lost());
 
         _rb.velocity = _moveDirection * attackSpeed;
-
     }
 
     public override IEnumerator Lost()
@@ -147,9 +151,7 @@ public class Buzzard : IEnemy {
     {
         SetState("found");
         _animator.speed = 0.0f;
-        //_animator.SetBool("Idle", false);
-        //_animator.SetBool("Attack", true);
-
+        
         _alertAnimator.SetBool("Lost", false);
         _alertAnimator.SetBool("Found", true);
         FoundLookDirection();
@@ -205,10 +207,9 @@ public class Buzzard : IEnemy {
         float t = 0;
         while (t < 1)
         {
-            t += Time.fixedDeltaTime * (Time.timeScale / 0.3f);
+            t += Time.fixedDeltaTime * (Time.timeScale / 0.6f);
 
             _moveDirection = Vector2.Lerp(_oldMoveDirection, _newMoveDirection, t);
-            _rb.velocity = _moveDirection;
             yield return null;
         }
 
