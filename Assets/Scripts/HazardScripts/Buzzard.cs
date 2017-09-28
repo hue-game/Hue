@@ -41,9 +41,9 @@ public class Buzzard : IEnemy {
         if (state != "lost" && state != "found")
         {
             if (_moveDirection.x > 0)
-                _flipScript.FlipSprite(false);
-            else if (_moveDirection.x < 0)
                 _flipScript.FlipSprite(true);
+            else if (_moveDirection.x < 0)
+                _flipScript.FlipSprite(false);
         }
     }
 
@@ -122,7 +122,7 @@ public class Buzzard : IEnemy {
         SetState("lost");
         _animator.speed = 0.0f;
         _animator.SetBool("Attack", false);
-        //_animator.SetBool("Idle", true);
+        _animator.SetBool("Idle", true);
 
         _alertAnimator.SetBool("Lost", true);
         _alertAnimator.SetBool("Found", false);
@@ -141,8 +141,8 @@ public class Buzzard : IEnemy {
     {
         SetState("found");
         _animator.speed = 0.0f;
-        _animator.SetBool("Attack", false);
-        _animator.SetBool("Idle", true);
+        //_animator.SetBool("Idle", false);
+        //_animator.SetBool("Attack", true);
 
         _alertAnimator.SetBool("Lost", false);
         _alertAnimator.SetBool("Found", true);
@@ -160,7 +160,7 @@ public class Buzzard : IEnemy {
     public override void FoundLookDirection()
     {
         bool alertDirection = _playerTransform.position.x > transform.position.x;
-        _flipScript.FlipSprite(!alertDirection);
+        _flipScript.FlipSprite(alertDirection);
     }
 
     public override bool ObstacleCheck()

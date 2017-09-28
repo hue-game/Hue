@@ -47,6 +47,7 @@ public class Player : IPlayer
             _worldManager.SwitchWorld();
             _gameManager.PlayerInteract();
         }
+
         if (isDead)
         {
             DieAnimation.ResetTrigger("Land");
@@ -55,12 +56,8 @@ public class Player : IPlayer
         }
     }
 
-	void Respawn(GameObject checkpoint) {
-		//transform.position = checkpoint.transform.position;
-
-  //      _worldManager.ResetRopes();
-  //      _worldManager.ResetTriggers();
-
+	void Respawn(GameObject checkpoint) 
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
@@ -68,20 +65,14 @@ public class Player : IPlayer
     private void OnCollisionEnter2D(Collision2D hit)
     {
         if (hit.gameObject.tag == "Danger")
-        {
             StartCoroutine(KillPlayer());
-
-        }
     }
 
     void OnTriggerEnter2D(Collider2D hit) {
-	    if (hit.tag == "Checkpoint") {
+	    if (hit.tag == "Checkpoint")
 		    _checkpointManager.SetNewCheckpoint(hit.gameObject);
-	    }
-
-	    if (hit.tag == "Danger") {
+	    else if (hit.tag == "Danger")
             StartCoroutine(KillPlayer());
-        }
     } 
 
     public IEnumerator KillPlayer()
