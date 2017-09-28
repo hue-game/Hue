@@ -31,5 +31,10 @@ public class RollingRock : MonoBehaviour {
             if (_rb.velocity.sqrMagnitude > 3)
                 StartCoroutine(_player.KillPlayer());
         }
+        else if (other.gameObject.GetComponent<IEnemy>() != null)
+        {
+            if (_rb.velocity.sqrMagnitude > 3)
+                Destroy(other.gameObject);
+        }
     }
 }

@@ -9,6 +9,9 @@ public class Goomba : IEnemy {
     [Header("left is false, right is true")]
     public bool startDirection = false;
 
+    private bool _edgeFound = false;
+    private bool _flippedLastFrame = false;
+
     new void Awake () {
         base.Awake();
         if (startDirection)
@@ -60,19 +63,28 @@ public class Goomba : IEnemy {
                 _moveDirection = Vector2.left;
 
             _oldMoveDirection = _moveDirection;
+            _flippedLastFrame = false;
         }
         else if (EdgeCheck())
         {
-            _moveDirection *= -1;
-            _oldMoveDirection = _moveDirection;
+            if (!_flippedLastFrame)
+            {
+                _moveDirection *= -1;
+                _oldMoveDirection = _moveDirection;
+                _flippedLastFrame = true;
+            }
         }
-        else if (ObstacleCheck()) 
+        else if (ObstacleCheck())
         {
             _moveDirection *= -1;
             _oldMoveDirection = _moveDirection;
+            _flippedLastFrame = false;
         }
         else
+        {
             _moveDirection = _oldMoveDirection;
+            _flippedLastFrame = false;
+        }
 
         _rb.velocity = new Vector2(_moveDirection.x * idleSpeed, _rb.velocity.y);
         
@@ -150,5 +162,29 @@ public class Goomba : IEnemy {
         }
 
         return false;
+    }
+
+    public override bool EdgeCheck()
+    {
+        RaycastHit2D[] edgeHitChecks;
+
+        LayerMask layerMask;
+        if (_worldManager.worldType)
+            layerMask = ~(1 << 9);
+        else
+            layerMask = ~(1 << 8);
+
+        if (_moveDirection.x > 0)
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right + Vector2.down, 1.0f, layerMask);
+        else
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left + Vector2.down, 1.0f, layerMask);
+
+        foreach (RaycastHit2D edgeHit in edgeHitChecks)
+        {
+            if (edgeHit.transform.GetComponent<IEnemy>() == null && edgeHit.transform.tag != "Player")
+                return false;
+        }
+
+        return true;
     }
 }

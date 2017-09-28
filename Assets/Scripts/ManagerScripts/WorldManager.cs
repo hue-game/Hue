@@ -64,25 +64,35 @@ public class WorldManager : MonoBehaviour {
 	}
 
 	public void UpdateWorld() {
-		if (worldType) {
-			foreach (GameObject nightmareObject in nightmareWorldObjects)
+		if (worldType) 
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"));
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Goomba"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Goomba"));
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("PlayerFeet"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("PlayerFeet"));
+
+            foreach (GameObject nightmareObject in nightmareWorldObjects)
                 UpdateWorldObject(nightmareObject, false);
 
 			foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, true);
+        }
+        else 
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"));
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Goomba"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Goomba"));
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("PlayerFeet"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("PlayerFeet"));
 
-            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"), false);
-            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"));
-		} 
-		else {
-			foreach (GameObject nightmareObject in nightmareWorldObjects)
+            foreach (GameObject nightmareObject in nightmareWorldObjects)
                 UpdateWorldObject(nightmareObject, true);
 
             foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, false);
-
-            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"), false);
-            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"));
         }
     }
 
@@ -139,5 +149,10 @@ public class WorldManager : MonoBehaviour {
         //Check if you are on a rope when switching, if so exit the rope
         if (_player.onRope == worldObject)
             worldObject.GetComponent<RopeSegment>().ExitRope();
+
+        //if (worldObject.GetComponent<Goomba>() != null)
+        //{
+            
+        //}
     }
 }

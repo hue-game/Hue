@@ -14,12 +14,9 @@ public class VoidBall : MonoBehaviour {
     [Range(0, 100)]
     public float speedRandomizePercentage;
 
-    public float DestroyAfterSeconds = 3.0f;
-
     private Rigidbody2D _rb;
     private VoidBall _parentVB;
     private WorldManager _worldManager;
-    private float _killTime;
 
 	// Use this for initialization
 	void Awake() {
@@ -41,7 +38,6 @@ public class VoidBall : MonoBehaviour {
                     angleRandomizePercentage = _parentVB.angleRandomizePercentage;
                     speed = _parentVB.speed;
                     speedRandomizePercentage = _parentVB.speedRandomizePercentage;
-                    DestroyAfterSeconds = _parentVB.DestroyAfterSeconds;
                 }
 
                 angle *= (1 - (Random.Range(-angleRandomizePercentage, angleRandomizePercentage) / 100));
@@ -65,8 +61,6 @@ public class VoidBall : MonoBehaviour {
                     _worldManager.UpdateWorldObject(gameObject, _worldManager.worldType);
                 else if (LayerMask.LayerToName(gameObject.layer) == "NightmareWorld")
                     _worldManager.UpdateWorldObject(gameObject, !_worldManager.worldType);
-
-                _killTime = Time.time + DestroyAfterSeconds;
             }
         }
     }
@@ -75,12 +69,6 @@ public class VoidBall : MonoBehaviour {
     {
         if (GetComponent<SpawnSystem>() == null)
         {
-            if (_killTime < Time.time)
-            {
-                _worldManager.RemoveGameObject(gameObject);
-                Destroy(gameObject);
-            }
-
             if (enableGravity)
             { 
                 float angleSprite = Mathf.Atan2(_rb.velocity.x, _rb.velocity.y) * Mathf.Rad2Deg;

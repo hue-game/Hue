@@ -66,14 +66,17 @@ public class GameManager : MonoBehaviour {
     {
         foreach (LevelLoader levelLoader in _levelLoaders)
         {
-            int remaining = levelRequirements[levelLoader.levelToLoad] - PlayerPrefs.GetInt("totalCollectiblesGlobal");
-            if (remaining > 0)
+            if (levelLoader.GetComponentInChildren<TextMesh>() != null)
             {
-                levelLoader.GetComponentInChildren<TextMesh>().text = remaining.ToString() + " more twisted minds";
-            }
-            else
-            {
-                levelLoader.GetComponentInChildren<TextMesh>().text = "interact";
+                int remaining = levelRequirements[levelLoader.levelToLoad] - PlayerPrefs.GetInt("totalCollectiblesGlobal");
+                if (remaining > 0)
+                {
+                    levelLoader.GetComponentInChildren<TextMesh>().text = remaining.ToString() + " more twisted minds";
+                }
+                else
+                {
+                    levelLoader.GetComponentInChildren<TextMesh>().text = "interact";
+                }
             }
         }
     }

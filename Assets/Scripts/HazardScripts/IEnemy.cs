@@ -11,7 +11,7 @@ public abstract class IEnemy : MonoBehaviour {
     public float attackSpeed = 3.0f;
     public Collider2D roamingArea;
 
-    [HideInInspector]
+    //[HideInInspector]
     public string state = "idle";
 
     protected Animator _animator;
@@ -80,23 +80,7 @@ public abstract class IEnemy : MonoBehaviour {
             return true;
     }
 
-    public bool EdgeCheck()
-    {
-        RaycastHit2D[] edgeHitChecks;
-
-        if (_moveDirection.x > 0)
-            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right + Vector2.down, 1.0f);
-        else
-            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left + Vector2.down, 1.0f);
-
-        foreach (RaycastHit2D edgeHit in edgeHitChecks)
-        {
-            if (edgeHit.transform.GetComponent<IEnemy>() == null && edgeHit.transform.tag != "Player")
-                return false;
-        }
-
-        return true;
-    }
+    public abstract bool EdgeCheck();
 
     public abstract void FoundLookDirection();
 

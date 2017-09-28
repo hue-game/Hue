@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Charger : IEnemy {
 
     public float changeDirectionMin = 1f;
     public float changeDirectionMax = 5f;
+    public float slideDuration = 1.75f;
     [Header("left is false, right is true")]
     public bool startDirection = false;
 
-    private float _lastDirectionSwitch = 0;
     private bool _isSliding = false;
+    private bool _playerInWorld = false;
+
+    private bool _lostToIdle = false;
+    private float _nextDirectionSwitch = 0;
 
     new void Awake () {
         base.Awake();
@@ -22,11 +25,14 @@ public class Charger : IEnemy {
 
         _oldMoveDirection = _moveDirection;
         _rb.velocity = _moveDirection;
+        _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
     }
 
     void Update () {
         if (_player.isDead)
             SetState("idle");
+
+        _playerInWorld = !_worldManager.worldType;
 
         switch (state)
         {
@@ -71,12 +77,45 @@ public class Charger : IEnemy {
             _moveDirection *= -1;
             _oldMoveDirection = _moveDirection;
         }
+        else if (_lostToIdle)
+        {
+            _lostToIdle = false;
+            if (UnityEngine.Random.Range(0, 2) == 1)
+                _moveDirection = new Vector2(1f, 0f);
+            else
+                _moveDirection = new Vector2(-1f, 0f);
+            _oldMoveDirection = _moveDirection;
+        }
+        else if (Time.time > _nextDirectionSwitch)
+        {
+            _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
+            float movementChance = 0.66f;
+            if (roamingArea.bounds.center.x > transform.position.x)
+                movementChance = 0.33f;
+
+            if (UnityEngine.Random.Range(0f, 1f) > movementChance)
+                _moveDirection = new Vector2(1f, 0f);
+            else
+                _moveDirection = new Vector2(-1f, 0f);
+
+            if (UnityEngine.Random.Range(0f, 1f) > 0.8f)
+            {
+                _moveDirection = new Vector2(0f, 0f);
+                _animator.speed = 0.0f;
+                _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(0.8f, 2.5f);
+            }
+
+            _oldMoveDirection = _moveDirection;
+        }
         else
             _moveDirection = _oldMoveDirection;
 
+        if (_moveDirection.x != 0)
+            _animator.speed = 1.0f;
+
         _rb.velocity = new Vector2(_moveDirection.x * idleSpeed, _rb.velocity.y);
         
-        if (!_player.isDead)
+        if (!_player.isDead && _playerInWorld)
         {
             float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
             if (distanceToPlayer < alertRadius && !_isSliding)
@@ -93,19 +132,25 @@ public class Charger : IEnemy {
 
         _oldMoveDirection = _moveDirection;
 
-        if (!_isSliding)
-            _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
-
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-        if (distanceToPlayer > alertRadius && !_isSliding)
+        if (((distanceToPlayer > alertRadius) && !_isSliding) || (!_isSliding && !_playerInWorld))
             StartCoroutine(Lost());
+
+        if (!_isSliding)
+        {
+            if (!_playerInWorld)
+                StartCoroutine(Slide());
+            else
+                _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
+        }
     }
 
     public override IEnumerator Lost()
     {
         SetState("lost");
+        _animator.speed = 0.0f;
         _animator.SetBool("Attack", false);
-        _animator.SetBool("Idle", true);
+        //_animator.SetBool("Idle", true);
 
         _alertAnimator.SetBool("Lost", true);
         _alertAnimator.SetBool("Found", false);
@@ -115,11 +160,13 @@ public class Charger : IEnemy {
         _alertAnimator.SetBool("Lost", false);
         _animator.speed = 1.0f;
         SetState("idle");
+        _lostToIdle = true;
     }
 
     public override IEnumerator Found()
     {
         SetState("found");
+        _animator.speed = 0.0f;
         _animator.SetBool("Attack", false);
         _animator.SetBool("Idle", true);
 
@@ -130,6 +177,7 @@ public class Charger : IEnemy {
         yield return new WaitForSeconds(alertDuration);
 
         _alertAnimator.SetBool("Found", false);
+        _animator.speed = 1.0f;
         SetState("attack");
     }
 
@@ -156,29 +204,43 @@ public class Charger : IEnemy {
         return false;
     }
 
-    private Vector2 RandomDirection()
-    {
-
-        return Vector2.zero;
-    }
-    
     private IEnumerator Slide()
     {
         _isSliding = true;
+        _animator.SetBool("Attack", false);
         _animator.SetBool("Sliding", true);
         Vector2 startVelocity = _rb.velocity;
         float t = 0;
         while (t < 1)
         {
             Vector2 endVelocity = new Vector2(0, _rb.velocity.y);
-            t += Time.fixedDeltaTime * (Time.timeScale / 2f);
+            t += Time.fixedDeltaTime * (Time.timeScale / slideDuration);
 
-            _rb.velocity = Vector2.Lerp(startVelocity, endVelocity, t);
-            yield return 0;
+            _rb.velocity = Vector2.Lerp(new Vector2(startVelocity.x, _rb.velocity.y), endVelocity, t);
+            yield return null;
         }
 
         _isSliding = false;
         _animator.SetBool("Sliding", false);
+        _animator.SetBool("idle", true);
     }
 
+
+    public override bool EdgeCheck()
+    {
+        RaycastHit2D[] edgeHitChecks;
+
+        if (_moveDirection.x > 0)
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right + Vector2.down, 1.0f);
+        else
+            edgeHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left + Vector2.down, 1.0f);
+
+        foreach (RaycastHit2D edgeHit in edgeHitChecks)
+        {
+            if (edgeHit.transform.GetComponent<IEnemy>() == null && edgeHit.transform.tag != "Player")
+                return false;
+        }
+
+        return true;
+    }
 }
