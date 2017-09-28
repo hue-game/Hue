@@ -118,7 +118,7 @@ public class Charger : IEnemy {
         if (!_player.isDead && _playerInWorld)
         {
             float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-            if (distanceToPlayer < alertRadius && !_isSliding)
+            if (distanceToPlayer < alertRadius && Mathf.Abs(_playerTransform.position.y - transform.position.y) < 2f && !_isSliding)
                 StartCoroutine(Found());
         }
     }
@@ -133,7 +133,7 @@ public class Charger : IEnemy {
         _oldMoveDirection = _moveDirection;
 
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-        if (((distanceToPlayer > alertRadius) && !_isSliding) || (!_isSliding && !_playerInWorld))
+        if (((distanceToPlayer > alertRadius) && !_isSliding) || (!_isSliding && !_playerInWorld) || (!_isSliding && Mathf.Abs(_playerTransform.position.y - transform.position.y) > 2f))
             StartCoroutine(Lost());
 
         if (!_isSliding)

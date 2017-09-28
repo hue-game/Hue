@@ -117,6 +117,32 @@ public class WorldManager : MonoBehaviour {
                         worldObject.layer = LayerMask.NameToLayer("NightmareWorld");
                     }
                 }
+                else if(worldObject.GetComponent<Buzzard>() != null)
+                {
+                    if (worldType)
+                    {
+                        worldObject.GetComponent<Animator>().runtimeAnimatorController = worldObject.GetComponent<Buzzard>().dreamAnimator;
+                        worldObject.layer = LayerMask.NameToLayer("DreamWorld");
+                    }
+                    else
+                    {
+                        worldObject.GetComponent<Animator>().runtimeAnimatorController = worldObject.GetComponent<Buzzard>().nightmareAnimator;
+                        worldObject.layer = LayerMask.NameToLayer("NightmareWorld");
+                    }
+                }
+                else if (worldObject.GetComponent<Feather>() != null)
+                {
+                    if (worldType)
+                    {
+                        worldObject.GetComponent<SpriteRenderer>().sprite = worldObject.GetComponent<Feather>().dreamFeather;
+                        worldObject.layer = LayerMask.NameToLayer("DreamWorld");
+                    }
+                    else
+                    {
+                        worldObject.GetComponent<SpriteRenderer>().sprite = worldObject.GetComponent<Feather>().nightmareFeather;
+                        worldObject.layer = LayerMask.NameToLayer("NightmareWorld");
+                    }
+                }
                 else
                 {
                     //Show object from other world at lower opacity
