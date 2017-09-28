@@ -6,6 +6,7 @@ public class Buzzard : IEnemy {
 
     public float changeDirectionMin = 1f;
     public float changeDirectionMax = 5f;
+    //public float attackCooldown = 1f;
 
     private bool _lostToIdle = false;
     private float _nextDirectionSwitch = 0;
@@ -178,7 +179,7 @@ public class Buzzard : IEnemy {
         }
 
         if (_moveDirection.y > 0)
-            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.down, 4f);
+            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.down, 1f);
         else
             obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.up, 1f);
 

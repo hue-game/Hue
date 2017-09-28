@@ -42,7 +42,7 @@ public class Player : IPlayer
         if (_input.jump)
             _jumpScript.JumpUp();
 
-        if (_input.Switch)
+        if (_input.Switch && !isDead)
         {
             _worldManager.SwitchWorld();
             _gameManager.PlayerInteract();

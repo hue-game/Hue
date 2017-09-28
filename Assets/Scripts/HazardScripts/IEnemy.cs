@@ -6,7 +6,6 @@ public abstract class IEnemy : MonoBehaviour {
 
     public float alertRadius = 5;
     public float alertDuration = 0.2f;
-    //public float attackCooldown = 1f;
     public float idleSpeed = 1.5f;
     public float attackSpeed = 3.0f;
     public Collider2D roamingArea;
@@ -23,10 +22,6 @@ public abstract class IEnemy : MonoBehaviour {
     protected WorldManager _worldManager;
     protected Vector2 _moveDirection = Vector2.right;
     protected Vector2 _oldMoveDirection;
-
-    //Enable this if you want to randomly switch direction next frame (in idle)
-    //protected bool _changeDirectionNextUpdate = false;
-    //protected float _lastDirectionSwitch = 0;
 
     private IEnemy[] _enemies;
     private bool playerIsDead;
@@ -54,7 +49,6 @@ public abstract class IEnemy : MonoBehaviour {
 
     public abstract IEnumerator Found();
 
-    //Set this from animator or script
     public void SetState(string newState)
     {
         state = newState;

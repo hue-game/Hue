@@ -26,8 +26,6 @@ public class GroundCheck : MonoBehaviour {
             bool groundFound = false;
             foreach(Collider2D colOverlap in Physics2D.OverlapBoxAll(_col.bounds.center, _col.bounds.size, 0f))
             {
-                print(colOverlap.name);
-                print(Physics2D.GetIgnoreCollision(_col, colOverlap));
                 if (colOverlap != other && colOverlap != _col && colOverlap != _playerCollider && !colOverlap.isTrigger && !Physics2D.GetIgnoreLayerCollision(LayerMask.NameToLayer("PlayerFeet"), colOverlap.gameObject.layer))
                     groundFound = true;
             }

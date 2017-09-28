@@ -148,10 +148,6 @@ public class Charger : IEnemy {
     public override IEnumerator Lost()
     {
         SetState("lost");
-        _animator.speed = 0.0f;
-        _animator.SetBool("Attack", false);
-        //_animator.SetBool("Idle", true);
-
         _alertAnimator.SetBool("Lost", true);
         _alertAnimator.SetBool("Found", false);
 
@@ -167,8 +163,8 @@ public class Charger : IEnemy {
     {
         SetState("found");
         _animator.speed = 0.0f;
-        _animator.SetBool("Attack", false);
-        _animator.SetBool("Idle", true);
+        _animator.SetBool("Idle", false);
+        _animator.SetBool("Attack", true);
 
         _alertAnimator.SetBool("Lost", false);
         _alertAnimator.SetBool("Found", true);
@@ -208,7 +204,7 @@ public class Charger : IEnemy {
     {
         _isSliding = true;
         _animator.SetBool("Attack", false);
-        _animator.SetBool("Sliding", true);
+        _animator.SetBool("Slide", true);
         Vector2 startVelocity = _rb.velocity;
         float t = 0;
         while (t < 1)
@@ -221,10 +217,9 @@ public class Charger : IEnemy {
         }
 
         _isSliding = false;
-        _animator.SetBool("Sliding", false);
-        _animator.SetBool("idle", true);
+        _animator.SetBool("Slide", false);
+        _animator.SetBool("Idle", true);
     }
-
 
     public override bool EdgeCheck()
     {
