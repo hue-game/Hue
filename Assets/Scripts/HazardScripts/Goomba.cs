@@ -91,7 +91,7 @@ public class Goomba : IEnemy {
         if (followPlayer && !_player.isDead)
         {
             float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-            if (distanceToPlayer < alertRadius)
+            if (distanceToPlayer < alertRadius && Mathf.Abs(_playerTransform.position.y - transform.position.y) < 2f)
                 StartCoroutine(Found());
         }
     }
@@ -107,7 +107,7 @@ public class Goomba : IEnemy {
         _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
 
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-        if (distanceToPlayer > alertRadius)
+        if (distanceToPlayer > alertRadius || Mathf.Abs(_playerTransform.position.y - transform.position.y) > 2f)
             StartCoroutine(Lost());
     }
 
