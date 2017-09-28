@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 114380559949901804}
   - component: {fileID: 120455878151167714}
   - component: {fileID: 50308171180143060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rope4
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4635169356099248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RopeEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1007724394689034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.41, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4635169356099248}
@@ -107,7 +107,6 @@ MonoBehaviour:
   ropeDrag: 0.15
   ropeMass: 1
   ropeColRadius: 0.1
-  ropeLeaveMultiplier: 2
   ropeSwingSpeed: 30
 --- !u!120 &120455878151167714
 LineRenderer:
