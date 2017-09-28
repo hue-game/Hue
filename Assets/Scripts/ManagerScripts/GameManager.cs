@@ -12,18 +12,31 @@ public class GameManager : MonoBehaviour {
     private LevelLoader[] _levelLoaders;
     private ResetProgress _resetProgress;
     private CheckpointManager _checkpointManager;
+    private ViewTutorial _viewTutorial;
 
 	void Start() {
         if (!PlayerPrefs.HasKey("totalCollectiblesGlobal"))
+        {
             PlayerPrefs.SetInt("totalCollectiblesGlobal", 0);
+            PlayerPrefs.Save();
+        }
 
         _levelLoaders = FindObjectsOfType<LevelLoader>();
         _resetProgress = FindObjectOfType<ResetProgress>();
         _checkpointManager = FindObjectOfType<CheckpointManager>();
+        _viewTutorial = FindObjectOfType<ViewTutorial>();
     
         LoadLevelRequirements();
         if (SceneManager.GetActiveScene().name == "InteractiveMainMenu")
+        {
+            if (!PlayerPrefs.HasKey("FirstTime"))
+            {
+                PlayerPrefs.SetInt("FirstTime", 0);
+                PlayerPrefs.Save();
+                _viewTutorial.ShowTutorial();
+            }
             UpdateLevelLoaders();
+        }
 
         if (_checkpointManager == null)
         {
@@ -50,8 +63,11 @@ public class GameManager : MonoBehaviour {
             levelLoader.PlayerInteract();
         }
 
-        if(_resetProgress != null)
+        if (_resetProgress != null)
             _resetProgress.PlayerInteract();
+
+        if (_viewTutorial != null)
+            _viewTutorial.PlayerInteract();
     }
 
     private void LoadLevelRequirements()
