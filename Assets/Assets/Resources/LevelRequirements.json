@@ -5,32 +5,12 @@
 			"collectiblesRequired" : 0
 		},
 		{
-			"levelName": "Level - Voids", 
-			"collectiblesRequired" : 0
-		},
-		{
-			"levelName": "Level - Pusher", 
-			"collectiblesRequired" : 0
-		},
-		{
 			"levelName": "Level - World of Goo(mba)", 
-			"collectiblesRequired" : 0
+			"collectiblesRequired" : 1
 		},
 		{
 			"levelName": "Level - Charger", 
-			"collectiblesRequired" : 0
-		},
-		{
-			"levelName": "Level 1", 
-			"collectiblesRequired" : 0
-		},
-		{
-			"levelName": "Level 2", 
-			"collectiblesRequired" : 0
-		},
-		{
-			"levelName": "Level 3", 
-			"collectiblesRequired" : 2
-	  }
+			"collectiblesRequired" : 3
+		}
 	]
 }
