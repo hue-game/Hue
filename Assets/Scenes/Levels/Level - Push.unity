@@ -3450,7 +3450,7 @@ Prefab:
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
       propertyPath: spawnPoint.y
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
@@ -3922,7 +3922,7 @@ Prefab:
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
       propertyPath: spawnPoint.y
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
@@ -8538,7 +8538,7 @@ Prefab:
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
       propertyPath: spawnPoint.y
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
@@ -9689,7 +9689,7 @@ Prefab:
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
       propertyPath: spawnPoint.y
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 114016601567810520, guid: 0d1568e541d81e148b244096d45b62c5,
         type: 2}
