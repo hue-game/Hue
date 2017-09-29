@@ -1585,7 +1585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1025524054139518, guid: 15855ec4d2f0a40948d12cc2b94d6cc1, type: 2}
       propertyPath: m_Name
-      value: Level - Voids
+      value: Level - World of Goo(mba)
       objectReference: {fileID: 0}
     - target: {fileID: 114425166235990342, guid: 15855ec4d2f0a40948d12cc2b94d6cc1,
         type: 2}
@@ -4047,7 +4047,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1025524054139518, guid: 15855ec4d2f0a40948d12cc2b94d6cc1, type: 2}
       propertyPath: m_Name
-      value: Level 3
+      value: Level - Charger
       objectReference: {fileID: 0}
     - target: {fileID: 114425166235990342, guid: 15855ec4d2f0a40948d12cc2b94d6cc1,
         type: 2}
