@@ -3237,18 +3237,9 @@ Prefab:
       propertyPath: levelTransitionCanvas
       value: 
       objectReference: {fileID: 1641338373}
-    - target: {fileID: 102004733670810108, guid: 15855ec4d2f0a40948d12cc2b94d6cc1,
-        type: 2}
-      propertyPath: m_CharacterSize
-      value: 0.125
-      objectReference: {fileID: 0}
     - target: {fileID: 1025524054139518, guid: 15855ec4d2f0a40948d12cc2b94d6cc1, type: 2}
       propertyPath: m_Name
       value: Level 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487575141959158, guid: 15855ec4d2f0a40948d12cc2b94d6cc1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15855ec4d2f0a40948d12cc2b94d6cc1, type: 2}

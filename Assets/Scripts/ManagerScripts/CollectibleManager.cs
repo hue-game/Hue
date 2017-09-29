@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CollectibleManager : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class CollectibleManager : MonoBehaviour {
     private int _collectiblesFoundFloat = 0;
     [HideInInspector]
     public int totalCollectiblesGlobal = 0;
+
 	// Use this for initialization
 	void Awake () {
         totalCollectiblesGlobal = PlayerPrefs.GetInt("totalCollectiblesGlobal");
@@ -27,6 +29,12 @@ public class CollectibleManager : MonoBehaviour {
             }
         }
         collectibleText.text = _collectiblesFoundFloat + "/" + _collectiblesFound.Count;
+
+        if (_collectiblesFound.Count == _collectiblesFoundFloat)
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_completed", 1);
+            PlayerPrefs.Save();
+        }
     }
 
     public void AddCollectible(GameObject collectible)
@@ -37,6 +45,8 @@ public class CollectibleManager : MonoBehaviour {
         collectibleText.text = _collectiblesFoundFloat + "/" + _collectiblesFound.Count;
         PlayerPrefs.SetInt(collectible.name, 1);
         PlayerPrefs.SetInt("totalCollectiblesGlobal", totalCollectiblesGlobal);
+        if (_collectiblesFound.Count == _collectiblesFoundFloat)
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_completed", 1);
         PlayerPrefs.Save();
     }
 }

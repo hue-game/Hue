@@ -34,7 +34,6 @@ public class Collectible : MonoBehaviour {
             yield return 0;
         }
 
-        //Destroy(gameObject);
         gameObject.SetActive(false);
     }
 

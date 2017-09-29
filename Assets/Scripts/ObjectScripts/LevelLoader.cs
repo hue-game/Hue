@@ -48,15 +48,13 @@ public class LevelLoader : MonoBehaviour {
                 }
                 else
                 {
-                    if (PlayerPrefs.GetInt("totalCollectiblesGlobal") >= _gameManager.levelRequirements[levelToLoad])
+                    if (PlayerPrefs.GetInt("totalCollectiblesGlobal") < _gameManager.levelRequirements[levelToLoad])
                         levelToLoad = "InteractiveMainMenu";
                     InitLevel();
                 }
             }
             else
-            {
                 InitLevel();
-            }
         }
     }
 
@@ -66,11 +64,11 @@ public class LevelLoader : MonoBehaviour {
         touching = false;
         FindObjectOfType<IPlayer>().GetComponent<Rigidbody2D>().simulated = false;
         levelTransitionCanvas.SetActive(true);
-        StartCoroutine(this.Transition());
+        StartCoroutine(Transition());
     }
 
     private IEnumerator Transition() {
-		yield return new WaitForSeconds(3);
-		SceneManager.LoadScene (this.levelToLoad);
+		yield return new WaitForSeconds(2);
+		SceneManager.LoadScene(levelToLoad);
 	}
 }

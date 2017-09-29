@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour {
 
 	public void RestartLevel() {
         Time.timeScale = 1.0f;
+        PlayerPrefs.DeleteKey("CurrentLevel");
+        PlayerPrefs.DeleteKey("CurrentCheckpoint");
+        PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
@@ -59,9 +62,7 @@ public class GameManager : MonoBehaviour {
     public void PlayerInteract()
     {
         foreach(LevelLoader levelLoader in _levelLoaders)
-        {
             levelLoader.PlayerInteract();
-        }
 
         if (_resetProgress != null)
             _resetProgress.PlayerInteract();
@@ -86,13 +87,14 @@ public class GameManager : MonoBehaviour {
             {
                 int remaining = levelRequirements[levelLoader.levelToLoad] - PlayerPrefs.GetInt("totalCollectiblesGlobal");
                 if (remaining > 0)
-                {
                     levelLoader.GetComponentInChildren<TextMesh>().text = remaining.ToString() + " more twisted minds";
-                }
                 else
-                {
                     levelLoader.GetComponentInChildren<TextMesh>().text = "interact";
-                }
+
+                if (PlayerPrefs.GetInt(levelLoader.levelToLoad + "_completed") == 1)
+                    levelLoader.transform.GetChild(1).gameObject.SetActive(true);
+                else
+                    levelLoader.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
     }
