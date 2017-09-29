@@ -1,6 +1,26 @@
 {
 	"Items" : [
 		{
+			"levelName": "Level - Push", 
+			"collectiblesRequired" : 0
+		},
+		{
+			"levelName": "Level - Voids", 
+			"collectiblesRequired" : 0
+		},
+		{
+			"levelName": "Level - Pusher", 
+			"collectiblesRequired" : 0
+		},
+		{
+			"levelName": "Level - World of Goo(mba)", 
+			"collectiblesRequired" : 0
+		},
+		{
+			"levelName": "Level - Charger", 
+			"collectiblesRequired" : 0
+		},
+		{
 			"levelName": "Level 1", 
 			"collectiblesRequired" : 0
 		},
