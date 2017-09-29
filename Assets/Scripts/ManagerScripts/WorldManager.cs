@@ -10,10 +10,12 @@ public class WorldManager : MonoBehaviour {
 	private List<GameObject> nightmareWorldObjects = new List<GameObject>();
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
     private IPlayer _player;
+    private Buzzard[] _buzzards;
 
     // Use this for initialization
     void Start () {
         _player = FindObjectOfType<IPlayer>();
+        _buzzards = FindObjectsOfType<Buzzard>();
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 
 		foreach (GameObject gameObject in allGameObjects)
@@ -51,10 +53,8 @@ public class WorldManager : MonoBehaviour {
 
     public void RemoveGameObject(GameObject removeObject)
     {
-        if (removeObject.layer == LayerMask.NameToLayer("NightmareWorld"))
-            nightmareWorldObjects.Remove(removeObject);
-        else if (removeObject.layer == LayerMask.NameToLayer("DreamWorld"))
-            dreamWorldObjects.Remove(removeObject);
+        nightmareWorldObjects.RemoveAll(obj => obj == removeObject);
+        dreamWorldObjects.RemoveAll(obj => obj == removeObject);
     }
 
 	public void SwitchWorld()
@@ -94,11 +94,14 @@ public class WorldManager : MonoBehaviour {
             foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, false);
         }
+
+        foreach (Buzzard buzzard in _buzzards)
+            buzzard.ChangeBuzzardSprite();
     }
 
     public void UpdateWorldObject(GameObject worldObject, bool show)
     {
-        float opacity = show ? 1.0f : 0.1f;
+        float opacity = show ? 1.0f : 0.15f;
 		if (worldObject.GetComponent<SpriteRenderer> () != null) 
         {
 			if (worldObject.tag != "Background") 
@@ -117,19 +120,7 @@ public class WorldManager : MonoBehaviour {
                         worldObject.layer = LayerMask.NameToLayer("NightmareWorld");
                     }
                 }
-                else if(worldObject.GetComponent<Buzzard>() != null)
-                {
-                    if (worldType)
-                    {
-                        worldObject.GetComponent<Animator>().runtimeAnimatorController = worldObject.GetComponent<Buzzard>().dreamAnimator;
-                        worldObject.layer = LayerMask.NameToLayer("DreamWorld");
-                    }
-                    else
-                    {
-                        worldObject.GetComponent<Animator>().runtimeAnimatorController = worldObject.GetComponent<Buzzard>().nightmareAnimator;
-                        worldObject.layer = LayerMask.NameToLayer("NightmareWorld");
-                    }
-                }
+                //Change sprite of feather
                 else if (worldObject.GetComponent<Feather>() != null)
                 {
                     if (worldType)
@@ -176,9 +167,5 @@ public class WorldManager : MonoBehaviour {
         if (_player.onRope == worldObject)
             worldObject.GetComponent<RopeSegment>().ExitRope();
 
-        //if (worldObject.GetComponent<Goomba>() != null)
-        //{
-            
-        //}
     }
 }

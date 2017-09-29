@@ -9,13 +9,16 @@ public class Buzzard : IEnemy {
 
     public float changeDirectionMin = 1f;
     public float changeDirectionMax = 5f;
+    public float hoverHeight = 3f;
+    public float maximumHoverOffset = 3.0f;
     //public float attackCooldown = 1f;
 
     private bool _lostToIdle = false;
     private float _nextDirectionSwitch = 0;
     private bool _turning = false;
     private Vector2 _newMoveDirection;
-    private bool _hoverAbove = true;
+    private int _hoverLocation = 0;
+    private float _hoverOffset = 0f;
 
     new void Awake () {
         base.Awake();
@@ -27,9 +30,17 @@ public class Buzzard : IEnemy {
         _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
     }
 
-    void Update () {
+    void FixedUpdate () {
         if (_player.isDead)
             SetState("idle");
+
+        if (state != "lost" && state != "found")
+        {
+            if (_moveDirection.x > 0)
+                _flipScript.FlipSprite(true);
+            else if (_moveDirection.x < 0)
+                _flipScript.FlipSprite(false);
+        }
 
         switch (state)
         {
@@ -42,14 +53,6 @@ public class Buzzard : IEnemy {
             default:
                 _rb.velocity = _moveDirection;
                 break;
-        }
-
-        if (state != "lost" && state != "found")
-        {
-            if (_moveDirection.x > 0)
-                _flipScript.FlipSprite(true);
-            else if (_moveDirection.x < 0)
-                _flipScript.FlipSprite(false);
         }
     }
 
@@ -118,13 +121,23 @@ public class Buzzard : IEnemy {
 
     public override void Attack()
     {
-        _moveDirection = (_playerTransform.position- transform.position).normalized;
-
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
         if (distanceToPlayer > alertRadius)
             StartCoroutine(Lost());
 
-        _rb.velocity = _moveDirection * attackSpeed;
+        if (_playerTransform.position.x > transform.position.x)
+            _flipScript.FlipSprite(true);
+        else
+            _flipScript.FlipSprite(false);
+
+        _hoverLocation = FlightMode();
+
+        if (_hoverLocation == 0)
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)_playerTransform.position + new Vector2(_hoverOffset, hoverHeight), attackSpeed * Time.deltaTime);
+        else if (_hoverLocation == 1)
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)_playerTransform.position + new Vector2(hoverHeight, 0.4f + Math.Abs(_hoverOffset / 2)), attackSpeed * Time.deltaTime);
+        else if (_hoverLocation == 2)
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)_playerTransform.position + new Vector2(-hoverHeight, 0.4f + Math.Abs(_hoverOffset / 2)), attackSpeed * Time.deltaTime);
     }
 
     public override IEnumerator Lost()
@@ -145,6 +158,7 @@ public class Buzzard : IEnemy {
         _animator.speed = 1.0f;
         SetState("idle");
         _lostToIdle = true;
+        roamingArea.GetComponent<EdgeCollider2D>().enabled = false;
     }
 
     public override IEnumerator Found()
@@ -163,6 +177,9 @@ public class Buzzard : IEnemy {
         _alertAnimator.SetBool("Found", false);
         _animator.speed = 1.0f;
         SetState("attack");
+        roamingArea.GetComponent<EdgeCollider2D>().enabled = true;
+
+        _hoverOffset = UnityEngine.Random.Range(-maximumHoverOffset, maximumHoverOffset);
     }
 
     public override void FoundLookDirection()
@@ -216,7 +233,15 @@ public class Buzzard : IEnemy {
         _turning = false;
     }
 
-
+    private int FlightMode()
+    {
+        if (_playerTransform.position.x > roamingArea.bounds.center.x + roamingArea.bounds.extents.x)
+            return 2;
+        else if (_playerTransform.position.x < roamingArea.bounds.center.x - roamingArea.bounds.extents.x)
+            return 1;
+        else
+            return 0;
+    }
 
     //private IEnumerator Slide()
     //{
@@ -244,5 +269,20 @@ public class Buzzard : IEnemy {
     {
         return false;
     }
+
+    public void ChangeBuzzardSprite()
+    { 
+        if (_worldManager.worldType)
+        {
+            GetComponent<Animator>().runtimeAnimatorController = dreamAnimator;
+            //gameObject.layer = LayerMask.NameToLayer("DreamWorld");
+        }
+        else
+        {
+            GetComponent<Animator>().runtimeAnimatorController = nightmareAnimator;
+            //gameObject.layer = LayerMask.NameToLayer("NightmareWorld");
+        }
+    }
+
 
 }

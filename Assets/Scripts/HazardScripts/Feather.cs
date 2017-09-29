@@ -15,7 +15,7 @@ public class Feather : MonoBehaviour {
     private WorldManager _worldManager;
 
     private float _timeAlive = 0f;
-    private float _killAfterSeconds = 10f;
+    private float _killAfterSeconds = 3f;
 
 	// Use this for initialization
 	void Awake () {
@@ -24,6 +24,7 @@ public class Feather : MonoBehaviour {
         _worldManager = FindObjectOfType<WorldManager>();
         _worldManager.AddGameObject(gameObject);
         _timeAlive = Time.time;
+        _killAfterSeconds = UnityEngine.Random.Range(0f, 3f);
 
         _rb.MoveRotation(-angle);
     }
@@ -33,6 +34,7 @@ public class Feather : MonoBehaviour {
 	    if (Time.time > (_timeAlive + _killAfterSeconds))	
         {
             _worldManager.RemoveGameObject(gameObject);
+            //gameObject.SetActive(false);
             Destroy(gameObject);
         }
 	}

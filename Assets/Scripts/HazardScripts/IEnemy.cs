@@ -68,7 +68,7 @@ public abstract class IEnemy : MonoBehaviour {
 
     public bool OutOfRangeCheck()
     {
-        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
+        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<BoxCollider2D>()))
             return false;
         else
             return true;

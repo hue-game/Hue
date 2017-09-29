@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4436936611561154}
   - component: {fileID: 61046214872671808}
   m_Layer: 8
-  m_Name: DreamVoid
+  m_Name: Dreamvoid
   m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
