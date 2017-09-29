@@ -146,7 +146,7 @@ PlayerSettings:
     Standalone: com.hue.hue
   buildNumber:
     Standalone: 9
-  AndroidBundleVersionCode: 8
+  AndroidBundleVersionCode: 9
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
@@ -220,7 +220,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 56cbd5397a5a841c9858e4f87169d34f, type: 3}
-  AndroidKeystoreName: C:/Users/Jori/Projects/Wake/wake.keystore
+  AndroidKeystoreName: wake.keystore
   AndroidKeyaliasName: wake
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

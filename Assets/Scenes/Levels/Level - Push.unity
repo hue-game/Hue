@@ -3467,6 +3467,10 @@ Prefab:
       propertyPath: intervalBase
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1299246237043490, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
   m_IsPrefabParent: 0
@@ -3938,6 +3942,10 @@ Prefab:
         type: 2}
       propertyPath: intervalBase
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299246237043490, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
@@ -8555,6 +8563,10 @@ Prefab:
       propertyPath: intervalBase
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1299246237043490, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
   m_IsPrefabParent: 0
@@ -9720,6 +9732,10 @@ Prefab:
         type: 2}
       propertyPath: intervalRandomizePercentage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299246237043490, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d1568e541d81e148b244096d45b62c5, type: 2}
