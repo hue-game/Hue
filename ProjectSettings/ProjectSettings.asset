@@ -122,7 +122,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.1
+  bundleVersion: 1.2
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -144,7 +144,8 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.teamchroma.wake
     Standalone: com.hue.hue
-  buildNumber: {}
+  buildNumber:
+    Standalone: 9
   AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
@@ -219,7 +220,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: 56cbd5397a5a841c9858e4f87169d34f, type: 3}
-  AndroidKeystoreName: wake.keystore
+  AndroidKeystoreName: C:/Users/Jori/Projects/Wake/wake.keystore
   AndroidKeyaliasName: wake
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
