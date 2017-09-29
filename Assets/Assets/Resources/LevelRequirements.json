@@ -11,6 +11,10 @@
 		{
 			"levelName": "Level - Charger", 
 			"collectiblesRequired" : 3
+		},
+		{
+			"levelName": "Level - Flyer", 
+			"collectiblesRequired" : 5
 		}
 	]
 }
