@@ -39,19 +39,23 @@ public class ViewTutorial : MonoBehaviour {
     public void ShowTutorial()
     {
         if (slides.Length > 0)
+        {
             tutorialCanvasSlide.transform.parent.gameObject.SetActive(true);
+            tutorialCanvasSlide.sprite = slides[_currentSlide];
+        }
     }
 
     public void NextSlide()
     {
-        if (_currentSlide == slides.Length)
+        if (_currentSlide == slides.Length - 1)
         {
+            _currentSlide = 0;
             tutorialCanvasSlide.transform.parent.gameObject.SetActive(false);
         }
         else
         {
-            tutorialCanvasSlide.sprite = slides[_currentSlide];
             _currentSlide++;
+            tutorialCanvasSlide.sprite = slides[_currentSlide];
         }
     }
 
