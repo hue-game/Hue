@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using System.Linq;
 
 public class Buzzard : IEnemy {
 
     public RuntimeAnimatorController dreamAnimator;
     public AnimatorOverrideController nightmareAnimator;
+    public GameObject featherPrefab;
 
     public float changeDirectionMin = 1f;
     public float changeDirectionMax = 5f;
     public float hoverHeight = 3f;
     public float maximumHoverOffset = 3.0f;
-    //public float attackCooldown = 1f;
+    public float attackCooldown = 1f;
 
     private bool _lostToIdle = false;
     private float _nextDirectionSwitch = 0;
@@ -64,12 +66,6 @@ public class Buzzard : IEnemy {
             {
                 _oldMoveDirection = _moveDirection;
                 _newMoveDirection = (roamingArea.bounds.center - transform.position).normalized;
-                StartCoroutine(Turn());
-            }
-            else if (ObstacleCheck())
-            {
-                _oldMoveDirection = _moveDirection;
-                _newMoveDirection = _moveDirection *= -1;
                 StartCoroutine(Turn());
             }
             else if (_lostToIdle)
@@ -142,11 +138,10 @@ public class Buzzard : IEnemy {
 
     public override IEnumerator Lost()
     {
+        CancelInvoke("ThrowFeather");
+        CancelInvoke("AttackAnimation");
         SetState("lost");
         _animator.speed = 0.0f;
-        _animator.SetBool("Attack", false);
-        _animator.SetBool("Idle", true);
-
         _alertAnimator.SetBool("Lost", true);
         _alertAnimator.SetBool("Found", false);
 
@@ -158,7 +153,6 @@ public class Buzzard : IEnemy {
         _animator.speed = 1.0f;
         SetState("idle");
         _lostToIdle = true;
-        roamingArea.GetComponent<EdgeCollider2D>().enabled = false;
     }
 
     public override IEnumerator Found()
@@ -177,44 +171,17 @@ public class Buzzard : IEnemy {
         _alertAnimator.SetBool("Found", false);
         _animator.speed = 1.0f;
         SetState("attack");
-        roamingArea.GetComponent<EdgeCollider2D>().enabled = true;
 
         _hoverOffset = UnityEngine.Random.Range(-maximumHoverOffset, maximumHoverOffset);
+
+        InvokeRepeating("AttackAnimation", attackCooldown - 0.35f, attackCooldown);
+        InvokeRepeating("ThrowFeather", attackCooldown, attackCooldown);
     }
 
     public override void FoundLookDirection()
     {
         bool alertDirection = _playerTransform.position.x > transform.position.x;
         _flipScript.FlipSprite(alertDirection);
-    }
-
-    public override bool ObstacleCheck()
-    {
-        RaycastHit2D[] obstacleHitChecks;
-
-        if (_moveDirection.x > 0)
-            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.right, 1f);
-        else
-            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.left, 1f);
-
-        foreach (RaycastHit2D obstacleHit in obstacleHitChecks)
-        {
-            if (obstacleHit.transform.GetComponent<IEnemy>() == null && obstacleHit.transform.tag != "Player")
-                return true;
-        }
-
-        if (_moveDirection.y > 0)
-            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.down, 1f);
-        else
-            obstacleHitChecks = Physics2D.RaycastAll(transform.position, Vector2.up, 1f);
-
-        foreach (RaycastHit2D obstacleHit in obstacleHitChecks)
-        {
-            if (obstacleHit.transform.GetComponent<IEnemy>() == null && obstacleHit.transform.tag != "Player")
-                return true;
-        }
-
-        return false;
     }
 
     private IEnumerator Turn()
@@ -243,29 +210,52 @@ public class Buzzard : IEnemy {
             return 0;
     }
 
-    //private IEnumerator Slide()
-    //{
-    //    _isSliding = true;
-    //    _animator.SetBool("Attack", false);
-    //    _animator.SetBool("Sliding", true);
-    //    Vector2 startVelocity = _rb.velocity;
-    //    float t = 0;
-    //    while (t < 1)
-    //    {
-    //        Vector2 endVelocity = new Vector2(0, _rb.velocity.y);
-    //        t += Time.fixedDeltaTime * (Time.timeScale / slideDuration);
+    private void AttackAnimation()
+    {
+        _animator.SetTrigger("Attack");
+    }
 
-    //        _rb.velocity = Vector2.Lerp(new Vector2(startVelocity.x, _rb.velocity.y), endVelocity, t);
-    //        yield return null;
-    //    }
+    private void ThrowFeather()
+    {
+        GameObject feather = Instantiate(featherPrefab, transform.position, Quaternion.identity, null);
 
-    //    _isSliding = false;
-    //    _animator.SetBool("Sliding", false);
-    //    _animator.SetBool("idle", true);
-    //}
+        if (_worldManager.worldType)
+        {
+            feather.layer = LayerMask.NameToLayer("DreamWorld");
+            feather.GetComponent<SpriteRenderer>().sprite = feather.GetComponent<Feather>().dreamFeather;
+        }
+        else
+        {
+            feather.layer = LayerMask.NameToLayer("NightmareWorld");
+            feather.GetComponent<SpriteRenderer>().sprite = feather.GetComponent<Feather>().nightmareFeather;
+        }
 
+        Vector2 featherAngle =  _playerTransform.position - transform.position;
+        float featherAngleFloat = (float) ((Mathf.Atan2(featherAngle.x, featherAngle.y) / Math.PI) * 180f);
+        if (featherAngleFloat < 0)
+            featherAngleFloat += 360f;
+
+        feather.transform.rotation = Quaternion.Euler(0f, 0f, -featherAngleFloat);
+        feather.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -featherAngleFloat) * Vector2.up * feather.GetComponent<Feather>().speed;
+
+        foreach (Buzzard buzzard in _worldManager._buzzards)
+            Physics2D.IgnoreCollision(buzzard.GetComponent<Collider2D>(), feather.GetComponent<Collider2D>());
+    }
+
+    public override bool OutOfRangeCheck()
+    {
+        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
+            return true;
+        else
+            return false;
+    }
 
     public override bool EdgeCheck()
+    {
+        return false;
+    }
+
+    public override bool ObstacleCheck()
     {
         return false;
     }
@@ -273,16 +263,13 @@ public class Buzzard : IEnemy {
     public void ChangeBuzzardSprite()
     { 
         if (_worldManager.worldType)
-        {
             GetComponent<Animator>().runtimeAnimatorController = dreamAnimator;
-            //gameObject.layer = LayerMask.NameToLayer("DreamWorld");
-        }
         else
-        {
             GetComponent<Animator>().runtimeAnimatorController = nightmareAnimator;
-            //gameObject.layer = LayerMask.NameToLayer("NightmareWorld");
-        }
     }
 
-
+    private void OnDestroy()
+    {
+        _worldManager._buzzards.Where(val => val != gameObject).ToArray();
+    }
 }

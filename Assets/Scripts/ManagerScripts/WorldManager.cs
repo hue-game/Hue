@@ -10,7 +10,8 @@ public class WorldManager : MonoBehaviour {
 	private List<GameObject> nightmareWorldObjects = new List<GameObject>();
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
     private IPlayer _player;
-    private Buzzard[] _buzzards;
+    [HideInInspector]
+    public Buzzard[] _buzzards;
 
     // Use this for initialization
     void Start () {

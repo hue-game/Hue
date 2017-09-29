@@ -10,7 +10,7 @@ public abstract class IEnemy : MonoBehaviour {
     public float attackSpeed = 3.0f;
     public Collider2D roamingArea;
 
-    //[HideInInspector]
+    [HideInInspector]
     public string state = "idle";
 
     protected Animator _animator;
@@ -66,13 +66,7 @@ public abstract class IEnemy : MonoBehaviour {
             Destroy(gameObject);
     }
 
-    public bool OutOfRangeCheck()
-    {
-        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<BoxCollider2D>()))
-            return false;
-        else
-            return true;
-    }
+    public abstract bool OutOfRangeCheck();
 
     public abstract bool EdgeCheck();
 

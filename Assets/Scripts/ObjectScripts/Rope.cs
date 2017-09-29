@@ -20,8 +20,6 @@ public class Rope : MonoBehaviour
     private int segments = 0;                   //  DONT MESS!	The number of segments is calculated based off of your distance * resolution
     private bool rope = false;                       //  DONT MESS!	This is to keep errors out of your debug window! Keeps the rope from rendering when it doesnt exist...
     private Material ropeMaterial;
-    private GameObject ropeEnd;
-    private Vector3 ropeEndPosition;
     private InputManager _input;
     private IPlayer _player;
     private Rigidbody2D _playerRB;
@@ -37,8 +35,6 @@ public class Rope : MonoBehaviour
 
     void Awake()
     {
-        ropeEnd = target.gameObject;
-        ropeEndPosition = ropeEnd.transform.localPosition;
         _input = FindObjectOfType<InputManager>();
         _player = FindObjectOfType<IPlayer>();
         _playerRB = _player.GetComponent<Rigidbody2D>();

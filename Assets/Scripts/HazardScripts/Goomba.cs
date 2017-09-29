@@ -9,7 +9,6 @@ public class Goomba : IEnemy {
     [Header("left is false, right is true")]
     public bool startDirection = false;
 
-    private bool _edgeFound = false;
     private bool _flippedLastFrame = false;
 
     new void Awake () {
@@ -145,6 +144,14 @@ public class Goomba : IEnemy {
     {
         bool alertDirection = _playerTransform.position.x > transform.position.x;
         _animator.SetBool("WalkLeft", !alertDirection);
+    }
+
+    public override bool OutOfRangeCheck()
+    {
+        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
+            return false;
+        else
+            return true;
     }
 
     public override bool ObstacleCheck()

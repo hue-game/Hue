@@ -8,7 +8,6 @@ public class GroundCheck : MonoBehaviour {
     private Jump _jumpScript;
     private Collider2D _playerCollider;
     private Collider2D _col;
-	Animator JumpAnimation;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +15,6 @@ public class GroundCheck : MonoBehaviour {
         _jumpScript = transform.parent.GetComponent<Jump>();
         _playerCollider = transform.parent.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(_playerCollider, GetComponent<Collider2D>());
-		JumpAnimation = GetComponent<Animator>(); 
 	}
 
     private void OnTriggerExit2D(Collider2D other)

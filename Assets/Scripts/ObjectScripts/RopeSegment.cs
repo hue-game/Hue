@@ -7,7 +7,6 @@ public class RopeSegment : MonoBehaviour {
     private IPlayer _player;
 	private Jump _playerJump;
     private Rigidbody2D _rb;
-    private GameObject _parentRope;
     [HideInInspector]
     public int index;
 
@@ -17,7 +16,6 @@ public class RopeSegment : MonoBehaviour {
     {
         _player = FindObjectOfType<IPlayer>();
         _rb = GetComponent<Rigidbody2D>();
-        _parentRope = transform.parent.gameObject;
 		ClimbAnimation = _player.GetComponent<Animator>();
 		_playerJump = _player.GetComponent<Jump> ();
     }

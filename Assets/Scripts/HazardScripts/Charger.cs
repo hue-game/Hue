@@ -183,6 +183,14 @@ public class Charger : IEnemy {
         _flipScript.FlipSprite(!alertDirection);
     }
 
+    public override bool OutOfRangeCheck()
+    {
+        if (Physics2D.IsTouching(GetComponent<Collider2D>(), roamingArea.GetComponent<Collider2D>()))
+            return false;
+        else
+            return true;
+    }
+
     public override bool ObstacleCheck()
     {
         RaycastHit2D[] obstacleHitChecks;
@@ -237,5 +245,10 @@ public class Charger : IEnemy {
         }
 
         return true;
+    }
+
+    private void OnDestroy()
+    {
+        _worldManager.RemoveGameObject(gameObject);
     }
 }

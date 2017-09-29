@@ -25,7 +25,6 @@ public class SpawnSystem : MonoBehaviour {
     public float initialDelay = 0.0f;
 
     private bool _currentlyActive = false;
-    private float _timeActive = 0.0f;
     private float _timeStart;
     private float _lastTrigger = 0.0f;
     private float _interval = 0.0f;
