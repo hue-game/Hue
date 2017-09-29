@@ -226,9 +226,9 @@ GameObject:
   m_Component:
   - component: {fileID: 30420319}
   - component: {fileID: 30420320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyDown
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,9 +439,9 @@ GameObject:
   m_Component:
   - component: {fileID: 44579164}
   - component: {fileID: 44579165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyUp (3)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,7 +579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &68439599
 Transform:
   m_ObjectHideFlags: 0
@@ -800,9 +800,9 @@ GameObject:
   m_Component:
   - component: {fileID: 126379140}
   - component: {fileID: 126379141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (6)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2239,9 +2239,9 @@ GameObject:
   m_Component:
   - component: {fileID: 366749824}
   - component: {fileID: 366749825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (3)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2626,9 +2626,9 @@ GameObject:
   m_Component:
   - component: {fileID: 442979446}
   - component: {fileID: 442979447}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareSky
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2843,6 +2843,42 @@ Prefab:
     - target: {fileID: 4837529970693424, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574781354326752, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293760877618378, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856526879242138, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446180375266696, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021625421915778, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633428146439386, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311612915301306, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383706661491010, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870467537897020, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
+      propertyPath: m_TagString
+      value: Background
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b15708a4e1b14bdf84b6407233d72ad, type: 2}
@@ -3092,9 +3128,9 @@ GameObject:
   m_Component:
   - component: {fileID: 529126654}
   - component: {fileID: 529126655}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyDown (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3168,9 +3204,9 @@ GameObject:
   m_Component:
   - component: {fileID: 554766433}
   - component: {fileID: 554766434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyUp (5)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3391,9 +3427,9 @@ GameObject:
   m_Component:
   - component: {fileID: 592160338}
   - component: {fileID: 592160339}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (9)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3462,9 +3498,9 @@ GameObject:
   m_Component:
   - component: {fileID: 594118236}
   - component: {fileID: 594118237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3681,9 +3717,9 @@ GameObject:
   m_Component:
   - component: {fileID: 629280800}
   - component: {fileID: 629280801}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyDown (5)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4123,9 +4159,9 @@ GameObject:
   m_Component:
   - component: {fileID: 708721486}
   - component: {fileID: 708721487}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyDown (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5074,9 +5110,9 @@ GameObject:
   m_Component:
   - component: {fileID: 837947738}
   - component: {fileID: 837947739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (11)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5454,9 +5490,9 @@ GameObject:
   m_Component:
   - component: {fileID: 906686051}
   - component: {fileID: 906686052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareSky (5)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6137,9 +6173,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1013981377}
   - component: {fileID: 1013981378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareSky (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6250,9 +6286,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1019891931}
   - component: {fileID: 1019891932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareSky (3)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6331,9 +6367,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1031399485}
   - component: {fileID: 1031399486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (4)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6953,9 +6989,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1124553363}
   - component: {fileID: 1124553364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyUp (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7656,9 +7692,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1264347703}
   - component: {fileID: 1264347704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (7)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8117,9 +8153,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1344077369}
   - component: {fileID: 1344077370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyDown (3)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8244,9 +8280,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1361296460}
   - component: {fileID: 1361296461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8315,9 +8351,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1362426428}
   - component: {fileID: 1362426429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (2)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8958,9 +8994,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1478661954}
   - component: {fileID: 1478661955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (10)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9472,9 +9508,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1558730240}
   - component: {fileID: 1558730241}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyDown (4)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9549,9 +9585,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1575530707}
   - component: {fileID: 1575530708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareSky (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9625,7 +9661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1585560092
 Transform:
   m_ObjectHideFlags: 0
@@ -10277,9 +10313,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1721995122}
   - component: {fileID: 1721995123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyUp
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10697,9 +10733,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1782368387}
   - component: {fileID: 1782368388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyUp (1)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10810,9 +10846,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1787156199}
   - component: {fileID: 1787156200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (8)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11051,9 +11087,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1832210366}
   - component: {fileID: 1832210367}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareSky (4)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11247,9 +11283,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1838952942}
   - component: {fileID: 1838952943}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightSkyUp (4)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11932,9 +11968,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2039427854}
   - component: {fileID: 2039427855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NightmareMountain (5)
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

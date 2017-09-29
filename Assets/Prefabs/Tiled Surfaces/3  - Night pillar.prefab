@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212089408674173790}
   m_Layer: 9
   m_Name: NightmareSurface_5 (1)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 212167082719548202}
   m_Layer: 9
   m_Name: NightmareSurface_5 (7)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 212903081670614600}
   m_Layer: 9
   m_Name: NightmareSurface_5 (1)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 212333938410975676}
   m_Layer: 9
   m_Name: NightmareSurface_5 (4)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 212653550228143592}
   m_Layer: 9
   m_Name: NightmareSurface_5 (4)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 212586445125800842}
   m_Layer: 9
   m_Name: NightmareSurface_5 (3)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 212004930235216296}
   m_Layer: 9
   m_Name: NightmareSurface_5 (2)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 212689970692951194}
   m_Layer: 9
   m_Name: NightmareSurface_5 (8)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 212448286814850888}
   m_Layer: 9
   m_Name: NightmareSurface_5 (5)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 212578748553498532}
   m_Layer: 9
   m_Name: NightmareSurface_5 (3)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 212383157833948606}
   m_Layer: 9
   m_Name: NightmareSurface_5 (5)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 212339682877002012}
   m_Layer: 9
   m_Name: NightmareSurface_5 (2)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 212272115892067684}
   m_Layer: 9
   m_Name: NightmareSurface_5
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 212529988773658096}
   m_Layer: 9
   m_Name: NightmareSurface_5
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 212451495913940038}
   m_Layer: 9
   m_Name: NightmareSurface_5
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 212368327937920862}
   m_Layer: 9
   m_Name: NightmareSurface_5 (4)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 212507072376958978}
   m_Layer: 9
   m_Name: NightmareSurface_5 (6)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 212618296358651430}
   m_Layer: 9
   m_Name: NightmareSurface_5 (6)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 61401554861618182}
   m_Layer: 9
   m_Name: 3  - Night pillar
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 212409247044476166}
   m_Layer: 9
   m_Name: NightmareSurface_5 (5)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 212180436369313148}
   m_Layer: 9
   m_Name: NightmareSurface_5 (3)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 212207687222887436}
   m_Layer: 9
   m_Name: NightmareSurface_5 (1)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 212188652407931064}
   m_Layer: 9
   m_Name: NightmareSurface_5 (8)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 212559025499533596}
   m_Layer: 9
   m_Name: NightmareSurface_5 (7)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 212870012090088470}
   m_Layer: 9
   m_Name: NightmareSurface_5 (7)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 212698582467752340}
   m_Layer: 9
   m_Name: NightmareSurface_5 (2)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 212360027839432806}
   m_Layer: 9
   m_Name: NightmareSurface_5 (6)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 212585791850964602}
   m_Layer: 9
   m_Name: NightmareSurface_5 (8)
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -989,7 +989,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1694546428839170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9126105, y: -22.5, z: 0}
+  m_LocalPosition: {x: -8.397491, y: 2.753028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4423176199033170}
@@ -1219,7 +1219,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0079422, y: -4.326871}
+  m_Offset: {x: 1.0079422, y: -4.3168144}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1230,7 +1230,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0158844, y: 8.473352}
+  m_Size: {x: 3.0158844, y: 8.493465}
   m_EdgeRadius: 0
 --- !u!212 &212004930235216296
 SpriteRenderer:
