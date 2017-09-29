@@ -2353,6 +2353,16 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayerInteract
       objectReference: {fileID: 0}
+    - target: {fileID: 114465080100536984, guid: 34c0dc26e729f4447b8f7cf03c0b4c39,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 114465080100536984, guid: 34c0dc26e729f4447b8f7cf03c0b4c39,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34c0dc26e729f4447b8f7cf03c0b4c39, type: 2}
   m_IsPrefabParent: 0
@@ -3094,7 +3104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08086c480fad7144b6ea7e07b13ef3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slides: []
+  slides:
+  - {fileID: 21300000, guid: 47d68a160769643f68227dd2469016ff, type: 3}
+  - {fileID: 21300000, guid: 8433f53948597428eba2570bca4e4f5f, type: 3}
+  - {fileID: 21300000, guid: f8c6e0e217a56412e842cbfd8088a3b4, type: 3}
   tutorialCanvasSlide: {fileID: 1340347178}
 --- !u!61 &1506060671
 BoxCollider2D:
