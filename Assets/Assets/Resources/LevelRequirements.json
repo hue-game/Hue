@@ -5,12 +5,16 @@
 			"collectiblesRequired" : 0
 		},
 		{
+			"levelName": "Level - Cage", 
+			"collectiblesRequired" : 0
+		},
+		{
 			"levelName": "Level - World of Goo(mba)", 
 			"collectiblesRequired" : 1
 		},
 		{
 			"levelName": "Level - Charger", 
-			"collectiblesRequired" : 3
+			"collectiblesRequired" : 4
 		},
 		{
 			"levelName": "Level - Flyer", 
