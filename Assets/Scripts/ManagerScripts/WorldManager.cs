@@ -11,12 +11,16 @@ public class WorldManager : MonoBehaviour {
 	private List<GameObject> dreamWorldObjects = new List<GameObject>();
     private IPlayer _player;
     [HideInInspector]
-    public Buzzard[] _buzzards;
+    public Buzzard[] buzzards;
+    public Rope[] ropes;
+
+    private float opacity = 1f;
 
     // Use this for initialization
     void Start () {
         _player = FindObjectOfType<IPlayer>();
-        _buzzards = FindObjectsOfType<Buzzard>();
+        ropes = FindObjectsOfType<Rope>();
+        buzzards = FindObjectsOfType<Buzzard>();
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 
 		foreach (GameObject gameObject in allGameObjects)
@@ -62,10 +66,10 @@ public class WorldManager : MonoBehaviour {
 	{
 		worldType = !worldType;
 		UpdateWorld();
-	}
+    }
 
-	public void UpdateWorld() {
-		if (worldType) 
+    public void UpdateWorld() {
+        if (worldType) 
         {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Player"), false);
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Player"));
@@ -75,10 +79,16 @@ public class WorldManager : MonoBehaviour {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("PlayerFeet"));
 
             foreach (GameObject nightmareObject in nightmareWorldObjects)
+            {
+                opacity = 0.15f;
                 UpdateWorldObject(nightmareObject, false);
+            }
 
-			foreach (GameObject dreamObject in dreamWorldObjects)
+            foreach (GameObject dreamObject in dreamWorldObjects)
+            {
+                opacity = 1f;
                 UpdateWorldObject(dreamObject, true);
+            }
         }
         else 
         {
@@ -90,20 +100,48 @@ public class WorldManager : MonoBehaviour {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("PlayerFeet"));
 
             foreach (GameObject nightmareObject in nightmareWorldObjects)
+            {
+                opacity = 1f;
                 UpdateWorldObject(nightmareObject, true);
+            }
 
             foreach (GameObject dreamObject in dreamWorldObjects)
+            {
+                opacity = 0.15f;
                 UpdateWorldObject(dreamObject, false);
+            }
         }
 
-        foreach (Buzzard buzzard in _buzzards)
+        foreach (Buzzard buzzard in buzzards)
             buzzard.ChangeBuzzardSprite();
+
+        foreach (Rope rope in ropes)
+        {
+            if (worldType)
+            {
+                if (rope.gameObject.layer == LayerMask.NameToLayer("DreamWorld"))
+                    rope.GetComponent<LineRenderer>().material.color = Color.white * 1.0f;
+                else
+                    rope.GetComponent<LineRenderer>().material.color = Color.white * 0.15f;
+            }
+            else
+            {
+                if (rope.gameObject.layer == LayerMask.NameToLayer("DreamWorld"))
+                    rope.GetComponent<LineRenderer>().material.color = Color.white * 0.15f;
+                else
+                    rope.GetComponent<LineRenderer>().material.color = Color.white * 1.0f;
+            }
+        }
+
+        if (_player.onRope != null)
+            _player.onRope.GetComponent<RopeSegment>().ExitRope();
+
     }
 
     public void UpdateWorldObject(GameObject worldObject, bool show)
     {
-        float opacity = show ? 1.0f : 0.15f;
-		if (worldObject.GetComponent<SpriteRenderer> () != null) 
+        //float opacity = show ? 1.0f : 0.15f;
+		if (worldObject.GetComponent<SpriteRenderer>() != null) 
         {
 			if (worldObject.tag != "Background") 
             {
@@ -138,35 +176,19 @@ public class WorldManager : MonoBehaviour {
                 else
                 {
                     //Show object from other world at lower opacity
-                    Color woc = worldObject.GetComponent<SpriteRenderer>().color;
+                    SpriteRenderer spriteRenderer = worldObject.GetComponent<SpriteRenderer>();
+                    Color woc = spriteRenderer.color;
                     woc.a = opacity;
-                    worldObject.GetComponent<SpriteRenderer>().color = woc;
+                    spriteRenderer.color = woc;
                 }
             } 
             else 
             {
-                //Don't enable collectibles if found
-                if (worldObject.GetComponent<Collectible>() != null)
-                {
-                    if (PlayerPrefs.GetInt(worldObject.name) == 1)
-                        worldObject.SetActive(false);
-                    else
-                        worldObject.SetActive(show);
-                }
-                else
-                    worldObject.SetActive(show);
+                worldObject.SetActive(show);
             }
-		} 
-        else if (worldObject.tag == "Danger") 
-			worldObject.SetActive(show);
-
-        //Change the opacity of the line renderer for the rope
-        if (worldObject.GetComponent<Rope>() != null)
-            worldObject.GetComponent<LineRenderer>().material.color = Color.white * opacity;
-
-        //Check if you are on a rope when switching, if so exit the rope
-        if (_player.onRope == worldObject)
-            worldObject.GetComponent<RopeSegment>().ExitRope();
+		}
+        else if (worldObject.tag == "Danger")
+            worldObject.SetActive(show);
 
     }
 }

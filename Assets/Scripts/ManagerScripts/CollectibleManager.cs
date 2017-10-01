@@ -12,8 +12,11 @@ public class CollectibleManager : MonoBehaviour {
     [HideInInspector]
     public int totalCollectiblesGlobal = 0;
 
+    private WorldManager _worldManager;
+
 	// Use this for initialization
 	void Awake () {
+        _worldManager = FindObjectOfType<WorldManager>();
         totalCollectiblesGlobal = PlayerPrefs.GetInt("totalCollectiblesGlobal");
         foreach(Collectible collectible in FindObjectsOfType<Collectible>())
         {
@@ -39,6 +42,8 @@ public class CollectibleManager : MonoBehaviour {
 
     public void AddCollectible(GameObject collectible)
     {
+        _worldManager.RemoveGameObject(collectible.gameObject);
+
         _collectiblesFound[collectible] = true;
         _collectiblesFoundFloat++;
         totalCollectiblesGlobal++;

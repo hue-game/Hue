@@ -238,7 +238,7 @@ public class Buzzard : IEnemy {
         feather.transform.rotation = Quaternion.Euler(0f, 0f, -featherAngleFloat);
         feather.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -featherAngleFloat) * Vector2.up * feather.GetComponent<Feather>().speed;
 
-        foreach (Buzzard buzzard in _worldManager._buzzards)
+        foreach (Buzzard buzzard in _worldManager.buzzards)
             Physics2D.IgnoreCollision(buzzard.GetComponent<Collider2D>(), feather.GetComponent<Collider2D>());
     }
 
@@ -270,6 +270,6 @@ public class Buzzard : IEnemy {
 
     private void OnDestroy()
     {
-        _worldManager._buzzards.Where(val => val != gameObject).ToArray();
+        _worldManager.buzzards.Where(val => val != gameObject).ToArray();
     }
 }
