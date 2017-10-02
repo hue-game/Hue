@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CheckpointManager))]
 public class Player : IPlayer
 {
-	[Range(0, 25)]
-	public float respawnTime = 3.0f;
-	private CheckpointManager _checkpointManager;
+    public float respawnTime = 3.0f;
+    public bool isScaring = false;
+    private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
     private GameManager _gameManager;
 	private Rigidbody2D _rigidBody;
@@ -33,7 +33,8 @@ public class Player : IPlayer
     // FixedUpdate is called once per frame after physics have applied
     private void FixedUpdate()
     {
-        _moveScript.MoveAnalog(_input.movementX, _input.movementY);
+        //if (!isDead && !isScaring)
+            _moveScript.MoveAnalog(_input.movementX, _input.movementY);
     }
 
     //Check for key inputs every frame
@@ -42,10 +43,11 @@ public class Player : IPlayer
         if (_input.jump)
             _jumpScript.JumpUp();
 
-        if (_input.Switch && !isDead)
+        if (_input.Switch && !isDead && !isScaring)
         {
-            _worldManager.SwitchWorld();
             _gameManager.PlayerInteract();
+            if (!isScaring)
+                _worldManager.SwitchWorld();
         }
 
         if (isDead)

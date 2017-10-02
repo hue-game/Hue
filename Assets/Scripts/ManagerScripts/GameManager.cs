@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	public float levelStartDelay = 2f;
     public Dictionary<string, int> levelRequirements = new Dictionary<string, int>();
 
+    private Collectible[] _collectibles;
     private LevelLoader[] _levelLoaders;
     private ResetProgress _resetProgress;
     private CheckpointManager _checkpointManager;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour {
         }
 
         _levelLoaders = FindObjectsOfType<LevelLoader>();
+        _collectibles = FindObjectsOfType<Collectible>();
         _resetProgress = FindObjectOfType<ResetProgress>();
         _checkpointManager = FindObjectOfType<CheckpointManager>();
         _viewTutorial = FindObjectOfType<ViewTutorial>();
@@ -61,6 +63,8 @@ public class GameManager : MonoBehaviour {
 
     public void PlayerInteract()
     {
+        foreach (Collectible collectible in _collectibles)
+            collectible.PlayerInteract();
         foreach(LevelLoader levelLoader in _levelLoaders)
             levelLoader.PlayerInteract();
 

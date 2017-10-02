@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 114838504110892400}
   - component: {fileID: 70837563277743046}
   - component: {fileID: 114090597626831704}
-  - component: {fileID: 114394218126740210}
+  - component: {fileID: 114715757295910960}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -324,7 +324,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onRope: {fileID: 0}
   onLadder: 0
+  isDead: 0
   respawnTime: 3
+  isScaring: 0
 --- !u!114 &114380806366229204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,21 +339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCheckpoint: {fileID: 0}
---- !u!114 &114394218126740210
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897117157980912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8489c2c4f41bf9a4ca3b50b55e8a826a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementX: 0
-  movementY: 0
-  jump: 0
-  Switch: 0
 --- !u!114 &114704928448740532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,6 +354,22 @@ MonoBehaviour:
   jumpX: 7.4
   jumpY: 6
   _inAir: 0
+--- !u!114 &114715757295910960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897117157980912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drawOutside: 1
+  CustomOutlineMaterial: {fileID: 0}
+  _glowColor: {r: 1.2352941, g: 0.6389453, b: 0, a: 1}
+  _outlineWidth: 1
+  _alphaThreshold: 0.353
 --- !u!114 &114757082521375846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,6 +381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89799520c79a94870a80a1e6aa1082d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldType: 0
+  buzzards: []
+  ropes: []
 --- !u!114 &114813851952441414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,7 +436,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6d1c04dc6db92e744abeb78019988fa8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1772,6 +1772,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.4514673
       objectReference: {fileID: 0}
+    - target: {fileID: 61405145999780336, guid: b87305b6c24864b1db4bcd05eba9cdf9,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
   m_IsPrefabParent: 0
@@ -4526,11 +4531,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 109.2
+      value: 117.92
       objectReference: {fileID: 0}
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4585,6 +4590,11 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 1bd9ed6ad992580488db7710700511e9, type: 2}
+    - target: {fileID: 212949849460144502, guid: a4c7911d082ac4230893a46db961433e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1505303585}
     m_RemovedComponents:
     - {fileID: 114394218126740210, guid: a4c7911d082ac4230893a46db961433e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a4c7911d082ac4230893a46db961433e, type: 2}
@@ -7486,7 +7496,18 @@ Prefab:
       propertyPath: orthographic size
       value: 3.4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 20935661040648292, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
+        type: 2}
+      propertyPath: m_HDR
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20935661040648292, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
+        type: 2}
+      propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114386049034804978, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9527edc6a972a490fab6fefb4e4b6b0f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &764048953
@@ -14539,6 +14560,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4557c309764a0492f8b9d903964b1f06, type: 2}
   m_IsPrefabParent: 0
+--- !u!21 &1505303585
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/OutlineGlow
+  m_Shader: {fileID: 4800000, guid: 6ef5390d7132bd7468da1905350a05c9, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA SPRITE_OUTLINE_OUTSIDE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _AlphaThreshold: 0.01
+    - _IsOutlineEnabled: 0
+    - _OutlineSize: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1511323064
 GameObject:
   m_ObjectHideFlags: 0
@@ -17495,6 +17546,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1818649752 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1772596826850058, guid: 9527edc6a972a490fab6fefb4e4b6b0f,
+    type: 2}
+  m_PrefabInternal: {fileID: 760307039}
+--- !u!114 &1818649759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818649752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 8ac116b35380b2f41a3cb5080362b5de, type: 2}
 --- !u!1 &1819206669 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1047032944099754, guid: 34c0dc26e729f4447b8f7cf03c0b4c39,
@@ -19515,6 +19583,39 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd6cb21fb74284b1daf01d7d0c97e557, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2031545231 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1897117157980912, guid: a4c7911d082ac4230893a46db961433e,
+    type: 2}
+  m_PrefabInternal: {fileID: 468304163}
+--- !u!114 &2031545241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2031545231}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a511dfc9d2cdd0547bce50370c445cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2031545242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2031545231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drawOutside: 1
+  CustomOutlineMaterial: {fileID: 0}
+  _glowColor: {r: 1.2352941, g: 0.6389453, b: 0, a: 1}
+  _outlineWidth: 1
+  _alphaThreshold: 0.353
 --- !u!1 &2031743683
 GameObject:
   m_ObjectHideFlags: 0
