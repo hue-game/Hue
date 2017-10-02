@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 61456444692953838}
   m_Layer: 8
   m_Name: 2 - Dream platform 1
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

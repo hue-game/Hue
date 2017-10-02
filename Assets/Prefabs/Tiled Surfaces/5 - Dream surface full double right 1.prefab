@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4391905090967394}
-  - component: {fileID: 68461594721060804}
+  - component: {fileID: 61530148242681158}
   m_Layer: 8
   m_Name: 5 - Dream surface full double right 1
   m_TagString: Background
@@ -577,7 +577,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225739740180196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4414, y: -13.177, z: 0}
+  m_LocalPosition: {x: 72.398, y: 6.5556, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4259593002075482}
@@ -795,6 +795,31 @@ Transform:
   m_Father: {fileID: 4041587773992994}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61530148242681158
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225739740180196}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 12.209808, y: -3.6978292}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.907089, y: 3.511732}
+  m_EdgeRadius: 0
 --- !u!68 &68061297301560928
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -829,24 +854,6 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.50365555, y: -0.1816827}
   - {x: 0.50065875, y: -0.18124235}
---- !u!68 &68461594721060804
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1225739740180196}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 14.647614, y: -5.325535}
-  - {x: 14.662678, y: -1.9269142}
-  - {x: 14.67028, y: -1.9856453}
 --- !u!68 &68594154720037552
 EdgeCollider2D:
   m_ObjectHideFlags: 1
