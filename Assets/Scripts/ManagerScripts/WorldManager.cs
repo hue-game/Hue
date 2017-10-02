@@ -79,16 +79,10 @@ public class WorldManager : MonoBehaviour {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("PlayerFeet"));
 
             foreach (GameObject nightmareObject in nightmareWorldObjects)
-            {
-                opacity = 0.15f;
                 UpdateWorldObject(nightmareObject, false);
-            }
 
             foreach (GameObject dreamObject in dreamWorldObjects)
-            {
-                opacity = 1f;
                 UpdateWorldObject(dreamObject, true);
-            }
         }
         else 
         {
@@ -100,16 +94,10 @@ public class WorldManager : MonoBehaviour {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("PlayerFeet"));
 
             foreach (GameObject nightmareObject in nightmareWorldObjects)
-            {
-                opacity = 1f;
                 UpdateWorldObject(nightmareObject, true);
-            }
 
             foreach (GameObject dreamObject in dreamWorldObjects)
-            {
-                opacity = 0.15f;
                 UpdateWorldObject(dreamObject, false);
-            }
         }
 
         foreach (Buzzard buzzard in buzzards)
@@ -140,8 +128,8 @@ public class WorldManager : MonoBehaviour {
 
     public void UpdateWorldObject(GameObject worldObject, bool show)
     {
-        //float opacity = show ? 1.0f : 0.15f;
-		if (worldObject.GetComponent<SpriteRenderer>() != null) 
+        float opacity = show ? 1.0f : 0.15f;
+        if (worldObject.GetComponent<SpriteRenderer>() != null) 
         {
 			if (worldObject.tag != "Background") 
             {
