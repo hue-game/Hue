@@ -169,12 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alertRadius: 3
   alertDuration: 0.2
-  attackCooldown: 1
   idleSpeed: 1
   attackSpeed: 3
   roamingArea: {fileID: 0}
-  alertSprite: {fileID: 21300006, guid: ff9b6caedcf794a02a4367d27fc23715, type: 3}
-  lostSprite: {fileID: 21300000, guid: ff9b6caedcf794a02a4367d27fc23715, type: 3}
   state: idle
   followPlayer: 0
   startDirection: 1
@@ -257,7 +254,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.6}
+  m_Size: {x: 0.79333335, y: 0.8233334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

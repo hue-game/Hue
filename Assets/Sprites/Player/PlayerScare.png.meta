@@ -1,17 +1,13 @@
 fileFormatVersion: 2
-guid: ee314ae508b224a2eb002762f9809fb5
-timeCreated: 1506932051
+guid: 9dd815d7aed064f77ad9646442568c1c
+timeCreated: 1506939727
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Goomba_0
-    21300002: Goomba_1
-    21300004: Goomba_2
-    21300006: Goomba_3
-    21300008: Goomba_4
-    21300010: Goomba_5
-    21300012: Goomba_6
-    21300014: Goomba_7
+    21300000: PlayerScare_0
+    21300002: PlayerScare_1
+    21300004: PlayerScare_2
+    21300006: PlayerScare_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -99,13 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goomba_0
+      name: PlayerScare_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 164.66666
-        width: 79.333336
-        height: 82.333336
+        y: 136.5
+        width: 93
+        height: 136.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,13 +109,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Goomba_1
+      name: PlayerScare_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 164.66666
-        width: 79.333336
-        height: 82.333336
+        x: 93
+        y: 136.5
+        width: 93
+        height: 136.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,27 +123,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Goomba_2
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 164.66666
-        width: 79.333336
-        height: 82.333336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Goomba_3
+      name: PlayerScare_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 82.666664
-        width: 79.333336
-        height: 82.333336
+        y: 0.5
+        width: 93
+        height: 136.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,55 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Goomba_4
+      name: PlayerScare_3
       rect:
         serializedVersion: 2
-        x: 79
-        y: 82.666664
-        width: 79.333336
-        height: 82.333336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Goomba_5
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 82.666664
-        width: 79.333336
-        height: 82.333336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Goomba_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0.6666641
-        width: 79.333336
-        height: 82.333336
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Goomba_7
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 0.6666641
-        width: 79.333336
-        height: 82.333336
+        x: 93
+        y: 0.5
+        width: 93
+        height: 136.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
