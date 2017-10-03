@@ -1821,6 +1821,31 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 114475467086617752, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eada2596f86d44a1baf568d7a7aede84,
+        type: 3}
+    - target: {fileID: 114475467086617752, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114475467086617752, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114475467086617752, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263296532643742, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0
@@ -4699,6 +4724,36 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!21 &1234082472
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/OutlineGlow
+  m_Shader: {fileID: 4800000, guid: 6ef5390d7132bd7468da1905350a05c9, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA SPRITE_OUTLINE_OUTSIDE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _AlphaThreshold: 0.01
+    - _IsOutlineEnabled: 0
+    - _OutlineSize: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1237149159
 Prefab:
   m_ObjectHideFlags: 0
@@ -7530,7 +7585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4642487362541280, guid: a61cdccfd61b5456199e1a57768247d4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.41
+      value: 5.45
       objectReference: {fileID: 0}
     - target: {fileID: 4642487362541280, guid: a61cdccfd61b5456199e1a57768247d4, type: 2}
       propertyPath: m_LocalPosition.z
