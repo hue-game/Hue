@@ -72,7 +72,7 @@ public class VoidBall : MonoBehaviour {
             if (enableGravity)
             { 
                 float angleSprite = Mathf.Atan2(_rb.velocity.x, _rb.velocity.y) * Mathf.Rad2Deg;
-                _rb.MoveRotation(angleSprite);
+                _rb.MoveRotation(angleSprite  * -1);
             }
         }
     }
