@@ -901,7 +901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4251247962416616, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -936,7 +936,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1688974964}
+      objectReference: {fileID: 2100000, guid: 6d1c04dc6db92e744abeb78019988fa8, type: 2}
     - target: {fileID: 1897117157980912, guid: a4c7911d082ac4230893a46db961433e, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -20890,36 +20890,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4352718136860586, guid: 1b2b79194fd244c2bb46b3a95c773fd9,
     type: 2}
   m_PrefabInternal: {fileID: 1688222967}
---- !u!21 &1688974964
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/OutlineGlow
-  m_Shader: {fileID: 4800000, guid: 6ef5390d7132bd7468da1905350a05c9, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA SPRITE_OUTLINE_OUTSIDE
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _AlphaThreshold: 0.01
-    - _IsOutlineEnabled: 0
-    - _OutlineSize: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1693949929
 Prefab:
   m_ObjectHideFlags: 0
