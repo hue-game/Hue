@@ -10,6 +10,7 @@ public class Player : IPlayer
 {
     public float respawnTime = 3.0f;
     public bool isScaring = false;
+    public GameObject SwitchShockwave;
     private CheckpointManager _checkpointManager;
 	private WorldManager _worldManager;
     private GameManager _gameManager;
@@ -47,7 +48,10 @@ public class Player : IPlayer
         {
             _gameManager.PlayerInteract();
             if (!isScaring)
+            {
+                Instantiate(SwitchShockwave);
                 _worldManager.SwitchWorld();
+            }
         }
 
         if (isDead)

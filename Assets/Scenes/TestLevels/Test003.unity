@@ -2769,6 +2769,7 @@ Transform:
   - {fileID: 311157331}
   - {fileID: 385497497}
   - {fileID: 1558281161}
+  - {fileID: 1951403916}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4594,7 +4595,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1505303585}
+      objectReference: {fileID: 1227982313}
     m_RemovedComponents:
     - {fileID: 114394218126740210, guid: a4c7911d082ac4230893a46db961433e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a4c7911d082ac4230893a46db961433e, type: 2}
@@ -11026,6 +11027,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37e5e866db83e48b290070ab944dc7bc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1151306372
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 262382451}
+    m_Modifications:
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 15c65e9f9fdf65c468af0febb11a2230, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1159933836 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4594896133414228, guid: 6afbd7289d0f0415aabbcddd7f29defa,
@@ -11576,6 +11619,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e85dcbd6ab92ac544a12d747793fa80b, type: 2}
   m_IsPrefabParent: 0
+--- !u!21 &1227982313
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/OutlineGlow
+  m_Shader: {fileID: 4800000, guid: 6ef5390d7132bd7468da1905350a05c9, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA SPRITE_OUTLINE_OUTSIDE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _AlphaThreshold: 0.01
+    - _IsOutlineEnabled: 0
+    - _OutlineSize: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1230157306
 GameObject:
   m_ObjectHideFlags: 0
@@ -14560,36 +14633,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4557c309764a0492f8b9d903964b1f06, type: 2}
   m_IsPrefabParent: 0
---- !u!21 &1505303585
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/OutlineGlow
-  m_Shader: {fileID: 4800000, guid: 6ef5390d7132bd7468da1905350a05c9, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA SPRITE_OUTLINE_OUTSIDE
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _AlphaThreshold: 0.01
-    - _IsOutlineEnabled: 0
-    - _OutlineSize: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1511323064
 GameObject:
   m_ObjectHideFlags: 0
@@ -18386,6 +18429,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!4 &1951403916 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4944937064683664, guid: 15c65e9f9fdf65c468af0febb11a2230,
+    type: 2}
+  m_PrefabInternal: {fileID: 1151306372}
 --- !u!1 &1960597912
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 70837563277743046}
   - component: {fileID: 114090597626831704}
   - component: {fileID: 114715757295910960}
+  - component: {fileID: 114854741939823032}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -327,6 +328,8 @@ MonoBehaviour:
   isDead: 0
   respawnTime: 3
   isScaring: 0
+  SwitchShockwave: {fileID: 1370840972707936, guid: 15c65e9f9fdf65c468af0febb11a2230,
+    type: 2}
 --- !u!114 &114380806366229204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,7 +363,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897117157980912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
   m_Name: 
@@ -411,6 +414,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleText: {fileID: 0}
   totalCollectiblesGlobal: 0
+--- !u!114 &114854741939823032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897117157980912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a511dfc9d2cdd0547bce50370c445cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0.9338235, g: 0.56029415, b: 0, a: 1}
+  outlineWidth: 1
 --- !u!114 &114888235076020024
 MonoBehaviour:
   m_ObjectHideFlags: 1

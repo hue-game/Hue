@@ -15,6 +15,7 @@ public class WorldManager : MonoBehaviour {
     public Rope[] ropes;
 
     private float opacity = 1f;
+    private bool firstSwitch = true;
 
     // Use this for initialization
     void Start () {
@@ -36,6 +37,7 @@ public class WorldManager : MonoBehaviour {
 		}
 
 		UpdateWorld();
+        firstSwitch = false;
 	}
 
     public bool GetGameObject(GameObject checkObject)
@@ -164,10 +166,11 @@ public class WorldManager : MonoBehaviour {
                 else
                 {
                     //Show object from other world at lower opacity
-                    SpriteRenderer spriteRenderer = worldObject.GetComponent<SpriteRenderer>();
-                    Color woc = spriteRenderer.color;
-                    woc.a = opacity;
-                    spriteRenderer.color = woc;
+                    StartCoroutine(ChangeOpacity(worldObject.GetComponent<SpriteRenderer>(), opacity));
+                    //SpriteRenderer spriteRenderer = worldObject.GetComponent<SpriteRenderer>();
+                    //Color woc = spriteRenderer.color;
+                    //woc.a = opacity;
+                    //spriteRenderer.color = woc;
                 }
             } 
             else 
@@ -179,4 +182,39 @@ public class WorldManager : MonoBehaviour {
             worldObject.SetActive(show);
 
     }
+
+    private IEnumerator ChangeOpacity(SpriteRenderer spriteRenderer, float opacity)
+    {
+        float t = 0;
+        float opacityOld = spriteRenderer.color.a;
+        Color woc = spriteRenderer.color;
+
+        float changeOpacityDuration;
+        if (firstSwitch)
+            changeOpacityDuration = 0.0f;
+        else
+            changeOpacityDuration = 0.2f;
+
+        while (t < 1)
+        {
+            if (spriteRenderer == null)
+                break;
+
+            t += Time.fixedDeltaTime * (Time.timeScale / changeOpacityDuration);
+
+            woc.a = opacityOld - ((opacityOld - opacity) * t);
+            spriteRenderer.color = woc;
+
+            yield return null;
+        }
+
+        if (spriteRenderer == null)
+            yield return null;
+        else
+        {
+            woc.a = opacity;
+            spriteRenderer.color = woc;
+        }
+    }
 }
+

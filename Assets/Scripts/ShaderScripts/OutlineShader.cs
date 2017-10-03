@@ -2,15 +2,24 @@
 
 public class OutlineShader : MonoBehaviour
 {
-    public Color color = Color.white;
+    public Color outlineColor = Color.white;
+    [Range(1,5)]
+    public int outlineWidth = 1;
 
     private SpriteRenderer spriteRenderer;
+    private MaterialPropertyBlock materialPB;
 
-    void OnEnable()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        materialPB = new MaterialPropertyBlock();
 
         UpdateOutline(true);
+    }
+
+    void onDestroy()
+    {
+        UpdateOutline(false);
     }
 
     void OnDisable()
@@ -18,17 +27,12 @@ public class OutlineShader : MonoBehaviour
         UpdateOutline(false);
     }
 
-    void Update()
-    {
-        UpdateOutline(true);
-    }
-
     void UpdateOutline(bool outline)
     {
-        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
-        spriteRenderer.GetPropertyBlock(mpb);
-        mpb.SetFloat("_Outline", outline ? 1f : 0);
-        mpb.SetColor("_OutlineColor", color);
-        spriteRenderer.SetPropertyBlock(mpb);
+        spriteRenderer.GetPropertyBlock(materialPB);
+        materialPB.SetFloat("_Outline", outline ? 1f : 0);
+        materialPB.SetColor("_OutlineColor", outlineColor);
+        materialPB.SetFloat("_OutlineSize", outlineWidth);
+        spriteRenderer.SetPropertyBlock(materialPB);
     }
 }
