@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 95922624575521722}
   - component: {fileID: 114345480134716288}
   - component: {fileID: 114915581052134818}
-  - component: {fileID: 114300668148061522}
+  - component: {fileID: 114950291571459450}
   m_Layer: 0
   m_Name: Level selection player
   m_TagString: Player
@@ -144,22 +144,6 @@ MonoBehaviour:
   onRope: {fileID: 0}
   onLadder: 0
   isDead: 0
---- !u!114 &114300668148061522
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402900644612964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _drawOutside: 1
-  CustomOutlineMaterial: {fileID: 0}
-  _glowColor: {r: 1.2352941, g: 0.6389453, b: 0, a: 1}
-  _outlineWidth: 1
-  _alphaThreshold: 0.353
 --- !u!114 &114345480134716288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,6 +185,19 @@ MonoBehaviour:
   jumpX: 7.4
   jumpY: 6
   _inAir: 0
+--- !u!114 &114950291571459450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402900644612964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a511dfc9d2cdd0547bce50370c445cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0.9338235, g: 0.56029415, b: 0, a: 1}
+  outlineWidth: 1
 --- !u!212 &212829239695847410
 SpriteRenderer:
   m_ObjectHideFlags: 1
