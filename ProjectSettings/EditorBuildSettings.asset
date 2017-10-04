@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level - Push.unity
     guid: 0f526f130f95b4e578514ee3d46e7d25
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Levels/Level - Voids.unity
     guid: 08cc24d71c4fa456e85db8113fef764d
   - enabled: 1
@@ -47,3 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level - Flyer.unity
     guid: 8a92090ed8413ab4c9b3a4f7f9ec1823
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level - Move.unity
+    guid: 0b8474fdddb4c414e93637b991f7ecdc
