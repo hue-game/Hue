@@ -1,24 +1,32 @@
 {
 	"Items" : [
 		{
+			"levelName": "Level - Move", 
+			"collectiblesRequired" : 0
+		},
+    {
 			"levelName": "Level - Push", 
-			"collectiblesRequired" : 0
-		},
-		{
-			"levelName": "Level - Cage", 
-			"collectiblesRequired" : 0
-		},
-		{
-			"levelName": "Level - World of Goo(mba)", 
 			"collectiblesRequired" : 1
 		},
 		{
+			"levelName": "Level - Cage", 
+			"collectiblesRequired" : 2
+		},
+    {
+			"levelName": "Level - Voids", 
+			"collectiblesRequired" : 3
+		},
+		{
+			"levelName": "Level - World of Goo(mba)", 
+			"collectiblesRequired" : 5
+		},
+		{
 			"levelName": "Level - Charger", 
-			"collectiblesRequired" : 4
+			"collectiblesRequired" : 7
 		},
 		{
 			"levelName": "Level - Flyer", 
-			"collectiblesRequired" : 5
+			"collectiblesRequired" : 9
 		}
 	]
 }
