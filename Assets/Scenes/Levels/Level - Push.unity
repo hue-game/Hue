@@ -3417,6 +3417,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &772082766 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114596493812159190, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 772082765}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &776130515 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4201683796911752, guid: bc4dc9fe441764025b4c591dd292192a,
@@ -6237,12 +6243,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fec115d63d3e4066b7046cac02d1998, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1571820379 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114810294728247620, guid: f63ead12d1273468c9675f7a7c893091,
-    type: 2}
-  m_PrefabInternal: {fileID: 772082765}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1595256822
 GameObject:
   m_ObjectHideFlags: 0
@@ -7004,7 +7004,7 @@ Prefab:
         type: 2}
       propertyPath: collectibleText
       value: 
-      objectReference: {fileID: 1571820379}
+      objectReference: {fileID: 772082766}
     - target: {fileID: 114380806366229204, guid: a4c7911d082ac4230893a46db961433e,
         type: 2}
       propertyPath: defaultCheckpoint

@@ -4233,6 +4233,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4436936611561154, guid: 9fec115d63d3e4066b7046cac02d1998,
     type: 2}
   m_PrefabInternal: {fileID: 718289491}
+--- !u!114 &719205800 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114596493812159190, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 1903641641}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &731286751 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4445481574380846, guid: 7d55af9aad673de42a8ddbefd144cae1,
@@ -10920,7 +10926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1284324017804580, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_Name
-      value: Checkpoint-fly-2
+      value: Checkpoint-fly-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}
@@ -12378,12 +12384,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1903641642 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114810294728247620, guid: f63ead12d1273468c9675f7a7c893091,
-    type: 2}
-  m_PrefabInternal: {fileID: 1903641641}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &1917564114 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4172711030385092, guid: d3ef75cb44ece4b19a66975b4662d390,
@@ -12840,7 +12840,7 @@ Prefab:
         type: 2}
       propertyPath: collectibleText
       value: 
-      objectReference: {fileID: 1903641642}
+      objectReference: {fileID: 719205800}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4c7911d082ac4230893a46db961433e, type: 2}
   m_IsPrefabParent: 0
@@ -13013,7 +13013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1284324017804580, guid: a582a8658c47d43d797486159b330137, type: 2}
       propertyPath: m_Name
-      value: Checkpoint-fly-1
+      value: Checkpoint-fly-2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a582a8658c47d43d797486159b330137, type: 2}

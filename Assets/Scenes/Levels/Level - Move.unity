@@ -5800,7 +5800,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!114 &453963079 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114810294728247620, guid: f63ead12d1273468c9675f7a7c893091,
+  m_PrefabParentObject: {fileID: 114596493812159190, guid: f63ead12d1273468c9675f7a7c893091,
     type: 2}
   m_PrefabInternal: {fileID: 453963078}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
