@@ -20,8 +20,15 @@ public class RollingRock : MonoBehaviour {
         _player = FindObjectOfType<Player>();
         _worldManager = FindObjectOfType<WorldManager>();
 
-        if (_worldManager.GetGameObject(gameObject))
+        if (!_worldManager.GetGameObject(gameObject))
+        {
             _worldManager.AddGameObject(gameObject);
+
+            if (LayerMask.LayerToName(gameObject.layer) == "DreamWorld")
+                _worldManager.UpdateWorldObject(gameObject, _worldManager.worldType);
+            else if (LayerMask.LayerToName(gameObject.layer) == "NightmareWorld")
+                _worldManager.UpdateWorldObject(gameObject, !_worldManager.worldType);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
