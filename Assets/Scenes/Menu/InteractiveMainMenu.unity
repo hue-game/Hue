@@ -949,6 +949,7 @@ Transform:
   - {fileID: 1190100654}
   - {fileID: 1037805676}
   - {fileID: 2103097365}
+  - {fileID: 1134049538}
   m_Father: {fileID: 176942588}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2437,6 +2438,57 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1134049537
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 241357261}
+    m_Modifications:
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.9109
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -7.929
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941231346124390, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+      propertyPath: m_Name
+      value: 5x2 - Nightmare underground (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c8ab3cebe546d4bd39c2f7a1e00210eb, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1134049538 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4634501911731540, guid: c8ab3cebe546d4bd39c2f7a1e00210eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1134049537}
 --- !u!4 &1174301114 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4687506303917500, guid: 15855ec4d2f0a40948d12cc2b94d6cc1,

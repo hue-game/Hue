@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4478684950175380}
   - component: {fileID: 212061562500150434}
   - component: {fileID: 95355453521379580}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4752546203177410}
   - component: {fileID: 212550065026474482}
   - component: {fileID: 95318573732509714}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4928642525663344}
   - component: {fileID: 212707744929213468}
   - component: {fileID: 95932667897290028}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4888119425849282}
   - component: {fileID: 212275768403030968}
   - component: {fileID: 95371121059405756}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4429423098483082}
   - component: {fileID: 212949275131811176}
   - component: {fileID: 95544139988979778}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4740050523423250}
   - component: {fileID: 212601569655514186}
   - component: {fileID: 95424929477792378}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

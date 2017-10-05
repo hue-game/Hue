@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 212999246145990504}
   - component: {fileID: 61065336887324284}
   - component: {fileID: 114384224505610200}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ladder1x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 212143582149842456}
   - component: {fileID: 61812636196170276}
   - component: {fileID: 114635077360232872}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ladder1x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

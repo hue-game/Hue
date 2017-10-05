@@ -52,6 +52,7 @@ public class Player : IPlayer
                 Instantiate(SwitchShockwave);
                 _worldManager.SwitchWorld();
             }
+            _input.Switch = false;
         }
 
         if (isDead)

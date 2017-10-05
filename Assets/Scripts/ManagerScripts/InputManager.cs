@@ -32,10 +32,15 @@ public class InputManager : MonoBehaviour {
             movementX = Input.GetAxisRaw("Horizontal");
             movementY = Input.GetAxisRaw("Vertical");
         }
-        #endif
 
         jump = Input.GetButton("Jump");
-        Switch = Input.GetKeyDown(KeyCode.LeftControl);
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            Switch = true;
+        #endif
     }
 
+    public void EnableSwitch()
+    {
+        Switch = true;
+    }
 }

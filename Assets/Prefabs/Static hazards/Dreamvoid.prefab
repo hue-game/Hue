@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4835656504225348}
   - component: {fileID: 212964771046044042}
   - component: {fileID: 95506320876850918}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_8
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4064110665445490}
   - component: {fileID: 212537048903727074}
   - component: {fileID: 95753779375473602}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_3
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 4793353013621582}
   - component: {fileID: 212309675425247050}
   - component: {fileID: 95730403090450140}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_1
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,9 +72,9 @@ GameObject:
   - component: {fileID: 4124640211874016}
   - component: {fileID: 212438520881251166}
   - component: {fileID: 95395737446000244}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_0
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 4793085994287000}
   - component: {fileID: 212009890100168438}
   - component: {fileID: 95083494162281670}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_4
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 4765236178150460}
   - component: {fileID: 212104185384687578}
   - component: {fileID: 95248961377700212}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_5
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,9 @@ GameObject:
   - component: {fileID: 4823580525747258}
   - component: {fileID: 212029809785776998}
   - component: {fileID: 95350338088694196}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_2
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,9 +140,9 @@ GameObject:
   - component: {fileID: 4221262128128656}
   - component: {fileID: 212687004922536498}
   - component: {fileID: 95247935466012058}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_6
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,9 +157,9 @@ GameObject:
   - component: {fileID: 4346362245693976}
   - component: {fileID: 212641767072477970}
   - component: {fileID: 95656168505524858}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DreamVoid_7
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

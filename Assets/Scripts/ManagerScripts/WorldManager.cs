@@ -14,7 +14,6 @@ public class WorldManager : MonoBehaviour {
     public Buzzard[] buzzards;
     public Rope[] ropes;
 
-    private float opacity = 1f;
     private bool firstSwitch = true;
 
     // Use this for initialization
@@ -167,10 +166,6 @@ public class WorldManager : MonoBehaviour {
                 {
                     //Show object from other world at lower opacity
                     StartCoroutine(ChangeOpacity(worldObject.GetComponent<SpriteRenderer>(), opacity));
-                    //SpriteRenderer spriteRenderer = worldObject.GetComponent<SpriteRenderer>();
-                    //Color woc = spriteRenderer.color;
-                    //woc.a = opacity;
-                    //spriteRenderer.color = woc;
                 }
             } 
             else 
@@ -178,6 +173,8 @@ public class WorldManager : MonoBehaviour {
                 worldObject.SetActive(show);
             }
 		}
+        else if (worldObject.tag == "Background")
+            worldObject.SetActive(show);
         else if (worldObject.tag == "Danger")
             worldObject.SetActive(show);
 

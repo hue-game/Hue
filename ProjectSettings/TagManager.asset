@@ -47,3 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DreamWorld
+    uniqueID: 3893195165
+    locked: 0
+  - name: NightmareWorld
+    uniqueID: 3133945785
+    locked: 0

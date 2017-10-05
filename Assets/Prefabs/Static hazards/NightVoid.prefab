@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4513071243258472}
   - component: {fileID: 212846015140746340}
   - component: {fileID: 95860744962164578}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_1
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4072539794755718}
   - component: {fileID: 212357973502586454}
   - component: {fileID: 95776934122744656}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_4
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,9 +71,9 @@ GameObject:
   - component: {fileID: 4499233671524994}
   - component: {fileID: 212658083106826152}
   - component: {fileID: 95906623409253906}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_5
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,9 +88,9 @@ GameObject:
   - component: {fileID: 4642779119789154}
   - component: {fileID: 212791125216441282}
   - component: {fileID: 95268159608392664}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_7
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 4958220920773772}
   - component: {fileID: 212939934396024498}
   - component: {fileID: 95210193097551922}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_2
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,9 +122,9 @@ GameObject:
   - component: {fileID: 4812222495057244}
   - component: {fileID: 212462667417408202}
   - component: {fileID: 95309346385154690}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_8
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +139,9 @@ GameObject:
   - component: {fileID: 4345251351348536}
   - component: {fileID: 212367836243446082}
   - component: {fileID: 95127021550917908}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_0
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,9 +156,9 @@ GameObject:
   - component: {fileID: 4730153512418902}
   - component: {fileID: 212453330309118092}
   - component: {fileID: 95275352528504108}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_3
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,9 +173,9 @@ GameObject:
   - component: {fileID: 4073075389888336}
   - component: {fileID: 212590566597080638}
   - component: {fileID: 95616117784478968}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: NightVoid_6
-  m_TagString: Background
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
