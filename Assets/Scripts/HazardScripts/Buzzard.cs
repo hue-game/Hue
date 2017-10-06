@@ -22,6 +22,8 @@ public class Buzzard : IEnemy {
     private int _hoverLocation = 0;
     private float _hoverOffset = 0f;
 
+	//AudioSource Flap;
+
     new void Awake () {
         base.Awake();
 
@@ -30,9 +32,12 @@ public class Buzzard : IEnemy {
         _oldMoveDirection = _moveDirection;
         _rb.velocity = _moveDirection;
         _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
+
+		//AudioSource Flap = GetComponent<AudioSource>();
     }
 
     void FixedUpdate () {
+
         if (_player.isDead)
             SetState("idle");
 
@@ -113,6 +118,8 @@ public class Buzzard : IEnemy {
             if (distanceToPlayer < alertRadius)
                 StartCoroutine(Found());
         }
+
+		//Flap.Play();
     }
 
     public override void Attack()
