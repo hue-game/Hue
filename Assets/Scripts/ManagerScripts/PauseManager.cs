@@ -21,7 +21,11 @@ public class PauseManager : MonoBehaviour {
 		controlCanvas.SetActive(false);
 		pauseUICanvas.SetActive (false);
 		pauseOverlayCanvas.SetActive(true);
-	}
+
+        AudioSource[] audio = FindObjectsOfType<AudioSource>();
+        for (int i = 0; i < audio.Length; i++)
+            audio[i].pitch = 0.0f;
+    }
 
 	public void Resume () {
 		_isPaused = false;
@@ -29,7 +33,11 @@ public class PauseManager : MonoBehaviour {
 		pauseOverlayCanvas.SetActive(false);
 		pauseUICanvas.SetActive (true);
 		controlCanvas.SetActive(true);
-	}
+
+        AudioSource[] audio = FindObjectsOfType<AudioSource>();
+        for (int i = 0; i < audio.Length; i++)
+            audio[i].pitch = 1.0f;
+    }
 
     void Update()
     { 
