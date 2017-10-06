@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    public float deadZone = 0.3f;
     private Image _joystickContainer;
     private Image _joystickKnob;
 
@@ -40,6 +41,11 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         //to define the area in which joystick can move around
         _joystickKnob.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (_joystickContainer.rectTransform.sizeDelta.x / 3)
                                                                , InputDirection.y * (_joystickContainer.rectTransform.sizeDelta.y) / 3);
+
+        if (Mathf.Abs(InputDirection.x) < deadZone)
+            InputDirection.x = 0.0f;
+        if (Mathf.Abs(InputDirection.y) < deadZone)
+            InputDirection.y = 0.0f;
     }
 
     public void OnPointerDown(PointerEventData eventData)

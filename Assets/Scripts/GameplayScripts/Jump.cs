@@ -30,8 +30,9 @@ public class Jump : MonoBehaviour {
     {
         if (_inAir && _groundedLeft && _groundedRight)
         {
-            JumpAnimation.SetTrigger("Land");
+            JumpAnimation.ResetTrigger("Climbing");
             JumpAnimation.ResetTrigger("Jump");
+            JumpAnimation.SetTrigger("Land");
             _inAir = false;
         }
         LedgeJump();
@@ -62,7 +63,6 @@ public class Jump : MonoBehaviour {
         _groundedLeft = false;
         _groundedRight = false;
         _inAir = true;
-
     }
 
     public void LedgeJump()
@@ -96,12 +96,9 @@ public class Jump : MonoBehaviour {
             _groundedRight = grounded;
     }
 
-    //Old Values
-    //X = 2, Y = 9
     IEnumerator SmoothJump(int direction)
     {
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
-        //_rb.AddForce(new Vector2(jumpX, jumpY), ForceMode2D.Impulse);
         _groundedLeft = false;
         _groundedRight = false;
         JumpAnimation.ResetTrigger("Land");

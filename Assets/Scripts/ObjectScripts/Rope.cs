@@ -2,23 +2,22 @@
 using System.Collections;
 using System;
 
-// Require a Rigidbody and LineRenderer object for easier assembly
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(LineRenderer))]
 public class Rope : MonoBehaviour
 {
     public Transform target;
-    public float resolution = 0.5F;                           //  Sets the amount of joints there are in the rope (1 = 1 joint for every 1 unit)
-    public float ropeDrag = 0.1F;                                //  Sets each joints Drag
-    public float ropeMass = 0.1F;                           //  Sets each joints Mass
-    public float ropeColRadius = 0.5F;                  //  Sets the radius of the collider in the SphereCollider component
+    public float resolution = 0.5F;                        
+    public float ropeDrag = 0.1F;                            
+    public float ropeMass = 0.1F;                          
+    public float ropeColRadius = 0.5F;               
     public float ropeSwingSpeed;                 
     
-    private Vector3[] segmentPos;           //  DONT MESS!	This is for the Line Renderer's Reference and to set up the positions of the gameObjects
-    private GameObject[] joints;            //  DONT MESS!	This is the actual joint objects that will be automatically created
-    private LineRenderer line;                          //  DONT MESS!	 The line renderer variable is set up when its assigned as a new component
-    private int segments = 0;                   //  DONT MESS!	The number of segments is calculated based off of your distance * resolution
-    private bool rope = false;                       //  DONT MESS!	This is to keep errors out of your debug window! Keeps the rope from rendering when it doesnt exist...
+    private Vector3[] segmentPos;         
+    private GameObject[] joints;         
+    private LineRenderer line;               
+    private int segments = 0;                 
+    private bool rope = false;              
     private Material ropeMaterial;
     private InputManager _input;
     private IPlayer _player;
@@ -98,7 +97,7 @@ public class Rope : MonoBehaviour
 
                 if (moveY > 0)
                 {
-                    if (_seg.GetComponent<RopeSegment>().index > 5)
+                    if (_seg.GetComponent<RopeSegment>().index > 1)
                     {
                         moveToJointIndex = _seg.GetComponent<RopeSegment>().index - 1;
                         _playerJoint.autoConfigureOffset = true;
@@ -134,7 +133,6 @@ public class Rope : MonoBehaviour
         line.useWorldSpace = true;
 
         // Find the amount of segments based on the distance and resolution
-        // Example: [resolution of 1.0 = 1 joint per unit of distance]
         segments = (int)(Vector3.Distance(transform.position, target.position) * resolution);
         line.positionCount = segments;
         segmentPos = new Vector3[segments];

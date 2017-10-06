@@ -26,7 +26,10 @@ public class LevelSelectionPlayer : IPlayer
     private void Update()
     {
         if (_input.Switch)
+        {
             _gameManager.PlayerInteract();
+            _input.Switch = false;
+        }
     }
 }
 

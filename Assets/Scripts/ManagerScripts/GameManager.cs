@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     private ResetProgress _resetProgress;
     private CheckpointManager _checkpointManager;
     private ViewTutorial _viewTutorial;
+    private IPlayer _player;
 
 	void Start() {
         if (!PlayerPrefs.HasKey("totalCollectiblesGlobal"))
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour {
         _resetProgress = FindObjectOfType<ResetProgress>();
         _checkpointManager = FindObjectOfType<CheckpointManager>();
         _viewTutorial = FindObjectOfType<ViewTutorial>();
+        _player = FindObjectOfType<IPlayer>();
     
         LoadLevelRequirements();
         if (SceneManager.GetActiveScene().name == "InteractiveMainMenu")
@@ -37,15 +39,27 @@ public class GameManager : MonoBehaviour {
                 PlayerPrefs.Save();
                 _viewTutorial.ShowTutorial();
             }
-            UpdateLevelLoaders();
-        }
 
-        if (_checkpointManager == null)
-        {
+            if (PlayerPrefs.HasKey("LastLevel"))
+            {
+                foreach (LevelLoader levelLoader in _levelLoaders)
+                {
+                    if (levelLoader.levelToLoad == PlayerPrefs.GetString("LastLevel"))
+                    {
+                        _player.transform.position = new Vector3(levelLoader.transform.position.x, levelLoader.transform.position.y, _player.transform.position.z) - new Vector3(1f, -0.4f, 0f);
+                        FindObjectOfType<FollowPlayer>().ResetCamera();
+                    }
+                }
+            }
+
+            UpdateLevelLoaders();
+
             PlayerPrefs.DeleteKey("CurrentLevel");
             PlayerPrefs.DeleteKey("CurrentCheckpoint");
             PlayerPrefs.Save();
         }
+        else
+            PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
     }
 
 	public void RestartLevel() {
@@ -91,9 +105,9 @@ public class GameManager : MonoBehaviour {
             {
                 int remaining = levelRequirements[levelLoader.levelToLoad] - PlayerPrefs.GetInt("totalCollectiblesGlobal");
                 if (remaining > 0)
-                    levelLoader.GetComponentInChildren<TextMesh>().text = remaining.ToString() + " more twisted minds";
+                    levelLoader.GetComponentInChildren<TextMesh>().text = levelLoader.GetComponentInChildren<TextMesh>().text + "\n" + remaining.ToString() + " more twisted minds";
                 else
-                    levelLoader.GetComponentInChildren<TextMesh>().text = "interact";
+                    levelLoader.GetComponentInChildren<TextMesh>().text = levelLoader.GetComponentInChildren<TextMesh>().text + "\n" + "Interact";
 
                 if (PlayerPrefs.GetInt(levelLoader.levelToLoad + "_completed") == 1)
                     levelLoader.transform.GetChild(1).gameObject.SetActive(true);

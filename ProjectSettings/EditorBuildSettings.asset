@@ -50,3 +50,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level - Move.unity
     guid: 0b8474fdddb4c414e93637b991f7ecdc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level - Move Two.unity
+    guid: a4b8a39452b19994fa14ce6b51a01b27

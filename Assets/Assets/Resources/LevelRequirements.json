@@ -26,6 +26,10 @@
 		},
 		{
 			"levelName": "Level - Flyer", 
+			"collectiblesRequired" : 12
+		},
+		{
+			"levelName": "Level - Move Two", 
 			"collectiblesRequired" : 10
 		}
 	]

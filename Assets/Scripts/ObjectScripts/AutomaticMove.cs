@@ -62,14 +62,15 @@ public class AutomaticMove : MonoBehaviour {
 		}
 			
 		_body.velocity = new Vector2 (_activeVelocityX, _activeVelocityY);
+
         if (_playerOnPlatform)
         {
             _playerBody.transform.position = _playerBody.position + _body.velocity * Time.deltaTime;
             _playerOnPlatform = false;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+ 
+   private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Feet")
             _playerOnPlatform = true;

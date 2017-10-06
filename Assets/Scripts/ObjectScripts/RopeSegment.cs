@@ -38,8 +38,11 @@ public class RopeSegment : MonoBehaviour {
                 _playerHJ.angularOffset = 0;
                 _playerHJ.connectedBody = _rb;
 
+                ClimbAnimation.ResetTrigger("Land");
 				ClimbAnimation.ResetTrigger("Jump");
 				ClimbAnimation.SetTrigger("Climbing");
+
+                _playerJump._inAir = true;
             }
         }
     }

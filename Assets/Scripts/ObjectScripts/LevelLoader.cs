@@ -68,7 +68,7 @@ public class LevelLoader : MonoBehaviour {
     }
 
     private IEnumerator Transition() {
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1.5f);
 		SceneManager.LoadScene(levelToLoad);
 	}
 }
