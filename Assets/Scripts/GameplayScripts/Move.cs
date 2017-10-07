@@ -18,6 +18,8 @@ public class Move : MonoBehaviour {
 
 	Animator Animation;
 
+    private AudioSource _walkingSound;
+
 	// Use this for initialization
 	void Start () {
         _rb = GetComponent<Rigidbody2D>();
@@ -26,6 +28,8 @@ public class Move : MonoBehaviour {
         _jump = GetComponent<Jump>();
 
 		Animation = GetComponent<Animator> ();
+        _walkingSound = GetComponents<AudioSource>()[0];
+        _walkingSound.Play();
 	}
 	
     public void MoveAnalog(float moveX, float moveY)
@@ -65,12 +69,22 @@ public class Move : MonoBehaviour {
                     _rb.velocity = new Vector2(moveX * runSpeed / 2f, moveY * runSpeed);
                     _rb.isKinematic = false;
                 }
+
+                _walkingSound.mute = true;
             }
             else
             {
                 //Move player if not jumping in the air
                 if (!_jump._inAir)
+                {
                     _rb.velocity = new Vector2(moveX * runSpeed, _rb.velocity.y);
+                    if ((_jump.GetGrounded(true) || _jump.GetGrounded(false)) && Mathf.Abs(moveX) > 0.2f)
+                        _walkingSound.mute = false;
+                    else
+                        _walkingSound.mute = true;
+                }
+                else
+                    _walkingSound.mute = true;
             }
         }
    

@@ -15,6 +15,8 @@ public class Charger : IEnemy {
 
     private bool _lostToIdle = false;
     private float _nextDirectionSwitch = 0;
+    [HideInInspector]
+    public AudioSource[] _audioSources;
 
     new void Awake () {
         base.Awake();
@@ -26,6 +28,8 @@ public class Charger : IEnemy {
         _oldMoveDirection = _moveDirection;
         _rb.velocity = _moveDirection;
         _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
+        _audioSources = GetComponents<AudioSource>();
+        _audioSources[0].Play();
     }
 
     void Update () {
@@ -143,10 +147,14 @@ public class Charger : IEnemy {
             else
                 _rb.velocity = new Vector2(_moveDirection.x * attackSpeed, _rb.velocity.y);
         }
+
     }
 
     public override IEnumerator Lost()
     {
+        _audioSources[0].Stop();
+        _audioSources[1].Stop();
+
         SetState("lost");
         _alertAnimator.SetBool("Lost", true);
         _alertAnimator.SetBool("Found", false);
@@ -161,6 +169,9 @@ public class Charger : IEnemy {
 
     public override IEnumerator Found()
     {
+        _audioSources[0].Stop();
+        _audioSources[1].Stop();
+
         SetState("found");
         _animator.speed = 0.0f;
         _animator.SetBool("Idle", false);
@@ -175,6 +186,8 @@ public class Charger : IEnemy {
         _alertAnimator.SetBool("Found", false);
         _animator.speed = 1.0f;
         SetState("attack");
+
+        _audioSources[1].Play();
     }
 
     public override void FoundLookDirection()
@@ -210,6 +223,7 @@ public class Charger : IEnemy {
 
     private IEnumerator Slide()
     {
+        _audioSources[2].Play();
         _isSliding = true;
         _animator.SetBool("Attack", false);
         _animator.SetBool("Slide", true);
@@ -227,6 +241,8 @@ public class Charger : IEnemy {
         _isSliding = false;
         _animator.SetBool("Slide", false);
         _animator.SetBool("Idle", true);
+        _audioSources[0].Play();
+
     }
 
     public override bool EdgeCheck()

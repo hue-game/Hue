@@ -3527,8 +3527,18 @@ Prefab:
     - target: {fileID: 114177181903866486, guid: f63ead12d1273468c9675f7a7c893091,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
+      value: ToggleMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGraphics
+      objectReference: {fileID: 0}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2067863850}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0
@@ -3538,6 +3548,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 453963078}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &453963080 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114321341588107290, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 453963078}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &453963081 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212126870641906, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 453963078}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &468330150
 GameObject:
   m_ObjectHideFlags: 0
@@ -6445,6 +6467,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: graphicsButton
+      value: 
+      objectReference: {fileID: 453963080}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: musicButton
+      value: 
+      objectReference: {fileID: 453963081}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 098c54b39d01d4c70bc12b443a46923e, type: 2}
   m_IsPrefabParent: 0

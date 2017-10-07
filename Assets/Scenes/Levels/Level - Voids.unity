@@ -2158,6 +2158,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: graphicsButton
+      value: 
+      objectReference: {fileID: 178057823}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: musicButton
+      value: 
+      objectReference: {fileID: 178057824}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 098c54b39d01d4c70bc12b443a46923e, type: 2}
   m_IsPrefabParent: 0
@@ -2739,7 +2749,17 @@ Prefab:
     - target: {fileID: 114177181903866486, guid: f63ead12d1273468c9675f7a7c893091,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
+      value: ToggleMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1142805343}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGraphics
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
@@ -2750,6 +2770,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 178057821}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &178057823 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114321341588107290, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 178057821}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &178057824 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212126870641906, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 178057821}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &178861411
 Prefab:
   m_ObjectHideFlags: 0

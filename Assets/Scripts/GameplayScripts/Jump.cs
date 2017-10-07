@@ -23,7 +23,6 @@ public class Jump : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
         _inputManager = GetComponent<InputManager>();
 		JumpAnimation = GetComponent<Animator> ();
-
 	}
 
     void FixedUpdate()

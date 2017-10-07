@@ -11,6 +11,7 @@ public class WorldManager : MonoBehaviour {
     private IPlayer _player;
     [HideInInspector]
     public Buzzard[] buzzards;
+    public Charger[] chargers;
     public Rope[] ropes;
 
     private bool firstSwitch = true;
@@ -20,6 +21,7 @@ public class WorldManager : MonoBehaviour {
         _player = FindObjectOfType<IPlayer>();
         ropes = FindObjectsOfType<Rope>();
         buzzards = FindObjectsOfType<Buzzard>();
+        chargers = FindObjectsOfType<Charger>();
         GameObject[] allGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
 
 		foreach (GameObject gameObject in allGameObjects)
@@ -77,12 +79,20 @@ public class WorldManager : MonoBehaviour {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Goomba"));
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("PlayerFeet"), false);
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("PlayerFeet"));
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Buzzard"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Buzzard"));
 
             foreach (GameObject nightmareObject in nightmareWorldObjects)
                 UpdateWorldObject(nightmareObject, false);
 
             foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, true);
+
+            foreach (Charger charger in chargers)
+            {
+                foreach (AudioSource audioSource in charger._audioSources)
+                    audioSource.volume = 0.1f;
+            }
         }
         else 
         {
@@ -92,12 +102,21 @@ public class WorldManager : MonoBehaviour {
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Goomba"));
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("PlayerFeet"), false);
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("PlayerFeet"));
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("NightmareWorld"), LayerMask.NameToLayer("Buzzard"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("DreamWorld"), LayerMask.NameToLayer("Buzzard"));
 
             foreach (GameObject nightmareObject in nightmareWorldObjects)
                 UpdateWorldObject(nightmareObject, true);
 
             foreach (GameObject dreamObject in dreamWorldObjects)
                 UpdateWorldObject(dreamObject, false);
+
+            foreach (Charger charger in chargers)
+            {
+                foreach (AudioSource audioSource in charger._audioSources)
+                    audioSource.volume = 0.9f;
+            }    
+
         }
 
         foreach (Buzzard buzzard in buzzards)

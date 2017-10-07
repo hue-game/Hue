@@ -52,3 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelStartDelay: 2
+  checkboxes:
+  - {fileID: 21300000, guid: 64010c68ecc9b8946bb064044788cf70, type: 3}
+  - {fileID: 21300000, guid: 68f0c2889b0ee5047af2664beaecd7b5, type: 3}

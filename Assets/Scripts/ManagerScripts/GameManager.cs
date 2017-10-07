@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.PostProcessing;
 
 public class GameManager : MonoBehaviour {
 	public float levelStartDelay = 2f;
     public Dictionary<string, int> levelRequirements = new Dictionary<string, int>();
+    public Sprite[] checkboxes;
+    public Image graphicsButton;
+    public Image musicButton;
 
     private Collectible[] _collectibles;
     private LevelLoader[] _levelLoaders;
@@ -17,26 +21,40 @@ public class GameManager : MonoBehaviour {
     private IPlayer _player;
 
 	void Start() {
-        if (!PlayerPrefs.HasKey("totalCollectiblesGlobal"))
-        {
-            PlayerPrefs.SetInt("totalCollectiblesGlobal", 0);
-            PlayerPrefs.Save();
-        }
-
         _levelLoaders = FindObjectsOfType<LevelLoader>();
         _collectibles = FindObjectsOfType<Collectible>();
         _resetProgress = FindObjectOfType<ResetProgress>();
         _checkpointManager = FindObjectOfType<CheckpointManager>();
         _viewTutorial = FindObjectOfType<ViewTutorial>();
         _player = FindObjectOfType<IPlayer>();
-    
+
+        if (!PlayerPrefs.HasKey("totalCollectiblesGlobal"))
+            PlayerPrefs.SetInt("totalCollectiblesGlobal", 0);
+        if (!PlayerPrefs.HasKey("MusicOn"))
+            PlayerPrefs.SetInt("MusicOn", 1);
+        if (!PlayerPrefs.HasKey("GraphicsOn"))
+            PlayerPrefs.SetInt("GraphicsOn", 1);
+            
+        if (PlayerPrefs.GetInt("GraphicsOn") == 0)
+        {
+            if (graphicsButton != null)
+                graphicsButton.sprite = checkboxes[0];
+            FindObjectOfType<PostProcessingBehaviour>().enabled = false;
+        }
+
+        if (PlayerPrefs.GetInt("MusicOn") == 0)
+        {
+            if (musicButton != null)
+                musicButton.sprite = checkboxes[0];
+            AudioListener.volume = 0.0f;
+        }
+  
         LoadLevelRequirements();
         if (SceneManager.GetActiveScene().name == "InteractiveMainMenu")
         {
             if (!PlayerPrefs.HasKey("FirstTime"))
             {
                 PlayerPrefs.SetInt("FirstTime", 0);
-                PlayerPrefs.Save();
                 _viewTutorial.ShowTutorial();
             }
 
@@ -56,13 +74,15 @@ public class GameManager : MonoBehaviour {
 
             PlayerPrefs.DeleteKey("CurrentLevel");
             PlayerPrefs.DeleteKey("CurrentCheckpoint");
-            PlayerPrefs.Save();
         }
         else
             PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
+
+        PlayerPrefs.Save();
+
     }
 
-	public void RestartLevel() {
+    public void RestartLevel() {
         Time.timeScale = 1.0f;
         PlayerPrefs.DeleteKey("CurrentLevel");
         PlayerPrefs.DeleteKey("CurrentCheckpoint");
@@ -116,6 +136,39 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
+
+    public void ToggleMusic()
+    {
+        PlayerPrefs.SetInt("MusicOn", 1 - PlayerPrefs.GetInt("MusicOn"));
+        PlayerPrefs.Save();
+        if (PlayerPrefs.GetInt("MusicOn") == 1)
+        {
+            AudioListener.volume = 1.0f;
+            musicButton.sprite = checkboxes[1];
+        }
+        else
+        {
+            AudioListener.volume = 0.0f;
+            musicButton.sprite = checkboxes[0];
+        }
+    }
+
+    public void ToggleGraphics()
+    {
+        PlayerPrefs.SetInt("GraphicsOn", 1 - PlayerPrefs.GetInt("GraphicsOn"));
+        PlayerPrefs.Save();
+        if (PlayerPrefs.GetInt("GraphicsOn") == 1)
+        {
+            FindObjectOfType<PostProcessingBehaviour>().enabled = true;
+            graphicsButton.sprite = checkboxes[1];
+        }
+        else
+        {
+            FindObjectOfType<PostProcessingBehaviour>().enabled = false;
+            graphicsButton.sprite = checkboxes[0];
+        }
+    }
+
 }
 
 [System.Serializable]

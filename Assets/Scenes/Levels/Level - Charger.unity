@@ -822,7 +822,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63554087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60.2, y: 5.5, z: 0}
+  m_LocalPosition: {x: 60.03, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1814500781}
@@ -5863,11 +5863,21 @@ Prefab:
     - target: {fileID: 114177181903866486, guid: f63ead12d1273468c9675f7a7c893091,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
+      value: ToggleMusic
       objectReference: {fileID: 0}
     - target: {fileID: 1664090735968752, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1155077067}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGraphics
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
@@ -5878,6 +5888,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 485654106}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &485654108 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114321341588107290, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 485654106}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &485654109 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212126870641906, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 485654106}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &488176573
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,6 +6714,11 @@ Prefab:
     - target: {fileID: 1498989689651212, guid: cb7f9637f9e9a2e468f2dd328c1e28fb, type: 2}
       propertyPath: m_Name
       value: BuzzardLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 114577660742303562, guid: cb7f9637f9e9a2e468f2dd328c1e28fb,
+        type: 2}
+      propertyPath: alertRadius
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb7f9637f9e9a2e468f2dd328c1e28fb, type: 2}
@@ -12428,6 +12455,11 @@ Prefab:
       propertyPath: attackCooldown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114577660742303562, guid: cb7f9637f9e9a2e468f2dd328c1e28fb,
+        type: 2}
+      propertyPath: alertRadius
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb7f9637f9e9a2e468f2dd328c1e28fb, type: 2}
   m_IsPrefabParent: 0
@@ -13598,7 +13630,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277688923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.7, y: 5.5, z: 0}
+  m_LocalPosition: {x: 50.95, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1814500781}
@@ -14882,6 +14914,11 @@ Prefab:
     - target: {fileID: 1215072294100628, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
       propertyPath: m_Name
       value: Collectible-charger-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212881209206388320, guid: b87305b6c24864b1db4bcd05eba9cdf9,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b87305b6c24864b1db4bcd05eba9cdf9, type: 2}
@@ -17105,7 +17142,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4436936611561154, guid: 9fec115d63d3e4066b7046cac02d1998, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.93
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4436936611561154, guid: 9fec115d63d3e4066b7046cac02d1998, type: 2}
       propertyPath: m_LocalPosition.z
@@ -17182,6 +17219,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: graphicsButton
+      value: 
+      objectReference: {fileID: 485654108}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: musicButton
+      value: 
+      objectReference: {fileID: 485654109}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 098c54b39d01d4c70bc12b443a46923e, type: 2}
   m_IsPrefabParent: 0

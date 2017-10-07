@@ -22,7 +22,8 @@ public class Buzzard : IEnemy {
     private int _hoverLocation = 0;
     private float _hoverOffset = 0f;
 
-	//AudioSource Flap;
+    private AudioSource[] _audioSources;
+
 
     new void Awake () {
         base.Awake();
@@ -33,7 +34,10 @@ public class Buzzard : IEnemy {
         _rb.velocity = _moveDirection;
         _nextDirectionSwitch = Time.time + UnityEngine.Random.Range(changeDirectionMin, changeDirectionMax);
 
-		//AudioSource Flap = GetComponent<AudioSource>();
+        _audioSources = GetComponents<AudioSource>();
+        _audioSources[0].Play();
+
+        StartCoroutine(Screach());
     }
 
     void FixedUpdate () {
@@ -145,6 +149,9 @@ public class Buzzard : IEnemy {
 
     public override IEnumerator Lost()
     {
+        _audioSources[0].Stop();
+        _audioSources[1].Stop();
+
         CancelInvoke("ThrowFeather");
         CancelInvoke("AttackAnimation");
         SetState("lost");
@@ -160,10 +167,15 @@ public class Buzzard : IEnemy {
         _animator.speed = 1.0f;
         SetState("idle");
         _lostToIdle = true;
+
+        _audioSources[0].Play();
     }
 
     public override IEnumerator Found()
     {
+        _audioSources[0].Stop();
+        _audioSources[1].Stop();
+
         SetState("found");
         _animator.speed = 0.0f;
         
@@ -183,6 +195,8 @@ public class Buzzard : IEnemy {
 
         InvokeRepeating("AttackAnimation", attackCooldown - 0.35f, attackCooldown);
         InvokeRepeating("ThrowFeather", attackCooldown, attackCooldown);
+
+        _audioSources[1].Play();
     }
 
     public override void FoundLookDirection()
@@ -273,6 +287,15 @@ public class Buzzard : IEnemy {
             GetComponent<Animator>().runtimeAnimatorController = dreamAnimator;
         else
             GetComponent<Animator>().runtimeAnimatorController = nightmareAnimator;
+    }
+
+    private IEnumerator Screach()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
+            _audioSources[2].Play();
+        }
     }
 
     private void OnDestroy()

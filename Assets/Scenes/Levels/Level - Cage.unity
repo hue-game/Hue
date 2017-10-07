@@ -1699,7 +1699,7 @@ Prefab:
     - target: {fileID: 114177181903866486, guid: f63ead12d1273468c9675f7a7c893091,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
+      value: ToggleMusic
       objectReference: {fileID: 0}
     - target: {fileID: 114475467086617752, guid: f63ead12d1273468c9675f7a7c893091,
         type: 2}
@@ -1730,9 +1730,31 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 700772796}
+    - target: {fileID: 114530085515367288, guid: f63ead12d1273468c9675f7a7c893091,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleGraphics
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63ead12d1273468c9675f7a7c893091, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &413738094 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114321341588107290, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 413738093}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &413738095 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212126870641906, guid: f63ead12d1273468c9675f7a7c893091,
+    type: 2}
+  m_PrefabInternal: {fileID: 413738093}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &431977726
 Prefab:
   m_ObjectHideFlags: 0
@@ -2087,7 +2109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 560260099}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Voids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2101,7 +2123,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 560260098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: -4.63, y: 2.18, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675163573}
@@ -4631,7 +4653,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4201683796911752, guid: bc4dc9fe441764025b4c591dd292192a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.27
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4201683796911752, guid: bc4dc9fe441764025b4c591dd292192a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5481,6 +5503,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: graphicsButton
+      value: 
+      objectReference: {fileID: 413738094}
+    - target: {fileID: 114626783894982206, guid: 098c54b39d01d4c70bc12b443a46923e,
+        type: 2}
+      propertyPath: musicButton
+      value: 
+      objectReference: {fileID: 413738095}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 098c54b39d01d4c70bc12b443a46923e, type: 2}
   m_IsPrefabParent: 0
@@ -5558,7 +5590,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1806803308}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Voids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
