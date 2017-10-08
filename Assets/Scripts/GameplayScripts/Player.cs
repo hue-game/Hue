@@ -18,6 +18,8 @@ public class Player : IPlayer
 
 	Animator DieAnimation;
 
+    private AudioSource _dieSound;
+
     private void Awake()
     {
 		_checkpointManager = GetComponent<CheckpointManager> ();
@@ -27,8 +29,9 @@ public class Player : IPlayer
 		_rigidBody = GetComponent<Rigidbody2D> ();
         _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
+        _dieSound = GetComponents<AudioSource>()[3];
 
-		DieAnimation = GetComponent<Animator> ();
+        DieAnimation = GetComponent<Animator> ();
     }
 
     // FixedUpdate is called once per frame after physics have applied
@@ -86,6 +89,7 @@ public class Player : IPlayer
     {
         isDead = true;
         _rigidBody.simulated = false;
+        _dieSound.Play();
 
         DieAnimation.ResetTrigger("Land");
         DieAnimation.ResetTrigger("Jump");

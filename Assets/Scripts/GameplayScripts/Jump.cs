@@ -19,10 +19,14 @@ public class Jump : MonoBehaviour {
 
 	Animator JumpAnimation;
 
+    private AudioSource _landingSound;
+
 	void Start () {
         _rb = GetComponent<Rigidbody2D>();
         _inputManager = GetComponent<InputManager>();
 		JumpAnimation = GetComponent<Animator> ();
+        if (GetComponent<LevelSelectionPlayer>() == null)
+            _landingSound = GetComponents<AudioSource>()[1];
 	}
 
     void FixedUpdate()
@@ -33,6 +37,8 @@ public class Jump : MonoBehaviour {
             JumpAnimation.ResetTrigger("Jump");
             JumpAnimation.SetTrigger("Land");
             _inAir = false;
+
+            _landingSound.Play();
         }
         LedgeJump();
     }

@@ -10,10 +10,13 @@ public class LevelSelectionPlayer : IPlayer
     private void Awake()
 	{
 		_moveScript = GetComponent<Move>();
-        _jumpScript = GetComponent<Jump>();
         _input = GetComponent<InputManager>();
         _gameManager = FindObjectOfType<GameManager>();
         onRope = null;
+        _jumpScript = GetComponent<Jump>();
+        _jumpScript._inAir = false;
+        _jumpScript.SetGrounded(true, true);
+        _jumpScript.SetGrounded(true, false);
 	}
 
     // FixedUpdate is called once per frame after physics have applied

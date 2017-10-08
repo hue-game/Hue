@@ -59,6 +59,8 @@ public class Collectible : MonoBehaviour {
         _playerRB.simulated = false;
 
         _player.isScaring = true;
+        GetComponent<AudioSource>().Play();
+        _player.GetComponents<AudioSource>()[2].Play();
 
         while (t < 1)
         {

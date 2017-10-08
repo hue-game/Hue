@@ -32,6 +32,9 @@ public class CheckpointManager : MonoBehaviour
     {
         if (!checkpoint.GetComponent<Checkpoint>()._CheckpointReached)
         {
+            if (checkpoint != defaultCheckpoint)
+                checkpoint.GetComponent<AudioSource>().Play();
+
             PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
             PlayerPrefs.SetString("CurrentCheckpoint", checkpoint.name);
             PlayerPrefs.Save();

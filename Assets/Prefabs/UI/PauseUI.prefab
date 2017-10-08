@@ -840,7 +840,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Music
+  m_Text: Sound
 --- !u!114 &114610091218579078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1446,7 +1446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 129.6, y: -4.7}
+  m_AnchoredPosition: {x: 129.6, y: -4.700012}
   m_SizeDelta: {x: 192.6, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224319542121959270
@@ -1466,7 +1466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.80827093, y: 0.767}
   m_AnchorMax: {x: 1, y: 0.9851803}
-  m_AnchoredPosition: {x: -16.999817, y: 98}
+  m_AnchoredPosition: {x: -16.999756, y: 98}
   m_SizeDelta: {x: -234, y: -96}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224347668530077924
@@ -1505,7 +1505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.80827093, y: 0.767}
   m_AnchorMax: {x: 1, y: 0.9851803}
-  m_AnchoredPosition: {x: -16.999939, y: -11.599998}
+  m_AnchoredPosition: {x: -17, y: -11.600098}
   m_SizeDelta: {x: -234, y: -96}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224382125247907512

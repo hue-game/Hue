@@ -84,6 +84,9 @@ public class GameManager : MonoBehaviour {
 
     public void RestartLevel() {
         Time.timeScale = 1.0f;
+        AudioSource[] audio = FindObjectsOfType<AudioSource>();
+        for (int i = 0; i < audio.Length; i++)
+            audio[i].pitch = 1.0f;
         PlayerPrefs.DeleteKey("CurrentLevel");
         PlayerPrefs.DeleteKey("CurrentCheckpoint");
         PlayerPrefs.Save();
@@ -92,6 +95,9 @@ public class GameManager : MonoBehaviour {
 
 	public void StopLevel() {
         Time.timeScale = 1.0f;
+        AudioSource[] audio = FindObjectsOfType<AudioSource>();
+        for (int i = 0; i < audio.Length; i++)
+            audio[i].pitch = 1.0f;
         SceneManager.LoadScene ("InteractiveMainMenu");
 	}
 

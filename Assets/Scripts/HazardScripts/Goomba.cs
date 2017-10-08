@@ -10,6 +10,7 @@ public class Goomba : IEnemy {
     public bool startDirection = false;
 
     private bool _flippedLastFrame = false;
+    private AudioSource[] _audioSources;
 
     new void Awake () {
         base.Awake();
@@ -20,6 +21,9 @@ public class Goomba : IEnemy {
 
         _oldMoveDirection = _moveDirection;
         _rb.velocity = _moveDirection;
+        _audioSources = GetComponents<AudioSource>();
+
+        InvokeRepeating("RepeatWalking", 0, 0.5f);
     }
 
     void Update () {
@@ -112,6 +116,7 @@ public class Goomba : IEnemy {
 
     public override IEnumerator Lost()
     {
+        CancelInvoke();
         _animator.speed = 0.0f;
         SetState("lost");
         _alertAnimator.SetBool("Lost", true);
@@ -122,10 +127,14 @@ public class Goomba : IEnemy {
         _alertAnimator.SetBool("Lost", false);
         _animator.speed = 1.0f;
         SetState("idle");
+        InvokeRepeating("RepeatWalking", 0, 0.5f);
     }
 
     public override IEnumerator Found()
     {
+        CancelInvoke();
+        _audioSources[1].Play();
+
         _animator.speed = 0.0f;
         SetState("found");
         FoundLookDirection();
@@ -137,6 +146,8 @@ public class Goomba : IEnemy {
         _alertAnimator.SetBool("Found", false);
         _animator.speed = 1.0f;
         SetState("attack");
+
+        InvokeRepeating("RepeatWalking", 0, 0.2f);
     }
 
 
@@ -193,5 +204,10 @@ public class Goomba : IEnemy {
         }
 
         return true;
+    }
+
+    private void RepeatWalking()
+    {
+        _audioSources[0].Play();
     }
 }

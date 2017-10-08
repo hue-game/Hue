@@ -30,13 +30,12 @@ public class Move : MonoBehaviour {
 		Animation = GetComponent<Animator> ();
         _walkingSound = GetComponents<AudioSource>()[0];
         _walkingSound.Play();
-	}
+    }
 	
     public void MoveAnalog(float moveX, float moveY)
     {
         Animation.SetFloat("XMovement", Mathf.Abs(moveX));
 
-        //Apply the velocity of the player
         if (_player.onRope == null)
         {
             if (_player.onLadder)
@@ -57,7 +56,6 @@ public class Move : MonoBehaviour {
 				}
 
 
-                //ClimbAnimation.SetFloat("YMovement", Mathf.Abs(moveY));
                 //Move player if on a ladder (allow horizontal movement)
                 if (moveX == 0 && moveY == 0)
                 {
